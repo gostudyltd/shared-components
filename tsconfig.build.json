@@ -1,0 +1,21 @@
+{
+  "include": ["src/packages"],
+  "exclude": ["lib", "node_modules"],
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "target": "es6",
+    "rootDir": "./src/packages",
+    "outDir": "./lib/esm",
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": false,
+    "preserveSymlinks": true,
+    "declaration": true
+  }
+}
