@@ -1,5 +1,5 @@
 {
-  "name": "@tsvir/shared-components",
+  "name": "@gostudyltd/shared-components",
   "version": "0.0.1",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
