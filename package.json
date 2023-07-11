@@ -39,7 +39,7 @@
     ]
   },
   "repository": {
-    "url": "git://github.com/tsvir/shared-components.git"
+    "url": "git://github.com/gostudyltd/shared-components.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
