@@ -7,7 +7,6 @@ import {
   TableBody,
   TableRow,
   TableCell,
-  TableFooter,
   TableSortLabel,
   SxProps,
   Paper,
@@ -18,7 +17,6 @@ import dymmyData from "../dummy-data.json";
 import theme from "../config/theme";
 
 const tableData = dymmyData;
-let totalExpense: number = 0;
 
 export type TableExampleProps = {
   title?: string;
@@ -46,7 +44,7 @@ export const TableExample: React.FC<TableExampleProps> = ({
 
   const dataUsed = data ? data : tableData;
 
-  const renderTable = () => (
+  const table = (
     <>
       <Typography variant="h1">{title || "Default title"}</Typography>
       <TableContainer
@@ -69,8 +67,8 @@ export const TableExample: React.FC<TableExampleProps> = ({
             </TableRow>
           </TableHead>
           <TableBody>
-            {dataUsed.map((row) => (
-              <TableRow key={row.project_name}>
+            {dataUsed.map((row, index) => (
+              <TableRow key={`${row.project_name}${index}`}>
                 <TableCell>{row.departments}</TableCell>
                 <TableCell>{row.project_name}</TableCell>
                 <TableCell>{row.amount}</TableCell>
@@ -79,17 +77,14 @@ export const TableExample: React.FC<TableExampleProps> = ({
               </TableRow>
             ))}
           </TableBody>
-          <TableFooter>
-            <TableCell align="right">Total: {totalExpense}€ </TableCell>
-          </TableFooter>
         </Table>
       </TableContainer>
     </>
   );
 
   return externalTheme ? (
-    renderTable()
+    table
   ) : (
-    <ThemeProvider theme={theme()}>{renderTable()}</ThemeProvider>
+    <ThemeProvider theme={theme}>{table}</ThemeProvider>
   );
 };
