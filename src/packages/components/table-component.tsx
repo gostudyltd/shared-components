@@ -15,7 +15,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import dymmyData from "../dummy-data.json";
-import theme from "../../config/theme";
+import theme from "../config/theme";
 
 const tableData = dymmyData;
 let totalExpense: number = 0;
