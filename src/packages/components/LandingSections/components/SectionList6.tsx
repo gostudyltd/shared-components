@@ -4,6 +4,7 @@ import { AccentColor } from './types';
 import { accentColorBase } from './utils';
 import { iconBase } from '../icons';
 import { montserratFamily } from '../../../constants/themeVars';
+import { withCustomTheme } from '../../hoc/withCustomTheme';
 
 type DataItem = {
   title: string;
@@ -157,55 +158,57 @@ type SectionList6Props = {
   postDescription?: string;
 };
 
-export const SectionList6: React.FC<SectionList6Props> = (props) => {
-  const { data, accentColor = 'primary', postDescription } = props;
-  const [first, ...rest] = data;
-  return (
-    <Stack>
-      <Stack
-        direction={{ xs: 'column', sm: 'row' }}
-        gap={{ xs: '1rem', sm: '1.5rem' }}
-      >
-        <Stack sx={{ flex: '1 1 0' }}>
-          <CardItem accentColor={accentColor} data={first} idx={0} />
-        </Stack>
-        <Stack display={'flex'} sx={{ flex: '2 2 0' }}>
-          <Grid container spacing={{ xs: 2, sm: 3 }}>
-            {rest.map((data, idx) => (
-              <Grid key={data.title} item sm={6} xs={12}>
-                <CardItem
-                  key={data.title}
-                  accentColor='primary'
-                  data={data}
-                  idx={idx + 1}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Stack>
-      </Stack>
-      {postDescription && (
-        <Box
-          sx={{
-            marginTop: { xs: '2rem', sm: '2.5rem' },
-            mx: { xs: '1.25rem', sm: '1.5rem' },
-          }}
+export const SectionList6: React.FC<SectionList6Props> = withCustomTheme(
+  (props) => {
+    const { data, accentColor = 'primary', postDescription } = props;
+    const [first, ...rest] = data;
+    return (
+      <Stack>
+        <Stack
+          direction={{ xs: 'column', sm: 'row' }}
+          gap={{ xs: '1rem', sm: '1.5rem' }}
         >
-          <Typography
-            fontFamily={montserratFamily}
-            color={'rgba(0,0,0,0.54)'}
-            sx={{ display: { xs: 'none', sm: 'block' }, fontSize: '1rem' }}
+          <Stack sx={{ flex: '1 1 0' }}>
+            <CardItem accentColor={accentColor} data={first} idx={0} />
+          </Stack>
+          <Stack display={'flex'} sx={{ flex: '2 2 0' }}>
+            <Grid container spacing={{ xs: 2, sm: 3 }}>
+              {rest.map((data, idx) => (
+                <Grid key={data.title} item sm={6} xs={12}>
+                  <CardItem
+                    key={data.title}
+                    accentColor='primary'
+                    data={data}
+                    idx={idx + 1}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </Stack>
+        </Stack>
+        {postDescription && (
+          <Box
+            sx={{
+              marginTop: { xs: '2rem', sm: '2.5rem' },
+              mx: { xs: '1.25rem', sm: '1.5rem' },
+            }}
           >
-            {postDescription}
-          </Typography>
-          <Typography
-            color={'rgba(0,0,0,0.54)'}
-            sx={{ display: { xs: 'block', sm: 'none' }, fontSize: '.875rem' }}
-          >
-            {postDescription}
-          </Typography>
-        </Box>
-      )}
-    </Stack>
-  );
-};
+            <Typography
+              fontFamily={montserratFamily}
+              color={'rgba(0,0,0,0.54)'}
+              sx={{ display: { xs: 'none', sm: 'block' }, fontSize: '1rem' }}
+            >
+              {postDescription}
+            </Typography>
+            <Typography
+              color={'rgba(0,0,0,0.54)'}
+              sx={{ display: { xs: 'block', sm: 'none' }, fontSize: '.875rem' }}
+            >
+              {postDescription}
+            </Typography>
+          </Box>
+        )}
+      </Stack>
+    );
+  }
+);

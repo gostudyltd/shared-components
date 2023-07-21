@@ -4,6 +4,7 @@ export * from './SectionContainerOverlay';
 export * from './SectionContainerWrapperColorized';
 export * from './SectionImageColumn';
 export * from './SectionList5';
+export * from './SectionList6';
 export * from './SectionTitle';
 export * from './SectionTwoColumnsContainer';
 export * from './types';

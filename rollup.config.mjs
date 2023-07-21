@@ -47,7 +47,6 @@ const config = {
     // svg support
     svgr({ icon: true }),
     typescript({
-      // useTsconfigDeclarationDir: true,
       tsconfig: './tsconfig.build.json',
       declaration: true,
     }),

@@ -1,1 +1,1 @@
-export * as LandingSections from './LandingSections';
+export * from './LandingSections';

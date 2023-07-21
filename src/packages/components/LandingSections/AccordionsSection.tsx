@@ -5,6 +5,7 @@ import { RoundedPlusIcon } from '../Icons/RoundedPlus';
 import { SectionTitle } from '../LandingSections/components/SectionTitle';
 import { montserratFamily } from '../../constants/themeVars';
 import { SectionContainerWrapperColorized } from './components/SectionContainerWrapperColorized';
+import { withCustomTheme } from '../hoc/withCustomTheme';
 
 type AccordionItem = {
   title: string;
@@ -120,61 +121,61 @@ export type AccordionSectionProps = {
   data: AccordionItem[];
 };
 
-export const AccordionSection: React.FC<AccordionSectionProps> = ({
-  title,
-  description,
-  data,
-}) => {
-  const [activeAccordionTitle, setActiveAccordionTitle] = useState<
-    null | string
-  >(null);
-  const handleAccordionItemClick = (title: string) => {
-    setActiveAccordionTitle((st) => {
-      if (st === title) return null;
-      return title;
-    });
-  };
+export const AccordionSection: React.FC<AccordionSectionProps> =
+  withCustomTheme(({ title, description, data }) => {
+    const [activeAccordionTitle, setActiveAccordionTitle] = useState<
+      null | string
+    >(null);
+    const handleAccordionItemClick = (title: string) => {
+      setActiveAccordionTitle((st) => {
+        if (st === title) return null;
+        return title;
+      });
+    };
 
-  return (
-    <SectionContainerWrapperColorized accentColor='primary' overlayVariant='v2'>
-      <Container
-        maxWidth={'md'}
-        component={'section'}
-        sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: { xs: 'flex-start', sm: 'flex-start' },
-          gap: { xs: '2.5rem', sm: '3.75rem' },
-          py: { xs: '3rem', sm: '6.25rem' },
-          position: 'relative',
-          zIndex: 1,
-        }}
+    return (
+      <SectionContainerWrapperColorized
+        accentColor='primary'
+        overlayVariant='v2'
       >
-        <Box width={'100%'} maxWidth={{ sm: '29.125rem' }}>
-          <SectionTitle
-            title={title}
-            wrapperSx={{ marginBottom: { xs: '1.5rem', sm: '1.5rem' } }}
-          />
-
-          <Typography
-            variant={'body1'}
-            fontSize={'1.1rem'}
-            color={'text.secondary'}
-          >
-            {description}
-          </Typography>
-        </Box>
-        <Box width={'100%'} display={'flex'} flexDirection={'column'}>
-          {data.map((i) => (
-            <AccordionItem
-              key={i.title}
-              {...i}
-              isActive={i.title === activeAccordionTitle}
-              onClick={handleAccordionItemClick}
+        <Container
+          maxWidth={'md'}
+          component={'section'}
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            justifyContent: { xs: 'flex-start', sm: 'flex-start' },
+            gap: { xs: '2.5rem', sm: '3.75rem' },
+            py: { xs: '3rem', sm: '6.25rem' },
+            position: 'relative',
+            zIndex: 1,
+          }}
+        >
+          <Box width={'100%'} maxWidth={{ sm: '29.125rem' }}>
+            <SectionTitle
+              title={title}
+              wrapperSx={{ marginBottom: { xs: '1.5rem', sm: '1.5rem' } }}
             />
-          ))}
-        </Box>
-      </Container>
-    </SectionContainerWrapperColorized>
-  );
-};
+
+            <Typography
+              variant={'body1'}
+              fontSize={'1.1rem'}
+              color={'text.secondary'}
+            >
+              {description}
+            </Typography>
+          </Box>
+          <Box width={'100%'} display={'flex'} flexDirection={'column'}>
+            {data.map((i) => (
+              <AccordionItem
+                key={i.title}
+                {...i}
+                isActive={i.title === activeAccordionTitle}
+                onClick={handleAccordionItemClick}
+              />
+            ))}
+          </Box>
+        </Container>
+      </SectionContainerWrapperColorized>
+    );
+  });

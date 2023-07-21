@@ -1,38 +1,39 @@
-import React from 'react'
-import { Box, Button, ButtonProps, Stack, Typography } from '@mui/material'
-import { AccentColor } from './types'
-import { accentColorBase } from './utils'
-import { CheckInCircle } from '../../Icons/CheckInCircle'
+import React from 'react';
+import { Box, Button, ButtonProps, Stack, Typography } from '@mui/material';
+import { AccentColor } from './types';
+import { accentColorBase } from './utils';
+import { CheckInCircle } from '../../Icons/CheckInCircle';
+import { withCustomTheme } from '../../hoc/withCustomTheme';
 // import CheckRoundedIcon from '@mui/icons-material/CheckRounded'
 
 type DataItem = {
-  badge?: string
-  title: string
-  description: string
-  list: string[]
+  badge?: string;
+  title: string;
+  description: string;
+  list: string[];
   button?: {
-    text: string
-    onClick: () => void
-  }
+    text: string;
+    onClick: () => void;
+  };
 
   /** From MUI */
-  buttonProps?: ButtonProps
-}
+  buttonProps?: ButtonProps;
+};
 
 export type SectionList5Props = {
-  accentColor: AccentColor
-  data: DataItem[]
-}
+  accentColor: AccentColor;
+  data: DataItem[];
+};
 
 type CardItemProps = {
-  accentColor: AccentColor
-  data: DataItem
-}
+  accentColor: AccentColor;
+  data: DataItem;
+};
 
 const CardItem: React.FC<CardItemProps> = (props) => {
-  const { data, accentColor } = props
-  const { title } = data
-  const accent = accentColorBase[accentColor]
+  const { data, accentColor } = props;
+  const { title } = data;
+  const accent = accentColorBase[accentColor];
   return (
     <Stack sx={{ height: 'inherit', flex: '1 1 0', pt: '42px' }}>
       <Stack
@@ -57,7 +58,11 @@ const CardItem: React.FC<CardItemProps> = (props) => {
           {title}
         </Typography>
         <Typography
-          sx={{ mb: { xs: '1.5rem', sm: '2.5rem' }, fontSize: { xs: '0.875rem', sm: '1rem' }, color: 'rgba(0,0,0,0.54)' }}
+          sx={{
+            mb: { xs: '1.5rem', sm: '2.5rem' },
+            fontSize: { xs: '0.875rem', sm: '1rem' },
+            color: 'rgba(0,0,0,0.54)',
+          }}
         >
           {data.description}
         </Typography>
@@ -137,22 +142,33 @@ const CardItem: React.FC<CardItemProps> = (props) => {
             zIndex: '-1',
           }}
         >
-          <Typography variant='h5' sx={{ fontSize: { xs: '1rem', sm: '1.125rem' }, color: 'background.paper' }}>
+          <Typography
+            variant='h5'
+            sx={{
+              fontSize: { xs: '1rem', sm: '1.125rem' },
+              color: 'background.paper',
+            }}
+          >
             {data.badge}
           </Typography>
         </Box>
       </Stack>
     </Stack>
-  )
-}
+  );
+};
 
-export const SectionList5: React.FC<SectionList5Props> = (props) => {
-  const { data, accentColor = 'primary' } = props
-  return (
-    <Stack gap={{ xs: '1.25rem', sm: '1.5rem' }} direction={{ sm: 'row', xs: 'column' }}>
-      {data.map((i) => (
-        <CardItem accentColor={accentColor} key={i.title} data={i} />
-      ))}
-    </Stack>
-  )
-}
+export const SectionList5: React.FC<SectionList5Props> = withCustomTheme(
+  (props) => {
+    const { data, accentColor = 'primary' } = props;
+    return (
+      <Stack
+        gap={{ xs: '1.25rem', sm: '1.5rem' }}
+        direction={{ sm: 'row', xs: 'column' }}
+      >
+        {data.map((i) => (
+          <CardItem accentColor={accentColor} key={i.title} data={i} />
+        ))}
+      </Stack>
+    );
+  }
+);

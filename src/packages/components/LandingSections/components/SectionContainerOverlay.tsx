@@ -1,7 +1,8 @@
-import React from 'react'
-import { AccentColor } from './types'
-import { Box, SxProps } from '@mui/material'
-import { accentColorBase } from './utils'
+import React from 'react';
+import { AccentColor } from './types';
+import { Box, SxProps } from '@mui/material';
+import { accentColorBase } from './utils';
+import { withCustomTheme } from '../../hoc/withCustomTheme';
 
 const Overlay1 = () => {
   return (
@@ -158,12 +159,18 @@ const Overlay1 = () => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
 const Overlay2 = () => {
   return (
-    <svg width='1920' height='1920' viewBox='0 0 1920 1920' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg
+      width='1920'
+      height='1920'
+      viewBox='0 0 1920 1920'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+    >
       <g clipPath='url(#clip0_3528_193812)'>
         <path
           opacity='0.0344828'
@@ -316,18 +323,22 @@ const Overlay2 = () => {
         </clipPath>
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-type Variant = 'v1' | 'v2'
+type Variant = 'v1' | 'v2';
 
 type WrapperProps = {
-  accentColor: AccentColor
-  sx?: SxProps
-}
+  accentColor: AccentColor;
+  sx?: SxProps;
+};
 
-const Wrapper: React.FC<React.PropsWithChildren<WrapperProps>> = ({ children, accentColor, sx = {} }) => {
-  const accent = accentColorBase[accentColor]
+const Wrapper: React.FC<React.PropsWithChildren<WrapperProps>> = ({
+  children,
+  accentColor,
+  sx = {},
+}) => {
+  const accent = accentColorBase[accentColor];
   return (
     <Box
       sx={{
@@ -339,46 +350,47 @@ const Wrapper: React.FC<React.PropsWithChildren<WrapperProps>> = ({ children, ac
     >
       {children}
     </Box>
-  )
-}
+  );
+};
 
 export type SectionContainerOverlayProps = {
-  variant: Variant
-  accentColor: AccentColor
-}
+  variant: Variant;
+  accentColor: AccentColor;
+};
 
-export const SectionContainerOverlay: React.FC<SectionContainerOverlayProps> = ({ variant, accentColor }) => {
-  if (variant === 'v1') {
-    return (
-      <Wrapper
-        accentColor={accentColor}
-        sx={{
-          position: 'absolute',
-          top: '50%',
-          left: '0',
-          transform: 'translateY(-50%)',
-          minWidth: '100vw',
-        }}
-      >
-        <Overlay1 />
-      </Wrapper>
-    )
-  }
-  if (variant === 'v2') {
-    return (
-      <Wrapper
-        accentColor={accentColor}
-        sx={{
-          position: 'absolute',
-          top: '0',
-          left: '50%',
-          transform: 'translateX(-50%)',
-        }}
-      >
-        <Overlay2 />
-      </Wrapper>
-    )
-  }
+export const SectionContainerOverlay: React.FC<SectionContainerOverlayProps> =
+  withCustomTheme(({ variant, accentColor }) => {
+    if (variant === 'v1') {
+      return (
+        <Wrapper
+          accentColor={accentColor}
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '0',
+            transform: 'translateY(-50%)',
+            minWidth: '100vw',
+          }}
+        >
+          <Overlay1 />
+        </Wrapper>
+      );
+    }
+    if (variant === 'v2') {
+      return (
+        <Wrapper
+          accentColor={accentColor}
+          sx={{
+            position: 'absolute',
+            top: '0',
+            left: '50%',
+            transform: 'translateX(-50%)',
+          }}
+        >
+          <Overlay2 />
+        </Wrapper>
+      );
+    }
 
-  return null
-}
+    return null;
+  });
