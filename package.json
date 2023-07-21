@@ -10,27 +10,43 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.13.7",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.0"
+  },
+  "peerDependencies": {
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.0",
+    "react": "^17.0.0-0 || ^18.0.0-0",
+    "react-dom": "^17.0.0-0 || ^18.0.0-0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-image": "^3.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-url": "^8.0.1",
+    "@svgr/rollup": "^8.0.1",
     "@types/node": "^16.18.38",
     "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
+    "@types/react-dom": "^18.2.7",
+    "copyfiles": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "rimraf": "^5.0.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.35.0",
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm run build:esm && npm run build:cjs",
+    "build:old": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p tsconfig.build.json",
     "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir lib/cjs",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "postbuild": "cp -r src/packages/icons lib/esm/icons",
+    "build": "rollup -c"
   },
   "eslintConfig": {
     "extends": [

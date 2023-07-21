@@ -1,20 +1,20 @@
-import { montserratFamily } from '../../constants/themeVars'
-import { Components, Theme } from '@mui/material'
+import { montserratFamily } from '../../constants/themeVars/typography';
+import { Components, Theme } from '@mui/material';
 
 declare module '@mui/material/Chip' {
   interface ChipPropsColorOverrides {
-    Signed: true
-    Default: true
-    Accepted: true
-    Waiting: true
-    Sign: true
-    Error: true
-    Expired: true
+    Signed: true;
+    Default: true;
+    Accepted: true;
+    Waiting: true;
+    Sign: true;
+    Error: true;
+    Expired: true;
   }
 }
 declare module '@mui/material/FormControl' {
   interface FormControlPropsOverrides {
-    variants: { custom: true }
+    variants: { custom: true };
   }
 }
 
@@ -28,7 +28,8 @@ export const components = {
     styleOverrides: {
       root: ({ theme, ownerState }) => ({
         '&.customfilled': {
-          padding: ownerState.size === 'small' ? '0.25em 0.5em' : '0.5em 0.75em',
+          padding:
+            ownerState.size === 'small' ? '0.25em 0.5em' : '0.5em 0.75em',
           borderRadius: '0.75em',
           backgroundColor: 'rgba(0, 117, 255, 0.05)',
           '& .MuiInput-root': {
@@ -191,4 +192,4 @@ export const components = {
       },
     },
   },
-} as Components<Omit<Theme, 'components'>>
+} as Components<Omit<Theme, 'components'>>;
