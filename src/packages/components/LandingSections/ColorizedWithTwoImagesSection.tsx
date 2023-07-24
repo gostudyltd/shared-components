@@ -43,7 +43,7 @@ export const ColorizedWithTwoImagesSection: React.FC<ColorizedWithTwoImagesSecti
             <SectionTitle {...sectionTitle} />
           </Stack>
         }
-        rightContent={<Box component={'img'} src={image} />}
+        rightContent={<Box component={'img'} src={image} width={'100%'} />}
       />
     );
   });
