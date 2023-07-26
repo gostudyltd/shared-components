@@ -42,11 +42,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "build": "rollup -c",
+    "prepare": "npm run build",
+    "postbuild": "cp -r src/packages/icons lib/esm/icons",
     "build:old": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc -p tsconfig.build.json",
-    "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir lib/cjs",
-    "postbuild": "cp -r src/packages/icons lib/esm/icons",
-    "build": "rollup -c"
+    "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir lib/cjs"
   },
   "eslintConfig": {
     "extends": [
