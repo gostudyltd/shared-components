@@ -81,35 +81,25 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
               }}
             >
               {data.title}
-
               {data.list && (
-                <Stack mt={'.5rem'} ml={'.5rem'}>
-                  {data.list.map((i) => (
+                <>
+                  <br />
+                  <br />
+                  <Stack>
                     <Box
-                      key={i}
-                      component={'span'}
-                      display={'flex'}
-                      alignItems={'center'}
+                      component={'ul'}
                       sx={{
+                        margin: '0',
                         color: accent.light,
+                        pl: '1.75rem',
                       }}
                     >
-                      <Box
-                        component={'span'}
-                        width={'.25rem'}
-                        height={'.25rem'}
-                        display={'block'}
-                        flexShrink={'0'}
-                        sx={{
-                          backgroundColor: accent.light,
-                          marginRight: '.5rem',
-                          borderRadius: '50%',
-                        }}
-                      />
-                      <span>{i}</span>
+                      {data.list.map((i) => (
+                        <li key={i}>{i}</li>
+                      ))}
                     </Box>
-                  ))}
-                </Stack>
+                  </Stack>
+                </>
               )}
               {data.button && (
                 <Stack sx={{ mt: 'auto' }}>
@@ -123,7 +113,7 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
                       justifySelf: 'flex-end',
                       mt: {
                         xs: '1.5rem',
-                        sm: '2.5rem',
+                        sm: '2rem',
                       },
                     }}
                   >

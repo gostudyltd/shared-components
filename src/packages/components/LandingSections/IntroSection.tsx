@@ -17,6 +17,7 @@ export type IntroSectionProps = {
   renderTitle?: (color: string) => string | React.ReactNode;
   description: string;
   image: string;
+  mobileImage?: string;
   button?: {
     text: string;
     onClick: () => void;
@@ -26,6 +27,48 @@ export type IntroSectionProps = {
   bottomListData?: HorizontalListWithSeparatorProps['data'];
 };
 
+type ImageProps = {
+  imageSrc: string;
+  mobileImageSrc?: string;
+};
+
+const Image: React.FC<ImageProps> = ({ imageSrc, mobileImageSrc }) => {
+  if (mobileImageSrc) {
+    return (
+      <>
+        <Box
+          component={'img'}
+          src={imageSrc}
+          alt=''
+          width={'100%'}
+          maxWidth={'588px'}
+          mx={'auto'}
+          sx={{ display: { xs: 'none', sm: 'block' } }}
+        />
+        <Box
+          component={'img'}
+          src={mobileImageSrc}
+          alt=''
+          width={'100%'}
+          maxWidth={'375px'}
+          mx={'auto'}
+          sx={{ display: { xs: 'block', sm: 'none' } }}
+        />
+      </>
+    );
+  }
+  return (
+    <Box
+      component={'img'}
+      src={imageSrc}
+      alt=''
+      width={'100%'}
+      maxWidth={'588px'}
+      mx={'auto'}
+    />
+  );
+};
+
 export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
   (props) => {
     const {
@@ -33,6 +76,7 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
       renderTitle,
       description,
       image,
+      mobileImage,
       button,
       accentColor = 'primary',
       preTitle,
@@ -148,16 +192,7 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
               )}
             </Stack>
           }
-          secondColumn={
-            <Box
-              component={'img'}
-              src={image}
-              alt='hero'
-              width={'100%'}
-              maxWidth={'588px'}
-              mx={'auto'}
-            />
-          }
+          secondColumn={<Image imageSrc={image} mobileImageSrc={mobileImage} />}
         />
         {bottomListData && (
           <Box position={'absolute'} bottom={'0'} left={'0'} right={'0'}>
