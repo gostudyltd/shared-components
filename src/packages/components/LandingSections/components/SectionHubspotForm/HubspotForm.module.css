@@ -1,0 +1,158 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  width: 100%;
+}
+
+.form input {
+  height: 3.5rem;
+}
+
+.form :global(.hs-input),
+.phoneInput {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 16.5px 14px;
+  border-radius: 12px;
+  border: 2px solid rgba(237, 108, 2, 0.5);
+  width: 100%;
+}
+
+.phoneInput {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  padding: 16.5px 14px !important;
+  border-radius: 12px !important;
+  border: 2px solid rgba(237, 108, 2, 0.5) !important;
+  width: 100% !important;
+
+  height: 3.5rem !important;
+  display: none;
+}
+
+.phoneInput label {
+  display: none !important;
+}
+
+.phoneInput:focus {
+  border-color: #ed6c02 !important;
+}
+
+.phoneInput_button {
+  display: none;
+  right: 20px;
+  border: none !important;
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.phoneInput_button > div {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.phoneInput_button:hover,
+.phoneInput_button:focus {
+  background-color: transparent !important;
+}
+
+.form :global(.error) {
+  border-color: #d32f2f;
+}
+
+.form :global(.hs-input):focus {
+  outline: none;
+  border-color: #ed6c02;
+}
+
+.form :global(.hs-form-field) {
+  position: relative;
+}
+
+.form label {
+  position: absolute;
+  top: 16.5px;
+  left: 14px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.54);
+  background: #ffffff;
+  transition: all 0.2s;
+}
+
+.form :global(.hs-form-field):focus-within label,
+.form .label_top {
+  transform: translate(0px, -28px) scale(0.8);
+  padding: 0 3px;
+  color: #ed6c02;
+}
+
+.form .label_error {
+  color: #d32f2f;
+}
+
+.form ul {
+  display: none !important;
+}
+
+.form :global(.field) + :global(.field) {
+  margin-top: 1rem;
+}
+
+.form :global(.hs-submit) input {
+  margin-top: 1.75rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: #ed6c02;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Montserrat', 'Inter', 'Helvetica', 'Arial', sans-serif;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.form :global(.hs-submit) input:hover {
+  background: #e65100;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.phoneInput_button ul {
+  display: block !important;
+  right: -35px;
+}
+
+@media (max-width: 1023px) {
+  .form input {
+    height: 2.625rem;
+  }
+
+  .form :global(.hs-input) {
+    font-size: 0.875rem;
+  }
+
+  .form label {
+    top: 8.5px;
+  }
+
+  .form :global(.hs-form-field):focus-within label,
+  .form .label_top {
+    transform: translate(0px, -20px) scale(0.8);
+  }
+
+  .form :global(.hs-submit) input {
+    margin-top: 1.625rem;
+    font-size: 1rem;
+  }
+
+  .phoneInput {
+    height: 2.625rem !important;
+  }
+
+  .phoneInput_button ul {
+    right: -17px;
+  }
+}

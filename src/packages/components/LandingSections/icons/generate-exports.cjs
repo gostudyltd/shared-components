@@ -77,7 +77,7 @@ const createImports = (iconsData) => {
         `import {ReactComponent as ${dashToCamelCase(
           icon.iconName,
           true
-        )}} from '${iconsFolder}${icon.pathToIcon}'`
+        )}} from '${iconsFolder.slice(0, -1)}${icon.pathToIcon}'`
     )
     .join('\n');
 };

@@ -7,16 +7,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 
-import {ReactComponent as Step1} from '../../../icons//one-tone/step1.svg'
-import {ReactComponent as Step2} from '../../../icons//one-tone/step2.svg'
-import {ReactComponent as Step3} from '../../../icons//one-tone/step3.svg'
-import {ReactComponent as Step4} from '../../../icons//one-tone/step4.svg'
-import {ReactComponent as Step5} from '../../../icons//one-tone/step5.svg'
-import {ReactComponent as Step6} from '../../../icons//one-tone/step6.svg'
-import {ReactComponent as Step7} from '../../../icons//one-tone/step7.svg'
-import {ReactComponent as DiplomaTwoTone} from '../../../icons//two-tone/diploma.svg'
-import {ReactComponent as ShieldTwoTone} from '../../../icons//two-tone/shield.svg'
-import {ReactComponent as VerifiedCheckTwoTone} from '../../../icons//two-tone/verified-check.svg'
+import {ReactComponent as Step1} from '../../../icons/one-tone/step1.svg'
+import {ReactComponent as Step2} from '../../../icons/one-tone/step2.svg'
+import {ReactComponent as Step3} from '../../../icons/one-tone/step3.svg'
+import {ReactComponent as Step4} from '../../../icons/one-tone/step4.svg'
+import {ReactComponent as Step5} from '../../../icons/one-tone/step5.svg'
+import {ReactComponent as Step6} from '../../../icons/one-tone/step6.svg'
+import {ReactComponent as Step7} from '../../../icons/one-tone/step7.svg'
+import {ReactComponent as DiplomaTwoTone} from '../../../icons/two-tone/diploma.svg'
+import {ReactComponent as ShieldTwoTone} from '../../../icons/two-tone/shield.svg'
+import {ReactComponent as VerifiedCheckTwoTone} from '../../../icons/two-tone/verified-check.svg'
 
 export const iconBase = {
   step1: <Step1 />,
