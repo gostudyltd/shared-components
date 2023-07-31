@@ -1,7 +1,7 @@
 {
   "name": "@gostudyltd/shared-components",
   "version": "0.0.8",
-  "homepage": "https://gostudyltd.gihub.io/shared-components",
+  "homepage": "https://gostudyltd.github.io/shared-components",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/esm/index.d.js",
