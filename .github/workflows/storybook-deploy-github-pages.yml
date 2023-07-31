@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: storybook:build
+      - run: npm run storybook:build
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
