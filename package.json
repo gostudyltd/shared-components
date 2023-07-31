@@ -70,7 +70,8 @@
     "build:esm": "tsc -p tsconfig.build.json",
     "build:cjs": "tsc -p tsconfig.build.json --module commonjs --outDir lib/cjs",
     "sb": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
