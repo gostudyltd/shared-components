@@ -198,6 +198,7 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
           <Box position={'absolute'} bottom={'0'} left={'0'} right={'0'}>
             <Box maxWidth={'md'} mx={'auto'} position={'relative'}>
               <HorizontalListWithSeparator
+                accentColor={accentColor}
                 data={bottomListData}
                 sx={{
                   width: 'calc(100% - 2rem)',

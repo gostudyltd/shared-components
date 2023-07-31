@@ -3,6 +3,8 @@ import { Box, Stack, SxProps } from '@mui/material';
 import { montserratFamily, palette } from '../../../constants/themeVars';
 import { iconBase } from '../icons';
 import { withCustomTheme } from '../../hoc/withCustomTheme';
+import { AccentColor } from './types';
+import { accentColorBase } from './utils';
 
 export type HorizontalListWithSeparatorProps = {
   data: {
@@ -13,9 +15,10 @@ export type HorizontalListWithSeparatorProps = {
 
   sx?: SxProps;
   itemSx?: SxProps;
+  accentColor?: AccentColor;
 };
 export const HorizontalListWithSeparator: React.FC<HorizontalListWithSeparatorProps> =
-  withCustomTheme(({ data, sx = {}, itemSx = {} }) => {
+  withCustomTheme(({ data, sx = {}, itemSx = {}, accentColor = 'primary' }) => {
     return (
       <Stack
         direction={'row'}
@@ -55,11 +58,14 @@ export const HorizontalListWithSeparator: React.FC<HorizontalListWithSeparatorPr
                     sm: itemMaxWIdth,
                     alignItems: 'center',
                   },
-                  '& > img, & > svg': {
+                  '& > svg': {
                     width: { xs: '2rem', sm: '2.5rem' },
                     height: { xs: '2rem', sm: '2.5rem' },
                     marginRight: { xs: '1rem', sm: '1.25rem' },
                     flexShrink: 0,
+                    '& path': {
+                      fill: accentColorBase[accentColor].main,
+                    },
                   },
                   ...itemSx,
                 }}

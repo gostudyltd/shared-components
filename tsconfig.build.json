@@ -1,6 +1,6 @@
 {
   "include": ["src/packages", "declarations.d.ts"],
-  "exclude": ["lib", "node_modules"],
+  "exclude": ["lib", "node_modules", "src/packages/**/*.stories.ts"],
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],
