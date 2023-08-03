@@ -13,6 +13,8 @@ export const introSectionContent1: TranslationType<
         жизни в новой стране
       </>
     ),
+    imageOverlayText:
+      'Курс рекомендован гражданам Украины, планирующим жить и работать в Чехии',
     description:
       'Программа изучения чешского языка для иностранных граждан от центра GoStudy при поддержке Управления занятости (Úřad práce) в Праге, Брно или онлайн.',
     bottomListData: [
@@ -40,6 +42,8 @@ export const introSectionContent1: TranslationType<
     ),
     description:
       'Програма вивчення чеської мови для іноземних громадян від центру GoStudy за підтримки Управління зайнятості  (Úřad práce) в Празі, Брно або онлайн.',
+    imageOverlayText:
+      'Курс рекомендований громадянам України, які планують жити та працювати в Чехії.',
     bottomListData: [
       {
         icon: 'verifiedCheckTwoTone',

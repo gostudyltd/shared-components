@@ -10,6 +10,8 @@ import {
 } from './components/HorizontalListWithSeparator';
 import { SectionContainer } from './components/SectionContainer';
 import { withCustomTheme } from '../hoc/withCustomTheme';
+import { Ukraine } from '../Icons/Ukraine';
+import { montserratFamily } from '../../constants/themeVars';
 
 export type IntroSectionProps = {
   preTitle?: string;
@@ -17,6 +19,7 @@ export type IntroSectionProps = {
   renderTitle?: (color: string) => string | React.ReactNode;
   description: string;
   image: string;
+  imageOverlayText?: string;
   mobileImage?: string;
   button?: {
     text: string;
@@ -81,6 +84,7 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
       accentColor = 'primary',
       preTitle,
       bottomListData,
+      imageOverlayText,
     } = props;
     const accent = accentColorBase[accentColor];
     return (
@@ -192,7 +196,53 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
               )}
             </Stack>
           }
-          secondColumn={<Image imageSrc={image} mobileImageSrc={mobileImage} />}
+          secondColumn={
+            <Stack position={'relative'} overflow={'hidden'}>
+              <Image imageSrc={image} mobileImageSrc={mobileImage} />
+              {imageOverlayText && (
+                <Stack
+                  direction={'row'}
+                  alignItems={'center'}
+                  position={'absolute'}
+                  sx={{
+                    background:
+                      'linear-gradient(306deg, #FFEDD1 30.81%, #FFF3E0 30.81%)',
+                    padding: { xs: '0.375rem .5rem', sm: '.875rem 1rem' },
+                    borderRadius: '.75rem',
+                    width: '100%',
+                    maxWidth: { xs: '73%', sm: '374px' },
+
+                    bottom: '2rem',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      mr: { xs: '.5rem', sm: '.75rem' },
+                      '& svg': {
+                        width: { sm: '27px', xs: '24px' },
+                        height: { sm: '27px', xs: '24px' },
+                      },
+                    }}
+                  >
+                    <Ukraine />
+                  </Box>
+                  <Typography
+                    fontFamily={montserratFamily}
+                    fontWeight={'600'}
+                    color={'rgba(0,0,0,.54)'}
+                    lineHeight={'1.43'}
+                    sx={{
+                      fontSize: { xs: '10px', sm: '14px' },
+                    }}
+                  >
+                    {imageOverlayText}
+                  </Typography>
+                </Stack>
+              )}
+            </Stack>
+          }
         />
         {bottomListData && (
           <Box position={'absolute'} bottom={'0'} left={'0'} right={'0'}>
