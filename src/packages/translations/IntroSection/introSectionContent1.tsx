@@ -1,5 +1,6 @@
 import { IntroSectionProps } from '../../components';
 import { TranslationType } from '../types';
+import { getTranslationByLang } from '../utils';
 
 export const introSectionContent1: TranslationType<
   Omit<IntroSectionProps, 'image' | 'mobileImage'>
