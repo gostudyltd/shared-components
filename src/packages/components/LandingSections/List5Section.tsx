@@ -15,13 +15,19 @@ export type List5SectionProps = {
 };
 
 export const List5Section: React.FC<List5SectionProps> = withCustomTheme(
-  ({ accentColor = 'primary', sectionTitle, data, containerSx = {} }) => {
+  ({ accentColor = 'primary', sectionTitle = {}, data, containerSx = {} }) => {
     return (
       <SectionContainerWrapperColorized
         accentColor={accentColor}
         overlayVariant='v1'
       >
-        <SectionContainer sx={containerSx} sectionTitle={sectionTitle}>
+        <SectionContainer
+          sx={containerSx}
+          sectionTitle={{
+            accentColor,
+            ...sectionTitle,
+          }}
+        >
           <SectionList5 accentColor={accentColor} data={data} />
         </SectionContainer>
       </SectionContainerWrapperColorized>

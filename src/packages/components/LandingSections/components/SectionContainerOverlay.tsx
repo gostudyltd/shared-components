@@ -343,7 +343,7 @@ const Wrapper: React.FC<React.PropsWithChildren<WrapperProps>> = ({
     <Box
       sx={{
         '& path': {
-          stroke: accent.light,
+          stroke: accent.overlayFill,
         },
         ...sx,
       }}

@@ -26,14 +26,13 @@ export type SectionList5Props = {
 };
 
 type CardItemProps = {
-  accentColor: AccentColor;
   data: DataItem;
 };
 
 const CardItem: React.FC<CardItemProps> = (props) => {
-  const { data, accentColor } = props;
+  const { data } = props;
   const { title } = data;
-  const accent = accentColorBase[accentColor];
+  const accent = accentColorBase.primary;
   return (
     <Stack sx={{ height: 'inherit', flex: '1 1 0', pt: '42px' }}>
       <Stack
@@ -159,14 +158,14 @@ const CardItem: React.FC<CardItemProps> = (props) => {
 
 export const SectionList5: React.FC<SectionList5Props> = withCustomTheme(
   (props) => {
-    const { data, accentColor = 'primary' } = props;
+    const { data } = props;
     return (
       <Stack
         gap={{ xs: '1.25rem', sm: '1.5rem' }}
         direction={{ sm: 'row', xs: 'column' }}
       >
         {data.map((i) => (
-          <CardItem accentColor={accentColor} key={i.title} data={i} />
+          <CardItem key={i.title} data={i} />
         ))}
       </Stack>
     );

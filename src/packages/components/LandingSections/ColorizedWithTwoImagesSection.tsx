@@ -3,7 +3,7 @@ import { RoundedColorizedSection } from './RoundedSection';
 import { SectionTitle, SectionTitleProps } from './components';
 import { withCustomTheme } from '../hoc/withCustomTheme';
 
-type ColorizedWithTwoImagesSectionProps = {
+export type ColorizedWithTwoImagesSectionProps = {
   logo: string;
   image: string;
   sectionTitle: SectionTitleProps;

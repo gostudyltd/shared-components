@@ -6,6 +6,8 @@ import { SectionTitle } from '../LandingSections/components/SectionTitle';
 import { montserratFamily } from '../../constants/themeVars';
 import { SectionContainerWrapperColorized } from './components/SectionContainerWrapperColorized';
 import { withCustomTheme } from '../hoc/withCustomTheme';
+import { AccentColor } from './components';
+import { accentColorBase } from './components/utils';
 
 type AccordionItem = {
   title: string;
@@ -21,6 +23,7 @@ type AccordionProps = {
   isActive?: boolean;
   onClick: (title: string) => void;
   useItsOwnState?: boolean;
+  accentColor: AccentColor;
 };
 
 const AccordionItem: React.FC<AccordionProps> = (props) => {
@@ -30,7 +33,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
   const maxHeight = isActive
     ? (textRef.current?.firstChild as HTMLSpanElement)?.scrollHeight
     : 0 + 'px';
-
+  const accent = accentColorBase[props.accentColor].main;
   const handleClick = (title: string) => {
     if (props.useItsOwnState) setActive((st) => !st);
     else props.onClick(title);
@@ -81,6 +84,9 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
             sx={{
               width: { xs: '1.0625rem', sm: '1.25rem' },
               height: { xs: '1.0625rem', sm: '1.25rem' },
+              '& path': {
+                fill: accent,
+              },
             }}
           >
             <RoundedPlusIcon />
@@ -119,10 +125,11 @@ export type AccordionSectionProps = {
   title: string;
   description: string;
   data: AccordionItem[];
+  accentColor?: AccentColor;
 };
 
 export const AccordionSection: React.FC<AccordionSectionProps> =
-  withCustomTheme(({ title, description, data }) => {
+  withCustomTheme(({ title, description, data, accentColor = 'primary' }) => {
     const [activeAccordionTitle, setActiveAccordionTitle] = useState<
       null | string
     >(null);
@@ -135,7 +142,7 @@ export const AccordionSection: React.FC<AccordionSectionProps> =
 
     return (
       <SectionContainerWrapperColorized
-        accentColor='primary'
+        accentColor={accentColor}
         overlayVariant='v2'
       >
         <Container
@@ -172,6 +179,7 @@ export const AccordionSection: React.FC<AccordionSectionProps> =
                 {...i}
                 isActive={i.title === activeAccordionTitle}
                 onClick={handleAccordionItemClick}
+                accentColor={accentColor}
               />
             ))}
           </Box>
