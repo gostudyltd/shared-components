@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, SxProps, Typography } from '@mui/material';
 import React from 'react';
 // import { Link } from '../Link'
 import { AccentColor } from './components/types';
@@ -20,56 +20,14 @@ export type IntroSectionProps = {
   description: string;
   image: string;
   imageOverlayText?: string;
-  mobileImage?: string;
   button?: {
     text: string;
     onClick: () => void;
   };
 
+  containerSx?: SxProps;
   accentColor?: AccentColor;
   bottomListData?: HorizontalListWithSeparatorProps['data'];
-};
-
-type ImageProps = {
-  imageSrc: string;
-  mobileImageSrc?: string;
-};
-
-const Image: React.FC<ImageProps> = ({ imageSrc, mobileImageSrc }) => {
-  if (mobileImageSrc) {
-    return (
-      <>
-        <Box
-          component={'img'}
-          src={imageSrc}
-          alt=''
-          width={'100%'}
-          maxWidth={'588px'}
-          mx={'auto'}
-          sx={{ display: { xs: 'none', sm: 'block' } }}
-        />
-        <Box
-          component={'img'}
-          src={mobileImageSrc}
-          alt=''
-          width={'100%'}
-          maxWidth={'375px'}
-          mx={'auto'}
-          sx={{ display: { xs: 'block', sm: 'none' } }}
-        />
-      </>
-    );
-  }
-  return (
-    <Box
-      component={'img'}
-      src={imageSrc}
-      alt=''
-      width={'100%'}
-      maxWidth={'588px'}
-      mx={'auto'}
-    />
-  );
 };
 
 export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
@@ -79,12 +37,12 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
       renderTitle,
       description,
       image,
-      mobileImage,
       button,
       accentColor = 'primary',
       preTitle,
       bottomListData,
       imageOverlayText,
+      containerSx = {},
     } = props;
     const accent = accentColorBase[accentColor];
     return (
@@ -104,6 +62,7 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
             '& > *:first-of-type': {
               maxWidth: { xs: '100%', sm: '484px' },
             },
+            ...containerSx,
           }}
           firstColumn={
             <Stack
@@ -198,7 +157,14 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
           }
           secondColumn={
             <Stack position={'relative'} overflow={'hidden'}>
-              <Image imageSrc={image} mobileImageSrc={mobileImage} />
+              <Box
+                component={'img'}
+                src={image}
+                alt=''
+                width={'100%'}
+                maxWidth={'588px'}
+                mx={'auto'}
+              />
               {imageOverlayText && (
                 <Stack
                   direction={'row'}
