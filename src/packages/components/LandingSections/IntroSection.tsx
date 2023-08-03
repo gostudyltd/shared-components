@@ -210,7 +210,7 @@ export const IntroSection: React.FC<IntroSectionProps> = withCustomTheme(
                     padding: { xs: '0.375rem .5rem', sm: '.875rem 1rem' },
                     borderRadius: '.75rem',
                     width: '100%',
-                    maxWidth: { xs: '73%', sm: '374px' },
+                    maxWidth: { xs: '73%', sm: '388px' },
 
                     bottom: '2rem',
                     left: '50%',
