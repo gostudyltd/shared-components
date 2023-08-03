@@ -27,7 +27,7 @@ export const formSectionContent1: TranslationType<FormSectionProps> = {
       },
     },
   },
-  ru: {
+  uk: {
     renderTitle: (color) => {
       return (
         <>
@@ -52,7 +52,7 @@ export const formSectionContent1: TranslationType<FormSectionProps> = {
       },
     },
   },
-  uk: {
+  ru: {
     renderTitle: (color) => {
       return (
         <>
