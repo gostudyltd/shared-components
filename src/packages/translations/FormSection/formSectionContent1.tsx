@@ -13,7 +13,7 @@ export const formSectionContent1: TranslationType<FormSectionProps> = {
     description:
       'Fill out the contact form - we will contact you within an hour and answer any questions',
     formTranslations: {
-      language: 'ru',
+      language: 'en',
       content: {
         acceptTerms:
           '* by clicking the button, you accept the terms of the policy and the user agreement',
@@ -38,7 +38,7 @@ export const formSectionContent1: TranslationType<FormSectionProps> = {
     description:
       "Заповніть контактну форму - ми зв'яжемося з вами протягом години і відповімо на всі ваші питання",
     formTranslations: {
-      language: 'ru',
+      language: 'uk',
       content: {
         acceptTerms:
           '* Натискаючи кнопку, ви приймаєте умови політики та угоди користувача',
