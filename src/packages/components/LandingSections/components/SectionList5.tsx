@@ -13,7 +13,7 @@ type DataItem = {
   list: string[];
   button?: {
     text: string;
-    onClick: () => void;
+    onClick?: () => void;
   };
 
   /** From MUI */
@@ -113,6 +113,7 @@ const CardItem: React.FC<CardItemProps> = (props) => {
           <Button
             variant='contained'
             size='large'
+            onClick={data.button.onClick}
             sx={{
               fontSize: { xs: '1rem', sm: '1.125rem' },
               height: { xs: '2.625rem', sm: '3.5rem' },

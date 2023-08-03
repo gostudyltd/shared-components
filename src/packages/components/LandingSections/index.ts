@@ -5,3 +5,4 @@ export * from './RoundedSection';
 export * from './components/index';
 export * from './ColorizedWithTwoImagesSection';
 export * from './FormSection';
+export * from './List6Section';

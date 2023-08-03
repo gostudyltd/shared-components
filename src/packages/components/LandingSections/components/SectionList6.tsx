@@ -12,7 +12,7 @@ type DataItem = {
   text?: string;
   button?: {
     text: string;
-    onClick: () => void;
+    onClick?: () => void;
   };
   isHighlighted?: boolean;
 };
@@ -106,6 +106,7 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
                   <Button
                     variant='contained'
                     size='large'
+                    onClick={data.button.onClick}
                     sx={{
                       fontSize: { xs: '1rem', sm: '1.125rem' },
                       height: { xs: '2.625rem', sm: '3.5rem' },
@@ -142,7 +143,7 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
   );
 };
 
-type SectionList6Props = {
+export type SectionList6Props = {
   data: DataItem[];
   accentColor?: AccentColor;
   postDescription?: string;
