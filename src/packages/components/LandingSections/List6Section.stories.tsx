@@ -1,15 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { AccordionSection, AccordionSectionProps } from './AccordionsSection';
-import {
-  accordionSectionContent1,
-  getTranslationByLang,
-} from '../../translations';
 import { PropsWithContentLanguage } from '../../translations/types';
-
+import { getTranslationByLang, list6SectionContent1 } from '../../translations';
+import { List6Section, List6SectionProps } from './List6Section';
 const meta = {
-  title: 'Library/LandingSections/AccordionSection',
-  component: AccordionSection,
+  title: 'Library/LandingSections/List6Section',
+  component: List6Section,
   tags: ['autodocs'],
   argTypes: {
     language: {
@@ -18,7 +14,7 @@ const meta = {
       },
     },
   },
-} as Meta<PropsWithContentLanguage<AccordionSectionProps>>;
+} as Meta<PropsWithContentLanguage<List6SectionProps>>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -26,11 +22,11 @@ type Story = StoryObj<typeof meta>;
 export const Content1: Story = {
   render: (args) => {
     const translations = getTranslationByLang(
-      accordionSectionContent1,
+      list6SectionContent1,
       args.language,
       'ru'
     );
-    return <AccordionSection {...translations} {...args} />;
+    return <List6Section {...translations} {...args} />;
   },
   args: {
     language: 'ru',
@@ -38,7 +34,7 @@ export const Content1: Story = {
   argTypes: {
     language: {
       defaultValue: 'ru',
-      options: Object.keys(accordionSectionContent1),
+      options: Object.keys(list6SectionContent1),
     },
   },
 };

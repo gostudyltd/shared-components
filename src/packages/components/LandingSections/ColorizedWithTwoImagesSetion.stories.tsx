@@ -4,6 +4,11 @@ import {
   ColorizedWithTwoImagesSection,
   ColorizedWithTwoImagesSectionProps,
 } from './ColorizedWithTwoImagesSection';
+import { PropsWithContentLanguage } from '../../translations/types';
+import {
+  colorizedWithTwoImagesSectionContent1,
+  getTranslationByLang,
+} from '../../translations';
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
   title: 'Library/LandingSections/ColorizedWithTwoImagesSection',
@@ -11,39 +16,36 @@ const meta = {
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {},
-} satisfies Meta<ColorizedWithTwoImagesSectionProps>;
+  argTypes: {
+    language: {
+      control: {
+        type: 'radio',
+      },
+    },
+  },
+} as Meta<PropsWithContentLanguage<ColorizedWithTwoImagesSectionProps>>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NoName: Story = {
-  name: 'Курсы аккредитованы Министерством образования ЧР',
-  parameters: {
-    jsx: {
-      functionValue: () => `() => (
-        <>
-          Аккредитация на основании § 108 закона 435/2004 «О трудоустройстве» и
-          положения 176/2009 об аккредитации образовательных программ.
-          <br />
-          Информация о курсах на сайте Министерства.
-        </>
-      )`,
-    },
+export const Content1: Story = {
+  render: (args) => {
+    const translations = getTranslationByLang(
+      colorizedWithTwoImagesSectionContent1,
+      args.language,
+      'ru'
+    );
+    return <ColorizedWithTwoImagesSection {...translations} {...args} />;
   },
   args: {
-    sectionTitle: {
-      title: 'Курсы аккредитованы Министерством образования ЧР',
-      renderDescription: () => (
-        <>
-          Аккредитация на основании § 108 закона 435/2004 «О трудоустройстве» и
-          положения 176/2009 об аккредитации образовательных программ.
-          <br />
-          Информация о курсах на сайте Министерства.
-        </>
-      ),
-    },
+    language: 'ru',
     logo: 'https://images.gostudy.cz/static/czech-language-ministry-logo.svg',
     image: 'https://images.gostudy.cz/static/czech-language-flag.svg',
+  },
+  argTypes: {
+    language: {
+      defaultValue: 'ru',
+      options: Object.keys(colorizedWithTwoImagesSectionContent1),
+    },
   },
 };
