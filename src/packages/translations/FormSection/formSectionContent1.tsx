@@ -44,9 +44,9 @@ export const formSectionContent1: TranslationType<FormSectionProps> = {
           '* Натискаючи кнопку, ви приймаєте умови політики та угоди користувача',
         formSubmitted: (
           <>
-            Form sent successfully!
+            Форму успішно відправлено!
             <br />
-            Thank You!
+            Дякую!
           </>
         ),
       },
@@ -69,9 +69,9 @@ export const formSectionContent1: TranslationType<FormSectionProps> = {
           '* Нажимая кнопку, вы принимаете условия политики и пользовательского соглашения',
         formSubmitted: (
           <>
-            Form sent successfully!
+            Форма успешно отправлена!
             <br />
-            Thank You!
+            Спасибо!
           </>
         ),
       },

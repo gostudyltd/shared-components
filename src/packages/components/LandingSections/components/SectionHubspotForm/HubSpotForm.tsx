@@ -83,6 +83,7 @@ export const HubspotForm: React.FC<Props> = ({
         fieldLabels: {
           email: 'Адрес электронной почты',
           firstname: 'Имя',
+          lastname: 'Фамилия',
           phone: 'Телефон',
         },
         submitText: 'Регистрация',
@@ -92,6 +93,7 @@ export const HubspotForm: React.FC<Props> = ({
         fieldLabels: {
           email: 'Електронна адреса',
           firstname: "Ім'я",
+          lastname: 'Прізвище',
           phone: 'Телефон',
         },
         submitText: 'Реєстрація',
