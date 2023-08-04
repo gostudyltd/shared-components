@@ -9,11 +9,6 @@ import {
 import { withCustomTheme } from '../hoc/withCustomTheme';
 import { HubspotProvider } from '@aaronhayes/react-use-hubspot-form';
 
-const hubspotConfig = {
-  portalId: '139617067',
-  formId: 'd9a6bed0-c54d-4981-a619-11adc2e36fcf',
-};
-
 export type FormSectionProps = {
   title?: string | React.ReactNode;
   renderTitle?: (color: string) => string | React.ReactNode;
@@ -21,6 +16,10 @@ export type FormSectionProps = {
   description: string;
   nodeRef?: MutableRefObject<HTMLDivElement | null>;
   accentColor?: AccentColor;
+  hubspotConfig: {
+    portalId: string;
+    formId: string;
+  };
 };
 
 const getBackgroundByAccentColor = (accentColor: AccentColor): string => {
@@ -39,6 +38,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
       nodeRef,
       accentColor = 'warning',
       formTranslations,
+      hubspotConfig,
     } = props;
     const accent = accentColorBase[accentColor];
 

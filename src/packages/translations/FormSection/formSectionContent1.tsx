@@ -1,7 +1,9 @@
 import { FormSectionProps } from '../../components';
 import { TranslationType } from '../types';
 
-export const formSectionContent1: TranslationType<FormSectionProps> = {
+export const formSectionContent1: TranslationType<
+  Omit<FormSectionProps, 'hubspotConfig'>
+> = {
   en: {
     renderTitle: (color) => {
       return (
