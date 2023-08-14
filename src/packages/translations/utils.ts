@@ -1,4 +1,4 @@
-import { TranslationType } from './types';
+import { TranslationType } from "./types";
 
 export const getTranslationByLang = <
   T extends object,
