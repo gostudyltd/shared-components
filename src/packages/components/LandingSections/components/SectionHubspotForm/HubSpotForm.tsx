@@ -82,9 +82,7 @@ export const HubspotForm: React.FC<Props> = ({
     onFormSubmit: (form) => {
       if (hubspotConfig.onSubmit) {
         const data = new FormData(form);
-        hubspotConfig.onSubmit(
-          Object.fromEntries(data.entries()) as FormFields
-        );
+        hubspotConfig.onSubmit(Object.fromEntries(data) as FormFields);
       }
     },
 

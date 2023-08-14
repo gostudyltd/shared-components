@@ -3,7 +3,7 @@
   "exclude": ["lib", "node_modules", "src/packages/**/*.stories.ts"],
   "compilerOptions": {
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "lib": ["dom", "DOM.Iterable", "esnext"],
     "target": "es6",
     "rootDir": "./src/packages",
     "outDir": "./lib/esm",
