@@ -192,7 +192,7 @@ export const HubspotForm: React.FC<Props> = ({
 
   const phoneCountries = ["ua", "cz", "kz", "kg", "az", "ee", "ae", "se", ""];
   const onChangePhoneNumber = (phoneNumber: string) => {
-    setPhoneNumber(phoneNumber);
+    setPhoneNumber(`+${phoneNumber}`);
   };
 
   useEffect(() => {
