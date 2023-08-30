@@ -67,7 +67,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       {
         badge: "З 0 до А1",
         title: "Базовий курс",
-        description: "",
+        description: "Základní kurz",
         list: [
           "60 годин вивчення мови",
           "з 0 до A1",

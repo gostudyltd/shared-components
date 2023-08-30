@@ -51,7 +51,7 @@ export const introSectionContent1: TranslationType<
       },
       {
         icon: "shieldTwoTone",
-        text: "Акредитація Міністерством освіти Чеської Республіки",
+        text: "Акредитація Міністерства освіти Чеської Республіки",
       },
       {
         icon: "diplomaTwoTone",
