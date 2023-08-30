@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
-import React, { MutableRefObject, useState } from "react";
+import React, { MutableRefObject } from "react";
 import { AccentColor } from "./components/types";
 import { accentColorBase } from "./components/utils";
 import {

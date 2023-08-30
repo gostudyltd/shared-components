@@ -10,7 +10,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
     data: [
       {
         badge: "с 0 до А1",
-        title: "Уверенный старт",
+        title: "Базовый курс",
         description: "Základní kurz",
         list: [
           "60 часов изучения языка",
@@ -26,7 +26,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       },
       {
         badge: "c A1 до A2",
-        title: "Свободное общение",
+        title: "Продолжающий курс с А1 до А2",
         description: "Navazující kurz",
         list: [
           "120 часов изучения языка",
@@ -42,7 +42,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       },
       {
         badge: "c A2 до B1",
-        title: "Деловые коммуникации",
+        title: "Углубленный курс с А2 до B1",
         description: "Pro pokročilé",
         list: [
           "150 часов изучения языка",
@@ -66,7 +66,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
     data: [
       {
         badge: "З 0 до А1",
-        title: "Впевнений старт",
+        title: "Базовий курс",
         description: "",
         list: [
           "60 годин вивчення мови",
@@ -82,7 +82,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       },
       {
         badge: "З А1 до А2",
-        title: "Вільне спілкування",
+        title: "Тривалий курс від А1 до А2",
         description: "Navazující kurz",
         list: [
           "120 годин вивчення мови",
@@ -98,7 +98,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       },
       {
         badge: "З А2 до B1",
-        title: "Ділові комунікації",
+        title: "Поглиблений курс від А2 до B1",
         description: "Pro pokročilé",
         list: [
           "150 годин вивчення мови",

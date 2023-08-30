@@ -246,8 +246,10 @@ export const HubspotForm: React.FC<Props> = ({
           specialLabel=""
           preferredCountries={phoneCountries}
           preserveOrder={["preferredCountries"]}
-          excludeCountries={language === "uk" ? ["ru"] : []}
-          country={language === "uk" ? "ua" : "ru"}
+          // excludeCountries={language === "uk" ? ["ru"] : []}
+          excludeCountries={["ru"]}
+          // country={language === "uk" ? "ua" : "ru"}
+          country={"ua"}
           onChange={onChangePhoneNumber}
           value={phoneNumber}
           localization={ru}
