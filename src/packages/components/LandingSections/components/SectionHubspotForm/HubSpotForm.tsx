@@ -112,6 +112,16 @@ export const HubspotForm: React.FC<Props> = ({
         },
         submitText: "Реєстрація",
       },
+      da: {
+        // eslint-disable-next-line quotes
+        fieldLabels: {
+          email: "Địa chỉ email",
+          firstname: "Tên",
+          lastname: "Họ",
+          phone: "Điện thoại",
+        },
+        submitText: "Đăng ký",
+      },
     },
     onFormReady: () => {
       console.log("ready");
