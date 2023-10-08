@@ -12,7 +12,7 @@ import { ReactComponent as FormSubmittedImage } from "./form-submitted.svg";
 import { FormFields } from "../../FormSection";
 
 export type HubspotFormTranslations = {
-  language: "en" | "ru" | "uk";
+  language: "en" | "ru" | "uk" | "vi";
 
   content: {
     acceptTerms: string | React.ReactNode;
@@ -72,7 +72,13 @@ export const HubspotForm: React.FC<Props> = ({
   const phoneInputRef = useRef<HTMLInputElement | null>(null);
 
   const langForHubspot =
-    language === "ru" ? "FRENCH" : language === "uk" ? "FINNISH" : "ENGLISH";
+    language === "ru"
+      ? "FRENCH"
+      : language === "uk"
+      ? "FINNISH"
+      : language === "vi"
+      ? "DANISH"
+      : "ENGLISH";
 
   const { loaded } = useHubspotForm({
     portalId: hubspotConfig.portalId || "139617067",

@@ -59,4 +59,58 @@ export const introSectionContent1: TranslationType<
       },
     ],
   },
+  vi: {
+    preTitle: "ČESKÝ JAZYK PRO CIZINCE",
+    renderTitle: (color) => (
+      <>
+        Học tiếng Séc <span style={{ color }}>miễn phí</span> để có cuộc sống
+        thoải mái ở đất nước mới
+      </>
+    ),
+    imageOverlayText:
+      "Khóa học được đề xuất cho công dân Ukraine định cư và làm việc tại Cộng hòa Séc",
+    description:
+      "Chương trình học tiếng Séc cho người nước ngoài do Trung tâm GoStudy tổ chức với sự hỗ trợ của Cục Lao động (Úřad práce) tại Praha, Brno hoặc trực tuyến.",
+    bottomListData: [
+      {
+        icon: "verifiedCheckTwoTone",
+        text: "Khóa học hoàn toàn miễn phí cho người tham gia",
+      },
+      {
+        icon: "shieldTwoTone",
+        text: "Được công nhận bởi Bộ Giáo dục Cộng hòa Séc",
+      },
+      {
+        icon: "diplomaTwoTone",
+        text: "Chứng chỉ sau khi hoàn thành khóa học cho nhà tuyển dụng của bạn",
+      },
+    ],
+  },
+  en: {
+    preTitle: "ČESKÝ JAZYK PRO CIZINCE",
+    renderTitle: (color) => (
+      <>
+        Learn Czech <span style={{ color }}>for free</span> for a comfortable
+        life in a new country
+      </>
+    ),
+    imageOverlayText:
+      "The course is recommended for citizens of Ukraine planning to live and work in the Czech Republic",
+    description:
+      "Czech language learning program for foreign citizens by the GoStudy center with the support of the Employment Office (Úřad práce) in Prague, Brno, or online.",
+    bottomListData: [
+      {
+        icon: "verifiedCheckTwoTone",
+        text: "The course is completely free for participants",
+      },
+      {
+        icon: "shieldTwoTone",
+        text: "Accredited by the Ministry of Education of the Czech Republic",
+      },
+      {
+        icon: "diplomaTwoTone",
+        text: "Certificate upon completion of the course for your employer",
+      },
+    ],
+  },
 };

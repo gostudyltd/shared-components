@@ -1,14 +1,14 @@
-import { ImageWithTitleTwoColumnsSectionProps } from '../../components';
-import { TranslationType } from '../types';
+import { ImageWithTitleTwoColumnsSectionProps } from "../../components";
+import { TranslationType } from "../types";
 
 export const imageWithTitleTwoColumnsSectionContent1: TranslationType<
-  Omit<ImageWithTitleTwoColumnsSectionProps, 'image'>
+  Omit<ImageWithTitleTwoColumnsSectionProps, "image">
 > = {
   ru: {
     sectionTitle: {
       renderTitle: (color) => (
         <>
-          Каждый выпускник курсов{' '}
+          Каждый выпускник курсов{" "}
           <span style={{ color }}>получит сертификат</span>
         </>
       ),
@@ -19,7 +19,7 @@ export const imageWithTitleTwoColumnsSectionContent1: TranslationType<
           переквалификации «Osvědčení o rekvalifikaci».
           <br />
           <br />
-          <span style={{ fontWeight: '600' }}>
+          <span style={{ fontWeight: "600" }}>
             Сертификат о знании чешского языка станет вашим конкурентным
             преимуществом на рынке труда в Чешской Республике.
           </span>
@@ -31,7 +31,7 @@ export const imageWithTitleTwoColumnsSectionContent1: TranslationType<
     sectionTitle: {
       renderTitle: (color) => (
         <>
-          Кожний випускник курсів{' '}
+          Кожний випускник курсів{" "}
           <span style={{ color }}>отримає сертифікат</span>
         </>
       ),
@@ -42,9 +42,56 @@ export const imageWithTitleTwoColumnsSectionContent1: TranslationType<
           перекваліфікацію «Osvedčení o rekvalifikaci».
           <br />
           <br />
-          <span style={{ fontWeight: '600' }}>
+          <span style={{ fontWeight: "600" }}>
             Сертифікат про знання чеської мови стане вашою конкурентною
             перевагою на ринку праці в Чеській Республіці.
+          </span>
+        </>
+      ),
+    },
+  },
+  en: {
+    sectionTitle: {
+      renderTitle: (color) => (
+        <>
+          Every course graduate will{" "}
+          <span style={{ color }}>receive a certificate</span>
+        </>
+      ),
+      renderDescription: () => (
+        <>
+          Upon completion of the course, participants take a final exam in
+          accordance with the regulation (dle vyhlášky č. 176/2009 Sb.) and
+          receive a retraining certificate "Osvědčení o rekvalifikaci".
+          <br />
+          <br />
+          <span style={{ fontWeight: "600" }}>
+            The certificate of proficiency in the Czech language will become
+            your competitive advantage in the labor market in the Czech
+            Republic.
+          </span>
+        </>
+      ),
+    },
+  },
+  vi: {
+    sectionTitle: {
+      renderTitle: (color) => (
+        <>
+          Mỗi người tốt nghiệp khóa học sẽ{" "}
+          <span style={{ color }}>nhận được chứng chỉ</span>
+        </>
+      ),
+      renderDescription: () => (
+        <>
+          Sau khi hoàn thành khóa học, các người tham gia sẽ thi cuối khóa theo
+          quy định (dle vyhlášky č. 176/2009 Sb.) và nhận được chứng chỉ tái đào
+          tạo "Osvědčení o rekvalifikaci".
+          <br />
+          <br />
+          <span style={{ fontWeight: "600" }}>
+            Chứng chỉ về việc thông thạo tiếng Séc sẽ trở thành lợi thế cạnh
+            tranh của bạn trên thị trường lao động tại Cộng hòa Séc.
           </span>
         </>
       ),

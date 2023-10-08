@@ -1,8 +1,8 @@
-import { FormSectionProps } from '../../components';
-import { TranslationType } from '../types';
+import { FormSectionProps } from "../../components";
+import { TranslationType } from "../types";
 
 export const formSectionContent1: TranslationType<
-  Omit<FormSectionProps, 'hubspotConfig'>
+  Omit<FormSectionProps, "hubspotConfig">
 > = {
   en: {
     renderTitle: (color) => {
@@ -13,12 +13,12 @@ export const formSectionContent1: TranslationType<
       );
     },
     description:
-      'Fill out the contact form - we will contact you within an hour and answer any questions',
+      "Fill out the contact form - we will contact you within an hour and answer any questions",
     formTranslations: {
-      language: 'en',
+      language: "en",
       content: {
         acceptTerms:
-          '* by clicking the button, you accept the terms of the policy and the user agreement',
+          "* by clicking the button, you accept the terms of the policy and the user agreement",
         formSubmitted: (
           <>
             Form sent successfully!
@@ -40,10 +40,10 @@ export const formSectionContent1: TranslationType<
     description:
       "Заповніть контактну форму - ми зв'яжемося з вами протягом години і відповімо на всі ваші питання",
     formTranslations: {
-      language: 'uk',
+      language: "uk",
       content: {
         acceptTerms:
-          '* Натискаючи кнопку, ви приймаєте умови політики та угоди користувача',
+          "* Натискаючи кнопку, ви приймаєте умови політики та угоди користувача",
         formSubmitted: (
           <>
             Форму успішно відправлено!
@@ -63,17 +63,42 @@ export const formSectionContent1: TranslationType<
       );
     },
     description:
-      'Заполните контактную форму - мы свяжемся с вами в течение часа и ответим на все ваши вопросы',
+      "Заполните контактную форму - мы свяжемся с вами в течение часа и ответим на все ваши вопросы",
     formTranslations: {
-      language: 'ru',
+      language: "ru",
       content: {
         acceptTerms:
-          '* Нажимая кнопку, вы принимаете условия политики и пользовательского соглашения',
+          "* Нажимая кнопку, вы принимаете условия политики и пользовательского соглашения",
         formSubmitted: (
           <>
             Форма успешно отправлена!
             <br />
             Спасибо!
+          </>
+        ),
+      },
+    },
+  },
+  vi: {
+    renderTitle: (color) => {
+      return (
+        <>
+          Đăng ký <span style={{ color }}>cuộc họp tư vấn miễn phí</span>
+        </>
+      );
+    },
+    description:
+      "Hãy điền vào biểu mẫu liên hệ - chúng tôi sẽ liên hệ với bạn trong vòng một giờ và trả lời tất cả các câu hỏi của bạn",
+    formTranslations: {
+      language: "vi",
+      content: {
+        acceptTerms:
+          "* Bằng cách nhấn nút, bạn chấp nhận các điều khoản của chính sách và thỏa thuận người dùng",
+        formSubmitted: (
+          <>
+            Biểu mẫu đã được gửi thành công!
+            <br />
+            Cảm ơn bạn!
           </>
         ),
       },

@@ -1,10 +1,10 @@
-import { Box, Button, Grid, Stack, Typography } from '@mui/material';
-import React from 'react';
-import { AccentColor } from './types';
-import { accentColorBase } from './utils';
-import { iconBase } from '../icons';
-import { montserratFamily } from '../../../constants/themeVars';
-import { withCustomTheme } from '../../hoc/withCustomTheme';
+import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import React from "react";
+import { AccentColor } from "./types";
+import { accentColorBase } from "./utils";
+import { iconBase } from "../icons";
+import { montserratFamily } from "../../../constants/themeVars";
+import { withCustomTheme } from "../../hoc/withCustomTheme";
 
 type DataItem = {
   title: string;
@@ -29,34 +29,34 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
     <>
       <Stack
         sx={{
-          backgroundColor: data.isHighlighted ? accent.light : '#fff',
-          borderRadius: '1.25rem',
-          p: '1.25rem',
-          height: { sm: '100%' },
+          backgroundColor: data.isHighlighted ? accent.light : "#fff",
+          borderRadius: "1.25rem",
+          p: "1.25rem",
+          height: { sm: "100%" },
 
-          '& > div:first-of-type': {
-            flexDirection: 'column',
+          "& > div:first-of-type": {
+            flexDirection: "column",
           },
         }}
       >
-        <Stack direction={'row'}>
+        <Stack direction={"row"}>
           <Box
-            component={'span'}
-            display={'flex'}
-            alignItems={'center'}
-            justifyContent={'center'}
+            component={"span"}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
             flexShrink={0}
             sx={{
-              marginBottom: { xs: '1rem', sm: '1.25rem' },
-              width: { xs: '2.5rem', sm: '3rem' },
-              height: { xs: '2.5rem', sm: '3rem' },
-              border: `1px solid ${data.isHighlighted ? '#fff' : accent.light}`,
-              borderRadius: '.75rem',
-              '& path': {
-                fill: data.isHighlighted ? '#fff' : accent.light,
+              marginBottom: { xs: "1rem", sm: "1.25rem" },
+              width: { xs: "2.5rem", sm: "3rem" },
+              height: { xs: "2.5rem", sm: "3rem" },
+              border: `1px solid ${data.isHighlighted ? "#fff" : accent.light}`,
+              borderRadius: ".75rem",
+              "& path": {
+                fill: data.isHighlighted ? "#fff" : accent.light,
               },
 
-              '& > svg': {
+              "& > svg": {
                 margin: 0,
               },
             }}
@@ -64,20 +64,20 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
             {iconBase[`step${idx + 1}` as keyof typeof iconBase]}
           </Box>
           <Typography
-            variant='h3'
-            color={'text.primary'}
+            variant="h3"
+            color={"text.primary"}
             sx={{
-              fontSize: { sm: '1.125rem', xs: '1rem' },
-              fontWeight: '600',
-              lineHeight: '1.44',
-              display: 'flex',
-              alignItems: 'center',
+              fontSize: { sm: "1.125rem", xs: "1rem" },
+              fontWeight: "600",
+              lineHeight: "1.44",
+              display: "flex",
+              alignItems: "center",
             }}
           >
             <Box
-              component={'div'}
+              component={"div"}
               style={{
-                color: data.isHighlighted ? '#fff' : undefined,
+                color: data.isHighlighted ? "#fff" : undefined,
               }}
             >
               {data.title}
@@ -87,11 +87,11 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
                   <br />
                   <Stack>
                     <Box
-                      component={'ul'}
+                      component={"ul"}
                       sx={{
-                        margin: '0',
+                        margin: "0",
                         color: accent.light,
-                        pl: '1.75rem',
+                        pl: "1.75rem",
                       }}
                     >
                       {data.list.map((i) => (
@@ -102,20 +102,21 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
                 </>
               )}
               {data.button && (
-                <Stack sx={{ mt: 'auto' }}>
+                <Stack sx={{ mt: "auto" }}>
                   <Button
-                    variant='contained'
-                    size='large'
+                    variant="contained"
+                    size="large"
                     onClick={data.button.onClick}
                     sx={{
-                      fontSize: { xs: '1rem', sm: '1.125rem' },
-                      height: { xs: '2.625rem', sm: '3.5rem' },
+                      fontSize: { xs: "1rem", sm: "1.125rem" },
+                      height: { xs: "2.625rem", sm: "3.5rem" },
                       backgroundColor: accent.light,
-                      justifySelf: 'flex-end',
+                      justifySelf: "flex-end",
                       mt: {
-                        xs: '1.5rem',
-                        sm: '2rem',
+                        xs: "1.5rem",
+                        sm: "2rem",
                       },
+                      padding: 0,
                     }}
                   >
                     {data.button.text}
@@ -128,11 +129,11 @@ const CardItem: React.FC<CardItemProps> = ({ data, accentColor, idx }) => {
 
         {data.text && (
           <Typography
-            variant={'body2'}
-            fontSize={'1.125rem'}
-            color={'text.secondary'}
+            variant={"body2"}
+            fontSize={"1.125rem"}
+            color={"text.secondary"}
             sx={{
-              fontSize: { xs: '0.875rem', sm: '1rem' },
+              fontSize: { xs: "0.875rem", sm: "1rem" },
             }}
           >
             {data.text}
@@ -151,24 +152,24 @@ export type SectionList6Props = {
 
 export const SectionList6: React.FC<SectionList6Props> = withCustomTheme(
   (props) => {
-    const { data, accentColor = 'primary', postDescription } = props;
+    const { data, accentColor = "primary", postDescription } = props;
     const [first, ...rest] = data;
     return (
       <Stack>
         <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          gap={{ xs: '1rem', sm: '1.5rem' }}
+          direction={{ xs: "column", sm: "row" }}
+          gap={{ xs: "1rem", sm: "1.5rem" }}
         >
-          <Stack sx={{ flex: '1 1 0' }}>
+          <Stack sx={{ flex: "1 1 0" }}>
             <CardItem accentColor={accentColor} data={first} idx={0} />
           </Stack>
-          <Stack display={'flex'} sx={{ flex: '2 2 0' }}>
+          <Stack display={"flex"} sx={{ flex: "2 2 0" }}>
             <Grid container spacing={{ xs: 2, sm: 3 }}>
               {rest.map((data, idx) => (
                 <Grid key={data.title} item sm={6} xs={12}>
                   <CardItem
                     key={data.title}
-                    accentColor='primary'
+                    accentColor="primary"
                     data={data}
                     idx={idx + 1}
                   />
@@ -180,20 +181,20 @@ export const SectionList6: React.FC<SectionList6Props> = withCustomTheme(
         {postDescription && (
           <Box
             sx={{
-              marginTop: { xs: '2rem', sm: '2.5rem' },
-              mx: { xs: '1.25rem', sm: '1.5rem' },
+              marginTop: { xs: "2rem", sm: "2.5rem" },
+              mx: { xs: "1.25rem", sm: "1.5rem" },
             }}
           >
             <Typography
               fontFamily={montserratFamily}
-              color={'rgba(0,0,0,0.54)'}
-              sx={{ display: { xs: 'none', sm: 'block' }, fontSize: '1rem' }}
+              color={"rgba(0,0,0,0.54)"}
+              sx={{ display: { xs: "none", sm: "block" }, fontSize: "1rem" }}
             >
               {postDescription}
             </Typography>
             <Typography
-              color={'rgba(0,0,0,0.54)'}
-              sx={{ display: { xs: 'block', sm: 'none' }, fontSize: '.875rem' }}
+              color={"rgba(0,0,0,0.54)"}
+              sx={{ display: { xs: "block", sm: "none" }, fontSize: ".875rem" }}
             >
               {postDescription}
             </Typography>
