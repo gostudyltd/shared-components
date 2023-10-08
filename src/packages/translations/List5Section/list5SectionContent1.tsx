@@ -179,7 +179,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       {
         badge: "từ 0 đến A1",
         title: "Khóa học cơ bản",
-        description: "Khóa học cơ bản",
+        description: "Základní kurz",
         list: [
           "60 giờ học tiếng",
           "từ 0 đến A1",
@@ -195,7 +195,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       {
         badge: "từ A1 đến A2",
         title: "Khóa học tiếp theo từ A1 đến A2",
-        description: "Khóa học tiếp theo",
+        description: "Navazující kurz",
         list: [
           "120 giờ học tiếng",
           "từ A1 đến A2",
@@ -211,7 +211,7 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
       {
         badge: "từ A2 đến B1",
         title: "Khóa học sâu rộng từ A2 đến B1",
-        description: "Khóa học nâng cao",
+        description: "Pro pokročilé",
         list: [
           "150 giờ học tiếng",
           "từ A2 đến B1",
