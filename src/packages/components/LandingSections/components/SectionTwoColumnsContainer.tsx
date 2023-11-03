@@ -1,8 +1,8 @@
-import React from 'react';
-import { SectionTwoColumnsContainerProps } from './types';
-import { SectionContainer } from './SectionContainer';
-import { Stack } from '@mui/material';
-import { withCustomTheme } from '../../hoc/withCustomTheme';
+import React from "react";
+import { SectionTwoColumnsContainerProps } from "./types";
+import { SectionContainer } from "./SectionContainer";
+import { Stack } from "@mui/material";
+import { withCustomTheme } from "../../hoc/withCustomTheme";
 
 export const SectionTwoColumnsContainer: React.FC<SectionTwoColumnsContainerProps> =
   withCustomTheme(
@@ -11,6 +11,8 @@ export const SectionTwoColumnsContainer: React.FC<SectionTwoColumnsContainerProp
       firstColumn,
       secondColumn,
       disableContainerPaddings,
+      secondColumnSx,
+      firstColumnSx,
     }) => {
       return (
         <SectionContainer
@@ -18,10 +20,22 @@ export const SectionTwoColumnsContainer: React.FC<SectionTwoColumnsContainerProp
           sx={sectionContainerSx}
           disableContainerPaddings={disableContainerPaddings}
         >
-          <Stack sx={{ flex: '1 1 0', width: { xs: '100%', sm: '50%' } }}>
+          <Stack
+            sx={{
+              flex: "1 1 0",
+              width: { xs: "100%", sm: "50%" },
+              ...firstColumnSx,
+            }}
+          >
             {firstColumn}
           </Stack>
-          <Stack sx={{ flex: '1 1 0', width: { xs: '100%', sm: '50%' } }}>
+          <Stack
+            sx={{
+              flex: "1 1 0",
+              width: { xs: "100%", sm: "50%" },
+              ...secondColumnSx,
+            }}
+          >
             {secondColumn}
           </Stack>
         </SectionContainer>

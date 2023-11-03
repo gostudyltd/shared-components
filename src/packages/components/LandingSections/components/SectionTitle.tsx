@@ -1,9 +1,9 @@
-import React from 'react';
-import { Box, Button, Stack, Typography } from '@mui/material';
-import { SectionTitleProps } from './types';
-import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
-import { accentColorBase } from './utils';
-import { withCustomTheme } from '../../hoc/withCustomTheme';
+import React from "react";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { SectionTitleProps } from "./types";
+import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
+import { accentColorBase } from "./utils";
+import { withCustomTheme } from "../../hoc/withCustomTheme";
 
 export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
   (props) => {
@@ -11,7 +11,8 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
       title,
       renderTitle,
       preTitle,
-      accentColor = 'primary',
+      preTitleWrapperSx = {},
+      accentColor = "primary",
       sx = {},
       wrapperSx = {},
       button,
@@ -26,44 +27,45 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
 
     const accent = accentColorBase[accentColor];
     return (
-      <Stack direction={'column'} sx={wrapperSx}>
+      <Stack direction={"column"} sx={wrapperSx}>
         {preTitle && (
           <Stack
-            alignItems={'center'}
-            direction={'row'}
-            mb={'.75rem'}
-            position={'relative'}
+            alignItems={"center"}
+            direction={"row"}
+            mb={".75rem"}
+            position={"relative"}
             sx={{
-              mx: centered ? 'auto' : undefined,
-              mb: { xs: '.5rem', sm: '.75rem' },
-              px: { xs: '3rem', sm: '3.5rem' },
+              mx: centered ? "auto" : undefined,
+              mb: { xs: ".5rem", sm: ".75rem" },
+              px: { xs: "3rem", sm: "3.5rem" },
+              ...preTitleWrapperSx,
             }}
           >
             <Box
-              component={'span'}
+              component={"span"}
               sx={{
-                width: { xs: '2rem', sm: '2.5rem' },
-                height: '0.125rem',
-                transition: 'all .2s linear',
+                width: { xs: "2rem", sm: "2.5rem" },
+                height: "0.125rem",
+                transition: "all .2s linear",
                 backgroundColor: accent.main,
-                marginRight: '1rem',
+                marginRight: "1rem",
                 flexShrink: 0,
-                position: 'absolute',
+                position: "absolute",
                 left: 0,
                 top: 0,
-                my: '0.875rem',
-                display: 'block',
-                borderRadius: '0.125rem',
+                my: "0.875rem",
+                display: "block",
+                borderRadius: "0.125rem",
               }}
             />
 
             <Typography
-              variant='h5'
+              variant="h5"
               sx={{
                 color: accent.main,
-                fontSize: '1.25rem',
+                fontSize: "1.25rem",
                 fontWeight: 600,
-                transition: 'all .2s linear',
+                transition: "all .2s linear",
               }}
             >
               {preTitle}
@@ -71,29 +73,29 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
           </Stack>
         )}
         <Stack
-          direction={'row'}
-          justifyContent={'space-between'}
-          alignItems={'flex-end'}
-          width={'100%'}
+          direction={"row"}
+          justifyContent={"space-between"}
+          alignItems={"flex-end"}
+          width={"100%"}
           sx={{
-            verticalAlign: 'middle',
+            verticalAlign: "middle",
           }}
         >
           <Stack
-            direction={'column'}
+            direction={"column"}
             sx={{
-              width: centered ? '100%' : undefined,
-              textAlign: centered ? 'center' : undefined,
+              width: centered ? "100%" : undefined,
+              textAlign: centered ? "center" : undefined,
             }}
           >
             <Typography
-              variant='h3'
-              fontSize={'2.25rem'}
-              fontWeight={'600'}
+              variant="h3"
+              fontSize={"2.25rem"}
+              fontWeight={"600"}
               sx={{
-                fontSize: { xs: '1.75rem', sm: '2.25rem' },
-                lineHeight: '1.32',
-                '& > span > *': {
+                fontSize: { xs: "1.75rem", sm: "2.25rem" },
+                lineHeight: "1.32",
+                "& > span > *": {
                   transition: `all ${transitionTime}s linear`,
                 },
                 ...sx,
@@ -107,11 +109,11 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
             </Typography>
             {(description || renderDescription) && (
               <Typography
-                variant={'body1'}
-                fontSize={'1.125rem'}
-                color={'text.secondary'}
+                variant={"body1"}
+                fontSize={"1.125rem"}
+                color={"text.secondary"}
                 sx={{
-                  marginTop: { xs: '1rem', sm: '1.5rem' },
+                  marginTop: { xs: "1rem", sm: "1.5rem" },
                   ...descriptionSx,
                 }}
               >
@@ -129,31 +131,32 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
           {button && (
             <Button
               onClick={button.onClick}
-              variant='outlined'
-              size='small'
-              color={accentColor || 'primary'}
+              variant="outlined"
+              size="small"
+              color={accentColor || "primary"}
               sx={{
-                display: { xs: 'none', sm: 'flex' },
+                display: { xs: "none", sm: "flex" },
                 flexShrink: 0,
-                height: '2.625rem',
-                fontSize: '1rem',
+                height: "2.625rem",
+                fontSize: "1rem",
                 fontWeight: 600,
-                px: '1.25rem',
-                '&:hover > svg': {
-                  transform: 'rotate(180deg) translateX(-0.125rem)',
+                px: "1.25rem",
+                "&:hover > svg": {
+                  transform: "rotate(180deg) translateX(-0.125rem)",
                 },
+                ...button.sx,
               }}
               {...buttonProps}
             >
-              {button.text}{' '}
+              {button.text}{" "}
               <ArrowBackOutlinedIcon
                 sx={{
-                  ml: '0.5rem',
-                  transform: 'rotate(180deg)',
-                  transition: 'transform .1s linear',
-                  position: 'relative',
-                  height: '22px',
-                  width: '18px',
+                  ml: "0.5rem",
+                  transform: "rotate(180deg)",
+                  transition: "transform .1s linear",
+                  position: "relative",
+                  height: "22px",
+                  width: "18px",
                 }}
               />
             </Button>
