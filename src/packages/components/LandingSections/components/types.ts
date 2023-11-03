@@ -1,7 +1,7 @@
 import { ButtonProps } from "@mui/material/Button";
 import { SxProps } from "@mui/system/styleFunctionSx/styleFunctionSx";
 import { ReactNode } from "react";
-import { CdnImage } from "../../../types/components";
+// import { CdnImage } from "../../../types/components";
 
 export type AccentColor = "primary" | "warning" | "error";
 

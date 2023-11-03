@@ -7,6 +7,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 
+import {ReactComponent as MagicStick2} from '../../../icons/one-tone/magic-stick-2.svg'
 import {ReactComponent as Step1} from '../../../icons/one-tone/step1.svg'
 import {ReactComponent as Step2} from '../../../icons/one-tone/step2.svg'
 import {ReactComponent as Step3} from '../../../icons/one-tone/step3.svg'
@@ -14,11 +15,20 @@ import {ReactComponent as Step4} from '../../../icons/one-tone/step4.svg'
 import {ReactComponent as Step5} from '../../../icons/one-tone/step5.svg'
 import {ReactComponent as Step6} from '../../../icons/one-tone/step6.svg'
 import {ReactComponent as Step7} from '../../../icons/one-tone/step7.svg'
+import {ReactComponent as ChatRoundCallTwoTone} from '../../../icons/two-tone/chat-round-call.svg'
 import {ReactComponent as DiplomaTwoTone} from '../../../icons/two-tone/diploma.svg'
+import {ReactComponent as Flag2TwoTone} from '../../../icons/two-tone/flag-2.svg'
+import {ReactComponent as ShieldCrossTwoTone} from '../../../icons/two-tone/shield-cross.svg'
 import {ReactComponent as ShieldTwoTone} from '../../../icons/two-tone/shield.svg'
+import {ReactComponent as SquareAcademicCapTwoTone} from '../../../icons/two-tone/square-academic-cap.svg'
+import {ReactComponent as StarsLineTwoTone} from '../../../icons/two-tone/stars-line.svg'
+import {ReactComponent as SuitcaseTagTwoTone} from '../../../icons/two-tone/suitcase-tag.svg'
 import {ReactComponent as VerifiedCheckTwoTone} from '../../../icons/two-tone/verified-check.svg'
+import {ReactComponent as WalletMoneyTwoTone} from '../../../icons/two-tone/wallet-money.svg'
+import {ReactComponent as WaterSunTwoTone} from '../../../icons/two-tone/water-sun.svg'
 
 export const iconBase = {
+  magicStick2: <MagicStick2 />,
   step1: <Step1 />,
   step2: <Step2 />,
   step3: <Step3 />,
@@ -26,7 +36,15 @@ export const iconBase = {
   step5: <Step5 />,
   step6: <Step6 />,
   step7: <Step7 />,
+  chatRoundCallTwoTone: <ChatRoundCallTwoTone />,
   diplomaTwoTone: <DiplomaTwoTone />,
+  flag2TwoTone: <Flag2TwoTone />,
+  shieldCrossTwoTone: <ShieldCrossTwoTone />,
   shieldTwoTone: <ShieldTwoTone />,
+  squareAcademicCapTwoTone: <SquareAcademicCapTwoTone />,
+  starsLineTwoTone: <StarsLineTwoTone />,
+  suitcaseTagTwoTone: <SuitcaseTagTwoTone />,
   verifiedCheckTwoTone: <VerifiedCheckTwoTone />,
+  walletMoneyTwoTone: <WalletMoneyTwoTone />,
+  waterSunTwoTone: <WaterSunTwoTone />,
 }
