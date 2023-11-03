@@ -54,10 +54,15 @@ export type SectionTwoColumnsContainerProps = {
   disableContainerPaddings?: boolean;
 };
 
+// export type SectionImageColumnProps = {
+//   sectionTitle?: SectionTitleProps;
+//   image: CdnImage;
+//   imageSx?: SxProps;
+//   withBorder?: boolean;
+//   accentColor?: AccentColor;
+// };
 export type SectionImageColumnProps = {
   sectionTitle?: SectionTitleProps;
-  image: CdnImage;
+  image: string;
   imageSx?: SxProps;
-  withBorder?: boolean;
-  accentColor?: AccentColor;
 };
