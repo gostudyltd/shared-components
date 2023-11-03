@@ -1,0 +1,1 @@
+//! Legacy code. Now its important to work with imgs like below (buildAccommodationImg)
