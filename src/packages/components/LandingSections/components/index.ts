@@ -6,6 +6,7 @@ export * from "./SectionImageColumn";
 export * from "./SectionList5";
 export * from "./SectionList6";
 export * from "./SectionTitle";
+export * from "./SectionTitleV2";
 export * from "./SectionTwoColumnsContainer";
 export * from "./types";
 export * from "./SectionTextCardList";

@@ -43,6 +43,7 @@ export type SectionContainerProps = {
   sectionTitle?: SectionTitleProps;
   accentColor?: AccentColor;
   disableContainerPaddings?: boolean;
+  titleVersion?: "v1" | "v2";
 };
 
 export type SectionTwoColumnsContainerProps = {
