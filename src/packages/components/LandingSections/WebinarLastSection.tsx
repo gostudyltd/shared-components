@@ -8,7 +8,15 @@ import { getPicture } from "../../helpers/CloudinaryImage";
 import { withCustomTheme } from "../hoc/withCustomTheme";
 
 export const WebinarLastSection = withCustomTheme(
-  ({ image, lang }: { image: string; lang: "uk" | "ru" }) => {
+  ({
+    image,
+    lang,
+    onClick,
+  }: {
+    image: string;
+    lang: "uk" | "ru";
+    onClick: VoidFunction;
+  }) => {
     return (
       <SectionContainerWrapperColorized
         accentColor="primary"
@@ -66,7 +74,7 @@ export const WebinarLastSection = withCustomTheme(
                 },
 
                 text: lang === "ru" ? "Зарегистрироваться" : "Зареєструватися",
-                onClick: () => {},
+                onClick: onClick,
               }}
             />
           }
