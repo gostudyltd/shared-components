@@ -10,3 +10,4 @@ export * from "./FormSection";
 export * from "./List6Section";
 export * from "./ImageWithTitleTwoColumnsSection";
 export * from "./SectionBasicCardList";
+export * from "./WebinarLastSection";
