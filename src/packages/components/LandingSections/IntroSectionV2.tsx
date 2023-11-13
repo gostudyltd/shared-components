@@ -16,6 +16,7 @@ import { SectionContainer } from "./components/SectionContainer";
 import { getPicture } from "../../helpers/CloudinaryImage";
 import { CdnImage } from "../../types/components";
 import { withCustomTheme } from "../hoc/withCustomTheme";
+import { montserratFamily } from "../../constants/themeVars";
 // import { getSrc, getSrcSet } from '../../helpers/residence'
 
 export type IntroSectionPropsV2 = {
@@ -24,6 +25,7 @@ export type IntroSectionPropsV2 = {
   title?: string | React.ReactNode;
   renderTitle?: (color: string) => string | React.ReactNode;
   description: string;
+  renderDescription?: (color: string) => string | React.ReactNode;
   descriptionSx?: SxProps;
   titleSx?: SxProps;
   image: CdnImage & { sx?: SxProps };
@@ -38,6 +40,7 @@ export type IntroSectionPropsV2 = {
 
   accentColor?: AccentColor;
   bottomListData?: HorizontalListWithSeparatorProps["data"];
+  info: string[];
 };
 
 type ImageProps = {
@@ -115,6 +118,8 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
       testButton,
       titleSx,
       descriptionSx,
+      info,
+      renderDescription,
     } = props;
 
     const accent = accentColorBase[accentColor];
@@ -140,12 +145,45 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
           }}
           firstColumn={
             <Stack
-              gap={{ xs: "2em", sm: "3em" }}
               sx={{
                 alignItems: { xs: "stretch", sm: "flex-start" },
               }}
             >
-              <Stack gap={{ xs: "1em", sm: "1.5em" }}>
+              {info && (
+                <Stack
+                  direction={"row"}
+                  gap={"8px"}
+                  sx={{
+                    marginBottom: { xs: ".5rem", sm: "1.25" },
+                  }}
+                >
+                  {info.map((item) => (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        height: "24px",
+                        px: { xs: "16px", sm: "20px" },
+                        backgroundColor: "rgba(86, 139, 255, 1)",
+                        borderRadius: "100px",
+                      }}
+                    >
+                      <Typography
+                        color={"#FFF"}
+                        fontFamily={montserratFamily}
+                        fontSize={"10px"}
+                        fontWeight={600}
+                      >
+                        {item}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Stack>
+              )}
+              <Stack
+                gap={{ xs: "1em", sm: "1.5em" }}
+                sx={{ marginBottom: { xs: "2em", sm: "3em" } }}
+              >
                 {preTitle && (
                   <Stack
                     alignItems={"center"}
@@ -210,7 +248,9 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                   color={"text.secondary"}
                   sx={descriptionSx}
                 >
-                  {description}
+                  {renderDescription
+                    ? renderDescription(accent.main)
+                    : description}
                 </Typography>
               </Stack>
               {button && (

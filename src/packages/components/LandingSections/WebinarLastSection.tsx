@@ -85,13 +85,14 @@ export const WebinarLastSection = withCustomTheme(
             {
               display: "flex",
               width: "100%",
-              maxWidth: { sm: "350px" },
+              maxWidth: { xs: "288px", sm: "466px" },
               position: { xs: "static", sm: "absolute" },
+              mx: "auto",
               bottom: 0,
             },
             {
               width: "100%",
-              maxWidth: { xs: "350px", sm: "350px" },
+              maxWidth: { xs: "350px", sm: "450px" },
               objectFit: { xs: "contain", sm: "cover" },
               height: { xs: "100%", sm: undefined },
               position: "relative",
