@@ -27,8 +27,14 @@ export const SectionTextCardList: React.FC<SectionTextCardListProps> = ({
       width={"100%"}
       {...gridContainerProps}
     >
-      {data.map((i) => (
-        <Grid item key={i.title} xs={12} sm={6} {...gridItemProps}>
+      {data.map((i, idx) => (
+        <Grid
+          item
+          key={i.title?.toString() ?? idx}
+          xs={12}
+          sm={6}
+          {...gridItemProps}
+        >
           <SectionTextCard
             variant={cardVariant}
             accentColor={accentColor}
