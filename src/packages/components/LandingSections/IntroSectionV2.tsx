@@ -171,7 +171,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                       <Typography
                         color={"#FFF"}
                         fontFamily={montserratFamily}
-                        fontSize={"10px"}
+                        fontSize={"12px"}
                         fontWeight={600}
                       >
                         {item}
