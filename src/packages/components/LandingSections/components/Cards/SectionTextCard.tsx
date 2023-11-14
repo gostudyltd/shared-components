@@ -12,9 +12,12 @@ type SectionTextCardPropsShared = {
   iconName?: keyof typeof iconBase | (string & {});
   renderIcon?: (icon: JSX.Element, color: string) => React.ReactNode;
 
-  title?: string;
-  renderTitle?: (text: string | undefined, color: string) => React.ReactNode;
-  text?: string;
+  title?: string | React.ReactNode;
+  renderTitle?: (
+    text: string | React.ReactNode | undefined,
+    color: string
+  ) => React.ReactNode;
+  text?: string | React.ReactNode;
   renderText?: (color: string) => React.ReactNode;
 
   sx?: SxProps;

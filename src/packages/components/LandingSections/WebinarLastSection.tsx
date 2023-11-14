@@ -26,8 +26,8 @@ export const WebinarLastSection = withCustomTheme(
       >
         <SectionTwoColumnsContainer
           sectionContainerSx={{
-            py: { xs: "3rem", sm: "50px" },
-            paddingBottom: { xs: "0", sm: "50px" },
+            py: { xs: "3rem", sm: "83px" },
+            paddingBottom: { xs: "0", sm: "83px" },
           }}
           firstColumnSx={{
             width: { sm: "40%", xs: "100%" },
