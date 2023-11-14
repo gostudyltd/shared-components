@@ -1159,7 +1159,7 @@ export const SectionContainerOverlay: React.FC<SectionContainerOverlayProps> =
             height: { xs: "100%", sm: "100%" },
             width: { xs: undefined, sm: "100%" },
             "& svg": {
-              height: { xs: "100%", sm: "inherit" },
+              height: { xs: "100%", sm: "auto" },
               width: { xs: undefined, sm: "100%" },
             },
           }}
