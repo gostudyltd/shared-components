@@ -25,7 +25,7 @@ interface Props {
   btnAction: VoidFunction;
 }
 
-export const deutshLanding: React.FC<Props> = ({
+export const DeutshLanding: React.FC<Props> = ({
   lang = "ru",
   cdnUrl,
   btnAction,

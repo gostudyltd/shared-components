@@ -1,1 +1,1 @@
-export * from "./deutshLanding";
+export * from "./DeutshLanding";
