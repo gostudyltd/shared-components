@@ -115,7 +115,6 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
       bottomListData,
       leftSectionContainerSx = {},
       containerSx = {},
-      testButton,
       titleSx,
       descriptionSx,
       info,

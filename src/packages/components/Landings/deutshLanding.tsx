@@ -38,7 +38,7 @@ export const deutshLanding: React.FC<Props> = ({
       >
         <IntroSectionV2
           // containerSx={{ backgroundColor: 'rgba(255, 247, 226, 1)' }}
-          renderTitle={(color) =>
+          renderTitle={() =>
             lang === "ru" ? (
               <>
                 Бесплатные{" "}
