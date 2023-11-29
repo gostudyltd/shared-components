@@ -89,6 +89,8 @@ export const DeutshLanding: React.FC<Props> = ({
       {/* <SectionContainerWrapperColorized accentColor='primary'> */}
       <SectionContainer
         sectionTitle={{
+          sx: { fontSize: { xs: "1.25rem", sm: "2.25rem" } },
+          descriptionSx: { fontSize: { xs: "0.875rem", sm: "1.25rem" } },
           title:
             lang === "ru"
               ? "Учите язык эффективно и с интересом!"
@@ -107,7 +109,7 @@ export const DeutshLanding: React.FC<Props> = ({
           }}
           data={[
             {
-              iconName: "verifiedCheckTwoTone",
+              iconName: "notebookBookmarkTwoTone",
               title:
                 lang === "ru"
                   ? "Освоите языковую базу: произношение, правила, аудирование и мн. др."
@@ -115,7 +117,7 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "usersGroupTwoTone",
+              iconName: "userSpeakTwoTone",
               title:
                 lang === "ru"
                   ? "Начнете понимать немецкую речь на слух"
@@ -123,7 +125,7 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "chatTwoTone",
+              iconName: "documentAddTwoTone",
               title:
                 lang === "ru"
                   ? "Построите свои первые предложения на немецком"
@@ -131,7 +133,7 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "clipboardCheckTwoTone",
+              iconName: "layersMinimalisticTwoTone",
               title:
                 lang === "ru"
                   ? "Убедитесь в том, что немецкий может быть простым и логичным"
@@ -139,7 +141,7 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "verifiedCheckTwoTone",
+              iconName: "userHeartTwoTone",
               title:
                 lang === "ru"
                   ? "Познакомитесь с замечательными преподавателями центра GoStudy"
@@ -147,7 +149,7 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "usersGroupTwoTone",
+              iconName: "hashtagChatTwoTone",
               title:
                 lang === "ru"
                   ? "Оцените комфорт и эффективность онлайн-обучения"
@@ -155,7 +157,7 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "chatTwoTone",
+              iconName: "usersGroupTwoRoundedTwoTone",
               title:
                 lang === "ru"
                   ? "Проведете время не скучно, с пользой и найдете новых друзей в учебной группе!"
@@ -163,12 +165,13 @@ export const DeutshLanding: React.FC<Props> = ({
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
-              iconName: "clipboardCheckTwoTone",
+              iconName: "handStarsTwoTone",
               title:
                 lang === "ru"
                   ? "Убедитесь, что онлайн-обучение в GoStudy действительно результативно"
                   : "Переконаєтеся, що онлайн-навчання в GoStudy дійсно результативне",
               iconColor: "rgba(221, 159, 1, 1)",
+              sx: { border: "1.6px solid rgba(221, 159, 1, 1)" },
             },
           ]}
         />
@@ -180,6 +183,7 @@ export const DeutshLanding: React.FC<Props> = ({
       >
         <SectionContainer
           sectionTitle={{
+            sx: { fontSize: { xs: "1.25rem", sm: "2.25rem" } },
             centered: true,
             title:
               lang === "ru"
@@ -232,6 +236,7 @@ export const DeutshLanding: React.FC<Props> = ({
                   fontWeight={500}
                   lineHeight={{ xs: "14.63px", sm: "21.94px" }}
                   color={"rgba(134, 134, 134, 1)"}
+                  minHeight={{ xs: "unset", sm: "132px" }}
                 >
                   {lang === "ru" ? (
                     <>
@@ -296,6 +301,7 @@ export const DeutshLanding: React.FC<Props> = ({
                   fontWeight={500}
                   lineHeight={{ xs: "14.63px", sm: "21.94px" }}
                   color={"rgba(134, 134, 134, 1)"}
+                  minHeight={{ xs: "unset", sm: "132px" }}
                 >
                   {lang === "ru" ? (
                     <>
@@ -320,7 +326,9 @@ export const DeutshLanding: React.FC<Props> = ({
       <RoundedColorizedSectionV2
         accentColor="warning"
         sectionTitle={{
+          sx: { fontSize: { xs: "1.25rem", sm: "1.75rem" } },
           title: lang === "ru" ? "Регистрация" : "Реєстрація",
+          descriptionSx: { fontSize: { xs: ".75rem", sm: "1.125rem" } },
           description:
             lang === "ru"
               ? "Уроки бесплатные, но нужна регистрация. Нажмите на кнопку, заполните короткую форму и выберите удобный для вас мессенджер. Умный бот пришлет доступ к уроку и напомнит о начале за 15 минут, чтобы вы точно ничего не пропустили"

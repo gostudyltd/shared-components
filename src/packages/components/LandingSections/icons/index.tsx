@@ -17,12 +17,20 @@ import {ReactComponent as Step6} from '../../../icons/one-tone/step6.svg'
 import {ReactComponent as Step7} from '../../../icons/one-tone/step7.svg'
 import {ReactComponent as ChatRoundCallTwoTone} from '../../../icons/two-tone/chat-round-call.svg'
 import {ReactComponent as DiplomaTwoTone} from '../../../icons/two-tone/diploma.svg'
+import {ReactComponent as DocumentAddTwoTone} from '../../../icons/two-tone/document-add.svg'
 import {ReactComponent as Flag2TwoTone} from '../../../icons/two-tone/flag-2.svg'
+import {ReactComponent as HandStarsTwoTone} from '../../../icons/two-tone/hand-stars.svg'
+import {ReactComponent as HashtagChatTwoTone} from '../../../icons/two-tone/hashtag-chat.svg'
+import {ReactComponent as LayersMinimalisticTwoTone} from '../../../icons/two-tone/layers-minimalistic.svg'
+import {ReactComponent as NotebookBookmarkTwoTone} from '../../../icons/two-tone/notebook-bookmark.svg'
 import {ReactComponent as ShieldCrossTwoTone} from '../../../icons/two-tone/shield-cross.svg'
 import {ReactComponent as ShieldTwoTone} from '../../../icons/two-tone/shield.svg'
 import {ReactComponent as SquareAcademicCapTwoTone} from '../../../icons/two-tone/square-academic-cap.svg'
 import {ReactComponent as StarsLineTwoTone} from '../../../icons/two-tone/stars-line.svg'
 import {ReactComponent as SuitcaseTagTwoTone} from '../../../icons/two-tone/suitcase-tag.svg'
+import {ReactComponent as UserHeartTwoTone} from '../../../icons/two-tone/user-heart.svg'
+import {ReactComponent as UserSpeakTwoTone} from '../../../icons/two-tone/user-speak.svg'
+import {ReactComponent as UsersGroupTwoRoundedTwoTone} from '../../../icons/two-tone/users-group-two-rounded.svg'
 import {ReactComponent as VerifiedCheckTwoTone} from '../../../icons/two-tone/verified-check.svg'
 import {ReactComponent as WalletMoneyTwoTone} from '../../../icons/two-tone/wallet-money.svg'
 import {ReactComponent as WaterSunTwoTone} from '../../../icons/two-tone/water-sun.svg'
@@ -38,12 +46,20 @@ export const iconBase = {
   step7: <Step7 />,
   chatRoundCallTwoTone: <ChatRoundCallTwoTone />,
   diplomaTwoTone: <DiplomaTwoTone />,
+  documentAddTwoTone: <DocumentAddTwoTone />,
   flag2TwoTone: <Flag2TwoTone />,
+  handStarsTwoTone: <HandStarsTwoTone />,
+  hashtagChatTwoTone: <HashtagChatTwoTone />,
+  layersMinimalisticTwoTone: <LayersMinimalisticTwoTone />,
+  notebookBookmarkTwoTone: <NotebookBookmarkTwoTone />,
   shieldCrossTwoTone: <ShieldCrossTwoTone />,
   shieldTwoTone: <ShieldTwoTone />,
   squareAcademicCapTwoTone: <SquareAcademicCapTwoTone />,
   starsLineTwoTone: <StarsLineTwoTone />,
   suitcaseTagTwoTone: <SuitcaseTagTwoTone />,
+  userHeartTwoTone: <UserHeartTwoTone />,
+  userSpeakTwoTone: <UserSpeakTwoTone />,
+  usersGroupTwoRoundedTwoTone: <UsersGroupTwoRoundedTwoTone />,
   verifiedCheckTwoTone: <VerifiedCheckTwoTone />,
   walletMoneyTwoTone: <WalletMoneyTwoTone />,
   waterSunTwoTone: <WaterSunTwoTone />,

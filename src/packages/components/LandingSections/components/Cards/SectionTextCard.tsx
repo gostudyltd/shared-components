@@ -23,6 +23,7 @@ type SectionTextCardPropsShared = {
   sx?: SxProps;
   accentColor?: AccentColor;
   iconColor?: string;
+  isHighlighted?: boolean;
 };
 
 export const SectionTextCard1: React.FC<SectionTextCardPropsShared> = (
@@ -316,6 +317,10 @@ export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
             flexShrink={"0"}
             className={"SectionTextCard4_icon"}
             sx={{
+              width: { xs: "48px", sm: "68px" },
+              height: { xs: "48px", sm: "68px" },
+              borderRadius: { xs: "12px", sm: "16px" },
+              backgroundColor: "#ffffff",
               "& path": {
                 fill: accent,
               },
@@ -331,7 +336,7 @@ export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
         <Typography
           variant="h3"
           sx={{
-            fontSize: { sm: "1.125rem", xs: "1rem" },
+            fontSize: { xs: ".75rem", sm: "1.125rem" },
             fontWeight: "600",
             lineHeight: "1.44",
             display: "flex",
