@@ -40,7 +40,7 @@ export type IntroSectionPropsV2 = {
 
   accentColor?: AccentColor;
   bottomListData?: HorizontalListWithSeparatorProps["data"];
-  info: string[];
+  info: { text: string; color?: string; bgColor?: string }[];
 };
 
 type ImageProps = {
@@ -164,17 +164,18 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                         alignItems: "center",
                         height: "24px",
                         px: { xs: "16px", sm: "20px" },
-                        backgroundColor: "rgba(86, 139, 255, 1)",
+                        backgroundColor:
+                          item.bgColor ?? "rgba(86, 139, 255, 1)",
                         borderRadius: "100px",
                       }}
                     >
                       <Typography
-                        color={"#FFF"}
+                        color={item.color ?? "#FFF"}
                         fontFamily={montserratFamily}
                         fontSize={"12px"}
                         fontWeight={600}
                       >
-                        {item}
+                        {item.text}
                       </Typography>
                     </Box>
                   ))}

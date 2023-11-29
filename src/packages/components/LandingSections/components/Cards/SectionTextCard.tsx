@@ -22,6 +22,7 @@ type SectionTextCardPropsShared = {
 
   sx?: SxProps;
   accentColor?: AccentColor;
+  iconColor?: string;
 };
 
 export const SectionTextCard1: React.FC<SectionTextCardPropsShared> = (
@@ -280,8 +281,72 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
   );
 };
 
+export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
+  props
+) => {
+  const {
+    sx,
+    accentColor = "primary",
+    renderTitle,
+    renderIcon,
+    iconColor,
+    iconName,
+    title,
+  } = props;
+  const accent = iconColor ? iconColor : accentColorBase[accentColor].main;
+
+  const icon = iconName && iconBase[iconName as keyof typeof iconBase];
+  return (
+    <Stack
+      sx={{
+        backgroundColor: "#fff",
+        borderRadius: "1.25rem",
+        p: "1.25rem",
+        borderBottom: "none",
+        height: { sm: "100%" },
+        ...sx,
+      }}
+    >
+      <Stack direction={"row"} alignItems={"center"} gap={"1.125rem"}>
+        {icon && renderIcon ? (
+          renderIcon(icon, accent)
+        ) : (
+          <Box
+            component={"span"}
+            flexShrink={"0"}
+            className={"SectionTextCard4_icon"}
+            sx={{
+              "& path": {
+                fill: accent,
+              },
+              "& > svg": {
+                width: { xs: "2rem", sm: "2.5rem" },
+                height: { xs: "2rem", sm: "2.5rem" },
+              },
+            }}
+          >
+            {iconBase[iconName as keyof typeof iconBase]}
+          </Box>
+        )}
+        <Typography
+          variant="h3"
+          sx={{
+            fontSize: { sm: "1.125rem", xs: "1rem" },
+            fontWeight: "600",
+            lineHeight: "1.44",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {renderTitle ? renderTitle(title, accent) : <span>{title}</span>}
+        </Typography>
+      </Stack>
+    </Stack>
+  );
+};
+
 export type SectionTextCardProps = SectionTextCardPropsShared & {
-  variant?: "v1" | "v2" | "v3" | "v4" | "v5" | "v6";
+  variant?: "v1" | "v2" | "v3" | "v4" | "v5" | "v6" | "v7";
 };
 
 export const SectionTextCard: React.FC<SectionTextCardProps> = ({
@@ -386,6 +451,10 @@ export const SectionTextCard: React.FC<SectionTextCardProps> = ({
 
   if (variant === "v2") {
     return <SectionTextCard2 {...restProps} />;
+  }
+
+  if (variant === "v7") {
+    return <SectionTextCard6 {...restProps} />;
   }
 
   return <SectionTextCard1 {...restProps} />;

@@ -1,1 +1,2 @@
-export * from './LandingSections';
+export * from "./LandingSections";
+export * from "./Landings";
