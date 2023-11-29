@@ -171,7 +171,10 @@ export const DeutshLanding: React.FC<Props> = ({
                   ? "Убедитесь, что онлайн-обучение в GoStudy действительно результативно"
                   : "Переконаєтеся, що онлайн-навчання в GoStudy дійсно результативне",
               iconColor: "rgba(221, 159, 1, 1)",
-              sx: { border: "1.6px solid rgba(221, 159, 1, 1)" },
+              sx: {
+                border: "1.6px solid rgba(221, 159, 1, 1)",
+                "& span": { border: "1.6px solid rgba(221, 159, 1, 1)" },
+              },
             },
           ]}
         />
@@ -337,12 +340,12 @@ export const DeutshLanding: React.FC<Props> = ({
           wrapperSx: { marginBottom: { xs: "0", sm: "40px" } },
         }}
         image={{
-          src: `${cdnUrl}/doctorsLanding/seventhSextion_${lang}.png`,
+          src: `${cdnUrl}/doctorsLanding/fourthSection_${lang}.png`,
           width: 445,
           height: 392,
         }}
         mobileImage={{
-          src: `${cdnUrl}/doctorsLanding/seventhSextion_${lang}_mobile.png`,
+          src: `${cdnUrl}/doctorsLanding/fourthSection_${lang}_mobile.png`,
           width: 343,
           height: 316,
         }}

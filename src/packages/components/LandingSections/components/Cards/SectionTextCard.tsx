@@ -317,6 +317,9 @@ export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
             flexShrink={"0"}
             className={"SectionTextCard4_icon"}
             sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
               width: { xs: "48px", sm: "68px" },
               height: { xs: "48px", sm: "68px" },
               borderRadius: { xs: "12px", sm: "16px" },
