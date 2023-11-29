@@ -325,6 +325,7 @@ export const DeutshLanding: React.FC<Props> = ({
 
       <RoundedColorizedSectionV2
         accentColor="warning"
+        sx={{ background: "rgba(248, 248, 248, 1)" }}
         sectionTitle={{
           sx: { fontSize: { xs: "1.25rem", sm: "1.75rem" } },
           title: lang === "ru" ? "Регистрация" : "Реєстрація",
