@@ -347,7 +347,11 @@ export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
             "& span": { border: "none" },
           }}
         >
-          {renderTitle ? renderTitle(title, accent) : <span>{title}</span>}
+          {renderTitle ? (
+            renderTitle(title, accent)
+          ) : (
+            <span style={{ border: "none" }}>{title}</span>
+          )}
         </Typography>
       </Stack>
     </Stack>

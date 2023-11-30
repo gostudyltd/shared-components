@@ -349,7 +349,7 @@ export const DeutshLanding: React.FC<Props> = ({
           width: 226,
           height: 275,
         }}
-        imageSx={{ minHeight: "316px", objectFit: "cover" }}
+        imageSx={{ minHeight: "316px", objectFit: "cover", marginX: "auto" }}
         button={{
           sx: {
             background: "rgba(221, 159, 1, 1)",

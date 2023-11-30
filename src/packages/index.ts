@@ -1,4 +1,4 @@
-export { default as theme } from './config/theme';
+export { default as theme } from "./config/theme";
 
-export * from './components';
-export * from './translations';
+export * from "./components";
+export * from "./translations";
