@@ -340,12 +340,12 @@ export const DeutshLanding: React.FC<Props> = ({
           wrapperSx: { marginBottom: { xs: "0", sm: "40px" } },
         }}
         image={{
-          src: `${cdnUrl}/doctorsLanding/fourthSection_${lang}.png`,
+          src: `${cdnUrl}/deutschLanguage/fourthSection_${lang}.png`,
           width: 445,
           height: 392,
         }}
         mobileImage={{
-          src: `${cdnUrl}/doctorsLanding/fourthSection_${lang}_mobile.png`,
+          src: `${cdnUrl}/deutschLanguage/fourthSection_${lang}_mobile.png`,
           width: 343,
           height: 316,
         }}
