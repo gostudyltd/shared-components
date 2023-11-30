@@ -344,6 +344,7 @@ export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
             lineHeight: "1.44",
             display: "flex",
             alignItems: "center",
+            "& span": { border: "none" },
           }}
         >
           {renderTitle ? renderTitle(title, accent) : <span>{title}</span>}

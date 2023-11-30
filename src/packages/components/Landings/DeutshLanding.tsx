@@ -341,13 +341,13 @@ export const DeutshLanding: React.FC<Props> = ({
         }}
         image={{
           src: `${cdnUrl}/deutschLanguage/fourthSection_${lang}.png`,
-          width: 445,
-          height: 392,
+          width: 388,
+          height: 429,
         }}
         mobileImage={{
           src: `${cdnUrl}/deutschLanguage/fourthSection_${lang}_mobile.png`,
-          width: 343,
-          height: 316,
+          width: 226,
+          height: 275,
         }}
         imageSx={{ minHeight: "316px", objectFit: "cover" }}
         button={{
