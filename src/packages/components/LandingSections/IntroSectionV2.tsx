@@ -24,7 +24,7 @@ export type IntroSectionPropsV2 = {
   preTitle?: string;
   title?: string | React.ReactNode;
   renderTitle?: (color: string) => string | React.ReactNode;
-  description: string;
+  description?: string;
   renderDescription?: (color: string) => string | React.ReactNode;
   descriptionSx?: SxProps;
   titleSx?: SxProps;
@@ -171,7 +171,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                       <Typography
                         color={item.color ?? "#FFF"}
                         fontFamily={montserratFamily}
-                        fontSize={"12px"}
+                        fontSize={{ xs: "12px", sm: "14px" }}
                         fontWeight={600}
                       >
                         {item.text}

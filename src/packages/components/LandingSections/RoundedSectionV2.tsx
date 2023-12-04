@@ -15,7 +15,7 @@ import { getPicture } from "../../helpers/CloudinaryImage";
 
 type LeftContentProps = {
   content?: React.ReactNode;
-  button?: RoundedColorizedSection["button"];
+  button?: RoundedColorizedSection["button"] & { buttonContainerSx?: SxProps };
   sx?: SxProps;
   accentColor?: AccentColor;
 };
@@ -29,7 +29,12 @@ const LeftContent: React.FC<LeftContentProps> = ({
     <Stack sx={sx}>
       {content}
       {button && (
-        <Box sx={{ marginTop: { xs: "2rem", sm: "2.5rem" } }}>
+        <Box
+          sx={{
+            marginTop: { xs: "2rem", sm: "2.5rem" },
+            ...button.buttonContainerSx,
+          }}
+        >
           <Button
             variant="contained"
             color={accentColor}
@@ -79,6 +84,7 @@ type RoundedColorizedSection = {
     wrapperSx?: SxProps;
     text: string;
     onClick: () => void;
+    buttonContainerSx?: SxProps;
   };
   image?: CdnImage;
   mobileImage?: CdnImage;

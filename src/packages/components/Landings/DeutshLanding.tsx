@@ -37,7 +37,7 @@ export const DeutshLanding: React.FC<Props> = ({
         sx={{ background: "rgba(255, 247, 226, 1)" }}
       >
         <IntroSectionV2
-          // containerSx={{ backgroundColor: 'rgba(255, 247, 226, 1)' }}
+          containerSx={{ py: { xs: "3em", sm: "3.5em" } }}
           renderTitle={() =>
             lang === "ru" ? (
               <>
@@ -57,11 +57,24 @@ export const DeutshLanding: React.FC<Props> = ({
               </>
             )
           }
-          description={
-            lang === "ru"
-              ? "Начните учить язык с преподавателем-носителем бесплатно, эффективно и без скучных заданий, от которых тянет спать"
-              : "Почніть вивчати мову з викладачем-носієм безкоштовно та без нудних завдань, від яких тягне спати"
+          renderDescription={() =>
+            lang === "ru" ? (
+              <>
+                Начните учить язык с преподавателем-носителем бесплатно,
+                эффективно и без скучных заданий, <br /> от которых тянет спать.
+              </>
+            ) : (
+              <>
+                Почніть вивчати мову з викладачем-носієм безкоштовно та без
+                нудних завдань, від яких тягне спати.
+              </>
+            )
           }
+          // description={
+          //   lang === "ru"
+          //     ? "Начните учить язык с преподавателем-носителем бесплатно, эффективно и без скучных заданий, от которых тянет спать."
+          //     : "Почніть вивчати мову з викладачем-носієм безкоштовно та без нудних завдань, від яких тягне спати."
+          // }
           info={[
             { text: "Каждое воскресенье", bgColor: "rgba(221, 159, 1, 1)" },
             { text: "15:00 по Праге", bgColor: "rgba(221, 159, 1, 1)" },
@@ -75,6 +88,7 @@ export const DeutshLanding: React.FC<Props> = ({
             src: `${cdnUrl}/deutschLanguage/firstSection_mobile.png`,
             width: 288,
             height: 338,
+            sx: { maxHeight: "338px", objectFit: "contain" },
           }}
           button={{
             text: lang === "ru" ? "Зарегистрироваться" : "Зареєструватися",
@@ -235,11 +249,11 @@ export const DeutshLanding: React.FC<Props> = ({
                 </Typography>
                 <Typography
                   fontFamily={montserratFamily}
-                  fontSize={{ xs: "12px", sm: "18px" }}
+                  fontSize={{ xs: "12px", sm: "16px" }}
                   fontWeight={500}
-                  lineHeight={{ xs: "14.63px", sm: "21.94px" }}
+                  lineHeight={{ xs: "14.63px", sm: "19.5px" }}
                   color={"rgba(134, 134, 134, 1)"}
-                  minHeight={{ xs: "unset", sm: "132px" }}
+                  minHeight={{ xs: "unset", sm: "97px" }}
                 >
                   {lang === "ru" ? (
                     <>
@@ -300,15 +314,15 @@ export const DeutshLanding: React.FC<Props> = ({
                 </Typography>
                 <Typography
                   fontFamily={montserratFamily}
-                  fontSize={{ xs: "12px", sm: "18px" }}
+                  fontSize={{ xs: "12px", sm: "16px" }}
                   fontWeight={500}
-                  lineHeight={{ xs: "14.63px", sm: "21.94px" }}
+                  lineHeight={{ xs: "14.63px", sm: "19.5px" }}
                   color={"rgba(134, 134, 134, 1)"}
                   minHeight={{ xs: "unset", sm: "132px" }}
                 >
                   {lang === "ru" ? (
                     <>
-                      Учитель чешского языка в GoStudy и методист по
+                      Учитель чешского языка в GoStudy и методист <br /> по
                       онлайн-обучению. Преподает чешский язык в школе GoStudy
                       уже 14 лет, ведёт марафоны чешского языка.
                     </>
@@ -327,16 +341,34 @@ export const DeutshLanding: React.FC<Props> = ({
       </SectionContainerWrapperColorized>
 
       <RoundedColorizedSectionV2
+        leftContentSx={{ width: { xs: "unset", sm: "55%" } }}
+        rightContentSx={{ flex: { xs: "1 1 0", sm: "initial" } }}
         accentColor="warning"
         sx={{ background: "rgba(248, 248, 248, 1)" }}
         sectionTitle={{
           sx: { fontSize: { xs: "1.25rem", sm: "1.75rem" } },
           title: lang === "ru" ? "Регистрация" : "Реєстрація",
           descriptionSx: { fontSize: { xs: ".75rem", sm: "1.125rem" } },
-          description:
-            lang === "ru"
-              ? "Уроки бесплатные, но нужна регистрация. Нажмите на кнопку, заполните короткую форму и выберите удобный для вас мессенджер. Умный бот пришлет доступ к уроку и напомнит о начале за 15 минут, чтобы вы точно ничего не пропустили"
-              : "Уроки безкоштовні, але потрібна реєстрація.Натисніть кнопку, заповніть коротку форму і виберіть зручний для вас месенджер. Розумний бот надішле доступ до уроку і нагадає про початок за 15 хвилин. Щоб ви точно нічого не пропустили",
+          renderDescription: () =>
+            lang === "ru" ? (
+              <>
+                Уроки бесплатные, но нужна регистрация. Нажмите на кнопку,
+                заполните короткую форму <br /> и выберите удобный для вас
+                мессенджер. Умный бот пришлет доступ к уроку и напомнит <br /> о
+                начале за 15 минут, чтобы вы точно ничего не пропустили
+              </>
+            ) : (
+              <>
+                Уроки безкоштовні, але потрібна реєстрація.Натисніть кнопку,
+                заповніть коротку форму і виберіть зручний для вас месенджер.
+                Розумний бот надішле доступ до уроку і нагадає про початок за 15
+                хвилин. Щоб ви точно нічого не пропустили
+              </>
+            ),
+          // description:
+          //   lang === "ru"
+          //     ? "Уроки бесплатные, но нужна регистрация. Нажмите на кнопку, заполните короткую форму и выберите удобный для вас мессенджер. Умный бот пришлет доступ к уроку и напомнит о начале за 15 минут, чтобы вы точно ничего не пропустили"
+          //     : "Уроки безкоштовні, але потрібна реєстрація.Натисніть кнопку, заповніть коротку форму і виберіть зручний для вас месенджер. Розумний бот надішле доступ до уроку і нагадає про початок за 15 хвилин. Щоб ви точно нічого не пропустили",
           wrapperSx: { marginBottom: { xs: "0", sm: "40px" } },
         }}
         image={{
@@ -349,7 +381,13 @@ export const DeutshLanding: React.FC<Props> = ({
           width: 226,
           height: 275,
         }}
-        imageSx={{ minHeight: "316px", objectFit: "cover", marginX: "auto" }}
+        imageSx={{
+          minHeight: "316px",
+          objectFit: "cover",
+          marginX: "auto",
+          position: { sm: "absolute" },
+          height: { sm: "429px" },
+        }}
         button={{
           sx: {
             background: "rgba(221, 159, 1, 1)",
@@ -357,6 +395,7 @@ export const DeutshLanding: React.FC<Props> = ({
             minWidth: { xs: "100%", sm: "10rem" },
             fontSize: { xs: ".75rem", sm: "1.125rem" },
           },
+          buttonContainerSx: { marginTop: "0" },
           text: lang === "ru" ? "Регистрация" : "Зареєструватися",
           onClick: () => {
             btnAction();
