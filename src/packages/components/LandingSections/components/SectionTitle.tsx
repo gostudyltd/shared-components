@@ -23,6 +23,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
       centered,
       transitionTime = 0.2,
       buttonProps = {},
+      textContainerSx,
     } = props;
 
     const accent = accentColorBase[accentColor];
@@ -79,6 +80,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
           width={"100%"}
           sx={{
             verticalAlign: "middle",
+            ...textContainerSx,
           }}
         >
           <Stack

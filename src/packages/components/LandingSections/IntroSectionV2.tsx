@@ -64,7 +64,7 @@ const Image: React.FC<ImageProps> = withCustomTheme((props) => {
             display: { xs: "none", sm: "block" },
           },
           {
-            maxWidth: "588px",
+            maxWidth: imageSrc.width,
             mx: "auto",
             width: "100%",
             display: { xs: "none", sm: "block" },

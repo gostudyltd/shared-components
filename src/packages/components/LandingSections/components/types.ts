@@ -22,6 +22,7 @@ export type SectionTitleProps = {
   accentColor?: AccentColor;
   descriptionSx?: SxProps;
   centered?: boolean;
+  textContainerSx?: SxProps;
 
   // preTitleRef?: (el: HTMLDivElement | null | undefined) => void
 

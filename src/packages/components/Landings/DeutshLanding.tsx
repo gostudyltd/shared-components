@@ -349,13 +349,14 @@ export const DeutshLanding: React.FC<Props> = ({
           sx: { fontSize: { xs: "1.25rem", sm: "1.75rem" } },
           title: lang === "ru" ? "Регистрация" : "Реєстрація",
           descriptionSx: { fontSize: { xs: ".75rem", sm: "1.125rem" } },
+          textContainerSx: { xs: "100%", sm: "75%" },
           renderDescription: () =>
             lang === "ru" ? (
               <>
                 Уроки бесплатные, но нужна регистрация. Нажмите на кнопку,
-                заполните короткую форму <br /> и выберите удобный для вас
-                мессенджер. Умный бот пришлет доступ к уроку и напомнит <br /> о
-                начале за 15 минут, чтобы вы точно ничего не пропустили
+                заполните короткую форму и выберите удобный для вас мессенджер.
+                Умный бот пришлет доступ к уроку и напомнит о начале за 15
+                минут, чтобы вы точно ничего не пропустили
               </>
             ) : (
               <>
@@ -382,7 +383,7 @@ export const DeutshLanding: React.FC<Props> = ({
           height: 275,
         }}
         imageSx={{
-          minHeight: "316px",
+          minHeight: "275px",
           objectFit: "cover",
           marginX: "auto",
           position: { sm: "absolute" },
