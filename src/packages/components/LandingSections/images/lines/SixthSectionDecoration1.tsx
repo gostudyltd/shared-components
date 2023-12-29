@@ -1,0 +1,28 @@
+import { SxProps } from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+
+export const SixthSectionDecoration1: React.FC<{ sx?: SxProps }> = ({ sx }) => {
+  return (
+    <Box
+      component={"svg"}
+      width="51px"
+      height="51px"
+      viewBox="0 0 55 55"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      sx={{ ...sx }}
+    >
+      <path
+        d="M45.7415 33.9472C48.2192 35.3778 48.2192 38.9541 45.7415 40.3846L26.2293 51.6499C23.7516 53.0805 20.6544 51.2923 20.6544 48.4313L20.6544 25.9006C20.6544 23.0395 23.7516 21.2514 26.2293 22.6819L45.7415 33.9472Z"
+        stroke="#EC407A"
+        stroke-width="3.7166"
+      />
+      <path
+        d="M4.86006 21.8018C2.38232 20.3713 2.38233 16.795 4.86006 15.3644L24.3722 4.09908C26.85 2.66856 29.9471 4.45672 29.9471 7.31776L29.9471 29.8485C29.9471 32.7095 26.85 34.4976 24.3722 33.0671L4.86006 21.8018Z"
+        stroke="#FFFF00"
+        stroke-width="3.7166"
+      />
+    </Box>
+  );
+};

@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
-import { Container, Typography } from "@mui/material";
+import React, { ReactNode, useRef, useState } from "react";
+import { Container, Stack, Typography, SxProps } from "@mui/material";
 import { Box } from "@mui/system";
 import { RoundedPlusIcon } from "../Icons/RoundedPlus";
-import { SectionTitle } from "../LandingSections/components/SectionTitle";
+import { SectionTitle } from "./components/SectionTitle";
 import { montserratFamily } from "../../constants/themeVars";
 import { SectionContainerWrapperColorized } from "./components/SectionContainerWrapperColorized";
 import { withCustomTheme } from "../hoc/withCustomTheme";
@@ -51,6 +51,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
         },
         cursor: "pointer",
         WebkitTapHighlightColor: "transparent",
+        background: "rgba(227, 242, 253, 1)",
       }}
       borderRadius={".75rem"}
     >
@@ -85,7 +86,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
               width: { xs: "1.0625rem", sm: "1.25rem" },
               height: { xs: "1.0625rem", sm: "1.25rem" },
               "& path": {
-                fill: accent,
+                fill: "rgba(41, 98, 255, 1)",
               },
             }}
           >
@@ -123,67 +124,115 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
 
 export type AccordionSectionProps = {
   title: string;
+  renderTitle?: (color: string, transition: string) => string | React.ReactNode;
   description: string;
-  data: AccordionItem[];
+  firstColumnData: AccordionItem[];
+  secondColumnData: AccordionItem[];
   accentColor?: AccentColor;
+  descriptionSx?: SxProps;
 };
 
-export const AccordionSection: React.FC<AccordionSectionProps> =
-  withCustomTheme(({ title, description, data, accentColor = "primary" }) => {
-    const [activeAccordionTitle, setActiveAccordionTitle] = useState<
-      null | string
-    >(null);
-    const handleAccordionItemClick = (title: string) => {
-      setActiveAccordionTitle((st) => {
-        if (st === title) return null;
-        return title;
-      });
-    };
+export const AccordionsSectionV2: React.FC<AccordionSectionProps> =
+  withCustomTheme(
+    ({
+      title,
+      renderTitle,
+      description,
+      firstColumnData,
+      secondColumnData,
+      accentColor = "primary",
+      descriptionSx,
+    }) => {
+      const [activeAccordionTitle, setActiveAccordionTitle] = useState<
+        null | string
+      >(null);
+      const handleAccordionItemClick = (title: string) => {
+        setActiveAccordionTitle((st) => {
+          if (st === title) return null;
+          return title;
+        });
+      };
 
-    return (
-      <SectionContainerWrapperColorized
-        accentColor={accentColor}
-        overlayVariant="v2"
-      >
+      return (
         <Container
           maxWidth={"md"}
           component={"section"}
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
+            flexDirection: { xs: "column" },
             justifyContent: { xs: "flex-start", sm: "flex-start" },
+            alignItems: "center",
             gap: { xs: "2.5rem", sm: "3.75rem" },
             py: { xs: "3rem", sm: "6.25rem" },
             position: "relative",
             zIndex: 1,
           }}
         >
-          <Box width={"100%"} maxWidth={{ sm: "29.125rem" }}>
+          <Box width={"100%"} maxWidth={{ sm: "816px" }}>
             <SectionTitle
               title={title}
-              wrapperSx={{ marginBottom: { xs: "1.5rem", sm: "1.5rem" } }}
+              renderTitle={renderTitle}
+              sx={{ fontSize: { xs: "32px", sm: "42px" } }}
+              wrapperSx={{ marginBottom: { xs: "40px", sm: "50px" } }}
+              centered
+              description={description}
+              descriptionSx={{
+                fontSize: { xs: "20px", sm: "22px" },
+                ...descriptionSx,
+              }}
             />
 
-            <Typography
+            {/* <Typography
               variant={"body1"}
               fontSize={"1.1rem"}
               color={"text.secondary"}
             >
               {description}
-            </Typography>
+            </Typography> */}
           </Box>
-          <Box width={"100%"} display={"flex"} flexDirection={"column"}>
-            {data.map((i) => (
-              <AccordionItem
-                key={i.title}
-                {...i}
-                isActive={i.title === activeAccordionTitle}
-                onClick={handleAccordionItemClick}
-                accentColor={accentColor}
-              />
-            ))}
-          </Box>
+          <Stack
+            sx={{
+              width: "100%",
+              flexDirection: { xs: "column", sm: "row" },
+              justifyContent: { xs: "flex-start", sm: "flex-start" },
+              alignItems: "flex-start",
+              gap: { xs: ".75rem", sm: "1.5rem" },
+            }}
+          >
+            <Box
+              width={"100%"}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"flex-start"}
+            >
+              {firstColumnData.map((i) => (
+                <AccordionItem
+                  key={i.title}
+                  {...i}
+                  isActive={i.title === activeAccordionTitle}
+                  onClick={handleAccordionItemClick}
+                  accentColor={accentColor}
+                />
+              ))}
+            </Box>
+            <Box
+              width={"100%"}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"flex-start"}
+            >
+              {secondColumnData.map((i) => (
+                <AccordionItem
+                  key={i.title}
+                  {...i}
+                  isActive={i.title === activeAccordionTitle}
+                  onClick={handleAccordionItemClick}
+                  accentColor={accentColor}
+                />
+              ))}
+            </Box>
+          </Stack>
         </Container>
-      </SectionContainerWrapperColorized>
-    );
-  });
+      );
+    }
+  );

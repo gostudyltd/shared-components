@@ -1,0 +1,18 @@
+import React from "react";
+
+export const BurstStar: React.FC = () => {
+  return (
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 26 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13 0L13.995 10.5979L22.1924 3.80761L15.4021 12.005L26 13L15.4021 13.995L22.1924 22.1924L13.995 15.4021L13 26L12.005 15.4021L3.80761 22.1924L10.5979 13.995L0 13L10.5979 12.005L3.80761 3.80761L12.005 10.5979L13 0Z"
+        fill="#2962FF"
+      />
+    </svg>
+  );
+};

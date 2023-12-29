@@ -27,6 +27,7 @@ type Props = {
     onSubmit?: (data: FormFields) => void;
   };
   translations: HubspotFormTranslations;
+  buttonColor?: string;
 };
 
 const FinishView: React.FC<{ translations: HubspotFormTranslations }> = ({
@@ -64,6 +65,7 @@ const FinishView: React.FC<{ translations: HubspotFormTranslations }> = ({
 export const HubspotForm: React.FC<Props> = ({
   hubspotConfig,
   translations,
+  buttonColor,
 }) => {
   const { language } = translations;
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -134,6 +136,15 @@ export const HubspotForm: React.FC<Props> = ({
         const formChildrensArray = Array.from(formChildrens);
         for (const child of formChildrensArray) {
           if (child.nodeType === Node.ELEMENT_NODE) {
+            if (
+              (child as HTMLElement).className.includes("hs-submit") &&
+              buttonColor
+            ) {
+              const button = child.lastChild?.lastChild;
+              if (button) {
+                (button as HTMLElement).style.background = buttonColor;
+              }
+            }
             if ((child as HTMLElement).className.includes("hs-form-field")) {
               const label = child.firstChild as HTMLLabelElement;
               const input = child.lastChild?.firstChild as HTMLInputElement;
@@ -229,6 +240,7 @@ export const HubspotForm: React.FC<Props> = ({
           xs: "322px",
           sm: "412px",
         },
+        zIndex: "1",
       }}
     >
       <Stack

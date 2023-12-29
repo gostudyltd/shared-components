@@ -8,6 +8,7 @@ import {
 } from "./components/SectionHubspotForm";
 import { withCustomTheme } from "../hoc/withCustomTheme";
 import { HubspotProvider } from "@aaronhayes/react-use-hubspot-form";
+import { ReactComponent as Bg } from "./images/background.svg";
 
 export type FormFields = {
   email: string;
@@ -28,6 +29,8 @@ export type FormSectionProps = {
     formId: string;
     onSubmit?: VoidFunction;
   };
+  buttonColor?: string;
+  bgColor?: string;
 };
 
 const getBackgroundByAccentColor = (accentColor: AccentColor): string => {
@@ -47,6 +50,8 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
       accentColor = "warning",
       formTranslations,
       hubspotConfig,
+      bgColor,
+      buttonColor,
     } = props;
     const accent = accentColorBase[accentColor];
 
@@ -62,14 +67,26 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
             gap: { xs: "2em", sm: "3.75em" },
             my: { xs: "3em", sm: "6.25em" },
             padding: { xs: "1.25em", sm: "2.5em" },
-            background: getBackgroundByAccentColor(accentColor),
+            background: bgColor ?? getBackgroundByAccentColor(accentColor),
             borderRadius: "2em",
+            position: "relative",
+            overflow: "hidden",
           }}
         >
+          <Bg
+            style={{
+              position: "absolute",
+              right: "0",
+              bottom: "0",
+              height: "100%",
+              zIndex: "0",
+            }}
+          />
           <Stack
             gap={{ xs: "1em", sm: "1.5em" }}
             textAlign={{ xs: "center", sm: "left" }}
             width={"100%"}
+            zIndex={"1"}
           >
             <Typography variant="h3" fontSize={"1.75rem"} fontWeight={"600"}>
               {renderTitle ? renderTitle(accent.main) : title}
@@ -84,6 +101,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
           </Stack>
           <HubspotProvider>
             <HubspotForm
+              buttonColor={buttonColor}
               hubspotConfig={hubspotConfig}
               translations={
                 formTranslations ?? {

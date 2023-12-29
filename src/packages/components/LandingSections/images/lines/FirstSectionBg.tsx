@@ -1,0 +1,24 @@
+import { SxProps } from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+
+export const FirstSectionBg: React.FC<{ sx?: SxProps }> = ({ sx }) => {
+  return (
+    <Box
+      component={"svg"}
+      width="992px"
+      height="520px"
+      viewBox="0 0 992 520"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      sx={{ ...sx }}
+    >
+      <path
+        opacity="0.05"
+        d="M-48 668.212C600.568 680.572 941.042 652.801 1523 565.485C867.499 528.808 519.627 487.546 -48 358.318C564.638 370.593 908.509 355.148 1523 267.576C845.632 228.803 527.732 153.407 -15.2087 43.2879C337.392 41.0831 814.32 -18.0404 1040.07 -68"
+        stroke="#448AFF"
+        stroke-width="100"
+      />
+    </Box>
+  );
+};

@@ -1,0 +1,23 @@
+import { SxProps } from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+
+export const SeventhSectionBg: React.FC<{ sx?: SxProps }> = ({ sx }) => {
+  return (
+    <Box
+      component={"svg"}
+      width="1280px"
+      height="713px"
+      viewBox="0 0 1280 713"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      sx={{ ...sx }}
+    >
+      <path
+        d="M-103.493 326.454C139.775 308.822 102.911 -12.2653 265.002 23.5794C427.093 59.4242 470.328 753.188 801.002 687.835C1131.68 622.483 834.83 157.05 983.048 91.3247C1131.27 25.5997 1108.64 476.981 1354.96 414.794"
+        stroke="#BBDEFB"
+        stroke-width="40"
+      />
+    </Box>
+  );
+};

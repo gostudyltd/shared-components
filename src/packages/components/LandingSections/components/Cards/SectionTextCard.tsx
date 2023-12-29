@@ -212,8 +212,9 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
     text,
     iconName,
     title,
+    iconColor,
   } = props;
-  const accent = accentColorBase[accentColor].main;
+  const accent = iconColor ? iconColor : accentColorBase[accentColor].main;
   const icon = iconName && iconBase[iconName as keyof typeof iconBase];
   return (
     <Stack

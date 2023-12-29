@@ -15,6 +15,11 @@ import {ReactComponent as Step4} from '../../../icons/one-tone/step4.svg'
 import {ReactComponent as Step5} from '../../../icons/one-tone/step5.svg'
 import {ReactComponent as Step6} from '../../../icons/one-tone/step6.svg'
 import {ReactComponent as Step7} from '../../../icons/one-tone/step7.svg'
+import {ReactComponent as FireTwoTone} from '../../../icons/two-tone/Fire.svg'
+import {ReactComponent as UserHandUpTwoTone} from '../../../icons/two-tone/UserHandUp.svg'
+import {ReactComponent as AcademicCapTwoTone} from '../../../icons/two-tone/academicCap.svg'
+import {ReactComponent as BackpackTwoTone} from '../../../icons/two-tone/backpack.svg'
+import {ReactComponent as CaseTwoTone} from '../../../icons/two-tone/case.svg'
 import {ReactComponent as ChatRoundCallTwoTone} from '../../../icons/two-tone/chat-round-call.svg'
 import {ReactComponent as DiplomaTwoTone} from '../../../icons/two-tone/diploma.svg'
 import {ReactComponent as DocumentAddTwoTone} from '../../../icons/two-tone/document-add.svg'
@@ -44,6 +49,11 @@ export const iconBase = {
   step5: <Step5 />,
   step6: <Step6 />,
   step7: <Step7 />,
+  FireTwoTone: <FireTwoTone />,
+  UserHandUpTwoTone: <UserHandUpTwoTone />,
+  academicCapTwoTone: <AcademicCapTwoTone />,
+  backpackTwoTone: <BackpackTwoTone />,
+  caseTwoTone: <CaseTwoTone />,
   chatRoundCallTwoTone: <ChatRoundCallTwoTone />,
   diplomaTwoTone: <DiplomaTwoTone />,
   documentAddTwoTone: <DocumentAddTwoTone />,

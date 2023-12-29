@@ -1,0 +1,23 @@
+import { SxProps } from "@mui/material";
+import { Box } from "@mui/system";
+import React from "react";
+
+export const ThirdSectionCardBg: React.FC<{ sx?: SxProps }> = ({ sx }) => {
+  return (
+    <Box
+      component={"svg"}
+      width="308px"
+      height="135px"
+      viewBox="0 0 308 135"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      sx={{ ...sx }}
+    >
+      <path
+        d="M16.5504 28C9.67661 77.9533 25.1212 104.177 73.6829 149C94.0812 98.5127 117.029 71.7192 188.9 28C182.073 75.186 190.663 101.671 239.367 149C260.931 96.8284 302.863 72.3435 364.106 30.5256C365.333 57.6833 398.215 94.4168 426 111.805"
+        stroke="#90CAF9"
+        stroke-width="28.1193"
+      />
+    </Box>
+  );
+};
