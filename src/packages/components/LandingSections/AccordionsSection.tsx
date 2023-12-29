@@ -9,7 +9,7 @@ import { withCustomTheme } from "../hoc/withCustomTheme";
 import { AccentColor } from "./components";
 import { accentColorBase } from "./components/utils";
 
-type AccordionItem = {
+type AccordionItemProps = {
   title: string;
   text?: string;
   renderText?: () => string | React.ReactNode;
@@ -124,7 +124,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
 export type AccordionSectionProps = {
   title: string;
   description: string;
-  data: AccordionItem[];
+  data: AccordionItemProps[];
   accentColor?: AccentColor;
 };
 

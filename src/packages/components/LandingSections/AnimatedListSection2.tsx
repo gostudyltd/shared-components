@@ -4,9 +4,13 @@ import { AccentColor, SectionTitleProps } from "./components/types";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { SxProps, alpha, keyframes } from "@mui/material/styles";
+import {
+  SxProps,
+  //  alpha,
+  keyframes,
+} from "@mui/material/styles";
 import { SectionContainer } from "./components/SectionContainer";
-import { accentColorBase } from "./components/utils";
+// import { accentColorBase } from "./components/utils";
 import { montserratFamily } from "../../constants/themeVars";
 import { iconBase } from "./icons";
 import { CdnImage } from "../../types/components";
@@ -62,7 +66,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   isAnimationPaused,
   imageSx,
 }) => {
-  const accent = accentColorBase[accentColor];
+  // const accent = accentColorBase[accentColor];
   const descriptionRef = useRef<null | HTMLDivElement>(null);
   const [maxHeight, setMaxHeight] = useState(0);
   /* FIXME: Update the value on resize! */

@@ -48,6 +48,9 @@ export const GrantsLanding: React.FC<Props> = ({
   const cdnUrl = "https://images.gostudy.cz/static";
   const formRef = useRef<HTMLDivElement | null>(null);
   const scrollToForm = () => {
+    if (btnAction) {
+      btnAction();
+    }
     formRef?.current?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
   return (
@@ -1152,6 +1155,7 @@ export const GrantsLanding: React.FC<Props> = ({
         hubspotConfig={{
           portalId: "139617067",
           formId: "d9a6bed0-c54d-4981-a619-11adc2e36fcf",
+          onSubmit: onSubmit,
         }}
         formTranslations={{
           language: "ru",
