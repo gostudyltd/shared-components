@@ -1,15 +1,15 @@
-import React, { ReactNode, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Container, Stack, Typography, SxProps } from "@mui/material";
 import { Box } from "@mui/system";
 import { RoundedPlusIcon } from "../Icons/RoundedPlus";
 import { SectionTitle } from "./components/SectionTitle";
 import { montserratFamily } from "../../constants/themeVars";
-import { SectionContainerWrapperColorized } from "./components/SectionContainerWrapperColorized";
+// import { SectionContainerWrapperColorized } from "./components/SectionContainerWrapperColorized";
 import { withCustomTheme } from "../hoc/withCustomTheme";
 import { AccentColor } from "./components";
-import { accentColorBase } from "./components/utils";
+// import { accentColorBase } from "./components/utils";
 
-type AccordionItem = {
+type AccordionItemProps = {
   title: string;
   text?: string;
   renderText?: () => string | React.ReactNode;
@@ -33,7 +33,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
   const maxHeight = isActive
     ? (textRef.current?.firstChild as HTMLSpanElement)?.scrollHeight
     : 0 + "px";
-  const accent = accentColorBase[props.accentColor].main;
+  // const accent = accentColorBase[props.accentColor].main;
   const handleClick = (title: string) => {
     if (props.useItsOwnState) setActive((st) => !st);
     else props.onClick(title);
@@ -126,8 +126,8 @@ export type AccordionSectionProps = {
   title: string;
   renderTitle?: (color: string, transition: string) => string | React.ReactNode;
   description: string;
-  firstColumnData: AccordionItem[];
-  secondColumnData: AccordionItem[];
+  firstColumnData: AccordionItemProps[];
+  secondColumnData: AccordionItemProps[];
   accentColor?: AccentColor;
   descriptionSx?: SxProps;
 };
