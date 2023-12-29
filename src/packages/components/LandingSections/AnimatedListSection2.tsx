@@ -374,7 +374,7 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
         }
         secondColumn={
           <>
-            {extendedData.map((item, index) => (
+            {extendedData.map((item) => (
               <ImageWithColorizedBorder
                 key={item.idx}
                 sx={{
