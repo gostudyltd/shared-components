@@ -7,6 +7,7 @@ import { Box, CircularProgress, Stack, Typography } from "@mui/material";
 import styles from "./HubspotForm.module.css";
 import PhoneInput from "react-phone-input-2";
 import ru from "./ru.json";
+import vi from "./vi.json";
 import "react-phone-input-2/lib/style.css";
 import { ReactComponent as FormSubmittedImage } from "./form-submitted.svg";
 import { FormFields } from "../../FormSection";
@@ -280,7 +281,9 @@ export const HubspotForm: React.FC<Props> = ({
           country={"ua"}
           onChange={onChangePhoneNumber}
           value={phoneNumber}
-          localization={ru}
+          localization={
+            language === "ru" ? ru : language === "vi" ? vi : undefined
+          }
         />
 
         {loaded && !isSubmitted && (
