@@ -611,6 +611,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     sx={{
                       "& svg": {
                         width: { xs: "78px", sm: "94px" },
+                        height: { xs: "78px", sm: "94px" },
                         marginBottom: { xs: "20px", sm: "24px" },
                       },
                     }}
@@ -642,6 +643,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     sx={{
                       "& svg": {
                         width: { xs: "78px", sm: "94px" },
+                        height: { xs: "78px", sm: "94px" },
                         marginBottom: { xs: "20px", sm: "24px" },
                       },
                     }}
@@ -673,6 +675,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     sx={{
                       "& svg": {
                         width: { xs: "78px", sm: "94px" },
+                        height: { xs: "78px", sm: "94px" },
                         marginBottom: { xs: "20px", sm: "24px" },
                       },
                     }}
