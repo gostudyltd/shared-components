@@ -22,7 +22,7 @@ const animationDelay = 2; //sec
 
 type DataItem = {
   title: string;
-  description: string;
+  description: string | React.ReactNode;
   image: CdnImage;
 };
 
@@ -33,7 +33,7 @@ export type AnimatedListSection2Props = {
   sectionTitle: SectionTitleProps;
   data: DataItem[];
   imageSx?: SxProps;
-  btnAction?: VoidFunction;
+  button?: { btnText: string; btnAction?: VoidFunction };
 };
 
 const maxWidthKeyframe = keyframes`
@@ -246,7 +246,7 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
   accentColor,
   data,
   imageSx,
-  btnAction,
+  button,
 }) => {
   const [activeItemIdx, setActiveItemIdx] = useState(0);
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -351,7 +351,7 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
             <Button
               variant="contained"
               size="large"
-              onClick={btnAction}
+              onClick={button?.btnAction}
               sx={{
                 minWidth: { xs: "100%", sm: "10rem" },
                 px: { xs: "0", sm: "2rem" },
@@ -368,7 +368,7 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
                 },
               }}
             >
-              Поступить в Академию
+              {button?.btnText}
             </Button>
           </Box>
         }
