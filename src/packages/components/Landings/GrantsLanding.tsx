@@ -635,7 +635,11 @@ export const GrantsLanding: React.FC<Props> = ({
                 display: { xs: "block", sm: "none" },
                 zIndex: "2",
               },
-              { width: "100%", maxWidth: "261px" }
+              {
+                width: "100%",
+                maxWidth: "261px",
+                maxHeight: { xs: "auto", sm: "300px" },
+              }
             )}
             <ThirdSectionCardBg
               sx={{
