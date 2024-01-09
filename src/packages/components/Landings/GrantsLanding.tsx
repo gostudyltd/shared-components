@@ -621,9 +621,10 @@ export const GrantsLanding: React.FC<Props> = ({
                 right: "0",
                 display: { xs: "none", sm: "block" },
                 zIndex: "2",
-                maxHeight: { sm: "300px" },
               },
-              {}
+              {
+                maxHeight: { sm: "300px" },
+              }
             )}
             {getPicture(
               `${cdnUrl}/grantsLanding/thirdSection.png`,
