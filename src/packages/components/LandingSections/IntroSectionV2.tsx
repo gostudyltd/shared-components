@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import { SxProps } from "@mui/system/styleFunctionSx/styleFunctionSx";
-import React from "react";
+import React, { ReactNode } from "react";
 // import { Link } from '../Link'
 import { AccentColor } from "./components/types";
 import { accentColorBase } from "./components/utils";
@@ -41,6 +41,7 @@ export type IntroSectionPropsV2 = {
   accentColor?: AccentColor;
   bottomListData?: HorizontalListWithSeparatorProps["data"];
   info: { text: string; color?: string; bgColor?: string }[];
+  secondColumn?: ReactNode;
 };
 
 type ImageProps = {
@@ -48,7 +49,7 @@ type ImageProps = {
   mobileImageSrc?: CdnImage & { sx?: SxProps };
 };
 
-const Image: React.FC<ImageProps> = withCustomTheme((props) => {
+export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
   const { imageSrc, mobileImageSrc } = props;
   if (mobileImageSrc) {
     return (
@@ -119,6 +120,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
       descriptionSx,
       info,
       renderDescription,
+      secondColumn,
     } = props;
 
     const accent = accentColorBase[accentColor];
@@ -277,7 +279,11 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
               )}
             </Stack>
           }
-          secondColumn={<Image imageSrc={image} mobileImageSrc={mobileImage} />}
+          secondColumn={
+            secondColumn ?? (
+              <Image imageSrc={image} mobileImageSrc={mobileImage} />
+            )
+          }
         />
         {bottomListData && (
           <Box position={"absolute"} bottom={"0"} left={"0"} right={"0"}>

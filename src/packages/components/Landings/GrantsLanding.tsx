@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import {
   FormSection,
+  Image,
   IntroSectionV2,
   SectionContainer,
   SectionContainerWrapperColorized,
@@ -25,6 +26,7 @@ import { AnimatedListSection2 } from "../LandingSections/AnimatedListSection2";
 import { FourthSectionBg } from "../LandingSections/images/lines/FourthSectionBg";
 import { ThirdSectionCardBg } from "../LandingSections/images/lines/ThirdSectionCardBg";
 import { BurstStar } from "../Icons/BurstStar";
+import { FreeDesk } from "../LandingSections/images/lines/Free_desk";
 
 interface Props {
   lang: "ru" | "uk" | "en" | "vi";
@@ -68,7 +70,7 @@ export const GrantsLanding: React.FC<Props> = ({
           sx={{
             position: "absolute",
             width: { xs: "176%", sm: "100%" },
-            height: "100%",
+            height: { xs: "100%", sm: "unset" },
             top: { xs: "-215px", sm: "unset" },
           }}
         />
@@ -131,8 +133,7 @@ export const GrantsLanding: React.FC<Props> = ({
                         width: "90%",
                       }}
                     />
-                  </Box>
-                  <br />
+                  </Box>{" "}
                   của bạn tại Châu Âu.
                 </>,
                 <>
@@ -261,6 +262,83 @@ export const GrantsLanding: React.FC<Props> = ({
             height: 325,
             sx: { maxHeight: "338px", objectFit: "contain" },
           }}
+          secondColumn={
+            <Box
+              sx={{
+                position: "relative",
+                width: "fit-content",
+                mx: { xs: "auto", sm: "0" },
+              }}
+            >
+              <FreeDesk
+                lang={lang}
+                sx={{
+                  position: "absolute",
+                  left: { xs: "-3%", sm: "-8%" },
+                  width: { xs: "78px", sm: "123px" },
+                  height: { xs: "78px", sm: "123px" },
+                }}
+              />
+              <Image
+                imageSrc={{
+                  src: `${cdnUrl}/grantsLanding/firstSection_withoutText_desk.png`,
+                  width: 460,
+                  height: 448,
+                  sx: {
+                    objectFit: "contain",
+                    maxWidth: "460px",
+                    width: "100%",
+                  },
+                }}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "2px",
+                  padding: { xs: "10px", sm: "16px" },
+                  borderRadius: { xs: "14px", sm: "24px" },
+                  backgroundColor: "#FFEE58",
+                  position: "absolute",
+                  bottom: { xs: "-10px" },
+                  right: { xs: "-1px", sm: "-23px" },
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: { xs: "11px", sm: "16px" },
+                    fontWeight: "600",
+                    lineHeight: { xs: "15.73px", sm: "22.88px" },
+                    letterSpacing: "-0.5px",
+                    color: "#000000DE",
+                    fontFamily: montserratFamily,
+                    textAlign: "center",
+                  }}
+                >
+                  {getTranslatedText(
+                    "Academy Prize Fund",
+                    "Quỹ giải thưởng học viện",
+                    "Призовой фонд Академии",
+                    "Призовий фонд Академії"
+                  )}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "18px", sm: "26px" },
+                    fontWeight: "700",
+                    lineHeight: { xs: "25.2px", sm: "36.4px" },
+                    letterSpacing: "-1px",
+                    color: "#2962FF",
+                    fontFamily: montserratFamily,
+                    textAlign: "center",
+                  }}
+                >
+                  200 000 €
+                </Typography>
+              </Box>
+            </Box>
+          }
           button={{
             text: getTranslatedText(
               "Get into the Academy",
@@ -278,7 +356,7 @@ export const GrantsLanding: React.FC<Props> = ({
               maxWidth: { xs: "100%", sm: "100%" },
             },
             py: { xs: "3em", sm: "3.5em" },
-            gap: { xs: "2.5em", sm: "0" },
+            gap: { xs: "2.5em", sm: "28px" },
           }}
         />
       </SectionContainerWrapperColorized>
@@ -396,7 +474,6 @@ export const GrantsLanding: React.FC<Props> = ({
         </SectionContainer>
       </SectionContainerWrapperColorized>
 
-      {/* //! WHERE ARE THE TRANSLATIONS LEBOWSKI */}
       <SectionContainer
         sectionTitle={{
           renderTitle: () => (
@@ -415,7 +492,12 @@ export const GrantsLanding: React.FC<Props> = ({
                   },
                 }}
               >
-                Что такое
+                {getTranslatedText(
+                  "What is",
+                  "Học viện",
+                  "Что такое",
+                  "Що таке"
+                )}
                 <FirstUnderline
                   sx={{
                     position: "absolute",
@@ -425,11 +507,20 @@ export const GrantsLanding: React.FC<Props> = ({
                   }}
                 />
               </Box>{" "}
-              Академия GoStudy?
+              {getTranslatedText(
+                "GoStudy Academy?",
+                "GoStudy là gì?",
+                "Академия GoStudy?",
+                "академія GoStudy?"
+              )}
             </Typography>
           ),
-          description:
+          description: getTranslatedText(
+            "This is a free theory and practice course for your successful future in Europe",
+            "Đây là khóa học lý thuyết và thực hành miễn phí cho tương lai thành công của bạn ở Châu Âu",
             "Это бесплатный курс теории и практики для твоего успешного будущего в Европе",
+            "Це безкоштовний курс теорії та практики для твого успішного майбутнього в Європі"
+          ) as string,
         }}
       >
         <Stack flexDirection={{ xs: "column", sm: "row" }} gap={"16px"}>
@@ -464,7 +555,12 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{ display: "flex", alignItems: "center", gap: "8px" }}
               >
                 {iconBase["UserHandUpTwoTone"]}
-                Твой выбор - наш приоритет
+                {getTranslatedText(
+                  "Your choice is our priority",
+                  "Sự lựa chọn của bạn là ưu tiên của chúng tôi",
+                  "Твой выбор - наш приоритет",
+                  "Твій вибір — наш пріоритет"
+                )}
               </Typography>
             </Box>
             <Typography
@@ -478,24 +574,42 @@ export const GrantsLanding: React.FC<Props> = ({
                 zIndex: "2",
               }}
             >
-              В Академии ты сможешь определиться со страной для получения
-              высшего образования, выбрать университеты и направления для подачи
-              документов,
+              {getTranslatedText(
+                "At the Academy you will be able to decide on a country for higher education, choose universities and destinations to apply to",
+                "Tại Học viện, bạn sẽ có thể quyết định quốc gia cho giáo dục đại học, chọn trường đại học và điểm đến để đăng",
+                "В Академии ты сможешь определиться со страной для получения высшего образования, выбрать университеты и направления для подачи",
+                "В Академії ти можеш визначитися із країною для здобуття вищої освіти, вибрати університети та напрямки"
+              )}
               <Box
                 component={"br"}
                 sx={{ display: { xs: "none", sm: "block" } }}
               />{" "}
-              построить трек подготовки
-              <Box
-                component={"br"}
-                sx={{ display: { xs: "none", sm: "block" } }}
-              />{" "}
-              к поступлению и начать{" "}
+              {getTranslatedText(
+                "and build a track to prepare",
+                "ký và xây dựng đường đi để ",
+                "документов, построить трек",
+                "для подання документів,"
+              )}
               <Box
                 component={"br"}
                 sx={{ display: { xs: "none", sm: "block" } }}
               />
-              учить язык.
+              {getTranslatedText(
+                "for admission and start",
+                "chuẩn bị nhập học và bắt đầu",
+                "подготовки к поступлению",
+                "побудувати трек підготовки до"
+              )}
+              <Box
+                component={"br"}
+                sx={{ display: { xs: "none", sm: "block" } }}
+              />
+              {getTranslatedText(
+                "learning the language.",
+                "học ngôn ngữ.",
+                "и начать учить язык.",
+                "вступу і почати вивчати мову."
+              )}
             </Typography>
             {getPicture(
               `${cdnUrl}/grantsLanding/thirdSection.png`,
@@ -574,7 +688,12 @@ export const GrantsLanding: React.FC<Props> = ({
                   }}
                 >
                   {iconBase["FireTwoTone"]}
-                  Востребованно
+                  {getTranslatedText(
+                    "In demand",
+                    "Nhu cầu",
+                    "Востребованно",
+                    "Має попит"
+                  )}
                 </Typography>
               </Box>
               <Typography
@@ -586,9 +705,12 @@ export const GrantsLanding: React.FC<Props> = ({
                   lineHeight: { xs: "24px", sm: "28.8px" },
                 }}
               >
-                Востребованное образование, карьера в международных компаниях,
-                ясные перспективы и достойный уровень жизни — вот что дает
-                качественное европейское образование.
+                {getTranslatedText(
+                  "In-demand education, a career in international companies, clear prospects and a decent standard of living - this is what a quality European education provides.",
+                  "Nền giáo dục theo yêu cầu, sự nghiệp trong các công ty quốc tế, triển vọng rõ ràng và mức sống tử tế - đây là những gì nền giáo dục chất lượng của Châu Âu mang lại.",
+                  "Востребованное образование, карьера в международных компаниях, ясные перспективы и достойный уровень жизни — вот что дает качественное европейское образование.",
+                  "Освіта, яка має попит, кар'єра в міжнародних компаніях, ясні перспективи і гідний рівень життя — ось що дає якісна європейська освіта."
+                )}
               </Typography>
             </Box>
             <Box
@@ -630,7 +752,13 @@ export const GrantsLanding: React.FC<Props> = ({
                   }}
                 >
                   {iconBase["verifiedCheckTwoTone"]}
-                  Бесплатно
+
+                  {getTranslatedText(
+                    "It's free",
+                    "Nó miễn phí",
+                    "Бесплатно",
+                    "Безкоштовно"
+                  )}
                 </Typography>
               </Box>
               <Typography
@@ -642,10 +770,12 @@ export const GrantsLanding: React.FC<Props> = ({
                   lineHeight: { xs: "24px", sm: "28.8px" },
                 }}
               >
-                В Академии ты сможешь определиться со страной для получения
-                высшего образования, выбрать университеты и направления для
-                подачи документов, построить трек подготовки к поступлению
-                и начать учить язык.
+                {getTranslatedText(
+                  "We answer frequently asked questions about our academy, the admission and training process.",
+                  "Chúng tôi trả lời các câu hỏi thường gặp về học viện, quá trình tuyển sinh và đào tạo.",
+                  "Мы отвечаем на часто задаваемые вопросы о нашей академии, процессе поступления и обучения в ней.",
+                  "Ми відповідаємо на питання, які часто ставляться про нашу академію, процес вступу та навчання в ній."
+                )}
               </Typography>
             </Box>
           </Stack>
