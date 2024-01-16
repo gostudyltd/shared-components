@@ -179,7 +179,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
                       borderRadius: "1rem",
                       backgroundSize: "cover",
                       backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center",
+                      backgroundPosition: { sm: "center" },
                     }}
                   />
                 )}
@@ -408,7 +408,7 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
                       borderRadius: "1rem",
                       backgroundSize: "cover",
                       backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center",
+                      backgroundPosition: { sm: "center" },
                     }}
                   >
                     <Box
