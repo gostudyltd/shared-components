@@ -134,6 +134,10 @@ export const HubspotForm: React.FC<Props> = ({
         if (!formChildrens) {
           return;
         }
+        const utmObject = JSON.parse(
+          sessionStorage.getItem("utmObject") ?? "{}"
+        );
+
         const formChildrensArray = Array.from(formChildrens);
         for (const child of formChildrensArray) {
           if (child.nodeType === Node.ELEMENT_NODE) {
@@ -165,6 +169,28 @@ export const HubspotForm: React.FC<Props> = ({
                 for (const phoneInputChild of phoneInputDOMElementChildrenArray) {
                   (phoneInputChild as HTMLElement).style.display = "flex";
                 }
+              }
+
+              if (input.name === "url" && child.lastChild) {
+                if (typeof window !== "undefined") {
+                  input.value = window.location.href;
+                }
+              }
+
+              if (input.name === "utm_term" && child.lastChild) {
+                input.value = utmObject["utm_term"] ?? "";
+              }
+              if (input.name === "utm_source" && child.lastChild) {
+                input.value = utmObject["utm_source"] ?? "";
+              }
+              if (input.name === "utm_medium" && child.lastChild) {
+                input.value = utmObject["utm_medium"] ?? "";
+              }
+              if (input.name === "utm_content" && child.lastChild) {
+                input.value = utmObject["utm_content"] ?? "";
+              }
+              if (input.name === "utm_campaign" && child.lastChild) {
+                input.value = utmObject["utm_campaign"] ?? "";
               }
 
               const obsConfig = {
