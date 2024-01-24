@@ -86,7 +86,7 @@ export const GrantsLanding: React.FC<Props> = ({
               //   sm: lang === "en" ? "72px" : "60px",
               // }}
               lineHeight={{
-                xs: "47px",
+                xs: lang === "vi" ? "58px" : "47px",
                 sm: "72px",
               }}
               letterSpacing={{ xs: "-2px", sm: "-3px" }}
@@ -131,8 +131,9 @@ export const GrantsLanding: React.FC<Props> = ({
                       <FirstDecoration
                         sx={{
                           position: "absolute",
-                          right: { xs: "-32px", sm: "-34px" },
-                          top: { xs: "-18px", sm: "-2px" },
+                          right: { xs: "-64px", sm: "-34px" },
+                          top: { xs: "-24px", sm: "-2px" },
+                          width: "100%",
                         }}
                       />
                       công
@@ -141,7 +142,7 @@ export const GrantsLanding: React.FC<Props> = ({
                       sx={{
                         position: "absolute",
                         right: 0,
-                        bottom: "-6px",
+                        bottom: "-9px",
                         width: "90%",
                       }}
                     />
@@ -656,7 +657,10 @@ export const GrantsLanding: React.FC<Props> = ({
                 <strong>
                   {getTranslatedText(
                     "Your choice is our priority",
-                    "Sự lựa chọn của bạn là ưu tiên của chúng tôi",
+                    <>
+                      Sự lựa chọn của bạn là
+                      ưu&nbsp;tiên&nbsp;của&nbsp;chúng&nbsp;tôi
+                    </>,
                     "Твой выбор — наш приоритет ",
                     "Твій вибір — наш пріоритет"
                   )}
@@ -695,7 +699,7 @@ export const GrantsLanding: React.FC<Props> = ({
                 <>
                   to&nbsp;and build a&nbsp;track to&nbsp;prepare for admission
                 </>,
-                "ký và xây dựng đường đi để  chuẩn",
+                "ký và xây dựng đường đi để  chuẩn bị nhập",
                 <>и&nbsp;направления для подачи документов,</>,
                 "для подання документів, побудувати трек"
               )}
@@ -705,7 +709,7 @@ export const GrantsLanding: React.FC<Props> = ({
               />
               {getTranslatedText(
                 <> and start learning the language.</>,
-                "bị nhập học và bắt đầu",
+                " học và bắt đầu học ngôn ngữ.",
                 <>построить трек подготовки к&nbsp;поступлению</>,
                 "підготовки до вступу і почати вивчати мову."
               )}
@@ -725,7 +729,10 @@ export const GrantsLanding: React.FC<Props> = ({
                     sx={{ display: { xs: "block", sm: "block" } }}
                   />
                 </>,
-                "học ngôn ngữ.",
+                <Box
+                  component={"br"}
+                  sx={{ display: { xs: "block", sm: "block" } }}
+                />,
                 <>
                   {" "}
                   и&nbsp;начать учить язык.{" "}
@@ -1363,7 +1370,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     component={"span"}
                     sx={{ color: "rgba(41, 98, 255, 1)", position: "relative" }}
                   >
-                    Học{" "}
+                    Học&nbsp;
                     <Box component={"span"} sx={{ position: "relative" }}>
                       viện
                       <FirstDecoration
