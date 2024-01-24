@@ -81,9 +81,13 @@ export const GrantsLanding: React.FC<Props> = ({
           renderTitle={() => (
             <Typography
               fontSize={{ xs: "40px", sm: "60px" }}
+              // lineHeight={{
+              //   xs: lang === "en" ? "47px" : "40px",
+              //   sm: lang === "en" ? "72px" : "60px",
+              // }}
               lineHeight={{
-                xs: lang === "en" ? "47px" : "40px",
-                sm: lang === "en" ? "72px" : "60px",
+                xs: "47px",
+                sm: "72px",
               }}
               letterSpacing={{ xs: "-2px", sm: "-3px" }}
               fontFamily={montserratFamily}
@@ -114,7 +118,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     />
                   </Box>
                   <br />
-                  future in Europe!
+                  future in&nbsp;Europe!
                 </>,
                 <>
                   Tương lai{" "}
@@ -168,7 +172,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     />
                   </Box>
                   <br />
-                  будущее в Европе!
+                  будущее в&nbsp;Европе!
                 </>,
                 <>
                   Твоє{" "}
@@ -194,7 +198,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     />
                   </Box>
                   <br />
-                  майбутнє в Європі!
+                  майбутнє в&nbsp;Європі!
                 </>
               )}
             </Typography>
@@ -203,29 +207,34 @@ export const GrantsLanding: React.FC<Props> = ({
             [
               getTranslatedText(
                 <>
-                  Enroll in the GoStudy Academy <strong>for free!</strong>
+                  Enroll in&nbsp;the GoStudy Academy <strong>for free!</strong>
                 </>,
                 <>
                   Đăng ký Học viện GoStudy <strong>miễn phí</strong>
                 </>,
                 <>
-                  Поступи в Академию GoStudy <strong>бесплатно!</strong>
+                  Поступи в&nbsp;Академию GoStudy <strong>бесплатно!</strong>
                 </>,
                 <>
-                  Вступи до Академії GoStudy <strong>безкоштовно!</strong>
+                  Вступи до&nbsp;Академії GoStudy <strong>безкоштовно!</strong>
                 </>
               ),
               <>
                 {getTranslatedText(
-                  "Discover everything about education and life in Europe",
+                  <>
+                    Discover everything about education and life in&nbsp;Europe
+                  </>,
                   "Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu",
-                  "Узнай всё об образовании и жизни в Европе",
-                  "Дізнайся все про освіту та життя в Європі"
+                  <>Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе</>,
+                  <>Дізнайся все про освіту та&nbsp;життя в&nbsp;Європі</>
                 )}
               </>,
               <>
                 {getTranslatedText(
-                  "Get the chance to win a scholarship for studying in Europe, up to €5700",
+                  <>
+                    Get the chance to&nbsp;win a&nbsp;scholarship for studying
+                    in&nbsp;Europe, up&nbsp;to&nbsp;&euro;5700
+                  </>,
                   <>
                     Có cơ hội nhận học bổng để học tập tại Châu Âu,{" "}
                     <Box
@@ -234,8 +243,14 @@ export const GrantsLanding: React.FC<Props> = ({
                     />
                     lên đến €5700
                   </>,
-                  "Получи возможность выиграть грант на обучение до 5700 €",
-                  "Отримай можливість виграти грант на навчання у Європі до 5700 €"
+                  <>
+                    Получи возможность выиграть грант на&nbsp;обучение
+                    до&nbsp;5700&nbsp;&euro;
+                  </>,
+                  <>
+                    Отримай можливість виграти грант на&nbsp;навчання
+                    у&nbsp;Європі до&nbsp;5700&nbsp;&euro;
+                  </>
                 )}
               </>,
             ].map((item) => (
@@ -586,11 +601,11 @@ export const GrantsLanding: React.FC<Props> = ({
               thành công của bạn ở Châu Âu
             </>,
             <>
-              Это бесплатный курс теории и&nbsp;практики для твоего успешного
-              будущего в&nbsp;Европе
+              Это бесплатный курс теории и&nbsp;практики для&nbsp;твоего
+              успешного будущего в&nbsp;Европе
             </>,
             <>
-              Це&nbsp;безкоштовний курс теорії та&nbsp;практики для твого
+              Це&nbsp;безкоштовний курс теорії та&nbsp;практики для&nbsp;твого
               успішного майбутнього в&nbsp;Європі
             </>
           ) as string,
@@ -602,6 +617,7 @@ export const GrantsLanding: React.FC<Props> = ({
               display: "flex",
               flexDirection: "column",
               padding: { xs: "20px", sm: "22px" },
+              minWidth: { xs: "auto", sm: "555px" },
               gap: "16px",
               backgroundColor: "rgba(225, 245, 254, 1)",
               borderRadius: "30px",
@@ -641,7 +657,7 @@ export const GrantsLanding: React.FC<Props> = ({
                   {getTranslatedText(
                     "Your choice is our priority",
                     "Sự lựa chọn của bạn là ưu tiên của chúng tôi",
-                    "Твой выбор - наш приоритет",
+                    "Твой выбор — наш приоритет ",
                     "Твій вибір — наш пріоритет"
                   )}
                 </strong>
@@ -665,7 +681,10 @@ export const GrantsLanding: React.FC<Props> = ({
                   universities and destinations to&nbsp;apply
                 </>,
                 "Tại Học viện, bạn sẽ có thể quyết định quốc gia cho giáo dục đại học, chọn trường đại học và điểm đến để đăng",
-                "В Академии ты сможешь определиться со страной для получения высшего образования, выбрать университеты",
+                <>
+                  В&nbsp;Академии ты&nbsp;сможешь определиться со&nbsp;страной
+                  для получения высшего образования, выбрать университеты
+                </>,
                 "В Академії ти можеш визначитися із країною для здобуття вищої освіти, вибрати університети та напрямки"
               )}
               <Box
@@ -677,7 +696,7 @@ export const GrantsLanding: React.FC<Props> = ({
                   to&nbsp;and build a&nbsp;track to&nbsp;prepare for admission
                 </>,
                 "ký và xây dựng đường đi để  chuẩn",
-                "и направления для подачи документов,",
+                <>и&nbsp;направления для подачи документов,</>,
                 "для подання документів, побудувати трек"
               )}
               <Box
@@ -687,12 +706,17 @@ export const GrantsLanding: React.FC<Props> = ({
               {getTranslatedText(
                 <> and start learning the language.</>,
                 "bị nhập học và bắt đầu",
-                "построить трек подготовки к поступлению",
+                <>построить трек подготовки к&nbsp;поступлению</>,
                 "підготовки до вступу і почати"
               )}
               <Box
                 component={"br"}
-                sx={{ display: { xs: "block", sm: "block" } }}
+                sx={{
+                  display: {
+                    xs: lang === "en" ? "block" : "none",
+                    sm: "block",
+                  },
+                }}
               />
               {getTranslatedText(
                 <>
@@ -702,9 +726,25 @@ export const GrantsLanding: React.FC<Props> = ({
                   />
                 </>,
                 "học ngôn ngữ.",
-                " и начать учить язык.",
+                <>
+                  {" "}
+                  и&nbsp;начать учить язык.{" "}
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "block", sm: "none" } }}
+                  />
+                </>,
                 "вивчати мову."
               )}
+              <Box
+                component={"br"}
+                sx={{
+                  display: {
+                    xs: lang === "en" ? "none" : "block",
+                    sm: "none",
+                  },
+                }}
+              />
             </Typography>
             {getPicture(
               `${cdnUrl}/grantsLanding/thirdSection.png`,
@@ -1118,17 +1158,18 @@ export const GrantsLanding: React.FC<Props> = ({
                   </Box>
                 ),
                 text: getTranslatedText(
-                  "For middle and high school students considering studying abroad.",
+                  <>
+                    For middle and high school students considering studying
+                    abroad.
+                  </>,
                   "Dành cho học sinh trung học và phổ thông có ý định học tập ở nước ngoài.",
                   <>
-                    Для ребят средней и старшей школы, кто рассматривает вариант
-                    учебы{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>за границей</span>
+                    Для ребят средней и&nbsp;старшей школы,
+                    кто&nbsp;рассматривает вариант учебы за&nbsp;границей
                   </>,
                   <>
-                    Для учнів середньої та старшої школи, хто розглядає варіант
-                    навчання{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>за кордоном</span>
+                    Для учнів середньої та&nbsp;старшої школи, хто розглядає
+                    варіант навчання за&nbsp;кордоном
                   </>
                 ) as string,
                 sx: {
@@ -1168,22 +1209,19 @@ export const GrantsLanding: React.FC<Props> = ({
                   </Box>
                 ),
                 text: getTranslatedText(
-                  "For bachelor's degree graduates planning to continue their education and enroll in a master's program.",
+                  <>
+                    For bachelor&rsquo;s degree graduates planning
+                    to&nbsp;continue their education and enroll
+                    in&nbsp;a&nbsp;master&rsquo;s program.
+                  </>,
                   "Dành cho những người tốt nghiệp cấp bằng cử nhân có kế hoạch tiếp tục học tập và nhập học vào chương trình thạc sĩ.",
                   <>
-                    Выпускникам бакалавриата, кто собирается продолжить обучение{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>и поступить</span>
-                    <span style={{ whiteSpace: "nowrap" }}>
-                      {" "}
-                      в магистратуру
-                    </span>
+                    Выпускникам бакалавриата, кто&nbsp;собирается продолжить
+                    обучение и&nbsp;поступить в&nbsp;магистратуру
                   </>,
                   <>
-                    Випускникам бакалаврату, хто збирається продовжити навчання{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>та вступити</span>{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>
-                      до магістратури
-                    </span>
+                    Випускникам бакалаврату, хто збирається продовжити навчання
+                    та&nbsp;вступити до&nbsp;магістратури
                   </>
                 ) as string,
                 sx: {
@@ -1237,21 +1275,18 @@ export const GrantsLanding: React.FC<Props> = ({
                   </Box>
                 ),
                 text: getTranslatedText(
-                  "For those planning to build a successful career not only in Europe but also worldwide.",
+                  <>
+                    For those planning to&nbsp;build a&nbsp;successful career
+                    not only in&nbsp;Europe but also worldwide.
+                  </>,
                   "Dành cho những người có kế hoạch xây dựng sự nghiệp thành công không chỉ tại Châu Âu mà còn trên toàn thế giới.",
                   <>
-                    Для тех, кто планирует построить успешную карьеру{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>не только</span>
-                    <span style={{ whiteSpace: "nowrap" }}>
-                      {" "}
-                      в Европе,
-                    </span>{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>но и в мире</span>
+                    Для тех, кто планирует построить успешную карьеру
+                    не&nbsp;только в&nbsp;Европе, но&nbsp;и&nbsp;в&nbsp;мире
                   </>,
                   <>
-                    Для тих, хто планує побудувати успішну кар'єру не лише{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>у Європі,</span>{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>а й у світі</span>
+                    Для тих, хто планує побудувати успішну кар&rsquo;єру
+                    не&nbsp;лише у&nbsp;Європі, а&nbsp;й&nbsp;у&nbsp;світі
                   </>
                 ) as string,
                 sx: {
@@ -1433,8 +1468,9 @@ export const GrantsLanding: React.FC<Props> = ({
               </>,
               "Bài giảng và tài liệu giới thiệu từ Học viện, thông tin về các lớp học, lịch trình, phần thưởng, quà tặng, và Cuộc thi Học bổng.",
               <>
-                Вводные лекции и&nbsp;материалы Академии, информация про
-                занятия, расписание, бонусы, подарки и&nbsp;Конкурс Грантов.
+                Вводные лекции и&nbsp;материалы Академии, информация
+                про&nbsp;занятия, расписание, бонусы, подарки и&nbsp;Конкурс
+                Грантов.
               </>,
               <>
                 Вступні лекції та&nbsp;матеріали Академії, інформація про
@@ -2000,7 +2036,7 @@ export const GrantsLanding: React.FC<Props> = ({
                       <FirstUnderline
                         sx={{
                           position: "absolute",
-                          bottom: "-6px",
+                          bottom: "-14px",
                           left: "0",
                           width: "100%",
                         }}
