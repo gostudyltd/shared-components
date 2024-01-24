@@ -81,7 +81,10 @@ export const GrantsLanding: React.FC<Props> = ({
           renderTitle={() => (
             <Typography
               fontSize={{ xs: "40px", sm: "60px" }}
-              lineHeight={{ xs: "40px", sm: "60px" }}
+              lineHeight={{
+                xs: lang === "en" ? "47px" : "40px",
+                sm: lang === "en" ? "72px" : "60px",
+              }}
               letterSpacing={{ xs: "-2px", sm: "-3px" }}
               fontFamily={montserratFamily}
               fontWeight={600}
@@ -265,13 +268,13 @@ export const GrantsLanding: React.FC<Props> = ({
           ]}
           image={{
             src: `${cdnUrl}/grantsLanding/firstSection.png`,
-            width: 520,
-            height: 445,
+            width: null,
+            height: null,
           }}
           mobileImage={{
             src: `${cdnUrl}/grantsLanding/firstSection_mobile.png`,
-            width: 335,
-            height: 325,
+            width: null,
+            height: null,
             sx: { maxHeight: "338px", objectFit: "contain" },
           }}
           secondColumn={
@@ -287,15 +290,15 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{
                   position: "absolute",
                   left: { xs: "-3%", sm: "-8%" },
-                  width: { xs: "78px", sm: "123px" },
-                  height: { xs: "78px", sm: "123px" },
+                  width: { xs: "115px", sm: "123px" },
+                  height: { xs: "115px", sm: "123px" },
                 }}
               />
               <Image
                 imageSrc={{
                   src: `${cdnUrl}/grantsLanding/firstSection_withoutText_desk.png`,
-                  width: 460,
-                  height: 448,
+                  width: null,
+                  height: null,
                   sx: {
                     objectFit: "contain",
                     maxWidth: "460px",
@@ -393,10 +396,23 @@ export const GrantsLanding: React.FC<Props> = ({
                   "Безкоштовно"
                 ) as string,
                 text: getTranslatedText(
-                  "Becoming a student of the Academy is absolutely free, all you need is to register.",
-                  "Việc trở thành sinh viên của Học viện là hoàn toàn miễn phí, bạn chỉ cần đăng ký.",
-                  "Стать студентом Академии можно совершенно бесплатно, нужна только регистрация",
-                  "Стати студентом Академії можна абсолютно безкоштовно, потрібна лише реєстрація"
+                  <>
+                    Becoming a&nbsp;student of&nbsp;the Academy
+                    is&nbsp;absolutely free, all you need
+                    is&nbsp;to&nbsp;register.
+                  </>,
+                  <>
+                    Việc trở thành sinh viên của Học viện là hoàn toàn miễn phí,
+                    bạn chỉ cần đăng ký.
+                  </>,
+                  <>
+                    Стать студентом Академии можно совершенно бесплатно, нужна
+                    только регистрация
+                  </>,
+                  <>
+                    Стати студентом Академії можна абсолютно безкоштовно,
+                    потрібна лише реєстрація
+                  </>
                 ) as string,
               },
               {
@@ -407,10 +423,22 @@ export const GrantsLanding: React.FC<Props> = ({
                   "Коли"
                 ) as string,
                 text: getTranslatedText(
-                  "You can become a student of the Academy at any time, right after registration.",
-                  "Bạn có thể trở thành sinh viên của Học viện bất kỳ lúc nào, ngay sau khi đăng ký.",
-                  "Стать студентом Академии можно в любое время и сразу после регистрации",
-                  "Стати студентом Академії можна у будь-який час і одразу після реєстрації"
+                  <>
+                    You can become a&nbsp;student of&nbsp;the Academy
+                    at&nbsp;any time, right after registration.
+                  </>,
+                  <>
+                    Bạn có thể trở thành sinh viên của Học viện bất kỳ lúc nào,
+                    ngay sau khi đăng ký.
+                  </>,
+                  <>
+                    Стать студентом Академии можно в&nbsp;любое время
+                    и&nbsp;сразу после регистрации
+                  </>,
+                  <>
+                    Стати студентом Академії можна у&nbsp;будь-який час
+                    і&nbsp;одразу після реєстрації
+                  </>
                 ) as string,
               },
               {
@@ -421,14 +449,22 @@ export const GrantsLanding: React.FC<Props> = ({
                   "Формат"
                 ) as string,
                 text: getTranslatedText(
-                  "You will receive assignments and materials from the Academy in the Telegram chatbot.",
-                  "Bạn sẽ nhận bài tập và tài liệu từ Học viện thông qua chatbot trên Telegram.",
                   <>
-                    Получать задания и материалы Академии ты будешь{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>в чат-боте</span>{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>в Telegram</span>
+                    You will receive assignments and materials from the Academy
+                    in&nbsp;the Telegram chatbot.
                   </>,
-                  "Отримувати завдання та матеріали Академії ти будеш у чат-боті в Telegram"
+                  <>
+                    Bạn sẽ nhận bài tập và tài liệu từ Học viện thông qua
+                    chatbot trên Telegram.
+                  </>,
+                  <>
+                    Получать задания и&nbsp;материалы Академии ты&nbsp;будешь
+                    в&nbsp;чат-боте в&nbsp;Telegram
+                  </>,
+                  <>
+                    Отримувати завдання та&nbsp;матеріали Академії ти&nbsp;будеш
+                    у&nbsp;чат-боті в&nbsp;Telegram
+                  </>
                 ) as string,
               },
               {
@@ -439,14 +475,19 @@ export const GrantsLanding: React.FC<Props> = ({
                   "Сертифікат"
                 ) as string,
                 text: getTranslatedText(
-                  "A certificate will be issued to all GoStudy Academy students upon completion of the course.",
+                  <>
+                    A&nbsp;certificate will be&nbsp;issued to&nbsp;all GoStudy
+                    Academy students upon completion of&nbsp;the course.
+                  </>,
                   "Một chứng chỉ sẽ được cấp cho tất cả sinh viên Học viện GoStudy sau khi hoàn thành khóa học.",
                   <>
-                    Будет выдан всем студентам Академии GoStudy{" "}
-                    <span style={{ whiteSpace: "nowrap" }}>о прохождении</span>{" "}
-                    курса
+                    Будет выдан всем студентам Академии GoStudy
+                    о&nbsp;прохождении курса
                   </>,
-                  "Буде виданий усім студентам Академії GoStudy про проходження курсу"
+                  <>
+                    Буде виданий усім студентам Академії GoStudy про проходження
+                    курсу
+                  </>
                 ) as string,
               },
             ].map((item) => (
@@ -536,10 +577,22 @@ export const GrantsLanding: React.FC<Props> = ({
             </Typography>
           ),
           description: getTranslatedText(
-            "This is a free theory and practice course for your successful future in Europe",
-            "Đây là khóa học lý thuyết và thực hành miễn phí cho tương lai thành công của bạn ở Châu Âu",
-            "Это бесплатный курс теории и практики для твоего успешного будущего в Европе",
-            "Це безкоштовний курс теорії та практики для твого успішного майбутнього в Європі"
+            <>
+              This is&nbsp;a&nbsp;free theory and practice course for your
+              successful future in&nbsp;Europe
+            </>,
+            <>
+              Đây là khóa học lý thuyết và thực hành miễn phí cho tương lai
+              thành công của bạn ở Châu Âu
+            </>,
+            <>
+              Это бесплатный курс теории и&nbsp;практики для твоего успешного
+              будущего в&nbsp;Европе
+            </>,
+            <>
+              Це&nbsp;безкоштовний курс теорії та&nbsp;практики для твого
+              успішного майбутнього в&nbsp;Європі
+            </>
           ) as string,
         }}
       >
@@ -606,7 +659,11 @@ export const GrantsLanding: React.FC<Props> = ({
               }}
             >
               {getTranslatedText(
-                "At the Academy you will be able to decide on a country for higher education, choose universities and destinations to apply",
+                <>
+                  At&nbsp;the Academy you will be&nbsp;able to&nbsp;decide
+                  on&nbsp;a&nbsp;country for higher education, choose
+                  universities and destinations to&nbsp;apply
+                </>,
                 "Tại Học viện, bạn sẽ có thể quyết định quốc gia cho giáo dục đại học, chọn trường đại học và điểm đến để đăng",
                 "В Академии ты сможешь определиться со страной для получения высшего образования, выбрать университеты",
                 "В Академії ти можеш визначитися із країною для здобуття вищої освіти, вибрати університети та напрямки"
@@ -616,7 +673,9 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{ display: { xs: "none", sm: "block" } }}
               />{" "}
               {getTranslatedText(
-                "to and build a track to prepare",
+                <>
+                  to&nbsp;and build a&nbsp;track to&nbsp;prepare for admission
+                </>,
                 "ký và xây dựng đường đi để  chuẩn",
                 "и направления для подачи документов,",
                 "для подання документів, побудувати трек"
@@ -626,17 +685,22 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{ display: { xs: "none", sm: "block" } }}
               />
               {getTranslatedText(
-                "for admission and start",
+                <> and start learning the language.</>,
                 "bị nhập học và bắt đầu",
                 "построить трек подготовки к поступлению",
                 "підготовки до вступу і почати"
               )}
               <Box
                 component={"br"}
-                sx={{ display: { xs: "none", sm: "block" } }}
+                sx={{ display: { xs: "block", sm: "block" } }}
               />
               {getTranslatedText(
-                "learning the language.",
+                <>
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "block", sm: "block" } }}
+                  />
+                </>,
                 "học ngôn ngữ.",
                 " и начать учить язык.",
                 "вивчати мову."
@@ -746,10 +810,25 @@ export const GrantsLanding: React.FC<Props> = ({
                 }}
               >
                 {getTranslatedText(
-                  "In-demand education, a career in international companies, clear prospects and a decent standard of living - this is what a quality European education provides.",
+                  <>
+                    In-demand education, a&nbsp;career in&nbsp;international
+                    companies, clear prospects and a&nbsp;decent standard
+                    of&nbsp;living&nbsp;&mdash; this is&nbsp;what a&nbsp;quality
+                    European education provides.
+                  </>,
                   "Nền giáo dục theo yêu cầu, sự nghiệp trong các công ty quốc tế, triển vọng rõ ràng và mức sống tử tế - đây là những gì nền giáo dục chất lượng của Châu Âu mang lại.",
-                  "Востребованное образование, карьера в международных компаниях, ясные перспективы и достойный уровень жизни — вот что дает качественное европейское образование.",
-                  "Освіта, яка має попит, кар'єра в міжнародних компаніях, ясні перспективи і гідний рівень життя — ось що дає якісна європейська освіта."
+                  <>
+                    Востребованное образование, карьера в&nbsp;международных
+                    компаниях, ясные перспективы и&nbsp;достойный уровень
+                    жизни&nbsp;&mdash; вот что дает качественное европейское
+                    образование.
+                  </>,
+                  <>
+                    Освіта, яка має попит, кар&rsquo;єра в&nbsp;міжнародних
+                    компаніях, ясні перспективи і&nbsp;гідний рівень
+                    життя&nbsp;&mdash; ось що&nbsp;дає якісна європейська
+                    освіта.
+                  </>
                 )}
               </Typography>
             </Box>
@@ -814,10 +893,19 @@ export const GrantsLanding: React.FC<Props> = ({
                 }}
               >
                 {getTranslatedText(
-                  "One Academy instead of a thousand paid counselling sessions for your future. Free!",
+                  <>
+                    One Academy instead of&nbsp;a&nbsp;thousand paid counselling
+                    sessions for your future. Free!
+                  </>,
                   "Một Học viện thay vì hàng nghìn buổi tư vấn trả phí cho tương lai của bạn. Miễn phí!",
-                  "Одна Академия вместо тысячи платных консультаций для твоего будущего. Бесплатно!",
-                  "Одна Академія замість тисячі платних консультацій для твого майбутнього. Безкоштовно! "
+                  <>
+                    Одна Академия вместо тысячи платных консультаций для твоего
+                    будущего. Бесплатно!
+                  </>,
+                  <>
+                    Одна Академія замість тисячі платних консультацій для твого
+                    майбутнього. Безкоштовно!
+                  </>
                 )}
               </Typography>
             </Box>
@@ -1338,13 +1426,19 @@ export const GrantsLanding: React.FC<Props> = ({
               "Знайомство"
             ) as string,
             description: getTranslatedText(
-              "Introductory lectures and materials from the Academy, information about classes, schedule, bonuses, gifts, and the Grant Competition.",
-              "Bài giảng và tài liệu giới thiệu từ Học viện, thông tin về các lớp học, lịch trình, phần thưởng, quà tặng, và Cuộc thi Học bổng.",
-              "Вводные лекции и материалы Академии, информация про занятия, расписание, бонусы, подарки и Конкурс Грантов.",
               <>
-                Вступні лекції та матеріали Академії, інформація{" "}
-                <span style={{ whiteSpace: "nowrap" }}>про заняття,</span>{" "}
-                розклад, бонуси, подарунки та Конкурс Грантів.
+                Introductory lectures and materials from the Academy,
+                information about classes, schedule, bonuses, gifts, and the
+                Grant Competition.
+              </>,
+              "Bài giảng và tài liệu giới thiệu từ Học viện, thông tin về các lớp học, lịch trình, phần thưởng, quà tặng, và Cuộc thi Học bổng.",
+              <>
+                Вводные лекции и&nbsp;материалы Академии, информация про
+                занятия, расписание, бонусы, подарки и&nbsp;Конкурс Грантов.
+              </>,
+              <>
+                Вступні лекції та&nbsp;матеріали Академії, інформація про
+                заняття, розклад, бонуси, подарунки та&nbsp;Конкурс Грантів.
               </>
             ) as string,
             image: {
@@ -1362,12 +1456,12 @@ export const GrantsLanding: React.FC<Props> = ({
             ) as string,
             description: getTranslatedText(
               <>
-                - Discover how education in Europe can be free.
+                - Discover how education in&nbsp;Europe can be&nbsp;free.
                 <br />- Obtain information about countries, universities,
-                majors, and admission conditions for tuition-free education in
-                Europe. <br />- Familiarize yourself with real success stories
-                from individuals, GoStudy graduates who have already walked this
-                path and achieved success!
+                majors, and admission conditions for tuition-free education
+                in&nbsp;Europe. <br />- Familiarize yourself with real success
+                stories from individuals, GoStudy graduates who have already
+                walked this path and achieved success!
               </>,
               <>
                 - Khám phá cách giáo dục tại Châu Âu có thể miễn phí.
@@ -1379,24 +1473,21 @@ export const GrantsLanding: React.FC<Props> = ({
                 con đường này và đạt được thành công!
               </>,
               <>
-                - Узнай, как образование в Европе может быть бесплатным. <br />-
-                Получи информацию про страны, университеты, направления, условия
-                поступления на бюджет{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в Европе.</span> <br />-
-                Познакомься с реальными историями успеха ребят, выпускников
-                GoStudy, с теми, кто уже прошел этот путь{" "}
-                <span style={{ whiteSpace: "nowrap" }}>и добился</span> успеха!
+                - Узнай, как образование в&nbsp;Европе может быть бесплатным.{" "}
+                <br />- Получи информацию про страны, университеты, направления,
+                условия поступления на&nbsp;бюджет в&nbsp;Европе. <br />-
+                Познакомься с&nbsp;реальными историями успеха ребят, выпускников
+                GoStudy, с&nbsp;теми, кто уже прошел этот путь и&nbsp;добился
+                успеха!
               </>,
               <>
-                - Дізнайся, як освіта в Європі може бути безкоштовною.
+                - Дізнайся, як&nbsp;освіта в&nbsp;Європі може бути безкоштовною.
                 <br />
                 - Отримай інформацію про країни, університети, напрями, умови
-                вступу на бюджет у Європі.
-                <br />- Познайомся з реальними історіями успіху хлопців{" "}
-                <span style={{ whiteSpace: "nowrap" }}>та дівчат,</span>{" "}
-                випускників GoStudy, з тими, хто вже пройшов{" "}
-                <span style={{ whiteSpace: "nowrap" }}>цей шлях</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>і досяг</span> успіху!
+                вступу на&nbsp;бюджет у&nbsp;Європі.
+                <br />- Познайомся з&nbsp;реальними історіями успіху хлопців
+                та&nbsp;дівчат, випускників GoStudy, з&nbsp;тими, хто вже
+                пройшов цей шлях і&nbsp;досяг успіху!
               </>
             ),
             image: {
@@ -1414,13 +1505,14 @@ export const GrantsLanding: React.FC<Props> = ({
             ) as string,
             description: getTranslatedText(
               <>
-                - Discover a promising country for higher education.
+                - Discover a&nbsp;promising country for higher education.
                 <br />
-                - Learn how to master the language in 3 months, get admitted on
-                a budget, and explore the brightest career prospects.
+                - Learn how to&nbsp;master the language in&nbsp;3&nbsp;months,
+                get admitted on&nbsp;a&nbsp;budget, and explore the brightest
+                career prospects.
                 <br />
                 - Receive colorful guides, compilations, guides, and more.
-                <br />- Join free German lessons with a native speaker!
+                <br />- Join free German lessons with a&nbsp;native speaker!
               </>,
               <>
                 - Khám phá một quốc gia hứa hẹn cho giáo dục cao học. <br />
@@ -1434,28 +1526,25 @@ export const GrantsLanding: React.FC<Props> = ({
               </>,
               <>
                 - Открой для себя перспективную страну для получения высшего
-                образования. <br />- Узнай как выучить язык за 3 месяца,
-                поступить{" "}
-                <span style={{ whiteSpace: "nowrap" }}>на бюджет</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>и открыть</span> для себя
-                самые яркие карьерные перспективы. <br />- Получи красочные
-                гайды, подборки, путеводители{" "}
-                <span style={{ whiteSpace: "nowrap" }}>и мн.др.</span>
-                <br />- Присоединяйся к бесплатным урокам немецкого{" "}
-                <span style={{ whiteSpace: "nowrap" }}>
-                  с преподавателем-носителем!
-                </span>
+                образования. <br />
+                - Узнай как выучить язык за&nbsp;3&nbsp;месяца, по&nbsp;ступить
+                на&nbsp;бюджети открыть для себя самые яркие карьерные
+                перспективы. <br />
+                - Получи красочные гайды, подборки, путеводители и&nbsp;мн.др.
+                <br />- Присоединяйся к&nbsp;бесплатным урокам немецкого
+                с&nbsp;преподавателем-носителем!
               </>,
               <>
                 - Відкрий для себе перспективну країну для здобуття вищої
                 освіти.
                 <br />
-                - Дізнайся як вивчити мову за 3 місяці, вступити на бюджет і
-                відкрити для себе найяскравіші кар'єрні перспективи.
+                - Дізнайся як&nbsp;вивчити мову за&nbsp;3&nbsp;місяці, вступити
+                на&nbsp;бюджет і&nbsp;відкрити для себе найяскравіші
+                кар&rsquo;єрні перспективи.
                 <br />
-                - Отримай барвисті гайди, добірки, путівники та ін.
-                <br />- Приєднуйся до безкоштовних уроків німецької з
-                викладачем-носієм!
+                - Отримай барвисті гайди, добірки, путівники та&nbsp;ін.
+                <br />- Приєднуйся до&nbsp;безкоштовних уроків німецької
+                з&nbsp;викладачем-носієм!
               </>
             ),
             image: {
@@ -1473,12 +1562,14 @@ export const GrantsLanding: React.FC<Props> = ({
             ) as string,
             description: getTranslatedText(
               <>
-                - Learn how to prepare and master the language to guarantee
-                admission in the Czech Republic, where education for foreign
-                students in Czech is completely free!
+                - Learn how to&nbsp;prepare and master the language
+                to&nbsp;guarantee admission in&nbsp;the Czech Republic, where
+                education for foreign students in&nbsp;Czech is&nbsp;completely
+                free!
                 <br />
                 - Receive helpful materials and guides.
-                <br />- Join free Czech language lessons with a native speaker!
+                <br />- Join free Czech language lessons with a&nbsp;native
+                speaker!
               </>,
               <>
                 - Học cách chuẩn bị và làm chủ ngôn ngữ để đảm bảo nhập học tại
@@ -1490,29 +1581,23 @@ export const GrantsLanding: React.FC<Props> = ({
                 bản xứ!
               </>,
               <>
-                - Узнай, как подготовиться и выучить язык, чтобы гарантировано
-                поступить в Чехии, где образование{" "}
-                <span style={{ whiteSpace: "nowrap" }}>для иностранных</span>{" "}
-                студентов{" "}
-                <span style={{ whiteSpace: "nowrap" }}>на чешском</span> языке
-                полностью бесплатное! <br />
-                - Получи полезные материалы и гайды.
-                <br />- Присоединяйся к бесплатным урокам чешского языка{" "}
-                <span style={{ whiteSpace: "nowrap" }}>
-                  с преподавателем-носителем!
-                </span>
+                - Узнай, как подготовиться и&nbsp;выучить язык, чтобы
+                гарантировано поступить в&nbsp;Чехии, где образование для
+                иностранных студентов на&nbsp;чешском языке полностью
+                бесплатное!
+                <br />
+                - Получи полезные материалы и&nbsp;гайды.
+                <br />- Присоединяйся к&nbsp;бесплатным урокам чешского языка
+                с&nbsp;преподавателем-носителем!
               </>,
               <>
-                - Дізнайся, як підготуватися та вивчити мову,{" "}
-                <span style={{ whiteSpace: "nowrap" }}>щоб гарантовано</span>
-                вступити до Чехії, де освіта для іноземних студентів чеською
-                мовою повністю безкоштовна!
+                - Дізнайся, як&nbsp;підготуватися та&nbsp;вивчити мову, щоб
+                гарантовано вступити до&nbsp;Чехії, де&nbsp;освіта для іноземних
+                студентів чеською мовою повністю безкоштовна!
                 <br />
-                - Отримай корисні матеріали та гайди.
-                <br />- Приєднуйся до безкоштовних уроків чеської мови{" "}
-                <span style={{ whiteSpace: "nowrap" }}>
-                  з викладачем-носієм!
-                </span>
+                - Отримай корисні матеріали та&nbsp;гайди.
+                <br />- Приєднуйся до&nbsp;безкоштовних уроків чеської мови
+                з&nbsp;викладачем-носієм!
               </>
             ),
             image: {
@@ -1530,11 +1615,11 @@ export const GrantsLanding: React.FC<Props> = ({
             ) as string,
             description: getTranslatedText(
               <>
-                - Discover how to obtain a student residence permit and settle
-                in the country with the most comfortable cost of living in
-                Europe. <br />
-                - Ensure that applying, studying, and living in Slovakia is
-                easy!
+                - Discover how to&nbsp;obtain a&nbsp;student residence permit
+                and settle in&nbsp;the country with the most comfortable cost
+                of&nbsp;living in&nbsp;Europe. <br />
+                - Ensure that applying, studying, and living in&nbsp;Slovakia
+                is&nbsp;easy!
                 <br />- Obtain unique information about Slovak universities and
                 majors.
               </>,
@@ -1548,34 +1633,22 @@ export const GrantsLanding: React.FC<Props> = ({
                 học tại Slovakia.
               </>,
               <>
-                - Узнай, как получить студенческий ВНЖ и обосноваться{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в стране</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>с самой</span> комфортной
-                стоимостью жизни{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в Европе.</span> <br />
-                - Убедись, что поступить, учиться и жить в Словакии легко!
-                <br />- Получи уникальную информацию{" "}
-                <span style={{ whiteSpace: "nowrap" }}>
-                  по словацким вузам
-                </span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>и направлениям.</span>
+                - Узнай, как получить студенческий ВНЖ и&nbsp;обосноваться
+                в&nbsp;стране с&nbsp;самой комфортной стоимостью жизни
+                в&nbsp;Европе. <br />
+                - Убедись, что поступить, учиться и&nbsp;жить в&nbsp;Словакии
+                легко!
+                <br />- Получи уникальную информацию по&nbsp;словацким вузам
+                и&nbsp;направлениям.
               </>,
               <>
-                - Дізнайся, як отримати студентську ППП{" "}
-                <span style={{ whiteSpace: "nowrap" }}>та влаштуватися</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в країні</span>
-                <span style={{ whiteSpace: "nowrap" }}>
-                  з найкомфортнішою
-                </span>{" "}
-                вартістю життя{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в Європі.</span>
-                <br />- Переконайся,{" "}
-                <span style={{ whiteSpace: "nowrap" }}>що вступити,</span>{" "}
-                вчитися <span style={{ whiteSpace: "nowrap" }}>та жити</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>у Словаччині</span>{" "}
-                легко!
-                <br />- Отримай унікальну інформацію щодо словацьких вишів{" "}
-                <span style={{ whiteSpace: "nowrap" }}>та напрямків.</span>
+                - Дізнайся, як&nbsp;отримати студентську ППП
+                та&nbsp;влаштуватися в&nbsp;країні з&nbsp;найкомфортнішою
+                вартістю життя в&nbsp;Європі.
+                <br />- Переконайся, що&nbsp;вступити, вчитися та&nbsp;жити
+                у&nbsp;Словаччині легко!
+                <br />- Отримай унікальну інформацію щодо словацьких вишів
+                та&nbsp;напрямків.
               </>
             ),
             image: {
@@ -1593,14 +1666,14 @@ export const GrantsLanding: React.FC<Props> = ({
             ) as string,
             description: getTranslatedText(
               <>
-                - Build a step-by-step educational and career strategy with
+                - Build a&nbsp;step-by-step educational and career strategy with
                 GoStudy experts.
                 <br />
-                - Choose a path to achieve your goal — a successful future in
-                Europe!
-                <br />- Learn about studying and working in Europe from
-                firsthand experiences. Gain access to the stories of graduates
-                from European universities.
+                - Choose a&nbsp;path to&nbsp;achieve your goal&nbsp;&mdash;
+                a&nbsp;successful future in&nbsp;Europe!
+                <br />- Learn about studying and working in&nbsp;Europe from
+                firsthand experiences. Gain access to&nbsp;the stories
+                of&nbsp;graduates from European universities.
               </>,
               <>
                 - Xây dựng chiến lược giáo dục và sự nghiệp từng bước với các
@@ -1613,22 +1686,24 @@ export const GrantsLanding: React.FC<Props> = ({
                 sinh viên từ các trường đại học Châu Âu.
               </>,
               <>
-                - Построй пошаговую образовательную и карьерную стратегию вместе
-                с экспертами GoStudy.
+                - Построй пошаговую образовательную и&nbsp;карьерную стратегию
+                вместе с&nbsp;экспертами GoStudy.
                 <br />
-                - Выбери направление для достижения поставленной цели — успешное
-                будущее в Европе!
-                <br />- Узнай об учёбе и работе в Европе из первых уст. Получи
-                доступ к историям выпускников европейских вузов.
+                - Выбери направление для достижения поставленной
+                цели&nbsp;&mdash; успешное будущее в&nbsp;Европе!
+                <br />- Узнай об&nbsp;учёбе и&nbsp;работе в&nbsp;Европе
+                из&nbsp;первых уст. Получи доступ к&nbsp;историям выпускников
+                европейских вузов.
               </>,
               <>
-                - Побудуй покрокову освітню та кар'єрну стратегію разом з
-                експертами GoStudy.
+                - Побудуй покрокову освітню та&nbsp;кар&rsquo;єрну стратегію
+                разом з&nbsp;експертами GoStudy.
                 <br />
-                - Вибери напрямок для досягнення поставленої мети – успішне
-                майбутнє в Європі!
-                <br />- Дізнайся про навчання та роботу в Європі з перших вуст.
-                Отримай доступ до історій випускників європейських вишів.
+                - Вибери напрямок для досягнення поставленої мети&nbsp;&mdash;
+                успішне майбутнє в&nbsp;Європі!
+                <br />- Дізнайся про навчання та&nbsp;роботу в&nbsp;Європі
+                з&nbsp;перших вуст. Отримай доступ до&nbsp;історій випускників
+                європейських вишів.
               </>
             ),
             image: {
@@ -1645,19 +1720,23 @@ export const GrantsLanding: React.FC<Props> = ({
               "Конкурс Грантів 🏆"
             ) as string,
             description: getTranslatedText(
-              "Every participant in the Academy will have the chance to win up to 5700 euros for preparation for admission in their chosen country. Study in Europe for FREE!",
+              <>
+                Every participant in&nbsp;the Academy will have the chance
+                to&nbsp;win up&nbsp;to&nbsp;5700 euros for preparation for
+                admission in&nbsp;their chosen country. Study in&nbsp;Europe for
+                FREE!
+              </>,
               "Mọi người tham gia Học viện đều có cơ hội nhận đến 5700 euro để chuẩn bị cho việc nhập học ở quốc gia mà họ đã chọn. Học tập tại Châu Âu MIỄN PHÍ! ",
               <>
-                Каждый участник Академии получит шанс выиграть{" "}
-                <span style={{ whiteSpace: "nowrap" }}>до 5700</span> евро{" "}
-                <span style={{ whiteSpace: "nowrap" }}>на подготовку</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>к поступлению</span>{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в выбранной</span>{" "}
-                стране. Учись{" "}
-                <span style={{ whiteSpace: "nowrap" }}>в Европе</span>{" "}
-                БЕСПЛАТНО!
+                Каждый участник Академии получит шанс выиграть до&nbsp;5700 евро
+                на&nbsp;подготовку к&nbsp;поступлению в&nbsp;выбранной стране.
+                Учись в&nbsp;Европе БЕСПЛАТНО!
               </>,
-              "Кожен учасник Академії отримає шанс виграти до 5700 євро на підготовку до вступу до обраної країни. Навчайся у Європі БЕЗКОШТОВНО!"
+              <>
+                Кожен учасник Академії отримає шанс виграти до&nbsp;5700 євро
+                на&nbsp;підготовку до&nbsp;вступу до&nbsp;обраної країни.
+                Навчайся у&nbsp;Європі БЕЗКОШТОВНО!
+              </>
             ),
             image: {
               src: `${cdnUrl}/grantsLanding/fifthSection_7.png`,
@@ -1725,31 +1804,59 @@ export const GrantsLanding: React.FC<Props> = ({
               {[
                 {
                   title: getTranslatedText(
-                    "The GoStudy Grant is your chance to fulfill the dream of studying and living abroad!",
-                    "Học bổng GoStudy là cơ hội của bạn để thực hiện ước mơ học tập và sống ở nước ngoài!",
-                    "Грант GoStudy — это ваша возможность исполнить мечту учиться и жить за границей!",
-                    "Грант GoStudy - це ваша можливість здійснити мрію вчитися і жити за кордоном!"
-                  ),
-                },
-                {
-                  title: getTranslatedText(
-                    "Every Academy participant has a unique opportunity to receive a grant ranging from €1400 to €5725!",
-                    "Mỗi người tham gia Học viện đều có cơ hội đặc biệt nhận được học bổng từ 1400 đến 5725 euro!",
-                    "Каждый участник Академии — обладатель уникальной возможности получить грант на сумму от 1400€ до 5725€! ",
                     <>
-                      Кожен учасник Академії — володар унікальної можливості
-                      отримати грант{" "}
-                      <span style={{ whiteSpace: "nowrap" }}>на суму</span> від
-                      1400€ до 5725€!
+                      The GoStudy Grant is&nbsp;your chance to&nbsp;fulfill the
+                      dream of&nbsp;studying and living abroad!
+                    </>,
+                    "Học bổng GoStudy là cơ hội của bạn để thực hiện ước mơ học tập và sống ở nước ngoài!",
+                    <>
+                      Грант GoStudy&nbsp;&mdash; это ваша возможность исполнить
+                      мечту учиться и&nbsp;жить за&nbsp;границей!
+                    </>,
+                    <>
+                      Грант GoStudy&nbsp;&mdash; це&nbsp;ваша можливість
+                      здійснити мрію вчитися і&nbsp;жити за&nbsp;кордоном!
                     </>
                   ),
                 },
                 {
                   title: getTranslatedText(
-                    "The grant provides the opportunity to study and prepare for admission to a European university absolutely free of charge.",
+                    <>
+                      Every Academy participant has a&nbsp;unique opportunity
+                      to&nbsp;receive a&nbsp;grant ranging from &euro;1400
+                      to&nbsp;&euro;5725!
+                    </>,
+                    "Mỗi người tham gia Học viện đều có cơ hội đặc biệt nhận được học bổng từ 1400 đến 5725 euro!",
+                    <>
+                      Каждый участник Академии&nbsp;&mdash; обладатель
+                      уникальной возможности получить грант на&nbsp;сумму
+                      от&nbsp;1400&euro; до&nbsp;5725&euro;!
+                    </>,
+                    <>
+                      Кожен учасник Академії&nbsp;&mdash; володар унікальної
+                      можливості отримати грант на&nbsp;суму від 1400&euro;
+                      до&nbsp;5725&euro;!
+                    </>
+                  ),
+                },
+                {
+                  title: getTranslatedText(
+                    <>
+                      The grant provides the opportunity to&nbsp;study and
+                      prepare for admission to&nbsp;a&nbsp;European university
+                      absolutely free of&nbsp;charge.
+                    </>,
                     "Học bổng cung cấp cơ hội học tập và chuẩn bị cho việc nhập học vào một trường đại học Châu Âu mà hoàn toàn miễn phí.",
-                    "Грант дает возможность учиться и готовиться к поступлению в европейский вуз абсолютно бесплатно.",
-                    "Грант дає можливість вчитися і готуватися до вступу до європейського вишу абсолютно безкоштовно."
+                    <>
+                      Грант дает возможность учиться и&nbsp;готовиться
+                      к&nbsp;поступлению в&nbsp;европейский вуз абсолютно
+                      бесплатно.
+                    </>,
+                    <>
+                      Грант дає можливість вчитися і&nbsp;готуватися
+                      до&nbsp;вступу до&nbsp;європейського вишу абсолютно
+                      безкоштовно.
+                    </>
                   ),
                 },
               ].map((item) => (
@@ -1779,7 +1886,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     <Typography
                       component={"p"}
                       fontFamily={montserratFamily}
-                      fontSize={"20px"}
+                      fontSize={{ xs: "1rem", sm: "20px" }}
                       fontWeight={600}
                       color={"rgba(255, 224, 178, 1)"}
                       width={"100%"}
@@ -1823,6 +1930,7 @@ export const GrantsLanding: React.FC<Props> = ({
               "Победители предыдущих Конкурсов Грантов от GoStudy",
               "Переможці попередніх Конкурсів Грантів від GoStudy"
             ) as string,
+            descriptionSx: { textAlign: { xs: "left", sm: "center" } },
             renderTitle: () => (
               <Typography
                 fontSize={{ xs: "32px", sm: "42px" }}
@@ -2092,8 +2200,8 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 {getPicture(
                   `${cdnUrl}/grantsLanding/${item.img}`,
-                  164,
-                  200,
+                  null,
+                  null,
                   {},
                   {
                     objectFit: "cover",
@@ -2115,6 +2223,7 @@ export const GrantsLanding: React.FC<Props> = ({
                   <Typography
                     component={"a"}
                     href={item.href}
+                    target={"_blank"}
                     sx={{
                       textDecoration: "none",
                       fontWeight: 500,
