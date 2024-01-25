@@ -682,36 +682,45 @@ export const GrantsLanding: React.FC<Props> = ({
                 <>
                   At&nbsp;the Academy you will be&nbsp;able to&nbsp;decide
                   on&nbsp;a&nbsp;country for higher education, choose
-                  universities and destinations to&nbsp;apply
+                  universities and destinations to&nbsp;apply to&nbsp;and build
+                  a&nbsp;track to&nbsp;prepare for
                 </>,
                 "Tại Học viện, bạn sẽ có thể quyết định quốc gia cho giáo dục đại học, chọn trường đại học và điểm đến để đăng",
                 <>
                   В&nbsp;Академии ты&nbsp;сможешь определиться со&nbsp;страной
                   для получения высшего образования, выбрать университеты
+                  и&nbsp;направления для подачи
                 </>,
-                "В Академії ти можеш визначитися із країною для здобуття вищої освіти, вибрати університети та напрямки"
+                <>
+                  В&nbsp;Академії ти&nbsp;можеш визначитися із&nbsp;країною для
+                  здобуття вищої освіти, вибрати університети та&nbsp;напрямки
+                  для подання документів, побудувати
+                </>
               )}
               <Box
                 component={"br"}
                 sx={{ display: { xs: "none", sm: "block" } }}
               />{" "}
               {getTranslatedText(
-                <>
-                  to&nbsp;and build a&nbsp;track to&nbsp;prepare for admission
-                </>,
-                "ký và xây dựng đường đi để  chuẩn bị nhập",
-                <>и&nbsp;направления для подачи документов,</>,
-                "для подання документів, побудувати трек"
+                <> admission and start learning the language.</>,
+                "ký và xây dựng đường đi để  chuẩn bị",
+                <>документов, построить трек подготовки</>,
+                <> трек підготовки до&nbsp;вступу і&nbsp;почати</>
               )}
               <Box
                 component={"br"}
                 sx={{ display: { xs: "none", sm: "block" } }}
               />
               {getTranslatedText(
-                <> and start learning the language.</>,
-                " học và bắt đầu học ngôn ngữ.",
-                <>построить трек подготовки к&nbsp;поступлению</>,
-                "підготовки до вступу і почати вивчати мову."
+                <>
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "none", sm: "block" } }}
+                  />
+                </>,
+                " nhập học và bắt đầu học ngôn ngữ.",
+                <> к&nbsp;поступлению и&nbsp;начать учить язык.</>,
+                <>вивчати мову.</>
               )}
               <Box
                 component={"br"}
@@ -734,11 +743,9 @@ export const GrantsLanding: React.FC<Props> = ({
                   sx={{ display: { xs: "block", sm: "block" } }}
                 />,
                 <>
-                  {" "}
-                  и&nbsp;начать учить язык.{" "}
                   <Box
                     component={"br"}
-                    sx={{ display: { xs: "block", sm: "none" } }}
+                    sx={{ display: { xs: "block", sm: "block" } }}
                   />
                 </>,
                 <Box
@@ -750,7 +757,7 @@ export const GrantsLanding: React.FC<Props> = ({
                 component={"br"}
                 sx={{
                   display: {
-                    xs: lang === "en" ? "none" : "block",
+                    xs: lang === "en" ? "block" : "block",
                     sm: "none",
                   },
                 }}
@@ -1506,8 +1513,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 <br />- Obtain information about countries, universities,
                 majors, and admission conditions for tuition-free education
                 in&nbsp;Europe. <br />- Familiarize yourself with real success
-                stories from individuals, GoStudy graduates who have already
-                walked this path and achieved success!
+                stories from&nbsp;individuals, GoStudy graduates who have
+                already walked this&nbsp;path and achieved success!
               </>,
               <>
                 - Khám phá cách giáo dục tại Châu Âu có thể miễn phí.
@@ -1554,8 +1561,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 - Discover a&nbsp;promising country for higher education.
                 <br />
                 - Learn how to&nbsp;master the language in&nbsp;3&nbsp;months,
-                get admitted on&nbsp;a&nbsp;budget, and explore the brightest
-                career prospects.
+                get&nbsp;admitted on&nbsp;a&nbsp;budget, and explore the
+                brightest career prospects.
                 <br />
                 - Receive colorful guides, compilations, guides, and more.
                 <br />- Join free German lessons with a&nbsp;native speaker!
@@ -1662,12 +1669,12 @@ export const GrantsLanding: React.FC<Props> = ({
             description: getTranslatedText(
               <>
                 - Discover how to&nbsp;obtain a&nbsp;student residence permit
-                and settle in&nbsp;the country with the most comfortable cost
-                of&nbsp;living in&nbsp;Europe. <br />
+                and&nbsp;settle in&nbsp;the country with the most comfortable
+                cost of&nbsp;living in&nbsp;Europe. <br />
                 - Ensure that applying, studying, and living in&nbsp;Slovakia
                 is&nbsp;easy!
-                <br />- Obtain unique information about Slovak universities and
-                majors.
+                <br />- Obtain unique information about Slovak universities
+                and&nbsp;majors.
               </>,
               <>
                 - Khám phá cách làm thế nào để có được giấy phép cư trú sinh
@@ -1712,14 +1719,14 @@ export const GrantsLanding: React.FC<Props> = ({
             ) as string,
             description: getTranslatedText(
               <>
-                - Build a&nbsp;step-by-step educational and career strategy with
-                GoStudy experts.
+                - Build a&nbsp;step-by-step educational and career strategy
+                with&nbsp;GoStudy experts.
                 <br />
                 - Choose a&nbsp;path to&nbsp;achieve your goal&nbsp;&mdash;
                 a&nbsp;successful future in&nbsp;Europe!
                 <br />- Learn about studying and working in&nbsp;Europe from
                 firsthand experiences. Gain access to&nbsp;the stories
-                of&nbsp;graduates from European universities.
+                of&nbsp;graduates from&nbsp;European universities.
               </>,
               <>
                 - Xây dựng chiến lược giáo dục và sự nghiệp từng bước với các
@@ -1851,8 +1858,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 {
                   title: getTranslatedText(
                     <>
-                      The GoStudy Grant is&nbsp;your chance to&nbsp;fulfill the
-                      dream of&nbsp;studying and living abroad!
+                      The GoStudy Grant is&nbsp;your chance to&nbsp;fulfill
+                      the&nbsp;dream of&nbsp;studying and living abroad!
                     </>,
                     "Học bổng GoStudy là cơ hội của bạn để thực hiện ước mơ học tập và sống ở nước ngoài!",
                     <>
@@ -1869,7 +1876,7 @@ export const GrantsLanding: React.FC<Props> = ({
                   title: getTranslatedText(
                     <>
                       Every Academy participant has a&nbsp;unique opportunity
-                      to&nbsp;receive a&nbsp;grant ranging from &euro;1400
+                      to&nbsp;receive a&nbsp;grant ranging from&nbsp;&euro;1400
                       to&nbsp;&euro;5725!
                     </>,
                     "Mỗi người tham gia Học viện đều có cơ hội đặc biệt nhận được học bổng từ 1400 đến 5725 euro!",
@@ -1888,9 +1895,10 @@ export const GrantsLanding: React.FC<Props> = ({
                 {
                   title: getTranslatedText(
                     <>
-                      The grant provides the opportunity to&nbsp;study and
-                      prepare for admission to&nbsp;a&nbsp;European university
-                      absolutely free of&nbsp;charge.
+                      The grant provides the opportunity to&nbsp;study
+                      and&nbsp;prepare for&nbsp;admission
+                      to&nbsp;a&nbsp;European university absolutely free
+                      of&nbsp;charge.
                     </>,
                     "Học bổng cung cấp cơ hội học tập và chuẩn bị cho việc nhập học vào một trường đại học Châu Âu mà hoàn toàn miễn phí.",
                     <>
