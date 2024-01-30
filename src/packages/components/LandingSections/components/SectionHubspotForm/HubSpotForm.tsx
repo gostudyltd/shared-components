@@ -135,9 +135,7 @@ export const HubspotForm: React.FC<Props> = ({
         if (!formChildrens) {
           return;
         }
-        const utmObject = JSON.parse(
-          sessionStorage.getItem("utmObject") ?? "{}"
-        );
+        const utmObject = JSON.parse(localStorage.getItem("utmObject") ?? "{}");
 
         const formChildrensArray = Array.from(formChildrens);
         for (const child of formChildrensArray) {
