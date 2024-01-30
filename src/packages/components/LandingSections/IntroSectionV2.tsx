@@ -184,7 +184,10 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
               )}
               <Stack
                 // gap={{ xs: "1em", sm: "1.5em" }}
-                sx={{ marginBottom: { xs: "2em", sm: "3em" } }}
+                sx={{
+                  marginBottom: { xs: "2em", sm: "3em" },
+                  "& p": { margin: 0 },
+                }}
               >
                 {preTitle && (
                   <Stack
