@@ -183,7 +183,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                 </Stack>
               )}
               <Stack
-                gap={{ xs: "1em", sm: "1.5em" }}
+                // gap={{ xs: "1em", sm: "1.5em" }}
                 sx={{ marginBottom: { xs: "2em", sm: "3em" } }}
               >
                 {preTitle && (
@@ -192,6 +192,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                     direction={"row"}
                     position={"relative"}
                     sx={{
+                      marginBottom: { xs: "1em", sm: "1.5em" },
                       px: { xs: "3rem", sm: "3.5rem" },
                     }}
                   >
@@ -232,7 +233,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                   display={{ xs: "none", sm: "block" }}
                   lineHeight={"63.38px"}
                   fontWeight={600}
-                  sx={titleSx}
+                  sx={{ marginBottom: { xs: "1em", sm: "1.5em" }, ...titleSx }}
                 >
                   {renderTitle ? renderTitle(accent.main) : title}
                 </Typography>
