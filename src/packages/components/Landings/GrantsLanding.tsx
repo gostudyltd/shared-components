@@ -205,7 +205,16 @@ export const GrantsLanding: React.FC<Props> = ({
             </Typography>
           )}
           description={
-            <>
+            <Box
+              sx={{
+                fontSize: "1.125rem",
+                color: "text.secondary",
+                letterSpacing: "-0.2px",
+                fontFamily: montserratFamily,
+                fontWeight: 500,
+                lineHeight: "142%",
+              }}
+            >
               <Box
                 sx={{
                   "& svg": {
@@ -252,14 +261,7 @@ export const GrantsLanding: React.FC<Props> = ({
                   </>,
                   <>Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu</>,
                   <>Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе</>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
-                    Дізнайся все про освіту та&nbsp;життя в&nbsp;Європі
-                  </Typography>
+                  <>Дізнайся все про освіту та&nbsp;життя в&nbsp;Європі</>
                 )}
               </Box>
 
@@ -275,49 +277,29 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 <BurstPucker />
                 {getTranslatedText(
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  <>
                     Get the chance to&nbsp;win a&nbsp;scholarship for studying
                     in&nbsp;Europe, up&nbsp;to&nbsp;&euro;5700
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  </>,
+                  <>
                     Có cơ hội nhận học bổng để học tập tại Châu Âu,{" "}
                     <Box
                       component={"br"}
                       display={{ xs: "none", sm: "block" }}
                     />
                     lên đến €5700
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  </>,
+                  <>
                     Получи возможность выиграть грант на&nbsp;обучение
                     до&nbsp;5700&nbsp;&euro;
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  </>,
+                  <>
                     Отримай можливість виграти грант на&nbsp;навчання
                     у&nbsp;Європі до&nbsp;5700&nbsp;&euro;
-                  </Typography>
+                  </>
                 )}
               </Box>
-            </>
+            </Box>
           }
           info={[
             {
