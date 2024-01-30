@@ -204,7 +204,7 @@ export const GrantsLanding: React.FC<Props> = ({
               )}
             </Typography>
           )}
-          renderDescription={() => (
+          description={
             <>
               <Box
                 sx={{
@@ -218,40 +218,20 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 <BurstPucker />
                 {getTranslatedText(
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  <>
                     Enroll in&nbsp;the GoStudy Academy{" "}
                     <strong>for free!</strong>
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  </>,
+                  <>
                     Đăng ký Học viện GoStudy <strong>miễn phí</strong>
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  </>,
+                  <>
                     Поступи в&nbsp;Академию GoStudy <strong>бесплатно!</strong>
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  </>,
+                  <>
                     Вступи до&nbsp;Академії GoStudy{" "}
                     <strong>безкоштовно!</strong>
-                  </Typography>
+                  </>
                 )}
               </Box>
 
@@ -267,30 +247,11 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 <BurstPucker />
                 {getTranslatedText(
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
+                  <>
                     Discover everything about education and life in&nbsp;Europe
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
-                    Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu
-                  </Typography>,
-                  <Typography
-                    component={"span"}
-                    variant={"body1"}
-                    fontSize={"1.125rem"}
-                    color={"text.secondary"}
-                  >
-                    Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе
-                  </Typography>,
+                  </>,
+                  <>Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu</>,
+                  <>Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе</>,
                   <Typography
                     component={"span"}
                     variant={"body1"}
@@ -357,7 +318,7 @@ export const GrantsLanding: React.FC<Props> = ({
                 )}
               </Box>
             </>
-          )}
+          }
           info={[
             {
               text: getTranslatedText(

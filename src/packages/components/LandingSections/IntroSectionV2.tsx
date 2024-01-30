@@ -24,7 +24,7 @@ export type IntroSectionPropsV2 = {
   preTitle?: string;
   title?: string | React.ReactNode;
   renderTitle?: (color: string) => string | React.ReactNode;
-  description?: string;
+  description?: string | ReactNode;
   renderDescription?: (color: string) => string | React.ReactNode;
   descriptionSx?: SxProps;
   titleSx?: SxProps;
