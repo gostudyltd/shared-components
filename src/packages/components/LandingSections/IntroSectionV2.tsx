@@ -192,7 +192,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                     direction={"row"}
                     position={"relative"}
                     sx={{
-                      marginBottom: { xs: "1em", sm: "1.5em" },
+                      marginBottom: { xs: "1rem", sm: "1.5rem" },
                       px: { xs: "3rem", sm: "3.5rem" },
                     }}
                   >
@@ -233,7 +233,10 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                   display={{ xs: "none", sm: "block" }}
                   lineHeight={"63.38px"}
                   fontWeight={600}
-                  sx={{ marginBottom: { xs: "1em", sm: "1.5em" }, ...titleSx }}
+                  sx={{
+                    marginBottom: { xs: "1rem", sm: "1.5rem" },
+                    ...titleSx,
+                  }}
                 >
                   {renderTitle ? renderTitle(accent.main) : title}
                 </Typography>
