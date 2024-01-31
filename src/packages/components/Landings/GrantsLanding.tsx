@@ -1831,7 +1831,7 @@ export const GrantsLanding: React.FC<Props> = ({
         ]}
       />
 
-      <SectionContainer>
+      <SectionContainer sx={{ overflowX: "hidden" }}>
         <Stack
           sx={{
             flexDirection: { xs: "column-reverse", sm: "row" },
@@ -1857,11 +1857,13 @@ export const GrantsLanding: React.FC<Props> = ({
             752,
             948,
             {
-              width: { xs: "295px", sm: "100%" },
+              maxWidth: { xs: "295px", sm: "100%" },
+              width: "100%",
               mx: { xs: "auto", sm: 0 },
             },
             {
-              width: { xs: "295px", sm: "100%" },
+              maxWidth: { xs: "295px", sm: "100%" },
+              width: "100%",
               height: { xs: "224px", sm: "unset" },
               objectFit: "cover",
               borderRadius: { xs: "20px", sm: "22px" },
