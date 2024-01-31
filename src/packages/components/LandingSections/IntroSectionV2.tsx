@@ -243,7 +243,6 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                 >
                   {renderTitle ? renderTitle(accent.main) : title}
                 </Typography>
-                <p>ss</p>
 
                 <Typography
                   variant="h2"
