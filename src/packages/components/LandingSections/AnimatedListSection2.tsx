@@ -21,7 +21,7 @@ const animationSpeed = 10; // sec
 const animationDelay = 2; //sec
 
 type DataItem = {
-  title: string;
+  title: string | React.ReactNode;
   description: string | React.ReactNode;
   image: CdnImage;
 };
@@ -96,7 +96,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       component={"div"}
       display={"flex"}
       flexDirection={"column"}
-      key={data.title}
+      key={data.title?.toString()}
       position={"relative"}
       onClick={() => onClick(data.idx)}
       sx={{
@@ -336,7 +336,7 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
           >
             {extendedData.map((item) => (
               <AccordionItem
-                key={item.title}
+                key={item.title?.toString()}
                 data={item}
                 isActive={activeItemIdx === item.idx}
                 accentColor={accentColor}
@@ -358,6 +358,14 @@ export const AnimatedListSection2: React.FC<AnimatedListSection2Props> = ({
                 fontSize: {
                   xs: "1rem",
                   sm: "1.125rem",
+                },
+                lineHeight: {
+                  xs: "28px",
+                  sm: "28px",
+                },
+                letterSpacing: {
+                  xs: "-0.5px",
+                  sm: "-0.5px",
                 },
                 height: { xs: "2.625rem", sm: "3.5rem" },
                 background: "rgba(41, 98, 255, 1)",

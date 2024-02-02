@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
 import { Container, Stack, Typography, SxProps } from "@mui/material";
 import { Box } from "@mui/system";
 import { RoundedPlusIcon } from "../Icons/RoundedPlus";
@@ -10,20 +10,21 @@ import { AccentColor } from "./components";
 // import { accentColorBase } from "./components/utils";
 
 type AccordionItemProps = {
-  title: string;
-  text?: string;
+  title: string | ReactNode;
+  text?: string | ReactNode;
   renderText?: () => string | React.ReactNode;
   useItsOwnState?: boolean;
 };
 
 type AccordionProps = {
-  title: string;
-  text?: string;
+  title: string | ReactNode;
+  text?: string | ReactNode;
   renderText?: () => string | React.ReactNode;
   isActive?: boolean;
   onClick: (title: string) => void;
   useItsOwnState?: boolean;
   accentColor: AccentColor;
+  id: string;
 };
 
 const AccordionItem: React.FC<AccordionProps> = (props) => {
@@ -34,16 +35,16 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
     ? (textRef.current?.firstChild as HTMLSpanElement)?.scrollHeight
     : 0 + "px";
   // const accent = accentColorBase[props.accentColor].main;
-  const handleClick = (title: string) => {
+  const handleClick = (id: string) => {
     if (props.useItsOwnState) setActive((st) => !st);
-    else props.onClick(title);
+    else props.onClick(id);
   };
   return (
     <Box
-      key={props.title}
+      key={props.id}
       width={"100%"}
       p={"1rem"}
-      onClick={() => handleClick(props.title)}
+      onClick={() => handleClick(props.id)}
       sx={{
         backgroundColor: "background.paper",
         "& + &": {
@@ -125,7 +126,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
 export type AccordionSectionProps = {
   title: string;
   renderTitle?: (color: string, transition: string) => string | React.ReactNode;
-  description: string;
+  description: string | ReactNode;
   firstColumnData: AccordionItemProps[];
   secondColumnData: AccordionItemProps[];
   accentColor?: AccentColor;
@@ -146,10 +147,10 @@ export const AccordionsSectionV2: React.FC<AccordionSectionProps> =
       const [activeAccordionTitle, setActiveAccordionTitle] = useState<
         null | string
       >(null);
-      const handleAccordionItemClick = (title: string) => {
+      const handleAccordionItemClick = (id: string) => {
         setActiveAccordionTitle((st) => {
-          if (st === title) return null;
-          return title;
+          if (st === id) return null;
+          return id;
         });
       };
 
@@ -173,7 +174,7 @@ export const AccordionsSectionV2: React.FC<AccordionSectionProps> =
               title={title}
               renderTitle={renderTitle}
               sx={{ fontSize: { xs: "32px", sm: "42px" } }}
-              wrapperSx={{ marginBottom: { xs: "40px", sm: "50px" } }}
+              // wrapperSx={{ marginBottom: { xs: "40px", sm: "50px" } }}
               centered
               description={description}
               descriptionSx={{
@@ -205,11 +206,12 @@ export const AccordionsSectionV2: React.FC<AccordionSectionProps> =
               flexDirection={"column"}
               justifyContent={"flex-start"}
             >
-              {firstColumnData.map((i) => (
+              {firstColumnData.map((i, idx) => (
                 <AccordionItem
-                  key={i.title}
+                  id={`l-${idx}`}
+                  key={`l-${idx}`}
                   {...i}
-                  isActive={i.title === activeAccordionTitle}
+                  isActive={`l-${idx}` === activeAccordionTitle}
                   onClick={handleAccordionItemClick}
                   accentColor={accentColor}
                 />
@@ -221,11 +223,12 @@ export const AccordionsSectionV2: React.FC<AccordionSectionProps> =
               flexDirection={"column"}
               justifyContent={"flex-start"}
             >
-              {secondColumnData.map((i) => (
+              {secondColumnData.map((i, idx) => (
                 <AccordionItem
-                  key={i.title}
+                  id={`r-${idx}`}
+                  key={`r-${idx}`}
                   {...i}
-                  isActive={i.title === activeAccordionTitle}
+                  isActive={`r-${idx}` === activeAccordionTitle}
                   onClick={handleAccordionItemClick}
                   accentColor={accentColor}
                 />

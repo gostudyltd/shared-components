@@ -11,7 +11,7 @@ export type SectionTitleProps = {
   renderTitle?: (color: string, transition: string) => string | React.ReactNode;
   preTitle?: string;
   preTitleWrapperSx?: SxProps;
-  description?: string;
+  description?: string | ReactNode;
   renderDescription?: (
     color: string,
     transition: string

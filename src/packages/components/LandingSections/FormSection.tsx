@@ -21,7 +21,7 @@ export type FormSectionProps = {
   title?: string | React.ReactNode;
   renderTitle?: (color: string) => string | React.ReactNode;
   formTranslations: HubspotFormTranslations;
-  description: string;
+  description: string | React.ReactNode;
   nodeRef?: MutableRefObject<HTMLDivElement | null>;
   accentColor?: AccentColor;
   hubspotConfig: {

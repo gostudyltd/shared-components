@@ -187,6 +187,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                 sx={{
                   marginBottom: { xs: "2em", sm: "3em" },
                   "& p": { margin: 0 },
+                  "& h2": { marginBottom: { xs: "2rem", sm: "3rem" } },
                 }}
               >
                 {preTitle && (
