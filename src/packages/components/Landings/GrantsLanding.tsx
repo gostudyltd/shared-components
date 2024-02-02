@@ -27,6 +27,7 @@ import { FourthSectionBg } from "../LandingSections/images/lines/FourthSectionBg
 import { ThirdSectionCardBg } from "../LandingSections/images/lines/ThirdSectionCardBg";
 import { BurstStar } from "../Icons/BurstStar";
 import { FreeDesk } from "../LandingSections/images/lines/Free_desk";
+import { SeventhSectionMobileBg } from "../LandingSections/images/lines/SeventhSectionMobileBg";
 
 interface Props {
   lang: "ru" | "uk" | "en" | "vi";
@@ -104,7 +105,7 @@ export const GrantsLanding: React.FC<Props> = ({
                       sx={{
                         position: "absolute",
                         right: { xs: "-32px", sm: "-34px" },
-                        top: { xs: "unset", sm: "-2px" },
+                        top: { xs: "-13px", sm: "-9px" },
                       }}
                     />
                     successful
@@ -113,7 +114,8 @@ export const GrantsLanding: React.FC<Props> = ({
                         position: "absolute",
                         right: 0,
                         bottom: "-6px",
-                        width: "90%",
+                        width: lang === "uk" || lang === "ru" ? "90%" : "100%",
+                        "& path": { strokeWidth: "7px" },
                       }}
                     />
                   </Box>
@@ -143,7 +145,7 @@ export const GrantsLanding: React.FC<Props> = ({
                         position: "absolute",
                         right: 0,
                         bottom: "-9px",
-                        width: "90%",
+                        width: lang === "uk" || lang === "ru" ? "90%" : "100%",
                       }}
                     />
                   </Box>{" "}
@@ -158,8 +160,8 @@ export const GrantsLanding: React.FC<Props> = ({
                     <FirstDecoration
                       sx={{
                         position: "absolute",
-                        right: { xs: "-32px", sm: "-34px" },
-                        top: { xs: "unset", sm: "-2px" },
+                        right: { xs: "-31px", sm: "-33px" },
+                        top: { xs: "-3px", sm: "8px" },
                       }}
                     />
                     успешное
@@ -168,7 +170,8 @@ export const GrantsLanding: React.FC<Props> = ({
                         position: "absolute",
                         right: 0,
                         bottom: "-6px",
-                        width: "90%",
+                        width: lang === "uk" || lang === "ru" ? "90%" : "100%",
+                        "& path": { strokeWidth: "7px" },
                       }}
                     />
                   </Box>
@@ -184,8 +187,8 @@ export const GrantsLanding: React.FC<Props> = ({
                     <FirstDecoration
                       sx={{
                         position: "absolute",
-                        right: { xs: "-32px", sm: "-34px" },
-                        top: { xs: "unset", sm: "-2px" },
+                        right: { xs: "-31px", sm: "-33px" },
+                        top: { xs: "-3px", sm: "8px" },
                       }}
                     />
                     успішне
@@ -194,7 +197,8 @@ export const GrantsLanding: React.FC<Props> = ({
                         position: "absolute",
                         right: 0,
                         bottom: "-6px",
-                        width: "90%",
+                        width: lang === "uk" || lang === "ru" ? "90%" : "100%",
+                        "& path": { strokeWidth: "8px" },
                       }}
                     />
                   </Box>
@@ -619,9 +623,19 @@ export const GrantsLanding: React.FC<Props> = ({
                 <FirstUnderline
                   sx={{
                     position: "absolute",
-                    bottom: "-6px",
+                    bottom: lang === "vi" ? "-12px" : "-6px",
                     left: "0",
                     width: "100%",
+                    "& path": {
+                      strokeWidth:
+                        lang === "uk"
+                          ? "9px"
+                          : lang === "vi"
+                          ? "8px"
+                          : lang === "en"
+                          ? "9px"
+                          : "7px",
+                    },
                   }}
                 />
               </Box>{" "}
@@ -817,7 +831,7 @@ export const GrantsLanding: React.FC<Props> = ({
               359,
               {
                 position: "absolute",
-                bottom: "-4px",
+                bottom: "0",
                 right: "0",
                 display: { xs: "none", sm: "block" },
                 zIndex: "2",
@@ -832,7 +846,7 @@ export const GrantsLanding: React.FC<Props> = ({
               359,
               {
                 position: "absolute",
-                bottom: "-4px",
+                bottom: "0",
                 right: "0",
                 display: { xs: "block", sm: "none" },
                 zIndex: "2",
@@ -1075,6 +1089,14 @@ export const GrantsLanding: React.FC<Props> = ({
                           bottom: "-6px",
                           left: "0",
                           width: "100%",
+                          "& path": {
+                            strokeWidth:
+                              lang === "uk"
+                                ? "7px"
+                                : lang === "vi"
+                                ? "17px"
+                                : "10px",
+                          },
                         }}
                       />
                     </Box>{" "}
@@ -1089,6 +1111,12 @@ export const GrantsLanding: React.FC<Props> = ({
                         color: "rgba(255, 109, 0, 1)",
                         "& path": {
                           stroke: "rgba(255, 109, 0, 1)",
+                          strokeWidth:
+                            lang === "uk"
+                              ? "7px"
+                              : lang === "vi"
+                              ? "17px"
+                              : "10px",
                         },
                       }}
                     >
@@ -1123,6 +1151,14 @@ export const GrantsLanding: React.FC<Props> = ({
                           bottom: "-6px",
                           left: "0",
                           width: "100%",
+                          "& path": {
+                            strokeWidth:
+                              lang === "uk"
+                                ? "7px"
+                                : lang === "vi"
+                                ? "17px"
+                                : "10px",
+                          },
                         }}
                       />
                     </Box>{" "}
@@ -1147,6 +1183,14 @@ export const GrantsLanding: React.FC<Props> = ({
                           bottom: "-6px",
                           left: "0",
                           width: "100%",
+                          "& path": {
+                            strokeWidth:
+                              lang === "uk"
+                                ? "7px"
+                                : lang === "vi"
+                                ? "17px"
+                                : "10px",
+                          },
                         }}
                       />
                     </Box>{" "}
@@ -1238,7 +1282,11 @@ export const GrantsLanding: React.FC<Props> = ({
                           For middle and high school students considering
                           studying abroad.
                         </>,
-                        "Dành cho học sinh trung học và phổ thông có ý định học tập ở nước ngoài.",
+                        <>
+                          D&agrave;nh cho học sinh trung học v&agrave;&nbsp;phổ
+                          th&ocirc;ng c&oacute;&nbsp;&yacute;&nbsp;định học tập
+                          ở nước ngo&agrave;i.
+                        </>,
                         <>
                           Для ребят средней и&nbsp;старшей школы,
                           кто&nbsp;рассматривает вариант учебы за&nbsp;границей
@@ -1299,7 +1347,12 @@ export const GrantsLanding: React.FC<Props> = ({
                           to&nbsp;continue their education and enroll
                           in&nbsp;a&nbsp;master&rsquo;s program.
                         </>,
-                        "Dành cho những người tốt nghiệp cấp bằng cử nhân có kế hoạch tiếp tục học tập và nhập học vào chương trình thạc sĩ.",
+                        <>
+                          D&agrave;nh cho những người tốt nghiệp cấp bằng cử
+                          nh&acirc;n c&oacute;&nbsp;kế hoạch tiếp tục học tập
+                          v&agrave;&nbsp;nhập học v&agrave;o chương tr&igrave;nh
+                          thạc sĩ.
+                        </>,
                         <>
                           Выпускникам бакалавриата, кто&nbsp;собирается
                           продолжить обучение и&nbsp;поступить
@@ -1374,7 +1427,13 @@ export const GrantsLanding: React.FC<Props> = ({
                           For those planning to&nbsp;build a&nbsp;successful
                           career not only in&nbsp;Europe but also worldwide.
                         </>,
-                        "Dành cho những người có kế hoạch xây dựng sự nghiệp thành công không chỉ tại Châu Âu mà còn trên toàn thế giới.",
+                        <>
+                          D&agrave;nh cho những người c&oacute;&nbsp;kế hoạch
+                          x&acirc;y dựng sự nghiệp th&agrave;nh c&ocirc;ng
+                          kh&ocirc;ng chỉ tại Ch&acirc;u
+                          &Acirc;u&nbsp;m&agrave;&nbsp;c&ograve;n tr&ecirc;n
+                          to&agrave;n thế giới.
+                        </>,
                         <>
                           Для тех, кто планирует построить успешную карьеру
                           не&nbsp;только в&nbsp;Европе,
@@ -1444,8 +1503,9 @@ export const GrantsLanding: React.FC<Props> = ({
                       sx={{
                         position: "absolute",
                         right: 0,
-                        bottom: "-6px",
+                        bottom: "-11px",
                         width: "100%",
+                        "& path": { strokeWidth: "8px" },
                       }}
                     />
                   </Box>
@@ -1475,8 +1535,9 @@ export const GrantsLanding: React.FC<Props> = ({
                       sx={{
                         position: "absolute",
                         right: 0,
-                        bottom: "-6px",
+                        bottom: "-11px",
                         width: "100%",
+                        "& path": { strokeWidth: "8px" },
                       }}
                     />
                   </Box>
@@ -1494,8 +1555,8 @@ export const GrantsLanding: React.FC<Props> = ({
                     <FirstDecoration
                       sx={{
                         position: "absolute",
-                        right: { xs: "-32px", sm: "-34px" },
-                        top: { xs: "unset", sm: "-2px" },
+                        right: { xs: "-33px", sm: "-36px" },
+                        top: { xs: "-12px", sm: "-12px" },
                       }}
                     />
                     Академии
@@ -1505,6 +1566,7 @@ export const GrantsLanding: React.FC<Props> = ({
                         right: 0,
                         bottom: "-6px",
                         width: "100%",
+                        "& path": { strokeWidth: "7px" },
                       }}
                     />
                   </Box>
@@ -1522,8 +1584,8 @@ export const GrantsLanding: React.FC<Props> = ({
                     <FirstDecoration
                       sx={{
                         position: "absolute",
-                        right: { xs: "-32px", sm: "-34px" },
-                        top: { xs: "unset", sm: "-2px" },
+                        right: { xs: "-33px", sm: "-36px" },
+                        top: { xs: "-12px", sm: "-12px" },
                       }}
                     />
                     Академії
@@ -1533,6 +1595,7 @@ export const GrantsLanding: React.FC<Props> = ({
                         right: 0,
                         bottom: "-6px",
                         width: "100%",
+                        "& path": { strokeWidth: "8px" },
                       }}
                     />
                   </Box>
@@ -2028,13 +2091,21 @@ export const GrantsLanding: React.FC<Props> = ({
           }}
         >
           <SixthSectionDecoration1
-            sx={{ position: "absolute", top: "-12px", right: "-18px" }}
+            sx={{
+              position: "absolute",
+              top: { xs: "-18px", sm: "-33px" },
+              right: { xs: "-25px", sm: "-38px" },
+              width: { xs: "74px", sm: "114px" },
+              height: { xs: "67px", sm: "103px" },
+            }}
           />
           <SixthSectionDecoration2
             sx={{
               position: "absolute",
-              bottom: { xs: "-12px", sm: "15%" },
-              left: { xs: "-15px", sm: "-24px" },
+              bottom: { xs: "-8px", sm: "12%" },
+              left: { xs: "-20px", sm: "-31px" },
+              width: { xs: "57.81px", sm: "83px" },
+              height: { xs: "32.37px", sm: "53px" },
             }}
           />
           {getPicture(
@@ -2067,10 +2138,30 @@ export const GrantsLanding: React.FC<Props> = ({
               }}
             >
               {getTranslatedText(
-                <>Regular grant giveaways among Academy students 🏆</>,
-                <>Phát quà định kỳ giữa sinh viên Học viện 🏆</>,
-                <>Регулярные розыгрыши грантов среди студентов Академии 🏆</>,
-                <>Регулярні розіграші грантів серед студентів Академії 🏆</>
+                <>
+                  <span style={{ color: "rgba(255, 255, 0, 1)" }}>
+                    Regular grant giveaways
+                  </span>{" "}
+                  among Academy students 🏆
+                </>,
+                <>
+                  <span style={{ color: "rgba(255, 255, 0, 1)" }}>
+                    Phát quà định kỳ
+                  </span>{" "}
+                  giữa sinh viên Học viện 🏆
+                </>,
+                <>
+                  <span style={{ color: "rgba(255, 255, 0, 1)" }}>
+                    Регулярные розыгрыши
+                  </span>{" "}
+                  грантов среди студентов Академии 🏆
+                </>,
+                <>
+                  <span style={{ color: "rgba(255, 255, 0, 1)" }}>
+                    Регулярні розіграші
+                  </span>{" "}
+                  грантів серед студентів Академії 🏆
+                </>
               )}
             </Typography>
             <Stack gap={{ xs: "12px", sm: "16px" }}>
@@ -2195,6 +2286,7 @@ export const GrantsLanding: React.FC<Props> = ({
       >
         <SeventhSectionBg
           sx={{
+            display: { xs: "none", sm: "block" },
             position: "absolute",
             width: "100%",
             height: "unset",
@@ -2203,6 +2295,15 @@ export const GrantsLanding: React.FC<Props> = ({
               xs: "translateY(-50%) rotate(90deg)",
               sm: "translateY(-50%)",
             },
+          }}
+        />
+        <SeventhSectionMobileBg
+          sx={{
+            display: { xs: "block", sm: "none" },
+            position: "absolute",
+            width: "100%",
+            height: "unset",
+            top: 0,
           }}
         />
         <SectionContainer
@@ -2254,6 +2355,7 @@ export const GrantsLanding: React.FC<Props> = ({
                           bottom: "-6px",
                           left: "0",
                           width: "100%",
+                          "& path": { strokeWidth: "6px" },
                         }}
                       />
                     </Box>
@@ -2320,9 +2422,10 @@ export const GrantsLanding: React.FC<Props> = ({
                       <FirstUnderline
                         sx={{
                           position: "absolute",
-                          bottom: "-6px",
+                          bottom: "-11px",
                           left: "0",
                           width: "100%",
+                          "& path": { strokeWidth: "7px" },
                         }}
                       />
                     </Box>
@@ -2342,7 +2445,7 @@ export const GrantsLanding: React.FC<Props> = ({
               position: "absolute",
               width: { xs: "37px", sm: "51px" },
               height: { xs: "37px", sm: "51px" },
-              top: { xs: "14%", sm: "24%" },
+              top: { xs: lang === "vi" ? " 16%" : "14%", sm: "24%" },
               left: { xs: "3%", sm: "3%" },
               zIndex: "0",
               "& path": { fill: "rgba(41, 98, 255, 1)" },
@@ -2618,8 +2721,20 @@ export const GrantsLanding: React.FC<Props> = ({
             ? {
                 language: "ru",
                 content: {
-                  acceptTerms:
-                    "* Нажимая кнопку, вы принимаете условия политики и пользовательского соглашения",
+                  acceptTerms: (
+                    <Box
+                      sx={{
+                        fontFamily: montserratFamily,
+                        lineHeight: { xs: "14.4px", sm: "20.02px" },
+                        letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
+                        fontSize: { xs: "12px", sm: "14" },
+                        textAlign: "center",
+                      }}
+                    >
+                      нажимая на&nbsp;кнопку, вы&nbsp;принимаете условия
+                      политики и&nbsp;пользовательского соглашения
+                    </Box>
+                  ),
                   formSubmitted: (
                     <>
                       Форма успешно отправлена!
@@ -2633,8 +2748,20 @@ export const GrantsLanding: React.FC<Props> = ({
             ? {
                 language: "uk",
                 content: {
-                  acceptTerms:
-                    "* Натискаючи кнопку, ви приймаєте умови політики та угоди користувача",
+                  acceptTerms: (
+                    <Box
+                      sx={{
+                        fontFamily: montserratFamily,
+                        lineHeight: { xs: "14.4px", sm: "20.02px" },
+                        letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
+                        fontSize: { xs: "12px", sm: "14" },
+                        textAlign: "center",
+                      }}
+                    >
+                      Натискаючи кнопку, ви&nbsp;приймаєте умови політики
+                      та&nbsp;угоди користувача
+                    </Box>
+                  ),
                   formSubmitted: (
                     <>
                       Форму успішно відправлено!
@@ -2648,8 +2775,22 @@ export const GrantsLanding: React.FC<Props> = ({
             ? {
                 language: "vi",
                 content: {
-                  acceptTerms:
-                    "* Bằng cách nhấn nút, bạn chấp nhận chính sách của tâm trí và làm hài lòng kristuvach",
+                  acceptTerms: (
+                    <Box
+                      sx={{
+                        fontFamily: montserratFamily,
+                        lineHeight: { xs: "14.4px", sm: "20.02px" },
+                        letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
+                        fontSize: { xs: "12px", sm: "14" },
+                        textAlign: "center",
+                      }}
+                    >
+                      Bằng c&aacute;ch nhấn n&uacute;t, bạn chấp nhận
+                      ch&iacute;nh s&aacute;ch của t&acirc;m tr&iacute;
+                      v&agrave;&nbsp;l&agrave;m h&agrave;i l&ograve;ng
+                      kristuvach
+                    </Box>
+                  ),
                   formSubmitted: (
                     <>
                       Biểu mẫu đã được gửi thành công!
@@ -2662,8 +2803,20 @@ export const GrantsLanding: React.FC<Props> = ({
             : {
                 language: "en",
                 content: {
-                  acceptTerms:
-                    "* By clicking the button, you accept the terms of the policy and user agreement",
+                  acceptTerms: (
+                    <Box
+                      sx={{
+                        fontFamily: montserratFamily,
+                        lineHeight: { xs: "14.4px", sm: "20.02px" },
+                        letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
+                        fontSize: { xs: "12px", sm: "14" },
+                        textAlign: "center",
+                      }}
+                    >
+                      By&nbsp;clicking the button, you accept the terms
+                      of&nbsp;the policy and user agreement
+                    </Box>
+                  ),
                   formSubmitted: (
                     <>
                       The form has been successfully submitted!
@@ -2692,9 +2845,9 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{
                   position: "absolute",
                   right: 0,
-                  bottom: "-6px",
+                  bottom: "-8px",
                   width: "100%",
-                  "& path": { strokeWidth: "11px" },
+                  "& path": { strokeWidth: "16px" },
                 }}
               />
             </Box>

@@ -16,6 +16,7 @@ import { iconBase } from "./icons";
 import { CdnImage } from "../../types/components";
 import { ImageWithColorizedBorder } from "./ImageWithColorizedBorder";
 import { Button } from "@mui/material";
+import { ReactComponent as Chevron } from "./images/Alt_Arrow_Down.svg";
 
 const animationSpeed = 10; // sec
 const animationDelay = 2; //sec
@@ -113,15 +114,21 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         <Stack
           alignItems={"center"}
           justifyContent={"center"}
-          borderRadius={"0.5rem"}
           flexShrink={"0"}
           sx={{
             marginRight: { xs: ".75rem", sm: "1rem" },
             width: { xs: "2.25rem", sm: "2.5rem" },
             height: { xs: "2.25rem", sm: "2.5rem" },
+            borderRadius: "12px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             // backgroundColor: isActive ? accent.secondary : "inherit",
             backgroundColor: isActive ? "rgba(41, 98, 255, 1)" : "inherit",
             transition: "background-color .2s linear",
+            border: isActive
+              ? "1.4px solid transparent"
+              : "1.4px solid rgba(130, 177, 255, 1)",
 
             "& > svg > path": {
               // fill: accent.main,
@@ -129,7 +136,20 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             },
           }}
         >
-          {iconBase[`step${data.idx + 1}` as keyof typeof iconBase]}
+          <Typography
+            component={"p"}
+            sx={{
+              fontFamily: montserratFamily,
+              fontSize: { xs: "20px", sm: "20px" },
+              lineHeight: { xs: "20px", sm: "20px" },
+              letterSpacing: { xs: "-1.5px", sm: "-1.5px" },
+              textAlign: "center",
+              color: isActive ? "#FFFFFF" : "rgba(41, 98, 255, 1)",
+            }}
+          >
+            {data.idx + 1}
+          </Typography>
+          {/* {iconBase[`step${data.idx + 1}` as keyof typeof iconBase]} */}
         </Stack>
         <Typography
           display={"flex"}
@@ -140,9 +160,19 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             fontSize: { xs: "1rem", sm: "1.125rem" },
             lineHeight: "1.42",
             fontWeight: "600",
+            width: "100%",
+            justifyContent: "space-between",
           }}
         >
           {data.title}
+          <Chevron
+            style={{
+              width: "24px",
+              height: "24px",
+              transition: "all .2s linear",
+              transform: isActive ? "none" : "rotate(180deg)",
+            }}
+          />
         </Typography>
       </Stack>
       <Stack ref={descriptionRef}>

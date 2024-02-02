@@ -8,7 +8,8 @@ import {
 } from "./components/SectionHubspotForm";
 import { withCustomTheme } from "../hoc/withCustomTheme";
 import { HubspotProvider } from "@aaronhayes/react-use-hubspot-form";
-import { ReactComponent as Bg } from "./images/background.svg";
+// import { ReactComponent as Bg } from "./images/background.svg";
+import { Background } from "./images/background";
 
 export type FormFields = {
   email: string;
@@ -73,15 +74,19 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
             overflow: "hidden",
           }}
         >
-          <Bg
-            style={{
-              position: "absolute",
-              right: "0",
-              bottom: "0",
-              height: "100%",
-              zIndex: "0",
-            }}
-          />
+          {bgColor && (
+            <Background
+              sx={{
+                position: "absolute",
+                right: "0",
+                bottom: "0",
+                height: { xs: "389px", sm: "100%" },
+                width: { xs: "402px", sm: "704px" },
+                transform: { xs: "rotate(356deg)", sm: "none" },
+                zIndex: "0",
+              }}
+            />
+          )}
           <Stack
             gap={{ xs: "1em", sm: "1.5em" }}
             textAlign={{ xs: "center", sm: "left" }}
