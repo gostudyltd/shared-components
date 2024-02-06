@@ -216,7 +216,7 @@ export const GrantsLanding: React.FC<Props> = ({
                 letterSpacing: "-0.5px",
                 fontFamily: montserratFamily,
                 fontWeight: 500,
-                fontSize: { xs: "14px", sm: "16px" },
+                fontSize: { xs: "16px", sm: "18px" },
                 lineHeight: { xs: "20.02px", sm: "22.88px" },
                 display: "flex",
                 flexDirection: "column",
@@ -758,7 +758,7 @@ export const GrantsLanding: React.FC<Props> = ({
             >
               <Typography
                 fontSize={{ xs: "16px", sm: "18px" }}
-                lineHeight={{ xs: "19.2px", sm: "21.6px" }}
+                lineHeight={{ xs: "19.2px", sm: "20.6px" }}
                 fontFamily={montserratFamily}
                 fontWeight={500}
                 color={"rgba(13, 71, 161, 1)"}
@@ -970,7 +970,7 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 <Typography
                   fontSize={{ xs: "16px", sm: "18px" }}
-                  lineHeight={{ xs: "19.2px", sm: "21.6px" }}
+                  lineHeight={{ xs: "19.2px", sm: "20.6px" }}
                   fontFamily={montserratFamily}
                   fontWeight={500}
                   color={"rgba(27, 94, 32, 1)"}
@@ -1054,7 +1054,7 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 <Typography
                   fontSize={{ xs: "16px", sm: "18px" }}
-                  lineHeight={{ xs: "19.2px", sm: "21.6px" }}
+                  lineHeight={{ xs: "19.2px", sm: "20.6px" }}
                   fontFamily={montserratFamily}
                   fontWeight={500}
                   color={"rgba(230, 81, 0, 1)"}
@@ -2229,6 +2229,13 @@ export const GrantsLanding: React.FC<Props> = ({
               borderRadius: { xs: "20px", sm: "22px" },
               mx: { xs: "auto", sm: 0 },
               position: { xs: "static", sm: "absolute" },
+              top:
+                lang === "en" || lang === "vi"
+                  ? "-76px"
+                  : // : lang === "uk"
+                    "-45px",
+              // ? "-45px"
+              // : "0",
             }
           )}
           <Stack gap={"32px"}>
