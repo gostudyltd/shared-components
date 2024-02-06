@@ -907,7 +907,7 @@ export const GrantsLanding: React.FC<Props> = ({
               null,
               {
                 position: "absolute",
-                bottom: "-4px",
+                bottom: lang === "ru" || lang === "uk" ? "0px" : "-6px",
                 right: "0",
                 display: { xs: "none", sm: "block" },
                 zIndex: "2",
@@ -922,7 +922,7 @@ export const GrantsLanding: React.FC<Props> = ({
               null,
               {
                 position: "absolute",
-                bottom: "-4px",
+                bottom: lang === "ru" || lang === "uk" ? "0px" : "-6px",
                 right: "0",
                 display: { xs: "block", sm: "none" },
                 zIndex: "2",
@@ -2842,7 +2842,7 @@ export const GrantsLanding: React.FC<Props> = ({
                         fontFamily: montserratFamily,
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
-                        fontSize: { xs: "12px", sm: "14" },
+                        fontSize: { xs: "12px", sm: "14px" },
                         textAlign: "center",
                       }}
                     >
