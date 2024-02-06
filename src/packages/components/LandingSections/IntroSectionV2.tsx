@@ -40,13 +40,19 @@ export type IntroSectionPropsV2 = {
 
   accentColor?: AccentColor;
   bottomListData?: HorizontalListWithSeparatorProps["data"];
-  info: { text: string; color?: string; bgColor?: string }[];
+  info: {
+    text: string;
+    color?: string;
+    bgColor?: string;
+    sx?: SxProps;
+    textSx?: SxProps;
+  }[];
   secondColumn?: ReactNode;
 };
 
 type ImageProps = {
-  imageSrc: CdnImage & { sx?: SxProps };
-  mobileImageSrc?: CdnImage & { sx?: SxProps };
+  imageSrc: CdnImage & { sx?: SxProps; pictureSx?: SxProps };
+  mobileImageSrc?: CdnImage & { sx?: SxProps; pictureSx?: SxProps };
 };
 
 export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
@@ -63,6 +69,7 @@ export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
             mx: "auto",
             width: "100%",
             display: { xs: "none", sm: "block" },
+            ...imageSrc.pictureSx,
           },
           {
             maxWidth: imageSrc.width,
@@ -81,6 +88,7 @@ export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
             mx: "auto",
             width: "100%",
             display: { xs: "block", sm: "none" },
+            ...mobileImageSrc.pictureSx,
           },
           {
             maxWidth: "375px",
@@ -97,7 +105,7 @@ export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
     imageSrc.src,
     imageSrc.width,
     imageSrc.height,
-    { maxWidth: "588px", mx: "auto", width: "100%" },
+    { maxWidth: "588px", mx: "auto", width: "100%", ...imageSrc.pictureSx },
     { maxWidth: "588px", mx: "auto", width: "100%", ...imageSrc.sx }
   );
 });
@@ -168,6 +176,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                         backgroundColor:
                           item.bgColor ?? "rgba(86, 139, 255, 1)",
                         borderRadius: "100px",
+                        ...item.sx,
                       }}
                     >
                       <Typography
@@ -175,6 +184,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
                         fontFamily={montserratFamily}
                         fontSize={{ xs: "12px", sm: "14px" }}
                         fontWeight={600}
+                        sx={item.textSx}
                       >
                         {item.text}
                       </Typography>

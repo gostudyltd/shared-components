@@ -69,7 +69,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
             my: { xs: "3em", sm: "6.25em" },
             padding: { xs: "1.25em", sm: "2.5em" },
             background: bgColor ?? getBackgroundByAccentColor(accentColor),
-            borderRadius: "2em",
+            borderRadius: bgColor ? { xs: "24px", sm: "40px" } : "2em",
             position: "relative",
             overflow: "hidden",
           }}

@@ -8,6 +8,13 @@
 import React from 'react'
 
 import {ReactComponent as MagicStick2} from '../../../icons/one-tone/magic-stick-2.svg'
+import {ReactComponent as Point1} from '../../../icons/one-tone/point1.svg'
+import {ReactComponent as Point2} from '../../../icons/one-tone/point2.svg'
+import {ReactComponent as Point3} from '../../../icons/one-tone/point3.svg'
+import {ReactComponent as Point4} from '../../../icons/one-tone/point4.svg'
+import {ReactComponent as Point5} from '../../../icons/one-tone/point5.svg'
+import {ReactComponent as Point6} from '../../../icons/one-tone/point6.svg'
+import {ReactComponent as Point7} from '../../../icons/one-tone/point7.svg'
 import {ReactComponent as Step1} from '../../../icons/one-tone/step1.svg'
 import {ReactComponent as Step2} from '../../../icons/one-tone/step2.svg'
 import {ReactComponent as Step3} from '../../../icons/one-tone/step3.svg'
@@ -42,6 +49,13 @@ import {ReactComponent as WaterSunTwoTone} from '../../../icons/two-tone/water-s
 
 export const iconBase = {
   magicStick2: <MagicStick2 />,
+  point1: <Point1 />,
+  point2: <Point2 />,
+  point3: <Point3 />,
+  point4: <Point4 />,
+  point5: <Point5 />,
+  point6: <Point6 />,
+  point7: <Point7 />,
   step1: <Step1 />,
   step2: <Step2 />,
   step3: <Step3 />,

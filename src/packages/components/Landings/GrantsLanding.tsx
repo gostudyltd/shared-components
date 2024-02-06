@@ -28,6 +28,7 @@ import { ThirdSectionCardBg } from "../LandingSections/images/lines/ThirdSection
 import { BurstStar } from "../Icons/BurstStar";
 import { FreeDesk } from "../LandingSections/images/lines/Free_desk";
 import { SeventhSectionMobileBg } from "../LandingSections/images/lines/SeventhSectionMobileBg";
+import { FourthSectionMobileBg } from "../LandingSections/images/lines/FourthSectionMobileBg";
 
 interface Props {
   lang: "ru" | "uk" | "en" | "vi";
@@ -211,97 +212,137 @@ export const GrantsLanding: React.FC<Props> = ({
           description={
             <Box
               sx={{
-                fontSize: "1.125rem",
                 color: "text.secondary",
                 letterSpacing: "-0.5px",
                 fontFamily: montserratFamily,
                 fontWeight: 500,
-                lineHeight: "142%",
+                fontSize: { xs: "14px", sm: "16px" },
+                lineHeight: { xs: "20.02px", sm: "22.88px" },
+                display: "flex",
+                flexDirection: "column",
+                gap: "2px",
               }}
             >
               <Box
                 sx={{
-                  "& svg": {
-                    marginRight: "10px",
-                  },
                   "& path": {
                     fill: "rgba(41, 98, 255, 1)",
                   },
                 }}
               >
-                <BurstPucker />
-                {getTranslatedText(
-                  <>
-                    Enroll in&nbsp;the GoStudy Academy{" "}
-                    <strong>for free!</strong>
-                  </>,
-                  <>
-                    Đăng ký Học viện GoStudy <strong>miễn phí</strong>
-                  </>,
-                  <>
-                    Поступи в&nbsp;Академию GoStudy <strong>бесплатно!</strong>
-                  </>,
-                  <>
-                    Вступи до&nbsp;Академії GoStudy{" "}
-                    <strong>безкоштовно!</strong>
-                  </>
-                )}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "10px",
+                  }}
+                >
+                  <BurstPucker
+                    sx={{
+                      width: { xs: "15px", sm: "20px" },
+                      height: { xs: "15px", sm: "20px" },
+                      flexShrink: "0",
+                    }}
+                  />
+                  {getTranslatedText(
+                    <span>
+                      Enroll in&nbsp;the GoStudy Academy{" "}
+                      <strong>for free!</strong>
+                    </span>,
+                    <span>
+                      Đăng ký Học viện GoStudy <strong>miễn phí</strong>
+                    </span>,
+                    <span>
+                      Поступи в&nbsp;Академию GoStudy{" "}
+                      <strong>бесплатно!</strong>
+                    </span>,
+                    <span>
+                      Вступи до&nbsp;Академії GoStudy{" "}
+                      <strong>безкоштовно!</strong>
+                    </span>
+                  )}
+                </Box>
               </Box>
 
               <Box
                 sx={{
-                  "& svg": {
-                    marginRight: "10px",
-                  },
                   "& path": {
                     fill: "rgba(41, 98, 255, 1)",
                   },
                 }}
               >
-                <BurstPucker />
-                {getTranslatedText(
-                  <>
-                    Discover everything about education and life in&nbsp;Europe
-                  </>,
-                  <>Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu</>,
-                  <>Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе</>,
-                  <>Дізнайся все про освіту та&nbsp;життя в&nbsp;Європі</>
-                )}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "10px",
+                  }}
+                >
+                  <BurstPucker
+                    sx={{
+                      width: { xs: "15px", sm: "20px" },
+                      height: { xs: "15px", sm: "20px" },
+                      flexShrink: "0",
+                    }}
+                  />
+                  {getTranslatedText(
+                    <>
+                      Discover everything about education and life
+                      in&nbsp;Europe
+                    </>,
+                    <>Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu</>,
+                    <>
+                      Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе
+                    </>,
+                    <>Дізнайся все про освіту та&nbsp;життя в&nbsp;Європі</>
+                  )}
+                </Box>
               </Box>
 
               <Box
                 sx={{
-                  "& svg": {
-                    marginRight: "10px",
-                  },
                   "& path": {
                     fill: "rgba(41, 98, 255, 1)",
                   },
                 }}
               >
-                <BurstPucker />
-                {getTranslatedText(
-                  <>
-                    Get the chance to&nbsp;win a&nbsp;scholarship for studying
-                    in&nbsp;Europe, up&nbsp;to&nbsp;&euro;5700
-                  </>,
-                  <>
-                    Có cơ hội nhận học bổng để học tập tại Châu Âu,{" "}
-                    <Box
-                      component={"br"}
-                      display={{ xs: "none", sm: "block" }}
-                    />
-                    lên đến €5700
-                  </>,
-                  <>
-                    Получи возможность выиграть грант на&nbsp;обучение
-                    до&nbsp;5700&nbsp;&euro;
-                  </>,
-                  <>
-                    Отримай можливість виграти грант на&nbsp;навчання
-                    у&nbsp;Європі до&nbsp;5700&nbsp;&euro;
-                  </>
-                )}
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: "10px",
+                  }}
+                >
+                  <BurstPucker
+                    sx={{
+                      width: { xs: "15px", sm: "20px" },
+                      height: { xs: "15px", sm: "20px" },
+                      flexShrink: "0",
+                    }}
+                  />
+                  {getTranslatedText(
+                    <>
+                      Get the chance to&nbsp;win a&nbsp;scholarship for studying
+                      in&nbsp;Europe, up&nbsp;to&nbsp;&euro;5700
+                    </>,
+                    <>
+                      Có cơ hội nhận học bổng để học tập tại Châu Âu,{" "}
+                      <Box
+                        component={"br"}
+                        display={{ xs: "none", sm: "block" }}
+                      />
+                      lên đến €5700
+                    </>,
+                    <>
+                      Получи возможность выиграть грант на&nbsp;обучение
+                      до&nbsp;5700&nbsp;&euro;
+                    </>,
+                    <>
+                      Отримай можливість виграти грант на&nbsp;навчання
+                      у&nbsp;Європі до&nbsp;5700&nbsp;&euro;
+                    </>
+                  )}
+                </Box>
               </Box>
             </Box>
           }
@@ -315,6 +356,14 @@ export const GrantsLanding: React.FC<Props> = ({
               ) as string,
               bgColor: "rgba(255, 238, 88, 1)",
               color: "#000000",
+              sx: { borderRadius: { xs: "8px", sm: "8px" }, px: "16px" },
+              textSx: {
+                fontSize: { xs: "16px", sm: "16px" },
+                lineHeight: { xs: "19.2px", sm: "19.2px" },
+                letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
+                fontFamily: montserratFamily,
+                fontWeight: "600",
+              },
             },
           ]}
           image={{
@@ -340,9 +389,10 @@ export const GrantsLanding: React.FC<Props> = ({
                 lang={lang}
                 sx={{
                   position: "absolute",
-                  left: { xs: "-3%", sm: "-8%" },
-                  width: { xs: "115px", sm: "123px" },
-                  height: { xs: "115px", sm: "123px" },
+                  top: { xs: "2%", sm: "unset" },
+                  left: { xs: "-2%", sm: "-8%" },
+                  width: { xs: "95px", sm: "123px" },
+                  height: { xs: "95px", sm: "123px" },
                 }}
               />
               <Image
@@ -353,7 +403,12 @@ export const GrantsLanding: React.FC<Props> = ({
                   sx: {
                     objectFit: "contain",
                     maxWidth: "460px",
-                    width: "100%",
+                    width: { xs: "90%", sm: "100%" },
+                  },
+                  pictureSx: {
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   },
                 }}
               />
@@ -572,6 +627,7 @@ export const GrantsLanding: React.FC<Props> = ({
                     component={"p"}
                     fontFamily={montserratFamily}
                     fontSize={{ xs: "26px", sm: "30px" }}
+                    lineHeight={{ xs: "26px", sm: "30px" }}
                     fontWeight={600}
                     letterSpacing={"-2px"}
                   >
@@ -600,8 +656,9 @@ export const GrantsLanding: React.FC<Props> = ({
           renderTitle: () => (
             <Typography
               fontSize={{ xs: "32px", sm: "42px" }}
+              lineHeight={{ xs: "38.4px", sm: "42px" }}
               fontFamily={montserratFamily}
-              fontWeight={600}
+              fontWeight={700}
               letterSpacing={{ xs: "-1px", sm: "-2px" }}
             >
               <Box
@@ -650,24 +707,27 @@ export const GrantsLanding: React.FC<Props> = ({
           description: getTranslatedText(
             <>
               This is&nbsp;a&nbsp;free theory and practice course for your
-              successful future in&nbsp;Europe
+              successful future in&nbsp;Europe.
             </>,
             <>
               Đây là khóa học lý thuyết và thực hành miễn phí cho tương lai
-              thành công của bạn ở Châu Âu
+              thành công của bạn ở Châu Âu.
             </>,
             <>
               Это бесплатный курс теории и&nbsp;практики для&nbsp;твоего
-              успешного будущего в&nbsp;Европе
+              успешного будущего в&nbsp;Европе.
             </>,
             <>
               Це&nbsp;безкоштовний курс теорії та&nbsp;практики для&nbsp;твого
-              успішного майбутнього в&nbsp;Європі
+              успішного майбутнього в&nbsp;Європі.
             </>
           ) as string,
           descriptionSx: {
             fontFamily: montserratFamily,
-            letterSpacing: "-0.5px",
+            letterSpacing: { xs: "-1px", sm: "-1px" },
+            fontSize: { xs: "20px", sm: "22px" },
+            lineHeight: { xs: "26px", sm: "28.6px" },
+            fontWeight: "500",
           },
         }}
       >
@@ -697,7 +757,8 @@ export const GrantsLanding: React.FC<Props> = ({
               }}
             >
               <Typography
-                fontSize={{ xs: "16px", sm: "20px" }}
+                fontSize={{ xs: "16px", sm: "18px" }}
+                lineHeight={{ xs: "19.2px", sm: "21.6px" }}
                 fontFamily={montserratFamily}
                 fontWeight={500}
                 color={"rgba(13, 71, 161, 1)"}
@@ -707,31 +768,30 @@ export const GrantsLanding: React.FC<Props> = ({
                   gap: "8px",
                   zIndex: "2",
                   "& svg": {
-                    width: { xs: "15px", sm: "20px" },
-                    height: { xs: "15px", sm: "20px" },
+                    width: { xs: "20px", sm: "18px" },
+                    height: { xs: "20px", sm: "18px" },
                   },
                   letterSpacing: "-1px",
                 }}
               >
                 {iconBase["UserHandUpTwoTone"]}
-                <strong>
-                  {getTranslatedText(
-                    "Your choice is our priority",
-                    <>
-                      Sự lựa chọn của bạn là
-                      ưu&nbsp;tiên&nbsp;của&nbsp;chúng&nbsp;tôi
-                    </>,
-                    "Твой выбор — наш приоритет ",
-                    "Твій вибір — наш пріоритет"
-                  )}
-                </strong>
+
+                {getTranslatedText(
+                  "Your choice is our priority",
+                  <>
+                    Sự lựa chọn của bạn là
+                    ưu&nbsp;tiên&nbsp;của&nbsp;chúng&nbsp;tôi
+                  </>,
+                  "Твой выбор — наш приоритет ",
+                  "Твій вибір — наш пріоритет"
+                )}
               </Typography>
             </Box>
             <Typography
               component={"p"}
               sx={{
-                fontSize: { xs: "1rem", sm: "1.125rem" },
-                lineHeight: "1.42",
+                fontSize: { xs: "20px", sm: "24px" },
+                lineHeight: { xs: "24px", sm: "28.8px" },
                 fontFamily: montserratFamily,
                 fontWeight: 500,
                 marginBottom: { xs: "180px" },
@@ -745,18 +805,20 @@ export const GrantsLanding: React.FC<Props> = ({
                   on&nbsp;a&nbsp;country for higher education, choose
                   universities and destinations to&nbsp;apply to&nbsp;and build
                   a&nbsp;track to&nbsp;prepare for admission and start learning
+                  the language.
                 </>,
-                "Tại Học viện, bạn sẽ có thể quyết định quốc gia cho giáo dục đại học, chọn trường đại học và điểm đến để đăng ký và xây dựng",
+                "Tại Học viện, bạn sẽ có thể quyết định quốc gia cho giáo dục đại học, chọn trường đại học và điểm đến để đăng ký và xây dựng đường",
                 <>
                   В&nbsp;Академии ты&nbsp;сможешь определиться со&nbsp;страной
                   для получения высшего образования, выбрать университеты
                   и&nbsp;направления для подачи документов, построить трек
+                  подготовки к&nbsp;поступлению
                 </>,
                 <>
                   В&nbsp;Академії ти&nbsp;можеш визначитися із&nbsp;країною для
                   здобуття вищої освіти, вибрати університети та&nbsp;напрямки
                   для подання документів, побудувати трек підготовки
-                  до&nbsp;вступу
+                  до&nbsp;вступу і&nbsp;почати
                 </>
               )}
               <Box
@@ -764,10 +826,10 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{ display: { xs: "none", sm: "block" } }}
               />{" "}
               {getTranslatedText(
-                <> the language.</>,
-                " đường đi để  chuẩn bị nhập học và bắt đầu",
-                <> подготовки к&nbsp;поступлению и&nbsp;начать</>,
-                <> і&nbsp;почати вивчати мову.</>
+                <></>,
+                " đi để  chuẩn bị nhập học và bắt đầu học",
+                <> и&nbsp;начать учить язык.</>,
+                <> вивчати мову.</>
               )}
               <Box
                 component={"br"}
@@ -780,11 +842,11 @@ export const GrantsLanding: React.FC<Props> = ({
                     sx={{ display: { xs: "none", sm: "block" } }}
                   />
                 </>,
-                " học ngôn ngữ.",
-                <> учить язык.</>,
+                " ngôn ngữ.",
+                <></>,
                 <></>
               )}
-              <Box
+              {/* <Box
                 component={"br"}
                 sx={{
                   display: {
@@ -792,22 +854,36 @@ export const GrantsLanding: React.FC<Props> = ({
                     sm: "block",
                   },
                 }}
-              />
+              /> */}
               {getTranslatedText(
+                <>
+                  {/* <Box
+                    component={"br"}
+                    sx={{ display: { xs: "block", sm: "block" } }}
+                  /> */}
+                </>,
                 <>
                   <Box
                     component={"br"}
                     sx={{ display: { xs: "block", sm: "block" } }}
                   />
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "none", sm: "block" } }}
+                  />
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "none", sm: "block" } }}
+                  />
                 </>,
-                <Box
-                  component={"br"}
-                  sx={{ display: { xs: "block", sm: "block" } }}
-                />,
                 <>
                   <Box
                     component={"br"}
                     sx={{ display: { xs: "block", sm: "block" } }}
+                  />
+                  <Box
+                    component={"br"}
+                    sx={{ display: { xs: "none", sm: "block" } }}
                   />
                 </>,
                 <Box
@@ -827,11 +903,11 @@ export const GrantsLanding: React.FC<Props> = ({
             </Typography>
             {getPicture(
               `${cdnUrl}/grantsLanding/thirdSection.png`,
-              412,
-              359,
+              null,
+              null,
               {
                 position: "absolute",
-                bottom: "0",
+                bottom: "-4px",
                 right: "0",
                 display: { xs: "none", sm: "block" },
                 zIndex: "2",
@@ -842,11 +918,11 @@ export const GrantsLanding: React.FC<Props> = ({
             )}
             {getPicture(
               `${cdnUrl}/grantsLanding/thirdSection.png`,
-              412,
-              359,
+              null,
+              null,
               {
                 position: "absolute",
-                bottom: "0",
+                bottom: "-4px",
                 right: "0",
                 display: { xs: "block", sm: "none" },
                 zIndex: "2",
@@ -893,7 +969,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 }}
               >
                 <Typography
-                  fontSize={{ xs: "16px", sm: "20px" }}
+                  fontSize={{ xs: "16px", sm: "18px" }}
+                  lineHeight={{ xs: "19.2px", sm: "21.6px" }}
                   fontFamily={montserratFamily}
                   fontWeight={500}
                   color={"rgba(27, 94, 32, 1)"}
@@ -902,21 +979,20 @@ export const GrantsLanding: React.FC<Props> = ({
                     alignItems: "center",
                     gap: "8px",
                     "& svg": {
-                      width: { xs: "15px", sm: "20px" },
-                      height: { xs: "15px", sm: "20px" },
+                      width: { xs: "20px", sm: "18px" },
+                      height: { xs: "20px", sm: "18px" },
                     },
                     letterSpacing: "-1px",
                   }}
                 >
                   {iconBase["FireTwoTone"]}
-                  <strong>
-                    {getTranslatedText(
-                      "In demand",
-                      "Nhu cầu",
-                      "Востребованно",
-                      "Має попит"
-                    )}
-                  </strong>
+
+                  {getTranslatedText(
+                    "In demand",
+                    "Nhu cầu",
+                    "Востребованно",
+                    "Має попит"
+                  )}
                 </Typography>
               </Box>
               <Typography
@@ -924,8 +1000,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{
                   minHeight: { xs: "2.25rem", sm: "2.5rem" },
                   fontFamily: montserratFamily,
-                  fontSize: { xs: "1rem", sm: "1.125rem" },
-                  lineHeight: "1.42",
+                  fontSize: { xs: "20px", sm: "24px" },
+                  lineHeight: { xs: "24px", sm: "28.8px" },
                   fontWeight: 500,
                   letterSpacing: { xs: "-1px", sm: "-1.3px" },
                 }}
@@ -977,7 +1053,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 }}
               >
                 <Typography
-                  fontSize={{ xs: "16px", sm: "20px" }}
+                  fontSize={{ xs: "16px", sm: "18px" }}
+                  lineHeight={{ xs: "19.2px", sm: "21.6px" }}
                   fontFamily={montserratFamily}
                   fontWeight={500}
                   color={"rgba(230, 81, 0, 1)"}
@@ -986,22 +1063,20 @@ export const GrantsLanding: React.FC<Props> = ({
                     alignItems: "center",
                     gap: "8px",
                     "& svg": {
-                      width: { xs: "15px", sm: "20px" },
-                      height: { xs: "15px", sm: "20px" },
+                      width: { xs: "20px", sm: "18px" },
+                      height: { xs: "20px", sm: "18px" },
                     },
                     letterSpacing: "-1px",
                   }}
                 >
                   {iconBase["verifiedCheckTwoTone"]}
 
-                  <strong>
-                    {getTranslatedText(
-                      "It's free",
-                      "Nó miễn phí",
-                      "Бесплатно",
-                      "Безкоштовно"
-                    )}
-                  </strong>
+                  {getTranslatedText(
+                    "It's free",
+                    "Nó miễn phí",
+                    "Бесплатно",
+                    "Безкоштовно"
+                  )}
                 </Typography>
               </Box>
               <Typography
@@ -1009,8 +1084,8 @@ export const GrantsLanding: React.FC<Props> = ({
                 sx={{
                   minHeight: { xs: "2.25rem", sm: "2.5rem" },
                   fontFamily: montserratFamily,
-                  fontSize: { xs: "1rem", sm: "1.125rem" },
-                  lineHeight: "1.42",
+                  fontSize: { xs: "20px", sm: "24px" },
+                  lineHeight: { xs: "24px", sm: "28.8px" },
                   fontWeight: "500",
                   letterSpacing: { xs: "-1px", sm: "-1.3px" },
                 }}
@@ -1042,6 +1117,7 @@ export const GrantsLanding: React.FC<Props> = ({
       >
         <FourthSectionBg
           sx={{
+            display: { xs: "none", sm: "block" },
             position: "absolute",
             width: "100%",
             height: "unset",
@@ -1049,14 +1125,12 @@ export const GrantsLanding: React.FC<Props> = ({
             transform: "translateY(-50%)",
           }}
         />
-        <FourthSectionBg
+        <FourthSectionMobileBg
           sx={{
-            display: { xs: "block", sm: "none" },
             position: "absolute",
             width: "100%",
             height: "unset",
-            top: { xs: "80%", sm: "59%" },
-            transform: "translateY(-50%) rotate(173deg)",
+            display: { xs: "block", sm: "none" },
           }}
         />
         <SectionContainer
@@ -1065,9 +1139,11 @@ export const GrantsLanding: React.FC<Props> = ({
             renderTitle: () => (
               <Typography
                 fontSize={{ xs: "32px", sm: "42px" }}
+                lineHeight={{ xs: "38.4px", sm: "42px" }}
                 fontFamily={montserratFamily}
-                fontWeight={600}
-                letterSpacing={{ xs: "-1px", sm: "-1.5px" }}
+                fontWeight={700}
+                letterSpacing={{ xs: "-1px", sm: "-2px" }}
+                textAlign={"center"}
               >
                 {getTranslatedText(
                   <>
@@ -1211,7 +1287,7 @@ export const GrantsLanding: React.FC<Props> = ({
               position: "absolute",
               width: "22px",
               height: "22px",
-              top: { xs: "14%", sm: "27%" },
+              top: { xs: "13%", sm: "27%" },
               left: { xs: "84%", sm: "10%" },
               zIndex: "0",
             }}
@@ -1219,15 +1295,16 @@ export const GrantsLanding: React.FC<Props> = ({
           <Star
             sx={{
               position: "absolute",
-              width: "39px",
-              height: "39px",
-              left: { xs: "0", sm: "42%" },
-              bottom: { xs: "30%", sm: "12%" },
+              width: { xs: "20.2px", sm: "39px" },
+              height: { xs: "20.2px", sm: "39px" },
+              left: { xs: "8%", sm: "42%" },
+              bottom: { xs: "29.8%", sm: "12%" },
               zIndex: "0",
             }}
           />
           <Star
             sx={{
+              display: { xs: "none", sm: "block" },
               position: "absolute",
               width: "24px",
               height: "24px",
@@ -1267,15 +1344,26 @@ export const GrantsLanding: React.FC<Props> = ({
                   <Box
                     component={"span"}
                     sx={{
+                      fontFamily: montserratFamily,
                       fontSize: { xs: "22px", sm: "24px" },
+                      lineHeight: { xs: "22px", sm: "24px" },
                       letterSpacing: "-1px",
+                      fontWeight: "600",
                     }}
                   >
                     {text}
                   </Box>
                 ),
                 text: (
-                  <Box letterSpacing={"-0.5px"} fontFamily={montserratFamily}>
+                  <Box
+                    sx={{
+                      fontFamily: montserratFamily,
+                      fontSize: { xs: "14px", sm: "16px" },
+                      lineHeight: { xs: "16.8px", sm: "20.8px" },
+                      letterSpacing: "-0.5px",
+                      fontWeight: "500",
+                    }}
+                  >
                     {
                       getTranslatedText(
                         <>
@@ -1331,15 +1419,26 @@ export const GrantsLanding: React.FC<Props> = ({
                   <Box
                     component={"span"}
                     sx={{
+                      fontFamily: montserratFamily,
                       fontSize: { xs: "22px", sm: "24px" },
+                      lineHeight: { xs: "22px", sm: "24px" },
                       letterSpacing: "-1px",
+                      fontWeight: "600",
                     }}
                   >
                     {text}
                   </Box>
                 ),
                 text: (
-                  <Box letterSpacing={"-0.5px"} fontFamily={montserratFamily}>
+                  <Box
+                    sx={{
+                      fontFamily: montserratFamily,
+                      fontSize: { xs: "14px", sm: "16px" },
+                      lineHeight: { xs: "16.8px", sm: "20.8px" },
+                      letterSpacing: "-0.5px",
+                      fontWeight: "500",
+                    }}
+                  >
                     {
                       getTranslatedText(
                         <>
@@ -1390,37 +1489,35 @@ export const GrantsLanding: React.FC<Props> = ({
                 iconName: "caseTwoTone",
                 iconColor: "rgba(255, 109, 0, 1)",
                 title: getTranslatedText(
-                  <>
-                    Young <br />
-                    professionals
-                  </>,
-                  <>
-                    Người chuyên
-                    <br />
-                    nghiệp trẻ
-                  </>,
-                  <>
-                    Молодым <br />
-                    специалистам
-                  </>,
-                  <>
-                    Молодим <br />
-                    фахівцям
-                  </>
+                  <>Young professionals</>,
+                  <>Người chuyên nghiệp trẻ</>,
+                  <>Молодым специалистам</>,
+                  <>Молодим фахівцям</>
                 ),
                 renderTitle: (text) => (
                   <Box
                     component={"span"}
                     sx={{
+                      fontFamily: montserratFamily,
                       fontSize: { xs: "22px", sm: "24px" },
+                      lineHeight: { xs: "22px", sm: "24px" },
                       letterSpacing: "-1px",
+                      fontWeight: "600",
                     }}
                   >
                     {text}
                   </Box>
                 ),
                 text: (
-                  <Box letterSpacing={"-0.5px"} fontFamily={montserratFamily}>
+                  <Box
+                    sx={{
+                      fontFamily: montserratFamily,
+                      fontSize: { xs: "14px", sm: "16px" },
+                      lineHeight: { xs: "16.8px", sm: "20.8px" },
+                      letterSpacing: "-0.5px",
+                      fontWeight: "500",
+                    }}
+                  >
                     {
                       getTranslatedText(
                         <>
@@ -1475,8 +1572,9 @@ export const GrantsLanding: React.FC<Props> = ({
           renderTitle: () => (
             <Typography
               fontSize={{ xs: "32px", sm: "42px" }}
+              lineHeight={{ xs: "38.4px", sm: "42px" }}
               fontFamily={montserratFamily}
-              fontWeight={600}
+              fontWeight={700}
               letterSpacing={{ xs: "-1px", sm: "-2px" }}
               // marginBottom={{ xs: "0", sm: "-25px" }}
             >
@@ -1611,7 +1709,10 @@ export const GrantsLanding: React.FC<Props> = ({
           ) as string,
           descriptionSx: {
             fontFamily: montserratFamily,
-            letterSpacing: "-0.5px",
+            letterSpacing: { xs: "-1px", sm: "-1px" },
+            fontSize: { xs: "20px", sm: "22px" },
+            lineHeight: { xs: "26px", sm: "28.6px" },
+            fontWeight: "500",
           },
         }}
         imageSx={{ border: "none", padding: "0" }}
@@ -2116,6 +2217,9 @@ export const GrantsLanding: React.FC<Props> = ({
               maxWidth: { xs: "295px", sm: "100%" },
               width: "100%",
               mx: { xs: "auto", sm: 0 },
+              position: "relative",
+              borderRadius: { xs: "20px", sm: "21.37px" },
+              overflow: "hidden",
             },
             {
               maxWidth: { xs: "295px", sm: "100%" },
@@ -2124,6 +2228,7 @@ export const GrantsLanding: React.FC<Props> = ({
               objectFit: "cover",
               borderRadius: { xs: "20px", sm: "22px" },
               mx: { xs: "auto", sm: 0 },
+              position: { xs: "static", sm: "absolute" },
             }
           )}
           <Stack gap={"32px"}>
@@ -2142,25 +2247,25 @@ export const GrantsLanding: React.FC<Props> = ({
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
                     Regular grant giveaways
                   </span>{" "}
-                  among Academy students 🏆
+                  among Academy students
                 </>,
                 <>
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
                     Phát quà định kỳ
                   </span>{" "}
-                  giữa sinh viên Học viện 🏆
+                  giữa sinh viên Học viện
                 </>,
                 <>
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
                     Регулярные розыгрыши
                   </span>{" "}
-                  грантов среди студентов Академии 🏆
+                  грантов среди студентов Академии
                 </>,
                 <>
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
                     Регулярні розіграші
                   </span>{" "}
-                  грантів серед студентів Академії 🏆
+                  грантів серед студентів Академії
                 </>
               )}
             </Typography>
@@ -2264,7 +2369,7 @@ export const GrantsLanding: React.FC<Props> = ({
                       fontFamily={montserratFamily}
                       // fontSize={{ xs: "1rem", sm: "20px" }}
                       fontSize={{ xs: "20px", sm: "24px" }}
-                      fontWeight={600}
+                      fontWeight={500}
                       color={"rgba(255, 224, 178, 1)"}
                       width={"100%"}
                       letterSpacing={{ xs: "-1px", sm: "-1.5px" }}
@@ -2323,17 +2428,21 @@ export const GrantsLanding: React.FC<Props> = ({
               <>Переможці попередніх Конкурсів Грантів від GoStudy</>
             ) as string,
             descriptionSx: {
-              textAlign: { xs: "left", sm: "center" },
+              textAlign: { xs: "center", sm: "center" },
+              fontSize: { xs: "20px", sm: "22px" },
+              lineHeight: { xs: "26px", sm: "28.6px" },
               fontFamily: montserratFamily,
-              letterSpacing: "-0.5px",
+              letterSpacing: { xs: "-1px", sm: "-1px" },
+              fontWeight: "500",
             },
             renderTitle: () => (
               <Typography
                 fontSize={{ xs: "32px", sm: "42px" }}
                 fontFamily={montserratFamily}
-                fontWeight={600}
+                fontWeight={700}
                 letterSpacing={{ xs: "-1px", sm: "-2px" }}
                 lineHeight={{ xs: "38.4px", sm: "42px" }}
+                textAlign={"center"}
               >
                 {getTranslatedText(
                   <>
@@ -2604,6 +2713,7 @@ export const GrantsLanding: React.FC<Props> = ({
                   null,
                   {},
                   {
+                    borderRadius: { xs: "16px", sm: "20px" },
                     objectFit: "cover",
                     width: { xs: "142px", sm: "164px" },
                     height: { xs: "160px", sm: "200px" },
@@ -2658,6 +2768,8 @@ export const GrantsLanding: React.FC<Props> = ({
             sx={{
               lineHeight: { xs: "26.4px", sm: "35.2px" },
               letterSpacing: { xs: "-1px", sm: "-2px" },
+              fontSize: { xs: "24px", sm: "35px" },
+              fontWeight: "600",
             }}
           >
             {getTranslatedText(
@@ -2698,7 +2810,10 @@ export const GrantsLanding: React.FC<Props> = ({
             sx={{
               lineHeight: { xs: "16.8px", sm: "26.4px" },
               letterSpacing: { xs: "-0.5px", sm: "-1px" },
+              fontSize: { xs: "14px", sm: "22px" },
+              fontWeight: "600",
               fontFamily: montserratFamily,
+              color: "rgba(97, 97, 97, 1)",
             }}
           >
             {
@@ -2809,7 +2924,7 @@ export const GrantsLanding: React.FC<Props> = ({
                         fontFamily: montserratFamily,
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
-                        fontSize: { xs: "12px", sm: "14" },
+                        fontSize: { xs: "12px", sm: "14px" },
                         textAlign: "center",
                       }}
                     >
@@ -2837,7 +2952,7 @@ export const GrantsLanding: React.FC<Props> = ({
             letterSpacing={{ xs: "-1px", sm: "-2px" }}
             fontSize={{ xs: "32px", sm: "42px" }}
             fontFamily={montserratFamily}
-            fontWeight={600}
+            fontWeight={700}
           >
             <Box component={"span"} sx={{ position: "relative" }}>
               FAQ
@@ -2875,9 +2990,11 @@ export const GrantsLanding: React.FC<Props> = ({
           ) as string
         }
         descriptionSx={{
-          letterSpacing: "-0.5px",
+          letterSpacing: { xs: "-1px", sm: "-1px" },
           fontFamily: montserratFamily,
-          fontSize: { xs: "18px", sm: "18px" },
+          fontSize: { xs: "20px", sm: "22px" },
+          lineHeight: { xs: "26px", sm: "28.6px" },
+          fontWeight: "500",
         }}
         firstColumnData={[
           {
@@ -3356,7 +3473,10 @@ export const GrantsLanding: React.FC<Props> = ({
           },
           {
             title: (
-              <Box>
+              <Box
+                letterSpacing={{ xs: "-0.5px", sm: "-1px" }}
+                lineHeight={{ xs: "20.8px", sm: "24px" }}
+              >
                 {
                   getTranslatedText(
                     <>
@@ -3405,7 +3525,10 @@ export const GrantsLanding: React.FC<Props> = ({
           },
           {
             title: (
-              <Box>
+              <Box
+                letterSpacing={{ xs: "-0.5px", sm: "-1px" }}
+                lineHeight={{ xs: "20.8px", sm: "24px" }}
+              >
                 {
                   getTranslatedText(
                     <>

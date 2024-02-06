@@ -54,7 +54,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
         WebkitTapHighlightColor: "transparent",
         background: "rgba(227, 242, 253, 1)",
       }}
-      borderRadius={".75rem"}
+      borderRadius={{ xs: "12px", sm: "24px" }}
     >
       <Box width={"100%"} display={"flex"} justifyContent={"space-between"}>
         <Typography
@@ -111,9 +111,9 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
           sx={{
             paddingTop: { xs: ".75rem", sm: "1rem" },
             display: "block",
-            fontSize: { xs: ".875rem", sm: "1rem" },
-            lineHeight: { xs: "1.43", sm: "1.5" },
-            color: "rgba(0,0,0,0.54)",
+            fontSize: { xs: "16px", sm: "16px" },
+            lineHeight: { xs: "20.8px", sm: "20.8px" },
+            color: "rgba(0,0,0,0.87)",
           }}
         >
           {props.renderText ? props.renderText() : props.text}

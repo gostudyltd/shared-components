@@ -130,26 +130,18 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
               ? "1.4px solid transparent"
               : "1.4px solid rgba(130, 177, 255, 1)",
 
+            "& > svg": {
+              height: "18px",
+              width: "17px",
+            },
+
             "& > svg > path": {
               // fill: accent.main,
               fill: isActive ? "white" : "rgba(41, 98, 255, 1)",
             },
           }}
         >
-          <Typography
-            component={"p"}
-            sx={{
-              fontFamily: montserratFamily,
-              fontSize: { xs: "20px", sm: "20px" },
-              lineHeight: { xs: "20px", sm: "20px" },
-              letterSpacing: { xs: "-1.5px", sm: "-1.5px" },
-              textAlign: "center",
-              color: isActive ? "#FFFFFF" : "rgba(41, 98, 255, 1)",
-            }}
-          >
-            {data.idx + 1}
-          </Typography>
-          {/* {iconBase[`step${data.idx + 1}` as keyof typeof iconBase]} */}
+          {iconBase[`point${data.idx + 1}` as keyof typeof iconBase]}
         </Stack>
         <Typography
           display={"flex"}
@@ -157,7 +149,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
           sx={{
             minHeight: { xs: "2.25rem", sm: "2.5rem" },
             fontFamily: montserratFamily,
-            fontSize: { xs: "1rem", sm: "1.125rem" },
+            fontSize: { xs: "20px", sm: "22px" },
             lineHeight: "1.42",
             fontWeight: "600",
             width: "100%",
@@ -220,6 +212,11 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
               sx={{
                 ml: { xs: "0", sm: "3.5rem" },
                 color: "rgba(0,0,0,0.54)",
+                fontFamily: montserratFamily,
+                fontSize: { xs: "16px", sm: "16px" },
+                letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
+                lineHeight: { xs: "20.8px", sm: "21px" },
+                fontWeight: "500",
               }}
             >
               {data.description}
