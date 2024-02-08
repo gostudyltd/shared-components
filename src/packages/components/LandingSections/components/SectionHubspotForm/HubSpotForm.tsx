@@ -22,6 +22,7 @@ export type HubspotFormTranslations = {
 };
 
 type Props = {
+  withoutHubspot?: boolean;
   hubspotConfig: {
     portalId: string;
     formId: string;
@@ -67,10 +68,12 @@ export const HubspotForm: React.FC<Props> = ({
   hubspotConfig,
   translations,
   buttonColor,
+  withoutHubspot,
 }) => {
   const { language } = translations;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const errorsRef = useRef<{ [key: string]: boolean }>({});
   const hubspotPhoneInputRef = useRef<HTMLInputElement | null>(null);
   const phoneInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -126,8 +129,7 @@ export const HubspotForm: React.FC<Props> = ({
         submitText: "Đăng ký",
       },
     },
-    onFormReady: () => {
-      console.log("ready");
+    onFormReady: async () => {
       if (containerRef.current) {
         const form = containerRef.current.firstChild;
         (form as HTMLFormElement).setAttribute("autocomplete", "off");
@@ -140,13 +142,34 @@ export const HubspotForm: React.FC<Props> = ({
         const formChildrensArray = Array.from(formChildrens);
         for (const child of formChildrensArray) {
           if (child.nodeType === Node.ELEMENT_NODE) {
-            if (
-              (child as HTMLElement).className.includes("hs-submit") &&
-              buttonColor
-            ) {
+            if ((child as HTMLElement).className.includes("hs-submit")) {
               const button = child.lastChild?.lastChild;
               if (button) {
-                (button as HTMLElement).style.background = buttonColor;
+                if (buttonColor) {
+                  (button as HTMLElement).style.background = buttonColor;
+                }
+                if (withoutHubspot) {
+                  (button as HTMLButtonElement).onclick = (e) => {
+                    e.preventDefault();
+                    if (!Object.keys(errorsRef.current).length) {
+                      if (hubspotConfig.onSubmit) {
+                        const data = new FormData(form as HTMLFormElement);
+                        const formData = Object.fromEntries(data) as FormFields;
+                        if (
+                          !formData.lastname ||
+                          !formData.firstname ||
+                          !formData.email ||
+                          !formData.phone
+                        ) {
+                          console.log("no data");
+                          return;
+                        }
+                        hubspotConfig.onSubmit(formData);
+                        setIsSubmitted(true);
+                      }
+                    }
+                  };
+                }
               }
             }
             if ((child as HTMLElement).className.includes("hs-form-field")) {
@@ -210,9 +233,15 @@ export const HubspotForm: React.FC<Props> = ({
                     if (isInvalidValue) {
                       if (label.className.includes("label_error")) return;
                       label.className += ` ${styles.label_error}`;
+                      errorsRef.current[
+                        (mutation.target as HTMLInputElement).name
+                      ] = true;
                       return;
                     }
 
+                    delete errorsRef.current[
+                      (mutation.target as HTMLInputElement).name
+                    ];
                     label.className = label.className.replace(
                       styles.label_error,
                       ""

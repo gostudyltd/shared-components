@@ -19,6 +19,7 @@ export type FormFields = {
 };
 
 export type FormSectionProps = {
+  withoutHubspot?: boolean;
   title?: string | React.ReactNode;
   renderTitle?: (color: string) => string | React.ReactNode;
   formTranslations: HubspotFormTranslations;
@@ -52,6 +53,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
       formTranslations,
       hubspotConfig,
       bgColor,
+      withoutHubspot,
       buttonColor,
     } = props;
     const accent = accentColorBase[accentColor];
@@ -106,6 +108,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
           </Stack>
           <HubspotProvider>
             <HubspotForm
+              withoutHubspot={withoutHubspot}
               buttonColor={buttonColor}
               hubspotConfig={hubspotConfig}
               translations={
