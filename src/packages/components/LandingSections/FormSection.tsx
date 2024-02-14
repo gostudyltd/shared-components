@@ -134,6 +134,9 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
                   height: { xs: "2.625rem", sm: "3.5rem" },
                   width: "100%",
                   background: buttonColor,
+                  "&:hover": {
+                    background: buttonColor,
+                  },
                 }}
               >
                 {button.text}
