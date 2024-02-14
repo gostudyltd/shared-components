@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import React, { MutableRefObject } from "react";
 import { AccentColor } from "./components/types";
 import { accentColorBase } from "./components/utils";
@@ -33,6 +33,10 @@ export type FormSectionProps = {
   };
   buttonColor?: string;
   bgColor?: string;
+  button?: {
+    text: string;
+    onClick: VoidFunction;
+  };
 };
 
 const getBackgroundByAccentColor = (accentColor: AccentColor): string => {
@@ -55,6 +59,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
       bgColor,
       withoutHubspot,
       buttonColor,
+      button,
     } = props;
     const accent = accentColorBase[accentColor];
 
@@ -83,7 +88,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
                 right: "0",
                 bottom: "0",
                 height: { xs: "389px", sm: "100%" },
-                width: { xs: "402px", sm: "704px" },
+                width: { xs: "402px", sm: button ? "402px" : "704px" },
                 transform: { xs: "rotate(356deg)", sm: "none" },
                 zIndex: "0",
               }}
@@ -106,22 +111,52 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
               {description}
             </Typography>
           </Stack>
-          <HubspotProvider>
-            <HubspotForm
-              withoutHubspot={withoutHubspot}
-              buttonColor={buttonColor}
-              hubspotConfig={hubspotConfig}
-              translations={
-                formTranslations ?? {
-                  language: "en",
-                  content: {
-                    acceptTerms: "string",
-                    formSubmitted: "string",
-                  },
+          {button ? (
+            <Box
+              sx={{
+                padding: { xs: "1.75rem 1rem", sm: "2.25rem 1.5rem" },
+                background: "#ffffff",
+                borderRadius: "1.25rem",
+                width: "100%",
+                maxWidth: "446px",
+                zIndex: "1",
+              }}
+            >
+              <Button
+                onClick={() => {
+                  button.onClick();
+                }}
+                variant="contained"
+                color={accentColor}
+                // type='submit'
+                sx={{
+                  fontSize: { xs: "1rem", sm: "1.125rem" },
+                  height: { xs: "2.625rem", sm: "3.5rem" },
+                  width: "100%",
+                  background: buttonColor,
+                }}
+              >
+                {button.text}
+              </Button>
+            </Box>
+          ) : (
+            <HubspotProvider>
+              <HubspotForm
+                withoutHubspot={withoutHubspot}
+                buttonColor={buttonColor}
+                hubspotConfig={hubspotConfig}
+                translations={
+                  formTranslations ?? {
+                    language: "en",
+                    content: {
+                      acceptTerms: "string",
+                      formSubmitted: "string",
+                    },
+                  }
                 }
-              }
-            />
-          </HubspotProvider>
+              />
+            </HubspotProvider>
+          )}
         </Box>
       </Container>
     );

@@ -34,12 +34,14 @@ interface Props {
   lang: "ru" | "uk" | "en" | "vi";
   btnAction?: VoidFunction;
   onSubmit?: VoidFunction;
+  button?: { onClick: VoidFunction; text: string };
 }
 
 export const GrantsLanding: React.FC<Props> = ({
   lang = "ru",
   btnAction,
   onSubmit,
+  button,
 }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
   const formRef = useRef<HTMLDivElement | null>(null);
@@ -2767,6 +2769,7 @@ export const GrantsLanding: React.FC<Props> = ({
       </SectionContainerWrapperColorized>
 
       <FormSection
+        button={button}
         nodeRef={formRef}
         bgColor="rgba(255, 238, 88, 1)"
         buttonColor="#000000"
