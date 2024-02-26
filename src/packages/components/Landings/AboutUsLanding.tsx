@@ -902,204 +902,209 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
         </Stack>
       </SectionContainer>
 
-      <SectionContainer
-        sectionTitle={{
-          renderTitle: (color) =>
-            getTranslatedText(
-              <>
-                <span style={{ color }}>Познакомьтесь с GoStudy</span> поближе!
-              </>,
-              <>
-                <span style={{ color }}>Познакомьтесь с GoStudy</span> поближе!
-              </>,
-              <>
-                <span style={{ color }}>Познакомьтесь с GoStudy</span> поближе!
-              </>,
-              <>
-                <span style={{ color }}>Ознайомтеся з GoStudy</span> ближче!
-              </>
+      {(lang === "ru" || lang === "uk") && (
+        <SectionContainer
+          sectionTitle={{
+            renderTitle: (color) =>
+              getTranslatedText(
+                <>
+                  <span style={{ color }}>Познакомьтесь с GoStudy</span>{" "}
+                  поближе!
+                </>,
+                <>
+                  <span style={{ color }}>Познакомьтесь с GoStudy</span>{" "}
+                  поближе!
+                </>,
+                <>
+                  <span style={{ color }}>Познакомьтесь с GoStudy</span>{" "}
+                  поближе!
+                </>,
+                <>
+                  <span style={{ color }}>Ознайомтеся з GoStudy</span> ближче!
+                </>
+              ),
+            description: getTranslatedText(
+              "Бесплатные уроки и вебинары от наших экспертов.",
+              "Бесплатные уроки и вебинары от наших экспертов.",
+              "Бесплатные уроки и вебинары от наших экспертов.",
+              "Безкоштовні уроки та вебінари від наших експертів."
             ),
-          description: getTranslatedText(
-            "Бесплатные уроки и вебинары от наших экспертов.",
-            "Бесплатные уроки и вебинары от наших экспертов.",
-            "Бесплатные уроки и вебинары от наших экспертов.",
-            "Безкоштовні уроки та вебінари від наших експертів."
-          ),
-        }}
-      >
-        <SectionTextCardList
-          accentColor="primary"
-          gridItemProps={{ xs: 12, sm: 4 }}
-          cardVariant="v4"
-          data={[
-            {
-              renderIcon: (icon) => (
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: { xs: "10px", sm: "12px" },
-                    borderRadius: "12px",
-                    width: { xs: "40px", sm: "48px" },
-                    height: { xs: "40px", sm: "48px" },
-                    backgroundColor: "#FFFFFF",
-                    "& svg path": { fill: "rgba(11, 78, 131, 1)" },
-                    marginBottom: { xs: "16px", sm: "20px" },
-                  }}
-                >
-                  {icon}
-                </Box>
-              ),
-              sx: {
-                backgroundColor: "secondary.main",
-                minHeight: {
-                  xs: "unset",
-                  sm: lang === "uk" ? "276px" : "302px",
+          }}
+        >
+          <SectionTextCardList
+            accentColor="primary"
+            gridItemProps={{ xs: 12, sm: 4 }}
+            cardVariant="v4"
+            data={[
+              {
+                renderIcon: (icon) => (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: { xs: "10px", sm: "12px" },
+                      borderRadius: "12px",
+                      width: { xs: "40px", sm: "48px" },
+                      height: { xs: "40px", sm: "48px" },
+                      backgroundColor: "#FFFFFF",
+                      "& svg path": { fill: "rgba(11, 78, 131, 1)" },
+                      marginBottom: { xs: "16px", sm: "20px" },
+                    }}
+                  >
+                    {icon}
+                  </Box>
+                ),
+                sx: {
+                  backgroundColor: "secondary.main",
+                  minHeight: {
+                    xs: "unset",
+                    sm: lang === "uk" ? "276px" : "302px",
+                  },
+                  height: "unset",
                 },
-                height: "unset",
-              },
-              iconName: "step1",
-              title: getTranslatedText(
-                "Language immersion",
-                "Ngôn ngữ ngâm",
-                "Благодаря высококвалифицированным педагогам, обучение в GoStudy эффективно — и мы рады дать вам возможность бесплатно познакомиться с тем, как это у нас происходит.",
-                "Завдяки висококваліфікованим педагогам, навчання в GoStudy є ефективним — і ми раді дати вам можливість безкоштовно познайомитися з тим, як це у нас відбувається."
-              ),
-              link: {
+                iconName: "step1",
                 title: getTranslatedText(
-                  "",
-                  "",
-                  "Уроки чешского",
-                  "Уроки чеської"
-                ) as string,
-                text: getTranslatedText(
-                  "",
-                  "",
-                  "Подробнее",
-                  "Детальніше"
-                ) as string,
-                to: getTranslatedText(
-                  "",
-                  "",
-                  "https://www.gostudy.cz/besplatnye-uroki",
-                  "https://www.gostudy.cz/uk/besplatnye-uroki"
-                ) as string,
-              },
-            },
-            {
-              renderIcon: (icon) => (
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: { xs: "10px", sm: "12px" },
-                    borderRadius: "12px",
-                    width: { xs: "40px", sm: "48px" },
-                    height: { xs: "40px", sm: "48px" },
-                    backgroundColor: "#FFFFFF",
-                    "& svg path": { fill: "rgba(11, 78, 131, 1)" },
-                    marginBottom: { xs: "16px", sm: "20px" },
-                  }}
-                >
-                  {icon}
-                </Box>
-              ),
-              sx: {
-                backgroundColor: "secondary.main",
-                minHeight: {
-                  xs: "unset",
-                  sm: lang === "uk" ? "276px" : "302px",
+                  "Language immersion",
+                  "Ngôn ngữ ngâm",
+                  "Благодаря высококвалифицированным педагогам, обучение в GoStudy эффективно — и мы рады дать вам возможность бесплатно познакомиться с тем, как это у нас происходит.",
+                  "Завдяки висококваліфікованим педагогам, навчання в GoStudy є ефективним — і ми раді дати вам можливість безкоштовно познайомитися з тим, як це у нас відбувається."
+                ),
+                link: {
+                  title: getTranslatedText(
+                    "",
+                    "",
+                    "Уроки чешского",
+                    "Уроки чеської"
+                  ) as string,
+                  text: getTranslatedText(
+                    "",
+                    "",
+                    "Подробнее",
+                    "Детальніше"
+                  ) as string,
+                  to: getTranslatedText(
+                    "",
+                    "",
+                    "https://www.gostudy.cz/besplatnye-uroki",
+                    "https://www.gostudy.cz/uk/besplatnye-uroki"
+                  ) as string,
                 },
-                height: "unset",
               },
-              iconName: "step2",
-              title: getTranslatedText(
-                "Openness and support",
-                "Cởi mở và hỗ trợ",
-                "Мы проводим очные информационные встречи, вебинары, стримы с педагогами школы и даем уроки чешского и немецкого.",
-                "Ми проводимо очні інформаційні зустрічі, вебінари, стріми з педагогами школи та даємо уроки чеської та німецької."
-              ),
-              link: {
-                title: getTranslatedText(
-                  "",
-                  "",
-                  "Уроки немецкого",
-                  "Уроки німецької"
-                ) as string,
-                text: getTranslatedText(
-                  "",
-                  "",
-                  "Подробнее",
-                  "Детальніше"
-                ) as string,
-                to: getTranslatedText(
-                  "",
-                  "",
-                  "https://www.gostudy.cz/besplatnye-uroki-nemeckogo",
-                  "https://www.gostudy.cz/uk/besplatnye-uroki-nemeckogo"
-                ) as string,
-              },
-            },
-            {
-              renderIcon: (icon) => (
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    padding: { xs: "10px", sm: "12px" },
-                    borderRadius: "12px",
-                    width: { xs: "40px", sm: "48px" },
-                    height: { xs: "40px", sm: "48px" },
-                    backgroundColor: "#FFFFFF",
-                    "& svg path": { fill: "rgba(11, 78, 131, 1)" },
-                    marginBottom: { xs: "16px", sm: "20px" },
-                  }}
-                >
-                  {icon}
-                </Box>
-              ),
-              sx: {
-                backgroundColor: "secondary.main",
-                minHeight: {
-                  xs: "unset",
-                  sm: lang === "uk" ? "276px" : "302px",
+              {
+                renderIcon: (icon) => (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: { xs: "10px", sm: "12px" },
+                      borderRadius: "12px",
+                      width: { xs: "40px", sm: "48px" },
+                      height: { xs: "40px", sm: "48px" },
+                      backgroundColor: "#FFFFFF",
+                      "& svg path": { fill: "rgba(11, 78, 131, 1)" },
+                      marginBottom: { xs: "16px", sm: "20px" },
+                    }}
+                  >
+                    {icon}
+                  </Box>
+                ),
+                sx: {
+                  backgroundColor: "secondary.main",
+                  minHeight: {
+                    xs: "unset",
+                    sm: lang === "uk" ? "276px" : "302px",
+                  },
+                  height: "unset",
                 },
-                height: "unset",
-              },
-              iconName: "step3",
-              title: getTranslatedText(
-                "More than just studying",
-                "Nhiều hơn là chỉ học",
-                "Вы бесплатно освоите языковую базу и узнаете все подробности об обучении в вузах Чехии, Словакии и Австрии.",
-                "Ви безкоштовно освоїте мовну базу та дізнаєтесь усі подробиці про навчання у вишах Чехії, Словаччини та Австрії."
-              ),
-              link: {
+                iconName: "step2",
                 title: getTranslatedText(
-                  "",
-                  "",
-                  "Вебинары",
-                  "Вебінари"
-                ) as string,
-                text: getTranslatedText(
-                  "",
-                  "",
-                  "Подробнее",
-                  "Детальніше"
-                ) as string,
-                to: getTranslatedText(
-                  "",
-                  "",
-                  "https://www.gostudy.cz/vebinary-s-ekspertami",
-                  "https://www.gostudy.cz/uk/vebinary-s-ekspertami"
-                ) as string,
+                  "Openness and support",
+                  "Cởi mở và hỗ trợ",
+                  "Мы проводим очные информационные встречи, вебинары, стримы с педагогами школы и даем уроки чешского и немецкого.",
+                  "Ми проводимо очні інформаційні зустрічі, вебінари, стріми з педагогами школи та даємо уроки чеської та німецької."
+                ),
+                link: {
+                  title: getTranslatedText(
+                    "",
+                    "",
+                    "Уроки немецкого",
+                    "Уроки німецької"
+                  ) as string,
+                  text: getTranslatedText(
+                    "",
+                    "",
+                    "Подробнее",
+                    "Детальніше"
+                  ) as string,
+                  to: getTranslatedText(
+                    "",
+                    "",
+                    "https://www.gostudy.cz/besplatnye-uroki-nemeckogo",
+                    "https://www.gostudy.cz/uk/besplatnye-uroki-nemeckogo"
+                  ) as string,
+                },
               },
-            },
-          ]}
-        />
-      </SectionContainer>
+              {
+                renderIcon: (icon) => (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: { xs: "10px", sm: "12px" },
+                      borderRadius: "12px",
+                      width: { xs: "40px", sm: "48px" },
+                      height: { xs: "40px", sm: "48px" },
+                      backgroundColor: "#FFFFFF",
+                      "& svg path": { fill: "rgba(11, 78, 131, 1)" },
+                      marginBottom: { xs: "16px", sm: "20px" },
+                    }}
+                  >
+                    {icon}
+                  </Box>
+                ),
+                sx: {
+                  backgroundColor: "secondary.main",
+                  minHeight: {
+                    xs: "unset",
+                    sm: lang === "uk" ? "276px" : "302px",
+                  },
+                  height: "unset",
+                },
+                iconName: "step3",
+                title: getTranslatedText(
+                  "More than just studying",
+                  "Nhiều hơn là chỉ học",
+                  "Вы бесплатно освоите языковую базу и узнаете все подробности об обучении в вузах Чехии, Словакии и Австрии.",
+                  "Ви безкоштовно освоїте мовну базу та дізнаєтесь усі подробиці про навчання у вишах Чехії, Словаччини та Австрії."
+                ),
+                link: {
+                  title: getTranslatedText(
+                    "",
+                    "",
+                    "Вебинары",
+                    "Вебінари"
+                  ) as string,
+                  text: getTranslatedText(
+                    "",
+                    "",
+                    "Подробнее",
+                    "Детальніше"
+                  ) as string,
+                  to: getTranslatedText(
+                    "",
+                    "",
+                    "https://www.gostudy.cz/vebinary-s-ekspertami",
+                    "https://www.gostudy.cz/uk/vebinary-s-ekspertami"
+                  ) as string,
+                },
+              },
+            ]}
+          />
+        </SectionContainer>
+      )}
 
       <AccordionSection
         title={
