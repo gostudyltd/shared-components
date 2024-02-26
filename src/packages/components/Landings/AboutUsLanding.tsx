@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import {
   AccordionSection,
@@ -23,12 +23,7 @@ interface Props {
   button?: { onClick: VoidFunction; text: string };
 }
 
-export const AboutUsLanding: React.FC<Props> = ({
-  lang = "ru",
-  btnAction,
-  onSubmit,
-  button,
-}) => {
+export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
 
   const getTranslatedText = (
