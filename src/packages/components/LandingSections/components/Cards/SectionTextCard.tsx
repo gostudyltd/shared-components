@@ -6,6 +6,9 @@ import React from "react";
 import { iconBase } from "../../icons";
 import { AccentColor } from "../types";
 import { accentColorBase } from "../utils";
+import { ChevronRight } from "@mui/icons-material";
+import { Link } from "@mui/material";
+import { montserratFamily } from "../../../../constants/themeVars";
 
 type SectionTextCardPropsShared = {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -24,6 +27,7 @@ type SectionTextCardPropsShared = {
   accentColor?: AccentColor;
   iconColor?: string;
   isHighlighted?: boolean;
+  link?: { title: string; text: string; to: string };
 };
 
 export const SectionTextCard1: React.FC<SectionTextCardPropsShared> = (
@@ -213,73 +217,76 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
     iconName,
     title,
     iconColor,
+    link,
   } = props;
   const accent = iconColor ? iconColor : accentColorBase[accentColor].main;
   const icon = iconName && iconBase[iconName as keyof typeof iconBase];
   return (
-    <Stack
-      sx={{
-        backgroundColor: "#fff",
-        borderRadius: "1.25rem",
-        p: "1.25rem",
-        borderBottom: "none",
-        height: { sm: "100%" },
-        ...sx,
-      }}
-    >
+    <>
       <Stack
-        direction={"column"}
         sx={{
-          marginBottom: { sm: ".75rem", xs: ".75rem" },
+          backgroundColor: "#fff",
+          borderRadius: "1.25rem",
+          p: "1.25rem",
+          borderBottom: "none",
+          height: { sm: "100%" },
+          ...sx,
         }}
       >
-        {icon && renderIcon ? (
-          renderIcon(icon, accent)
-        ) : (
-          <Box
-            component={"span"}
-            flexShrink={"0"}
-            className={"SectionTextCard4_icon"}
+        <Stack
+          direction={"column"}
+          sx={{
+            marginBottom: { sm: ".75rem", xs: ".75rem" },
+          }}
+        >
+          {icon && renderIcon ? (
+            renderIcon(icon, accent)
+          ) : (
+            <Box
+              component={"span"}
+              flexShrink={"0"}
+              className={"SectionTextCard4_icon"}
+              sx={{
+                "& path": {
+                  fill: accent,
+                },
+                "& > svg": {
+                  width: { xs: "2rem", sm: "2.5rem" },
+                  height: { xs: "2rem", sm: "2.5rem" },
+                },
+                marginBottom: { xs: "1rem", sm: "1.25rem" },
+              }}
+            >
+              {iconBase[iconName as keyof typeof iconBase]}
+            </Box>
+          )}
+          <Typography
+            variant="h3"
             sx={{
-              "& path": {
-                fill: accent,
-              },
-              "& > svg": {
-                width: { xs: "2rem", sm: "2.5rem" },
-                height: { xs: "2rem", sm: "2.5rem" },
-              },
-              marginBottom: { xs: "1rem", sm: "1.25rem" },
+              fontSize: { sm: "1.125rem", xs: "1rem" },
+              fontWeight: "600",
+              lineHeight: "1.44",
+              display: "flex",
+              alignItems: "center",
             }}
           >
-            {iconBase[iconName as keyof typeof iconBase]}
-          </Box>
+            {renderTitle ? renderTitle(title, accent) : <span>{title}</span>}
+          </Typography>
+        </Stack>
+        {(text || renderText) && (
+          <Typography
+            variant={"body2"}
+            fontSize={"1.125rem"}
+            color={"text.secondary"}
+            sx={{
+              fontSize: { xs: "0.875rem", sm: "1rem" },
+            }}
+          >
+            {renderText ? renderText(accent) : text}
+          </Typography>
         )}
-        <Typography
-          variant="h3"
-          sx={{
-            fontSize: { sm: "1.125rem", xs: "1rem" },
-            fontWeight: "600",
-            lineHeight: "1.44",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          {renderTitle ? renderTitle(title, accent) : <span>{title}</span>}
-        </Typography>
       </Stack>
-      {(text || renderText) && (
-        <Typography
-          variant={"body2"}
-          fontSize={"1.125rem"}
-          color={"text.secondary"}
-          sx={{
-            fontSize: { xs: "0.875rem", sm: "1rem" },
-          }}
-        >
-          {renderText ? renderText(accent) : text}
-        </Typography>
-      )}
-    </Stack>
+    </>
   );
 };
 

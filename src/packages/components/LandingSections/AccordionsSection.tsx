@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Container, Typography } from "@mui/material";
+import { Container, Link, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { RoundedPlusIcon } from "../Icons/RoundedPlus";
 import { SectionTitle } from "../LandingSections/components/SectionTitle";
@@ -8,17 +8,26 @@ import { SectionContainerWrapperColorized } from "./components/SectionContainerW
 import { withCustomTheme } from "../hoc/withCustomTheme";
 import { AccentColor } from "./components";
 import { accentColorBase } from "./components/utils";
+import { ChevronRight } from "@mui/icons-material";
 
 type AccordionItemProps = {
   title: string;
   text?: string;
   renderText?: () => string | React.ReactNode;
   useItsOwnState?: boolean;
+  link?: {
+    text: string;
+    to: string;
+  };
 };
 
 type AccordionProps = {
   title: string;
   text?: string;
+  link?: {
+    text: string;
+    to: string;
+  };
   renderText?: () => string | React.ReactNode;
   isActive?: boolean;
   onClick: (title: string) => void;
@@ -93,30 +102,54 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
           </Box>
         </Box>
       </Box>
-      <Typography
-        variant={"body2"}
-        fontSize={"1.125rem"}
-        overflow={"hidden"}
-        sx={{
-          fontSize: { xs: "0.875rem", sm: "1rem" },
-          maxHeight,
-          transition: "all .2s linear",
-        }}
-        ref={textRef}
-      >
-        <Box
-          component={"span"}
+      <Box>
+        <Typography
+          variant={"body2"}
+          fontSize={"1.125rem"}
+          overflow={"hidden"}
           sx={{
-            paddingTop: { xs: ".75rem", sm: "1rem" },
-            display: "block",
-            fontSize: { xs: ".875rem", sm: "1rem" },
-            lineHeight: { xs: "1.43", sm: "1.5" },
-            color: "rgba(0,0,0,0.54)",
+            fontSize: { xs: "0.875rem", sm: "1rem" },
+            maxHeight,
+            transition: "all .2s linear",
           }}
+          ref={textRef}
         >
-          {props.renderText ? props.renderText() : props.text}
-        </Box>
-      </Typography>
+          <Box
+            component={"span"}
+            sx={{
+              paddingTop: { xs: ".75rem", sm: "1rem" },
+              display: "block",
+              fontSize: { xs: ".875rem", sm: "1rem" },
+              lineHeight: { xs: "1.43", sm: "1.5" },
+              color: "rgba(0,0,0,0.54)",
+            }}
+          >
+            {props.renderText ? props.renderText() : props.text}
+            {props.link && (
+              <Link
+                href={props.link.to}
+                sx={{
+                  display: "flex",
+                  gap: "8px",
+                  alignItems: "center",
+                  paddingTop: { xs: ".75rem", sm: "1rem" },
+                  color: "primary.main",
+                  fontFamily: montserratFamily,
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  lineHeight: "24px",
+                  textDecoration: "none",
+                }}
+              >
+                {props.link.text}
+                <ChevronRight
+                  sx={{ width: "20px", sm: "20px", flexShrink: 0 }}
+                />
+              </Link>
+            )}
+          </Box>
+        </Typography>
+      </Box>
     </Box>
   );
 };
@@ -180,6 +213,7 @@ export const AccordionSection: React.FC<AccordionSectionProps> =
                 isActive={i.title === activeAccordionTitle}
                 onClick={handleAccordionItemClick}
                 accentColor={accentColor}
+                link={i.link}
               />
             ))}
           </Box>

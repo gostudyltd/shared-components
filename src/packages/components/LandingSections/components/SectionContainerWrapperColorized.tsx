@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 import { Box, SxProps } from "@mui/material";
 import { AccentColor } from "./types";
 import { accentColorBase } from "./utils";
@@ -14,6 +14,7 @@ type Props = {
   overlayVariant?: SectionContainerOverlayProps["variant"];
   overlayColor?: string;
   gradientBg?: boolean;
+  nodeRef?: MutableRefObject<HTMLDivElement | null>;
 };
 
 const getBackgroundByAccentColor = (
@@ -40,6 +41,7 @@ export const SectionContainerWrapperColorized: React.FC<
     overlayVariant,
     overlayColor,
     gradientBg,
+    nodeRef,
   }) => {
     return (
       <Box
@@ -51,6 +53,7 @@ export const SectionContainerWrapperColorized: React.FC<
         }}
         position={"relative"}
         overflow={"hidden"}
+        ref={nodeRef}
       >
         <Box sx={{ position: "relative", zIndex: 1, width: "100%" }}>
           {children}

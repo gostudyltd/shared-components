@@ -40,7 +40,7 @@ export type IntroSectionPropsV2 = {
 
   accentColor?: AccentColor;
   bottomListData?: HorizontalListWithSeparatorProps["data"];
-  info: {
+  info?: {
     text: string;
     color?: string;
     bgColor?: string;

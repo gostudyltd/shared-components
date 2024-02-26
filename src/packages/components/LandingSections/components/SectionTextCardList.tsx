@@ -2,6 +2,9 @@ import Grid, { GridProps } from "@mui/material/Grid";
 import React from "react";
 import { SectionTextCardProps, SectionTextCard } from "./Cards/SectionTextCard";
 import { AccentColor } from "./types";
+import { Box, Link, Typography } from "@mui/material";
+import { montserratFamily } from "../../../constants/themeVars";
+import { ChevronRight } from "@mui/icons-material";
 
 type SectionTextCardListProps = {
   data: SectionTextCardProps[];
@@ -40,6 +43,48 @@ export const SectionTextCardList: React.FC<SectionTextCardListProps> = ({
             accentColor={accentColor}
             {...i}
           />
+          {i.link && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: { xs: "8px 16px", sm: "16px 20px" },
+                width: "100%",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: montserratFamily,
+                  fontSize: "16px",
+                  lineHeight: "22.88px",
+                  fontWeight: "600",
+                  color: "text.secondary",
+                }}
+              >
+                {i.link.title}
+              </Typography>
+              <Link
+                href={i.link.to}
+                sx={{
+                  display: "flex",
+                  gap: "8px",
+                  alignItems: "center",
+                  color: "primary.main",
+                  fontFamily: montserratFamily,
+                  fontSize: "14px",
+                  fontWeight: "600",
+                  lineHeight: "24px",
+                  textDecoration: "none",
+                }}
+              >
+                {i.link.text}
+                <ChevronRight
+                  sx={{ width: "20px", sm: "20px", flexShrink: 0 }}
+                />
+              </Link>
+            </Box>
+          )}
         </Grid>
       ))}
     </Grid>

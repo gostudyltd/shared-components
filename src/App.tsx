@@ -1,11 +1,10 @@
 import React from "react";
-
-import { GrantsLanding } from "./packages/components/Landings/GrantsLanding";
+import { AboutUsLanding } from "./packages";
 
 function App() {
   return (
-    <GrantsLanding
-      lang="ru"
+    <AboutUsLanding
+      lang="uk"
       button={{
         text: "test",
         onClick: () => {

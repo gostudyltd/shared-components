@@ -184,14 +184,14 @@ export const getPicture = (
           component={"source"}
           srcSet={`${src}?tx=c_fill,h_${height * resolution},w_${
             width * resolution
-          }`}
+          },q_100`}
           media={`(resolution: ${resolution}dppx)`}
         />
         <Box
           component={"source"}
           srcSet={`${src}?tx=c_fill,h_${height * resolution},w_${
             width * resolution
-          }`}
+          },q_100`}
           media={`(-webkit-min-device-pixel-ratio: ${resolution})`}
         />
       </>
@@ -207,7 +207,7 @@ export const getPicture = (
       {sources}
       <Box
         component={"img"}
-        src={`${src}?tx=c_fill,h_${height},w_${width}`}
+        src={`${src}?tx=c_fill,h_${height},w_${width},q_100`}
         sx={imageSx}
         alt={alt ?? ""}
       />

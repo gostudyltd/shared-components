@@ -7,6 +7,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 
+import {ReactComponent as HelpTogether} from '../../../icons/one-tone/HelpTogether.svg'
+import {ReactComponent as Internet} from '../../../icons/one-tone/Internet.svg'
+import {ReactComponent as Smiley} from '../../../icons/one-tone/Smiley.svg'
 import {ReactComponent as MagicStick2} from '../../../icons/one-tone/magic-stick-2.svg'
 import {ReactComponent as Point1} from '../../../icons/one-tone/point1.svg'
 import {ReactComponent as Point2} from '../../../icons/one-tone/point2.svg'
@@ -48,6 +51,9 @@ import {ReactComponent as WalletMoneyTwoTone} from '../../../icons/two-tone/wall
 import {ReactComponent as WaterSunTwoTone} from '../../../icons/two-tone/water-sun.svg'
 
 export const iconBase = {
+  HelpTogether: <HelpTogether />,
+  Internet: <Internet />,
+  Smiley: <Smiley />,
   magicStick2: <MagicStick2 />,
   point1: <Point1 />,
   point2: <Point2 />,

@@ -1,6 +1,6 @@
 {
   "name": "@gostudyltd/shared-components",
-  "version": "0.0.78",
+  "version": "0.0.79",
   "homepage": "https://gostudyltd.github.io/shared-components",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
@@ -14,7 +14,8 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.0",
-    "react-phone-input-2": "^2.15.1"
+    "react-phone-input-2": "^2.15.1",
+    "swiper": "^9.3.2"
   },
   "peerDependencies": {
     "@mui/icons-material": "^5.11.16",
