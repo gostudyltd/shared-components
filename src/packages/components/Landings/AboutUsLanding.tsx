@@ -41,6 +41,11 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
   return (
     <>
       <IntroSectionV2
+        leftSectionContainerSx={{
+          "& > *:first-of-type": {
+            maxWidth: { xs: "100%", sm: "526px" },
+          },
+        }}
         containerSx={{
           py: { xs: "3em", sm: "3.5em" },
         }}
@@ -48,22 +53,31 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
           <Box>
             {getTranslatedText(
               <>
-                <Box sx={{ color: color }}>European education</Box> accessible
-                to everyone
+                <Box sx={{ color: color, display: "inline" }}>
+                  European education
+                </Box>{" "}
+                accessible to everyone
               </>,
               <>
                 GoStudy của nhiệm vụ này là để làm cho
-                <Box sx={{ color: color }}>giáo dục châu Âu</Box> có thể truy
-                cập để tất cả mọi người
+                <Box sx={{ color: color, display: "inline" }}>
+                  giáo dục châu Âu
+                </Box>{" "}
+                có thể truy cập để tất cả mọi người
               </>,
               <>
-                Делаем
-                <Box sx={{ color: color }}>образование в Европе</Box> доступным
+                Делаем{" "}
+                <Box sx={{ color: color, display: "inline" }}>
+                  образование в Европе
+                </Box>{" "}
+                доступным
               </>,
               <>
-                Робимо
-                <Box sx={{ color: color }}>європейську освіту</Box> доступною
-                всім
+                Робимо{" "}
+                <Box sx={{ color: color, display: "inline" }}>
+                  європейську освіту
+                </Box>{" "}
+                доступною всім
               </>
             )}
           </Box>
@@ -333,7 +347,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
               </>,
               <>
                 «Для тысяч иностранных студентов учеба в Европе началась именно
-                с 
+                с{" "}
                 <span style={{ color }}>образовательных программ GoStudy</span>»
               </>,
               <>
@@ -1007,6 +1021,16 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                       width: { xs: "40px", sm: "48px" },
                       height: { xs: "40px", sm: "48px" },
                       backgroundColor: "#FFFFFF",
+                      "& svg": {
+                        width: {
+                          xs: "20px",
+                          sm: "24px",
+                        },
+                        height: {
+                          xs: "20px",
+                          sm: "24px",
+                        },
+                      },
                       "& svg path": { fill: "rgba(11, 78, 131, 1)" },
                       marginBottom: { xs: "16px", sm: "20px" },
                     }}
@@ -1018,7 +1042,12 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   backgroundColor: "secondary.main",
                   minHeight: {
                     xs: "unset",
-                    sm: lang === "uk" ? "276px" : "302px",
+                    sm:
+                      lang === "uk"
+                        ? "276px"
+                        : lang === "ru"
+                        ? "288px"
+                        : "302px",
                   },
                   height: "unset",
                 },
@@ -1073,7 +1102,12 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   backgroundColor: "secondary.main",
                   minHeight: {
                     xs: "unset",
-                    sm: lang === "uk" ? "276px" : "302px",
+                    sm:
+                      lang === "uk"
+                        ? "276px"
+                        : lang === "ru"
+                        ? "288px"
+                        : "302px",
                   },
                   height: "unset",
                 },
@@ -1128,7 +1162,12 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   backgroundColor: "secondary.main",
                   minHeight: {
                     xs: "unset",
-                    sm: lang === "uk" ? "276px" : "302px",
+                    sm:
+                      lang === "uk"
+                        ? "276px"
+                        : lang === "ru"
+                        ? "288px"
+                        : "302px",
                   },
                   height: "unset",
                 },

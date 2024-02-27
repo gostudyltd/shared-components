@@ -76,6 +76,7 @@ export const SectionTextCardList: React.FC<SectionTextCardListProps> = ({
                   fontWeight: "600",
                   lineHeight: "24px",
                   textDecoration: "none",
+                  padding: { xs: "6px 8px", sm: "6px 8px" },
                 }}
               >
                 {i.link.text}

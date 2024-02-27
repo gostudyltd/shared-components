@@ -4,7 +4,7 @@ import { AboutUsLanding } from "./packages";
 function App() {
   return (
     <AboutUsLanding
-      lang="en"
+      lang="ru"
       button={{
         text: "test",
         onClick: () => {

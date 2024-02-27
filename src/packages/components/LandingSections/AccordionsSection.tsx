@@ -145,6 +145,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
                   fontWeight: "600",
                   lineHeight: "24px",
                   textDecoration: "none",
+                  padding: { xs: "6px 8px", sm: "6px 8px" },
                 }}
               >
                 {props.link.text}

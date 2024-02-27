@@ -50,7 +50,7 @@ const SliderButtons: React.FC<SliderButtonsProps> = ({
         sx={{
           display: { xs: "none", sm: "flex" },
           ml: "auto",
-          alignSelf: "center",
+          alignSelf: "flex-end",
         }}
       >
         <Button

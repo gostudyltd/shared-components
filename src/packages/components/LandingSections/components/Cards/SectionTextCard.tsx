@@ -232,7 +232,7 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
         <Stack
           direction={"column"}
           sx={{
-            marginBottom: { sm: ".75rem", xs: ".75rem" },
+            marginBottom: text ? { sm: ".75rem", xs: ".75rem" } : undefined,
           }}
         >
           {icon && renderIcon ? (
