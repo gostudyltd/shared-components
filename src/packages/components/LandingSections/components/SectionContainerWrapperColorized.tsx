@@ -15,6 +15,7 @@ type Props = {
   overlayColor?: string;
   gradientBg?: boolean;
   nodeRef?: MutableRefObject<HTMLDivElement | null>;
+  overlaySx?: SxProps;
 };
 
 const getBackgroundByAccentColor = (
@@ -42,6 +43,7 @@ export const SectionContainerWrapperColorized: React.FC<
     overlayColor,
     gradientBg,
     nodeRef,
+    overlaySx,
   }) => {
     return (
       <Box
@@ -60,6 +62,7 @@ export const SectionContainerWrapperColorized: React.FC<
         </Box>
         {overlayVariant && (
           <SectionContainerOverlay
+            sx={overlaySx}
             accentColor={accentColor}
             variant={overlayVariant}
             color={overlayColor}

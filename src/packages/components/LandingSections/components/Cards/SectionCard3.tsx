@@ -12,6 +12,8 @@ export type SectionCard3Props = {
   accentColor?: AccentColor;
   sx?: SxProps;
   avatar?: string;
+  authorSx?: SxProps;
+  descriptionSx?: SxProps;
 };
 
 export const SectionCard3: React.FC<SectionCard3Props> = ({
@@ -21,6 +23,8 @@ export const SectionCard3: React.FC<SectionCard3Props> = ({
   accentColor = "primary",
   sx = {},
   avatar,
+  authorSx,
+  descriptionSx,
 }) => {
   const accent = accentColorBase[accentColor];
   const firstLettersOfFullName = author
@@ -41,7 +45,7 @@ export const SectionCard3: React.FC<SectionCard3Props> = ({
     >
       <Stack
         direction={"row"}
-        alignItems={"center"}
+        alignItems={avatar ? "flex-start" : "center"}
         sx={{ marginBottom: "1rem" }}
       >
         {avatar ? (
@@ -88,6 +92,7 @@ export const SectionCard3: React.FC<SectionCard3Props> = ({
             sx={{
               fontSize: { xs: "1rem", sm: "1.25rem" },
               marginBottom: "0.5rem",
+              ...authorSx,
             }}
           >
             {author}
@@ -96,6 +101,7 @@ export const SectionCard3: React.FC<SectionCard3Props> = ({
             sx={{
               fontSize: { xs: "0.875rem", sm: "1rem" },
               color: "rgba(0,0,0,0.54)",
+              ...descriptionSx,
             }}
           >
             {description}

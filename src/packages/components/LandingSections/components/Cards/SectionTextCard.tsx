@@ -6,9 +6,6 @@ import React from "react";
 import { iconBase } from "../../icons";
 import { AccentColor } from "../types";
 import { accentColorBase } from "../utils";
-import { ChevronRight } from "@mui/icons-material";
-import { Link } from "@mui/material";
-import { montserratFamily } from "../../../../constants/themeVars";
 
 type SectionTextCardPropsShared = {
   // eslint-disable-next-line @typescript-eslint/ban-types
@@ -217,7 +214,6 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
     iconName,
     title,
     iconColor,
-    link,
   } = props;
   const accent = iconColor ? iconColor : accentColorBase[accentColor].main;
   const icon = iconName && iconBase[iconName as keyof typeof iconBase];
@@ -227,7 +223,7 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
         sx={{
           backgroundColor: "#fff",
           borderRadius: "1.25rem",
-          p: "1.25rem",
+          p: { xs: "1rem", sm: "1.25rem" },
           borderBottom: "none",
           height: { sm: "100%" },
           ...sx,

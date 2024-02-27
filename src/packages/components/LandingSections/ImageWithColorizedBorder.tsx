@@ -42,7 +42,12 @@ export const ImageWithColorizedBorder: React.FC<
             image.width,
             image.height,
             { borderRadius: "1rem", ...imageSx },
-            { borderRadius: "1rem", width: "100%", ...imageSx },
+            {
+              borderRadius: "1rem",
+              width: "100%",
+              verticalAlign: "top",
+              ...imageSx,
+            },
             "discover"
           )}
     </Stack>

@@ -26,7 +26,7 @@ export const SectionTextCardList: React.FC<SectionTextCardListProps> = ({
   return (
     <Grid
       container
-      spacing={{ xs: "1.25rem", sm: "1.5rem" }}
+      spacing={{ xs: "1rem", sm: "1.5rem" }}
       width={"100%"}
       {...gridContainerProps}
     >

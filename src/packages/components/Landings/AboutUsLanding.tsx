@@ -138,10 +138,11 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
         firstColumn={
           <ImageWithColorizedBorder
             image={{
-              src: `${cdnUrl}/AboutUsLanding/thirdSection.png`,
-              width: 514,
-              height: 408,
+              src: `${cdnUrl}/AboutsUsNew/SecondSection.png`,
+              width: 494,
+              height: 392,
             }}
+            imageSx={{ verticalAlign: "top" }}
           />
         }
         secondColumn={
@@ -314,6 +315,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
 
       <RoundedColorizedSectionV2
         accentColor="warning"
+        gap={{ xs: "2rem", sm: "28px" }}
         sectionTitle={{
           renderTitle: (color) =>
             getTranslatedText(
@@ -360,14 +362,15 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
       />
 
       <SliderSection2
+        gradientBg
         sectionTitle={{
-          preTitle: getTranslatedText(
+          title: getTranslatedText(
             "GoStudy Reviews",
             "GoStudy Đánh Giá",
             "Отзывы о GoStudy",
             "Відгуки про GoStudy"
           ) as string,
-          title: getTranslatedText(
+          description: getTranslatedText(
             "What students and alumni say about the school.",
             "Những gì cựu sinh viên nói về trường",
             "Что говорят о школе студенты и выпускники.",
@@ -377,6 +380,17 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
         accentColor="warning"
         data={[
           {
+            authorSx: {
+              fontWeight: 600,
+              fontFamily: montserratFamily,
+              fontSize: { xs: "16px", sm: "20px" },
+              lineHeight: { xs: "22.88px", sm: "28.8px" },
+            },
+            descriptionSx: {
+              fontWeight: 400,
+              fontSize: { xs: "14px", sm: "16px" },
+              lineHeight: { xs: "20.02px", sm: "24px" },
+            },
             avatar: `${cdnUrl}/AboutsUsNew/FifthSection_1_${
               lang === "vi" ? "en" : lang
             }.png?tx=c_fill,q_100`,
@@ -675,86 +689,104 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
         />
       </SectionContainerWrapperColorized>
 
-      <SectionContainer
-        sectionTitle={{
-          renderTitle: (color) =>
-            getTranslatedText(
-              <>
-                Our <span style={{ color }}>offices</span>
-              </>,
-              <>
-                <span style={{ color }}>Văn phòng </span> của chúng tôi
-              </>,
-              <>
-                Наши <span style={{ color }}>офисы</span>
-              </>,
-              <>
-                Наші <span style={{ color }}>офіси</span>
-              </>
-            ),
-          description: getTranslatedText(
-            "You can study at one of our centres in Europe or choose an online format.",
-            "Bạn có thể học tại một trong các trung tâm của chúng tôi ở Châu Âu hoặc chọn hình thức trực tuyến.",
-            "Вы можете учиться в одном из наших центров в Европе или выбрать онлайн-формат.",
-            "Ви можете навчатися в одному з наших центрів Європи або вибрати онлайн-формат."
-          ),
-        }}
+      <SectionContainerWrapperColorized
+        accentColor="primary"
+        overlayVariant="v11"
+        sx={{ backgroundColor: "#FFFFFF" }}
       >
-        <Stack
-          sx={{
-            gap: { xs: "16px", sm: "20px" },
+        <SectionContainer
+          sectionTitle={{
+            renderTitle: (color) =>
+              getTranslatedText(
+                <>
+                  Our <span style={{ color }}>offices</span>
+                </>,
+                <>
+                  <span style={{ color }}>Văn phòng </span> của chúng tôi
+                </>,
+                <>
+                  Наши <span style={{ color }}>офисы</span>
+                </>,
+                <>
+                  Наші <span style={{ color }}>офіси</span>
+                </>
+              ),
+            description: getTranslatedText(
+              "You can study at one of our centres in Europe or choose an online format.",
+              "Bạn có thể học tại một trong các trung tâm của chúng tôi ở Châu Âu hoặc chọn hình thức trực tuyến.",
+              "Вы можете учиться в одном из наших центров в Европе или выбрать онлайн-формат.",
+              "Ви можете навчатися в одному з наших центрів Європи або вибрати онлайн-формат."
+            ),
           }}
         >
           <Stack
             sx={{
-              flexDirection: { xs: "column", sm: "row" },
               gap: { xs: "16px", sm: "20px" },
-              width: "100%",
             }}
           >
-            <Box
+            <Stack
               sx={{
-                boxShadow: "0px 2px 28px 0px rgba(11, 78, 131, 0.15)",
-                borderRadius: "20px",
-                padding: { xs: "16px", sm: "24px" },
-                backgroundColor: "#ffffff",
+                flexDirection: { xs: "column", sm: "row" },
+                gap: { xs: "16px", sm: "20px" },
                 width: "100%",
-                maxWidth: { xs: "100%", sm: "382px" },
               }}
             >
-              <Typography
+              <Box
                 sx={{
-                  fontFamily: montserratFamily,
-                  fontSize: { xs: "20px", sm: "20px" },
-                  fontWeight: "600",
-                  lineHeight: { xs: "28.8px", sm: "28.8px" },
-                  marginBottom: { xs: "12px", sm: "12px" },
+                  boxShadow: "0px 2px 28px 0px rgba(11, 78, 131, 0.15)",
+                  borderRadius: "20px",
+                  padding: { xs: "16px", sm: "24px" },
+                  backgroundColor: "#ffffff",
+                  width: "100%",
+                  maxWidth: { xs: "100%", sm: "382px" },
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
               >
-                {getTranslatedText(
-                  "Head office of the language school",
-                  "Trụ sở chính của trường ngoại ngữ",
-                  "Главный офис языковой школы",
-                  "Головний офіс мовної школи"
-                )}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: { xs: "16px", sm: "16px" },
-                  fontWeight: "400",
-                  lineHeight: { xs: "24px", sm: "28.8px" },
-                  marginBottom: { xs: "24px", sm: "32px" },
-                  color: "text.secondary",
-                }}
-              >
-                {getTranslatedText(
-                  "The main office of the GoStudy National Examination Language School is located in Prague, where you can apply directly for study programmes.",
-                  "Văn phòng chính của Trường Ngôn ngữ Kiểm tra Quốc gia GoStudy đặt tại Praha, nơi bạn có thể đăng ký trực tiếp vào các chương trình học.",
-                  "С правом проведения государственного экзамена GoStudy находится в Праге, куда вы можете напрямую обратиться для оформления на учебные программы.",
-                  "З правом проведення державного іспиту GoStudy знаходиться у Празі, куди ви можете звернутися безпосередньо для оформлення на навчальні програми."
-                )}
-              </Typography>
-              {getPicture(
+                <Typography
+                  sx={{
+                    fontFamily: montserratFamily,
+                    fontSize: { xs: "20px", sm: "20px" },
+                    fontWeight: "600",
+                    lineHeight: { xs: "28.8px", sm: "28.8px" },
+                    marginBottom: { xs: "12px", sm: "12px" },
+                  }}
+                >
+                  {getTranslatedText(
+                    "Head office of the language school",
+                    "Trụ sở chính của trường ngoại ngữ",
+                    "Главный офис языковой школы",
+                    "Головний офіс мовної школи"
+                  )}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "16px", sm: "16px" },
+                    fontWeight: "400",
+                    lineHeight: { xs: "24px", sm: "28.8px" },
+                    marginBottom: { xs: "24px", sm: "32px" },
+                    color: "text.secondary",
+                  }}
+                >
+                  {getTranslatedText(
+                    "The main office of the GoStudy National Examination Language School is located in Prague, where you can apply directly for study programmes.",
+                    "Văn phòng chính của Trường Ngôn ngữ Kiểm tra Quốc gia GoStudy đặt tại Praha, nơi bạn có thể đăng ký trực tiếp vào các chương trình học.",
+                    "С правом проведения государственного экзамена GoStudy находится в Праге, куда вы можете напрямую обратиться для оформления на учебные программы.",
+                    "З правом проведення державного іспиту GoStudy знаходиться у Празі, куди ви можете звернутися безпосередньо для оформлення на навчальні програми."
+                  )}
+                </Typography>
+                <Box
+                  sx={{
+                    height: { xs: "240px", sm: "100%" },
+                    flexGrow: "1",
+                    borderRadius: "20px",
+                    background: `url(${cdnUrl}/AboutsUsNew/EigthSection_1.png)`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                />
+                {/* {getPicture(
                 `${cdnUrl}/AboutsUsNew/EigthSection_1.png`,
                 334,
                 351,
@@ -771,16 +803,125 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   maxHeight: { xs: "240px", sm: "unset" },
                   objectFit: "cover",
                 }
-              )}
-            </Box>
-            <Stack
+              )} */}
+              </Box>
+              <Stack
+                sx={{
+                  boxShadow: "0px 2px 28px 0px rgba(11, 78, 131, 0.15)",
+                  borderRadius: "20px",
+                  padding: { xs: "16px", sm: "24px" },
+                  backgroundColor: "#ffffff",
+                  width: "100%",
+                  maxWidth: { xs: "100%", sm: "750px" },
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: montserratFamily,
+                    fontSize: { xs: "20px", sm: "20px" },
+                    fontWeight: "600",
+                    lineHeight: { xs: "28.8px", sm: "28.8px" },
+                    marginBottom: { xs: "12px", sm: "12px" },
+                  }}
+                >
+                  {getTranslatedText(
+                    "In Brno, Bratislava and Vienna",
+                    "Ở Brno, Bratislava và Vienna",
+                    "В Брно, Братиславе и Вене",
+                    "У Брно, Братиславі та Відні"
+                  )}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: "16px", sm: "16px" },
+                    fontWeight: "400",
+                    lineHeight: { xs: "24px", sm: "28.8px" },
+                    marginBottom: { xs: "24px", sm: "32px" },
+                    color: "text.secondary",
+                  }}
+                >
+                  {getTranslatedText(
+                    "There are branches of the school.",
+                    "Có các chi nhánh của trường học.",
+                    "Работают филиалы школы.",
+                    "Працюють філії школи."
+                  )}
+                </Typography>
+                {getPicture(
+                  `${cdnUrl}/AboutsUsNew/EigthSection_2.png`,
+                  702,
+                  216,
+                  {
+                    borderRadius: "20px",
+                    marginBottom: { xs: "12px", sm: "20px" },
+                    width: "100%",
+                    maxWidth: "702px",
+                    minHeight: { xs: "192px", sm: "216px" },
+                  },
+                  {
+                    borderRadius: "20px",
+                    width: "100%",
+                    maxWidth: "702px",
+                    minHeight: { xs: "192px", sm: "216px" },
+                    objectFit: "cover",
+                  }
+                )}
+                <Stack
+                  sx={{
+                    flexDirection: { xs: "column", sm: "row" },
+                    gap: { xs: "12px", sm: "19px" },
+                  }}
+                >
+                  {getPicture(
+                    `${cdnUrl}/AboutsUsNew/EigthSection_3.png`,
+                    341,
+                    216,
+                    {
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "341px",
+                      minHeight: { xs: "192px", sm: "216px" },
+                      height: { xs: "192px", sm: "216px" },
+                    },
+                    {
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "341px",
+                      minHeight: { xs: "192px", sm: "216px" },
+                      height: { xs: "192px", sm: "216px" },
+                      objectFit: "cover",
+                    }
+                  )}
+                  {getPicture(
+                    `${cdnUrl}/AboutsUsNew/EigthSection_4.png`,
+                    341,
+                    216,
+                    {
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "341px",
+                      minHeight: { xs: "192px", sm: "216px" },
+                      height: { xs: "192px", sm: "216px" },
+                    },
+                    {
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "341px",
+                      minHeight: { xs: "192px", sm: "216px" },
+                      height: { xs: "192px", sm: "216px" },
+                      objectFit: "cover",
+                    }
+                  )}
+                </Stack>
+              </Stack>
+            </Stack>
+            <Box
               sx={{
                 boxShadow: "0px 2px 28px 0px rgba(11, 78, 131, 0.15)",
                 borderRadius: "20px",
                 padding: { xs: "16px", sm: "24px" },
                 backgroundColor: "#ffffff",
                 width: "100%",
-                maxWidth: { xs: "100%", sm: "750px" },
               }}
             >
               <Typography
@@ -793,10 +934,10 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                 }}
               >
                 {getTranslatedText(
-                  "In Brno, Bratislava and Vienna",
-                  "Ở Brno, Bratislava và Vienna",
-                  "В Брно, Братиславе и Вене",
-                  "У Брно, Братиславі та Відні"
+                  "You can also prepare for your studies from home, in parallel with your 11th grade studies",
+                  "Bạn cũng có thể chuẩn bị cho việc học ở nhà, song song với việc học lớp 11",
+                  "Вы также можете готовиться к поступлению из дома, параллельно с учебой в 11 классе",
+                  "Ви також можете готуватися до вступу з дому, паралельно з навчанням в 11 класі"
                 )}
               </Typography>
               <Typography
@@ -804,103 +945,21 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   fontSize: { xs: "16px", sm: "16px" },
                   fontWeight: "400",
                   lineHeight: { xs: "24px", sm: "28.8px" },
-                  marginBottom: { xs: "24px", sm: "32px" },
+                  // marginBottom: { xs: "24px", sm: "32px" },
                   color: "text.secondary",
                 }}
               >
                 {getTranslatedText(
-                  "There are branches of the school.",
-                  "Có các chi nhánh của trường học.",
-                  "Работают филиалы школы.",
-                  "Працюють філії школи."
+                  "For this purpose we have developed an online programme that is just as effective as face-to-face study.",
+                  "Vì mục đích này, chúng tôi đã phát triển một chương trình trực tuyến có hiệu quả tương đương với việc học trực tiếp.",
+                  "Для этого мы разработали онлайн-программу, которая не уступает по эффективности очному обучению.",
+                  "Для цього ми розробили онлайн-програму, яка не поступається ефективністю очному навчанню."
                 )}
               </Typography>
-              {getPicture(
-                `${cdnUrl}/AboutsUsNew/EigthSection_2.png`,
-                702,
-                216,
-                {
-                  borderRadius: "20px",
-                  marginBottom: { xs: "12px", sm: "20px" },
-                  width: "100%",
-                  maxWidth: "702px",
-                  minHeight: { xs: "192px", sm: "unset" },
-                },
-                {
-                  borderRadius: "20px",
-                  width: "100%",
-                  maxWidth: "702px",
-                  minHeight: { xs: "192px", sm: "unset" },
-                  objectFit: "cover",
-                }
-              )}
-              <Stack
-                sx={{
-                  flexDirection: { xs: "column", sm: "row" },
-                  gap: { xs: "12px", sm: "19px" },
-                }}
-              >
-                {getPicture(
-                  `${cdnUrl}/AboutsUsNew/EigthSection_3.png`,
-                  341,
-                  216,
-                  { borderRadius: "20px", width: "100%", maxWidth: "341px" },
-                  { borderRadius: "20px", width: "100%", maxWidth: "341px" }
-                )}
-                {getPicture(
-                  `${cdnUrl}/AboutsUsNew/EigthSection_4.png`,
-                  341,
-                  216,
-                  { borderRadius: "20px", width: "100%", maxWidth: "341px" },
-                  { borderRadius: "20px", width: "100%", maxWidth: "341px" }
-                )}
-              </Stack>
-            </Stack>
+            </Box>
           </Stack>
-          <Box
-            sx={{
-              boxShadow: "0px 2px 28px 0px rgba(11, 78, 131, 0.15)",
-              borderRadius: "20px",
-              padding: { xs: "16px", sm: "24px" },
-              backgroundColor: "#ffffff",
-              width: "100%",
-            }}
-          >
-            <Typography
-              sx={{
-                fontFamily: montserratFamily,
-                fontSize: { xs: "20px", sm: "20px" },
-                fontWeight: "600",
-                lineHeight: { xs: "28.8px", sm: "28.8px" },
-                marginBottom: { xs: "12px", sm: "12px" },
-              }}
-            >
-              {getTranslatedText(
-                "You can also prepare for your studies from home, in parallel with your 11th grade studies",
-                "Bạn cũng có thể chuẩn bị cho việc học ở nhà, song song với việc học lớp 11",
-                "Вы также можете готовиться к поступлению из дома, параллельно с учебой в 11 классе",
-                "Ви також можете готуватися до вступу з дому, паралельно з навчанням в 11 класі"
-              )}
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: { xs: "16px", sm: "16px" },
-                fontWeight: "400",
-                lineHeight: { xs: "24px", sm: "28.8px" },
-                // marginBottom: { xs: "24px", sm: "32px" },
-                color: "text.secondary",
-              }}
-            >
-              {getTranslatedText(
-                "For this purpose we have developed an online programme that is just as effective as face-to-face study.",
-                "Vì mục đích này, chúng tôi đã phát triển một chương trình trực tuyến có hiệu quả tương đương với việc học trực tiếp.",
-                "Для этого мы разработали онлайн-программу, которая не уступает по эффективности очному обучению.",
-                "Для цього ми розробили онлайн-програму, яка не поступається ефективністю очному навчанню."
-              )}
-            </Typography>
-          </Box>
-        </Stack>
-      </SectionContainer>
+        </SectionContainer>
+      </SectionContainerWrapperColorized>
 
       {(lang === "ru" || lang === "uk") && (
         <SectionContainer
@@ -1107,6 +1166,12 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
       )}
 
       <AccordionSection
+        overlaySx={{
+          "& svg": {
+            display: { xs: "none", sm: "block" },
+            "& path": { stroke: "rgba(11, 78, 131, 0.3)" },
+          },
+        }}
         title={
           getTranslatedText(
             "FAQ",

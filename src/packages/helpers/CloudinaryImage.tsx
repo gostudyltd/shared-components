@@ -172,7 +172,12 @@ export const getPicture = (
   if (!width || !height) {
     return (
       <Box component={"picture"} sx={pictureSx}>
-        <Box component={"img"} src={`${src}`} sx={imageSx} alt={alt ?? ""} />
+        <Box
+          component={"img"}
+          src={`${src}`}
+          sx={{ verticalAlign: "top", ...imageSx }}
+          alt={alt ?? ""}
+        />
       </Box>
     );
   }
@@ -208,7 +213,7 @@ export const getPicture = (
       <Box
         component={"img"}
         src={`${src}?tx=c_fill,h_${height},w_${width},q_100`}
-        sx={imageSx}
+        sx={{ verticalAlign: "top", ...imageSx }}
         alt={alt ?? ""}
       />
     </Box>
