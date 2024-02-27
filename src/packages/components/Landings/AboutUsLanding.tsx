@@ -82,7 +82,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
             )}
           </Box>
         )}
-        description={
+        renderDescription={() => (
           <Stack sx={{ gap: { xs: "4px", sm: "8px" } }}>
             {[
               getTranslatedText(
@@ -124,6 +124,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                       fontSize: { xs: "18px", sm: "18px" },
                       fontWeight: { xs: "400", sm: "400" },
                       lineHeight: { xs: "27.36px", sm: "27.36px" },
+                      color: "text.secondary",
                     }}
                   >
                     {item}
@@ -132,7 +133,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
               </Stack>
             ))}
           </Stack>
-        }
+        )}
         image={{
           src: `${cdnUrl}/AboutsUsNew/FirstSection_${lang}.png`,
           width: 576,

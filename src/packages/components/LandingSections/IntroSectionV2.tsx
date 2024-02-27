@@ -260,16 +260,19 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = (props) => {
               >
                 {renderTitle ? renderTitle(accent.main) : title}
               </Typography>
-              <Typography
-                variant={"body1"}
-                fontSize={"1.125rem"}
-                color={"text.secondary"}
-                sx={descriptionSx}
-              >
-                {renderDescription
-                  ? renderDescription(accent.main)
-                  : description}
-              </Typography>
+
+              {renderDescription ? (
+                renderDescription(accent.main)
+              ) : (
+                <Typography
+                  variant={"body1"}
+                  fontSize={"1.125rem"}
+                  color={"text.secondary"}
+                  sx={descriptionSx}
+                >
+                  {description}
+                </Typography>
+              )}
             </Stack>
             {button && (
               <Stack direction={{ xs: "column", sm: "row" }} gap={"1.375rem"}>
