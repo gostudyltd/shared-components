@@ -2,7 +2,6 @@ import React from "react";
 import { AccentColor } from "./types";
 import { Box, SxProps } from "@mui/material";
 import { accentColorBase } from "./utils";
-import { withCustomTheme } from "../../hoc/withCustomTheme";
 
 const Overlay1 = () => {
   return (
@@ -1913,183 +1912,190 @@ export type SectionContainerOverlayProps = {
   sx?: SxProps;
 };
 
-export const SectionContainerOverlay: React.FC<SectionContainerOverlayProps> =
-  withCustomTheme(({ variant, accentColor, color, sx }) => {
-    if (variant === "v1") {
-      return (
-        <Wrapper
-          accentColor={accentColor}
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "0",
-            transform: "translateY(-50%)",
-            minWidth: "100vw",
-            ...sx,
-          }}
-        >
-          <Overlay1 />
-        </Wrapper>
-      );
-    }
-    if (variant === "v2") {
-      return (
-        <Wrapper
-          accentColor={accentColor}
-          sx={{
-            position: "absolute",
-            top: "0",
-            left: "50%",
-            transform: "translateX(-50%)",
-            ...sx,
-          }}
-        >
-          <Overlay2 />
-        </Wrapper>
-      );
-    }
+export const SectionContainerOverlay: React.FC<
+  SectionContainerOverlayProps
+> = ({ variant, accentColor, color, sx }) => {
+  if (variant === "v1") {
+    return (
+      <Wrapper
+        accentColor={accentColor}
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "0",
+          transform: "translateY(-50%)",
+          minWidth: "100vw",
+          ...sx,
+        }}
+      >
+        <Overlay1 />
+      </Wrapper>
+    );
+  }
+  if (variant === "v2") {
+    return (
+      <Wrapper
+        accentColor={accentColor}
+        sx={{
+          position: "absolute",
+          top: "0",
+          left: "50%",
+          transform: "translateX(-50%)",
+          ...sx,
+        }}
+      >
+        <Overlay2 />
+      </Wrapper>
+    );
+  }
 
-    if (variant === "v4") {
-      return (
-        <Wrapper
-          color={color}
-          accentColor={accentColor}
-          sx={{
-            position: "absolute",
-            top: { xs: "0", sm: "55%" },
-            transform: "translateY(-50%)",
-            right: "-68px",
-            ...sx,
-          }}
-        >
-          <Overlay4 />
-        </Wrapper>
-      );
-    }
+  if (variant === "v4") {
+    return (
+      <Wrapper
+        color={color}
+        accentColor={accentColor}
+        sx={{
+          position: "absolute",
+          top: { xs: "0", sm: "55%" },
+          transform: "translateY(-50%)",
+          right: "-68px",
+          ...sx,
+        }}
+      >
+        <Overlay4 />
+      </Wrapper>
+    );
+  }
 
-    if (variant === "v4.5") {
-      return (
-        <Wrapper
-          color={color}
-          accentColor={accentColor}
-          sx={{
-            position: "absolute",
-            top: { xs: "0", sm: "55%" },
-            transform: { xs: "translateY(-26%)", sm: "translateY(-50%)" },
-            right: "-68px",
-            ...sx,
-          }}
-        >
-          <Overlay4 />
-        </Wrapper>
-      );
-    }
+  if (variant === "v4.5") {
+    return (
+      <Wrapper
+        color={color}
+        accentColor={accentColor}
+        sx={{
+          position: "absolute",
+          top: { xs: "0", sm: "55%" },
+          transform: { xs: "translateY(-26%)", sm: "translateY(-50%)" },
+          right: "-68px",
+          ...sx,
+        }}
+      >
+        <Overlay4 />
+      </Wrapper>
+    );
+  }
 
-    if (variant === "v9") {
-      return (
-        <Wrapper
-          accentColor={accentColor}
-          sx={{
-            position: "absolute",
-            top: "0",
-            height: { xs: "100%", sm: "100%" },
+  if (variant === "v9") {
+    return (
+      <Wrapper
+        accentColor={accentColor}
+        sx={{
+          position: "absolute",
+          top: "0",
+          height: { xs: "100%", sm: "100%" },
+          width: { xs: undefined, sm: "100%" },
+          "& svg": {
+            height: { xs: "100%", sm: "auto" },
             width: { xs: undefined, sm: "100%" },
+          },
+          ...sx,
+        }}
+        color="rgba(255, 255, 255, 0.3)"
+      >
+        <Overlay5 />
+      </Wrapper>
+    );
+  }
+
+  if (variant === "v10") {
+    return (
+      <>
+        <Wrapper
+          withoutAccent
+          accentColor={accentColor}
+          sx={{
+            display: { xs: "none", sm: "block" },
+            position: "absolute",
+            top: "0",
+            right: "0",
+            "& path": { fillOpacity: "0.6", fill: "rgba(11, 78, 131, 0.3)" },
+            ...sx,
+          }}
+        >
+          <Overlay6 />
+        </Wrapper>
+        <Wrapper
+          withoutAccent
+          accentColor={accentColor}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            position: "absolute",
+            width: "100%",
+            top: "115px",
             "& svg": {
-              height: { xs: "100%", sm: "auto" },
-              width: { xs: undefined, sm: "100%" },
+              width: "100%",
+              height: "auto",
+            },
+            "& path": {
+              fillOpacity: "0.6",
+              fill: "rgba(11, 78, 131, 0.3)",
             },
             ...sx,
           }}
-          color="rgba(255, 255, 255, 0.3)"
         >
-          <Overlay5 />
+          <Overlay6Mobile />
         </Wrapper>
-      );
-    }
+      </>
+    );
+  }
 
-    if (variant === "v10") {
-      return (
-        <>
-          <Wrapper
-            withoutAccent
-            accentColor={accentColor}
-            sx={{
-              display: { xs: "none", sm: "block" },
-              position: "absolute",
-              top: "0",
-              right: "0",
-              "& path": { fillOpacity: "0.6", fill: "rgba(11, 78, 131, 0.3)" },
-              ...sx,
-            }}
-          >
-            <Overlay6 />
-          </Wrapper>
-          <Wrapper
-            withoutAccent
-            accentColor={accentColor}
-            sx={{
-              display: { xs: "block", sm: "none" },
-              position: "absolute",
+  if (variant === "v11") {
+    return (
+      <>
+        <Wrapper
+          withoutAccent
+          accentColor={accentColor}
+          sx={{
+            display: { xs: "none", sm: "block" },
+            position: "absolute",
+            top: "0",
+            right: "0",
+            width: "100%",
+            "& svg": {
+              // verticalAlign: "bottom",
               width: "100%",
-              top: "115px",
-              "& svg": {
-                width: "100%",
-                height: "auto",
-              },
-              "& path": {
-                fillOpacity: "0.6",
-                fill: "rgba(11, 78, 131, 0.3)",
-              },
-              ...sx,
-            }}
-          >
-            <Overlay6Mobile />
-          </Wrapper>
-        </>
-      );
-    }
-
-    if (variant === "v11") {
-      return (
-        <>
-          <Wrapper
-            withoutAccent
-            accentColor={accentColor}
-            sx={{
-              display: { xs: "none", sm: "block" },
-              position: "absolute",
-              top: "0",
-              right: "0",
-              "& path": { fillOpacity: "0.6" },
-              ...sx,
-            }}
-          >
-            <Overlay7 />
-          </Wrapper>
-          <Wrapper
-            withoutAccent
-            accentColor={accentColor}
-            sx={{
-              display: { xs: "block", sm: "none" },
-              position: "absolute",
+              height: "auto",
+            },
+            "& path": { fillOpacity: "0.6" },
+            ...sx,
+          }}
+        >
+          <Overlay7 />
+        </Wrapper>
+        <Wrapper
+          withoutAccent
+          accentColor={accentColor}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            position: "absolute",
+            width: "100%",
+            bottom: "0",
+            "& svg": {
+              verticalAlign: "bottom",
               width: "100%",
-              bottom: "0",
-              "& svg": {
-                verticalAlign: "bottom",
-                width: "100%",
-                height: "auto",
-              },
-              "& path": {
-                fillOpacity: "0.6",
-              },
-              ...sx,
-            }}
-          >
-            <Overlay7Mobile />
-          </Wrapper>
-        </>
-      );
-    }
+              height: "auto",
+            },
+            "& path": {
+              fillOpacity: "0.6",
+            },
+            ...sx,
+          }}
+        >
+          <Overlay7Mobile />
+        </Wrapper>
+      </>
+    );
+  }
 
-    return null;
-  });
+  return null;
+};

@@ -15,7 +15,6 @@ import {
 import { SectionContainer } from "./components/SectionContainer";
 import { getPicture } from "../../helpers/CloudinaryImage";
 import { CdnImage } from "../../types/components";
-import { withCustomTheme } from "../hoc/withCustomTheme";
 import { montserratFamily } from "../../constants/themeVars";
 // import { getSrc, getSrcSet } from '../../helpers/residence'
 
@@ -55,7 +54,7 @@ type ImageProps = {
   mobileImageSrc?: CdnImage & { sx?: SxProps; pictureSx?: SxProps };
 };
 
-export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
+export const Image: React.FC<ImageProps> = (props) => {
   const { imageSrc, mobileImageSrc } = props;
   if (mobileImageSrc) {
     return (
@@ -108,219 +107,216 @@ export const Image: React.FC<ImageProps> = withCustomTheme((props) => {
     { maxWidth: "588px", mx: "auto", width: "100%", ...imageSrc.pictureSx },
     { maxWidth: "588px", mx: "auto", width: "100%", ...imageSrc.sx }
   );
-});
+};
 
-export const IntroSectionV2: React.FC<IntroSectionPropsV2> = withCustomTheme(
-  (props) => {
-    const {
-      title,
-      renderTitle,
-      description,
-      image,
-      mobileImage,
-      button,
-      accentColor = "primary",
-      preTitle,
-      bottomListData,
-      leftSectionContainerSx = {},
-      containerSx = {},
-      titleSx,
-      descriptionSx,
-      info,
-      renderDescription,
-      secondColumn,
-    } = props;
+export const IntroSectionV2: React.FC<IntroSectionPropsV2> = (props) => {
+  const {
+    title,
+    renderTitle,
+    description,
+    image,
+    mobileImage,
+    button,
+    accentColor = "primary",
+    preTitle,
+    bottomListData,
+    leftSectionContainerSx = {},
+    containerSx = {},
+    titleSx,
+    descriptionSx,
+    info,
+    renderDescription,
+    secondColumn,
+  } = props;
 
-    const accent = accentColorBase[accentColor];
-    return (
-      <SectionContainer
-        disableContainerPaddings
-        sx={{
-          position: "relative",
-          padding: bottomListData
-            ? { xs: "0 0 8.25rem 0", sm: "0 0 3.75rem 0" }
-            : undefined,
-          ...containerSx,
+  const accent = accentColorBase[accentColor];
+  return (
+    <SectionContainer
+      disableContainerPaddings
+      sx={{
+        position: "relative",
+        padding: bottomListData
+          ? { xs: "0 0 8.25rem 0", sm: "0 0 3.75rem 0" }
+          : undefined,
+        ...containerSx,
+      }}
+    >
+      <SectionTwoColumnsContainer
+        sectionContainerSx={{
+          gap: { xs: "2.5em", sm: "2.75em" },
+          py: { xs: "3em", sm: "7.5em" },
+          "& > *:first-of-type": {
+            maxWidth: { xs: "100%", sm: "484px" },
+          },
+          ...leftSectionContainerSx,
         }}
-      >
-        <SectionTwoColumnsContainer
-          sectionContainerSx={{
-            gap: { xs: "2.5em", sm: "2.75em" },
-            py: { xs: "3em", sm: "7.5em" },
-            "& > *:first-of-type": {
-              maxWidth: { xs: "100%", sm: "484px" },
-            },
-            ...leftSectionContainerSx,
-          }}
-          firstColumn={
-            <Stack
-              sx={{
-                alignItems: { xs: "stretch", sm: "flex-start" },
-              }}
-            >
-              {info && (
-                <Stack
-                  direction={"row"}
-                  gap={"8px"}
-                  sx={{
-                    marginBottom: { xs: ".5rem", sm: "1.25" },
-                  }}
-                >
-                  {info.map((item) => (
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        height: "24px",
-                        px: { xs: "16px", sm: "20px" },
-                        backgroundColor:
-                          item.bgColor ?? "rgba(86, 139, 255, 1)",
-                        borderRadius: "100px",
-                        ...item.sx,
-                      }}
-                    >
-                      <Typography
-                        color={item.color ?? "#FFF"}
-                        fontFamily={montserratFamily}
-                        fontSize={{ xs: "12px", sm: "14px" }}
-                        fontWeight={600}
-                        sx={item.textSx}
-                      >
-                        {item.text}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Stack>
-              )}
+        firstColumn={
+          <Stack
+            sx={{
+              alignItems: { xs: "stretch", sm: "flex-start" },
+            }}
+          >
+            {info && (
               <Stack
-                // gap={{ xs: "1em", sm: "1.5em" }}
+                direction={"row"}
+                gap={"8px"}
                 sx={{
-                  marginBottom: { xs: "2em", sm: "3em" },
-                  "& p": { margin: 0 },
-                  "& h2": { marginBottom: { xs: "2rem", sm: "3rem" } },
+                  marginBottom: { xs: ".5rem", sm: "1.25" },
                 }}
               >
-                {preTitle && (
-                  <Stack
-                    alignItems={"center"}
-                    direction={"row"}
-                    position={"relative"}
+                {info.map((item) => (
+                  <Box
                     sx={{
-                      marginBottom: { xs: "1rem", sm: "1.5rem" },
-                      px: { xs: "3rem", sm: "3.5rem" },
+                      display: "flex",
+                      alignItems: "center",
+                      height: "24px",
+                      px: { xs: "16px", sm: "20px" },
+                      backgroundColor: item.bgColor ?? "rgba(86, 139, 255, 1)",
+                      borderRadius: "100px",
+                      ...item.sx,
                     }}
                   >
-                    <Box
-                      component={"span"}
-                      sx={{
-                        width: { xs: "2rem", sm: "2.5rem" },
-                        height: "0.125rem",
-                        transition: "all .2s linear",
-                        backgroundColor: accent.main,
-                        marginRight: "1rem",
-                        flexShrink: 0,
-                        position: "absolute",
-                        left: 0,
-                        top: 0,
-                        my: "11px",
-                        display: "block",
-                        borderRadius: "0.125rem",
-                      }}
-                    />
-
                     <Typography
-                      variant="h5"
-                      sx={{
-                        color: accent.main,
-                        fontSize: "1.25rem",
-                        fontWeight: 600,
-                        transition: "all .2s linear",
-                      }}
+                      color={item.color ?? "#FFF"}
+                      fontFamily={montserratFamily}
+                      fontSize={{ xs: "12px", sm: "14px" }}
+                      fontWeight={600}
+                      sx={item.textSx}
                     >
-                      {preTitle}
+                      {item.text}
                     </Typography>
-                  </Stack>
-                )}
-                <Typography
-                  variant="h1"
-                  fontSize={"3rem"}
-                  display={{ xs: "none", sm: "block" }}
-                  lineHeight={"63.38px"}
-                  fontWeight={600}
+                  </Box>
+                ))}
+              </Stack>
+            )}
+            <Stack
+              // gap={{ xs: "1em", sm: "1.5em" }}
+              sx={{
+                marginBottom: { xs: "2em", sm: "3em" },
+                "& p": { margin: 0 },
+                "& h2": { marginBottom: { xs: "2rem", sm: "3rem" } },
+              }}
+            >
+              {preTitle && (
+                <Stack
+                  alignItems={"center"}
+                  direction={"row"}
+                  position={"relative"}
                   sx={{
                     marginBottom: { xs: "1rem", sm: "1.5rem" },
-                    ...titleSx,
+                    px: { xs: "3rem", sm: "3.5rem" },
                   }}
                 >
-                  {renderTitle ? renderTitle(accent.main) : title}
-                </Typography>
-
-                <Typography
-                  variant="h2"
-                  display={{ xs: "block", sm: "none" }}
-                  fontWeight={600}
-                  sx={titleSx}
-                >
-                  {renderTitle ? renderTitle(accent.main) : title}
-                </Typography>
-                <Typography
-                  variant={"body1"}
-                  fontSize={"1.125rem"}
-                  color={"text.secondary"}
-                  sx={descriptionSx}
-                >
-                  {renderDescription
-                    ? renderDescription(accent.main)
-                    : description}
-                </Typography>
-              </Stack>
-              {button && (
-                <Stack direction={{ xs: "column", sm: "row" }} gap={"1.375rem"}>
-                  <Button
-                    variant="contained"
-                    size="large"
-                    onClick={button.onClick}
-                    color={accentColor}
+                  <Box
+                    component={"span"}
                     sx={{
-                      minWidth: { xs: "100%", sm: "10rem" },
-                      px: { xs: "0", sm: "2rem" },
-                      fontSize: {
-                        xs: "1rem",
-                        sm: "1.125rem",
-                      },
-                      height: { xs: "2.625rem", sm: "3.5rem" },
-                      ...button.sx,
+                      width: { xs: "2rem", sm: "2.5rem" },
+                      height: "0.125rem",
+                      transition: "all .2s linear",
+                      backgroundColor: accent.main,
+                      marginRight: "1rem",
+                      flexShrink: 0,
+                      position: "absolute",
+                      left: 0,
+                      top: 0,
+                      my: "11px",
+                      display: "block",
+                      borderRadius: "0.125rem",
+                    }}
+                  />
+
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: accent.main,
+                      fontSize: "1.25rem",
+                      fontWeight: 600,
+                      transition: "all .2s linear",
                     }}
                   >
-                    {button.text}
-                  </Button>
+                    {preTitle}
+                  </Typography>
                 </Stack>
               )}
-            </Stack>
-          }
-          secondColumn={
-            secondColumn ?? (
-              <Image imageSrc={image} mobileImageSrc={mobileImage} />
-            )
-          }
-        />
-        {bottomListData && (
-          <Box position={"absolute"} bottom={"0"} left={"0"} right={"0"}>
-            <Box maxWidth={"md"} mx={"auto"} position={"relative"}>
-              <HorizontalListWithSeparator
-                data={bottomListData}
+              <Typography
+                variant="h1"
+                fontSize={"3rem"}
+                display={{ xs: "none", sm: "block" }}
+                lineHeight={"63.38px"}
+                fontWeight={600}
                 sx={{
-                  width: "calc(100% - 2rem)",
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
+                  marginBottom: { xs: "1rem", sm: "1.5rem" },
+                  ...titleSx,
                 }}
-              />
-            </Box>
+              >
+                {renderTitle ? renderTitle(accent.main) : title}
+              </Typography>
+
+              <Typography
+                variant="h2"
+                display={{ xs: "block", sm: "none" }}
+                fontWeight={600}
+                sx={titleSx}
+              >
+                {renderTitle ? renderTitle(accent.main) : title}
+              </Typography>
+              <Typography
+                variant={"body1"}
+                fontSize={"1.125rem"}
+                color={"text.secondary"}
+                sx={descriptionSx}
+              >
+                {renderDescription
+                  ? renderDescription(accent.main)
+                  : description}
+              </Typography>
+            </Stack>
+            {button && (
+              <Stack direction={{ xs: "column", sm: "row" }} gap={"1.375rem"}>
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={button.onClick}
+                  color={accentColor}
+                  sx={{
+                    minWidth: { xs: "100%", sm: "10rem" },
+                    px: { xs: "0", sm: "2rem" },
+                    fontSize: {
+                      xs: "1rem",
+                      sm: "1.125rem",
+                    },
+                    height: { xs: "2.625rem", sm: "3.5rem" },
+                    ...button.sx,
+                  }}
+                >
+                  {button.text}
+                </Button>
+              </Stack>
+            )}
+          </Stack>
+        }
+        secondColumn={
+          secondColumn ?? (
+            <Image imageSrc={image} mobileImageSrc={mobileImage} />
+          )
+        }
+      />
+      {bottomListData && (
+        <Box position={"absolute"} bottom={"0"} left={"0"} right={"0"}>
+          <Box maxWidth={"md"} mx={"auto"} position={"relative"}>
+            <HorizontalListWithSeparator
+              data={bottomListData}
+              sx={{
+                width: "calc(100% - 2rem)",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
           </Box>
-        )}
-      </SectionContainer>
-    );
-  }
-);
+        </Box>
+      )}
+    </SectionContainer>
+  );
+};
