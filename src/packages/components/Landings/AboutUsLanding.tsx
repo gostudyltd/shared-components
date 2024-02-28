@@ -140,9 +140,10 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
           height: 516,
         }}
         mobileImage={{
-          src: `${cdnUrl}/AboutsUsNew/FirstSection_${lang}_mobile.png`,
-          width: 343,
-          height: 306,
+          src: `${cdnUrl}/AboutsUsNew/FirstSection_${lang}_mobile_big.png`,
+          width: 686,
+          height: 612,
+          sx: { width: "100%", maxWidth: "343px", objectFit: "cover" },
         }}
       />
 
@@ -157,7 +158,16 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
               width: 494,
               height: 392,
             }}
-            imageSx={{ verticalAlign: "top" }}
+            mobileImage={{
+              src: `${cdnUrl}/AboutsUsNew/SecondSection_mobile_big.png`,
+              width: 638,
+              height: 480,
+            }}
+            imageSx={{
+              verticalAlign: "top",
+              width: { xs: "100%", sm: "unset", objectFit: "cover" },
+              // maxWidth: { xs: "240px", sm: "unset" },
+            }}
           />
         }
         secondColumn={
@@ -365,10 +375,11 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
           height: 410,
         }}
         mobileImage={{
-          src: `${cdnUrl}/AboutsUsNew/FourthSection_mobile.png`,
-          width: 303,
-          height: 304,
+          src: `${cdnUrl}/AboutsUsNew/FourthSection_mobile_big.png`,
+          width: 606,
+          height: 608,
         }}
+        imageSx={{ width: { xs: "303px", sm: "unset" } }}
       />
 
       <SliderSection2
@@ -592,6 +603,18 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   width: 514,
                   height: 304,
                 }}
+                mobileImage={{
+                  src: `${cdnUrl}/AboutsUsNew/SeventhSection_mobile_big.png`,
+                  width: 638,
+                  height: 284,
+                }}
+                imageSx={{
+                  width: {
+                    xs: "100%",
+                    sm: "unset",
+                  },
+                  minHeight: { xs: "192px", sm: "unset" },
+                }}
               />
             </>
           }
@@ -788,6 +811,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                 </Typography>
                 <Box
                   sx={{
+                    display: { xs: "none", sm: "block" },
                     height: { xs: "240px", sm: "100%" },
                     flexGrow: "1",
                     borderRadius: "20px",
@@ -796,6 +820,13 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                     backgroundRepeat: "no-repeat",
                   }}
                 />
+                {getPicture(
+                  `${cdnUrl}/AboutsUsNew/EigthSection_1_mobile_big.png`,
+                  622,
+                  480,
+                  { display: { xs: "block", sm: "none" } },
+                  { width: "100%" }
+                )}
                 {/* {getPicture(
                 `${cdnUrl}/AboutsUsNew/EigthSection_1.png`,
                 334,
@@ -862,6 +893,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                   702,
                   216,
                   {
+                    display: { xs: "none", sm: "block" },
                     borderRadius: "20px",
                     marginBottom: { xs: "12px", sm: "20px" },
                     width: "100%",
@@ -876,6 +908,26 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                     objectFit: "cover",
                   }
                 )}
+                {getPicture(
+                  `${cdnUrl}/AboutsUsNew/EigthSection_2_mobile_big.png`,
+                  622,
+                  480,
+                  {
+                    display: { xs: "block", sm: "none" },
+                    borderRadius: "20px",
+                    marginBottom: { xs: "12px", sm: "20px" },
+                    width: "100%",
+                    maxWidth: "341",
+                    height: { xs: "192px", sm: "216px" },
+                  },
+                  {
+                    borderRadius: "20px",
+                    width: "100%",
+                    maxWidth: "702px",
+                    height: { xs: "192px", sm: "216px" },
+                    objectFit: "cover",
+                  }
+                )}
                 <Stack
                   sx={{
                     flexDirection: { xs: "column", sm: "row" },
@@ -887,6 +939,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                     341,
                     216,
                     {
+                      display: { xs: "none", sm: "block" },
                       borderRadius: "20px",
                       width: "100%",
                       maxWidth: "341px",
@@ -903,10 +956,31 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                     }
                   )}
                   {getPicture(
+                    `${cdnUrl}/AboutsUsNew/EigthSection_3_mobile_big.png`,
+                    622,
+                    480,
+                    {
+                      display: { xs: "block", sm: "none" },
+                      borderRadius: "20px",
+                      marginBottom: { xs: "12px", sm: "20px" },
+                      width: "100%",
+                      maxWidth: "341",
+                      height: { xs: "192px", sm: "216px" },
+                    },
+                    {
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "702px",
+                      height: { xs: "192px", sm: "216px" },
+                      objectFit: "cover",
+                    }
+                  )}
+                  {getPicture(
                     `${cdnUrl}/AboutsUsNew/EigthSection_4.png`,
                     341,
                     216,
                     {
+                      display: { xs: "none", sm: "block" },
                       borderRadius: "20px",
                       width: "100%",
                       maxWidth: "341px",
@@ -920,6 +994,27 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                       minHeight: { xs: "192px", sm: "216px" },
                       height: { xs: "192px", sm: "216px" },
                       objectFit: "cover",
+                    }
+                  )}
+                  {getPicture(
+                    `${cdnUrl}/AboutsUsNew/EigthSection_4_mobile_big.png`,
+                    622,
+                    480,
+                    {
+                      display: { xs: "block", sm: "none" },
+                      borderRadius: "20px",
+                      marginBottom: { xs: "12px", sm: "20px" },
+                      width: "100%",
+                      maxWidth: "341",
+                      height: { xs: "192px", sm: "216px" },
+                    },
+                    {
+                      borderRadius: "20px",
+                      width: "100%",
+                      maxWidth: "702px",
+                      height: { xs: "192px", sm: "216px" },
+                      objectFit: "cover",
+                      objectPosition: "top",
                     }
                   )}
                 </Stack>

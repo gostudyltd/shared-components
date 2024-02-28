@@ -9,6 +9,7 @@ import { accentColorBase } from "./components/utils";
 
 type ImageWithColorizedBorderProps = {
   image: CdnImage;
+  mobileImage?: CdnImage;
   renderImage?: (src: string) => React.ReactNode;
   accentColor?: AccentColor;
   sx?: SxProps;
@@ -19,6 +20,7 @@ export const ImageWithColorizedBorder: React.FC<
   ImageWithColorizedBorderProps
 > = ({
   image,
+  mobileImage,
   renderImage,
   accentColor = "primary",
   sx = {},
@@ -35,13 +37,19 @@ export const ImageWithColorizedBorder: React.FC<
         ...sx,
       }}
     >
-      {renderImage
-        ? renderImage(image.src)
-        : getPicture(
+      {renderImage ? (
+        renderImage(image.src)
+      ) : mobileImage ? (
+        <>
+          {getPicture(
             image.src,
             image.width,
             image.height,
-            { borderRadius: "1rem", ...imageSx },
+            {
+              borderRadius: "1rem",
+              display: { xs: "none", sm: "block" },
+              ...imageSx,
+            },
             {
               borderRadius: "1rem",
               width: "100%",
@@ -50,6 +58,39 @@ export const ImageWithColorizedBorder: React.FC<
             },
             "discover"
           )}
+          {getPicture(
+            mobileImage.src,
+            mobileImage.width,
+            mobileImage.height,
+            {
+              borderRadius: "1rem",
+              display: { xs: "block", sm: "none" },
+              ...imageSx,
+            },
+            {
+              borderRadius: "1rem",
+              width: "100%",
+              verticalAlign: "top",
+              ...imageSx,
+            },
+            "discover"
+          )}
+        </>
+      ) : (
+        getPicture(
+          image.src,
+          image.width,
+          image.height,
+          { borderRadius: "1rem", ...imageSx },
+          {
+            borderRadius: "1rem",
+            width: "100%",
+            verticalAlign: "top",
+            ...imageSx,
+          },
+          "discover"
+        )
+      )}
     </Stack>
   );
 };
