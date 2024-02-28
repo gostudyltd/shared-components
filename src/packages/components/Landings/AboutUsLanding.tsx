@@ -176,83 +176,78 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
               "Ваше успешное будущее в Европе",
               "Ваше успішне майбутнє в Європі"
             )}
-            description={
-              <Typography>
-                {getTranslatedText(
-                  <>
-                    We will prepare you to enter and study at European
-                    universities in the Czech Republic, Austria and Slovakia
-                    qualitatively and in a short period of time. All you need
-                    to do is to study diligently and fulfil your teacher’s
-                    tasks.
-                    <br />
-                    <br />
-                    No language barriers: in just one year you will be able
-                    to study at university without any problems, communicate
-                    easily with your classmates and teachers and feel at home.
-                    <br />
-                    <br />
-                    We will quickly adapt you to the language environment,
-                    familiarise you with the new culture and give you all the
-                    perspectives for your studies and career. With us you will
-                    learn the language, visit different European countries and
-                    make many new friends!
-                  </>,
-                  <>
-                    Chúng tôi sẽ chuẩn bị để nhập học tại trường đại học châu
-                    u trong cộng Hòa séc, Áo và một số chất lượng và trong một
-                    khoảng thời gian ngắn. Tất cả bạn cần làm là để nghiên cứu
-                    siêng năng và thực hiện của bạn của giáo viên, nhiệm vụ.
-                    <br />
-                    <br />
-                    Không có ngôn ngữ: chỉ trong một năm em sẽ đến học tại
-                    trường đại học không có bất kỳ vấn đề giao tiếp dễ dàng với
-                    các bạn cùng lớp và giáo viên và cảm thấy như ở nhà.
-                    <br />
-                    <br />
-                    Chúng ta sẽ nhanh chóng thích nghi với bạn để các môi trường
-                    ngôn ngữ, làm quen với bạn mới văn hóa và cung cấp cho bạn
-                    tất cả các quan điểm cho nghiên cứu của bạn và sự nghiệp.
-                    Với chúng tôi, bạn sẽ được học các ngôn ngữ truy cập khác
-                    nhau các nước châu u và làm nhiều bạn bè mới!
-                  </>,
-                  <>
-                    Качественно и за короткий срок мы подготовим вас
-                    к поступлению и обучению в европейских университетах Чехии,
-                    Австрии и Словакии. Все, что потребуется от вас —
-                    добросовестно учиться и выполнять задания педагога.
-                    <br />
-                    <br />
-                    Никаких языковых барьеров: уже через год вы сможете без
-                    проблем учиться в вузе, легко общаться с однокурсниками
-                    и педагогами и будете чувствовать себя, как дома.
-                    <br />
-                    <br />
-                    Мы быстро адаптируем вас к языковой среде, познакомим
-                    с новой культурой и опишем все перспективы для учебы
-                    и построения карьеры. С нами вы выучите язык, побываете
-                    в разных странах Европы и обретете много новых друзей!
-                  </>,
-                  <>
-                    Якісно та за короткий термін ми підготуємо вас до вступу
-                    та навчання в європейських університетах Чехії, Австрії
-                    та Словаччини. Все, що буде потрібно від вас — сумлінно
-                    вчитися і виконувати завдання педагога.
-                    <br />
-                    <br />
-                    Жодних мовних бар’єрів: вже через рік ви зможете без проблем
-                    навчатися у виші, легко спілкуватися з однокурсниками
-                    та педагогами та почуватиметеся, як удома.
-                    <br />
-                    <br />
-                    Ми швидко адаптуємо вас до мовного середовища, познайомимо
-                    з новою культурою та опишемо всі перспективи для навчання
-                    та побудови кар’єри. З нами ви вивчите мову, побуваєте
-                    в різних країнах Європи та знайдете багато нових друзів!
-                  </>
-                )}
-              </Typography>
-            }
+            description={getTranslatedText(
+              <>
+                We will prepare you to enter and study at European universities
+                in the Czech Republic, Austria and Slovakia qualitatively and
+                in a short period of time. All you need to do is to study
+                diligently and fulfil your teacher’s tasks.
+                <br />
+                <br />
+                No language barriers: in just one year you will be able to study
+                at university without any problems, communicate easily with your
+                classmates and teachers and feel at home.
+                <br />
+                <br />
+                We will quickly adapt you to the language environment,
+                familiarise you with the new culture and give you all the
+                perspectives for your studies and career. With us you will learn
+                the language, visit different European countries and make many
+                new friends!
+              </>,
+              <>
+                Chúng tôi sẽ chuẩn bị để nhập học tại trường đại học châu
+                u trong cộng Hòa séc, Áo và một số chất lượng và trong một
+                khoảng thời gian ngắn. Tất cả bạn cần làm là để nghiên cứu siêng
+                năng và thực hiện của bạn của giáo viên, nhiệm vụ.
+                <br />
+                <br />
+                Không có ngôn ngữ: chỉ trong một năm em sẽ đến học tại trường
+                đại học không có bất kỳ vấn đề giao tiếp dễ dàng với các bạn
+                cùng lớp và giáo viên và cảm thấy như ở nhà.
+                <br />
+                <br />
+                Chúng ta sẽ nhanh chóng thích nghi với bạn để các môi trường
+                ngôn ngữ, làm quen với bạn mới văn hóa và cung cấp cho bạn tất
+                cả các quan điểm cho nghiên cứu của bạn và sự nghiệp. Với chúng
+                tôi, bạn sẽ được học các ngôn ngữ truy cập khác nhau các nước
+                châu u và làm nhiều bạn bè mới!
+              </>,
+              <>
+                Качественно и за короткий срок мы подготовим вас к поступлению
+                и обучению в европейских университетах Чехии, Австрии
+                и Словакии. Все, что потребуется от вас — добросовестно учиться
+                и выполнять задания педагога.
+                <br />
+                <br />
+                Никаких языковых барьеров: уже через год вы сможете без проблем
+                учиться в вузе, легко общаться с однокурсниками и педагогами
+                и будете чувствовать себя, как дома.
+                <br />
+                <br />
+                Мы быстро адаптируем вас к языковой среде, познакомим с новой
+                культурой и опишем все перспективы для учебы и построения
+                карьеры. С нами вы выучите язык, побываете в разных странах
+                Европы и обретете много новых друзей!
+              </>,
+              <>
+                Якісно та за короткий термін ми підготуємо вас до вступу
+                та навчання в європейських університетах Чехії, Австрії
+                та Словаччини. Все, що буде потрібно від вас — сумлінно вчитися
+                і виконувати завдання педагога.
+                <br />
+                <br />
+                Жодних мовних бар’єрів: вже через рік ви зможете без проблем
+                навчатися у виші, легко спілкуватися з однокурсниками
+                та педагогами та почуватиметеся, як удома.
+                <br />
+                <br />
+                Ми швидко адаптуємо вас до мовного середовища, познайомимо
+                з новою культурою та опишемо всі перспективи для навчання
+                та побудови кар’єри. З нами ви вивчите мову, побуваєте в різних
+                країнах Європи та знайдете багато нових друзів!
+              </>
+            )}
           />
         }
       />
