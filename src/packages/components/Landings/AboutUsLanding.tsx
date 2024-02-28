@@ -1087,6 +1087,16 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                       width: { xs: "40px", sm: "48px" },
                       height: { xs: "40px", sm: "48px" },
                       backgroundColor: "#FFFFFF",
+                      "& svg": {
+                        width: {
+                          xs: "20px",
+                          sm: "24px",
+                        },
+                        height: {
+                          xs: "20px",
+                          sm: "24px",
+                        },
+                      },
                       "& svg path": { fill: "rgba(11, 78, 131, 1)" },
                       marginBottom: { xs: "16px", sm: "20px" },
                     }}
@@ -1147,6 +1157,16 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
                       width: { xs: "40px", sm: "48px" },
                       height: { xs: "40px", sm: "48px" },
                       backgroundColor: "#FFFFFF",
+                      "& svg": {
+                        width: {
+                          xs: "20px",
+                          sm: "24px",
+                        },
+                        height: {
+                          xs: "20px",
+                          sm: "24px",
+                        },
+                      },
                       "& svg path": { fill: "rgba(11, 78, 131, 1)" },
                       marginBottom: { xs: "16px", sm: "20px" },
                     }}
