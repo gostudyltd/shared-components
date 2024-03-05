@@ -1,16 +1,20 @@
 import React from "react";
-import { AboutUsLanding } from "./packages";
+import { AboutUsLanding, DeutshLanding } from "./packages";
 
 function App() {
   return (
-    <AboutUsLanding
-      lang="ru"
-      button={{
-        text: "test",
-        onClick: () => {
-          console.log("test");
-        },
+    <DeutshLanding
+      lang="uk"
+      cdnUrl="https://images.gostudy.cz/static"
+      btnAction={() => {
+        console.log("test");
       }}
+      // button={{
+      // text: "test",
+      // onClick: () => {
+      // console.log("test");
+      // },
+      // }}
     />
   );
 }
