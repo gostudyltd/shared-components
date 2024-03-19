@@ -365,7 +365,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru" }) => {
           description: getTranslatedText(
             "Mgr. Anna Čurdová, director of the GoStudy language centre in Prague, teacher, politician, honorary member of the Parliamentary Assembly of the Council of Europe and the Committee for European Integration.",
             "Đức ông Anna Čurdová, giám đốc trung tâm ngôn ngữ GoStudy ở Prague, giáo viên, chính trị gia, thành viên danh dự của Hội đồng Nghị viện của Hội đồng Châu Âu và Ủy ban Hội nhập Châu Âu.",
-            "Анна Чурдова, директор зыкового центра GoStudy в Праге, педагог, политик, почетный член Парламентской ассамблеи Совета Европы и комитета по Европейской интеграции.",
+            "Анна Чурдова, директор языкового центра GoStudy в Праге, педагог, политик, почетный член Парламентской ассамблеи Совета Европы и комитета по Европейской интеграции.",
             "Mgr. Anna Čurdová, директор мовного центру GoStudy у Празі, педагог, політик, почесний член Парламентської асамблеї Ради Європи та Комітету з Європейської інтеграції."
           ),
         }}
