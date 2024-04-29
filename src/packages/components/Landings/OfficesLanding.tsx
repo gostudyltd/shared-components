@@ -1,21 +1,14 @@
 import React from "react";
-import { Box, Button, Link, Stack, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import {
-  AccordionSection,
   FormSection,
   IntroSectionV2,
-  RoundedColorizedSectionV2,
   SectionContainer,
-  SectionContainerWrapperColorized,
-  SectionTextCardList,
   SectionTitle,
   SectionTwoColumnsContainer,
 } from "../LandingSections";
-import { CheckRounded } from "@mui/icons-material";
 import { ImageWithColorizedBorder } from "../LandingSections/ImageWithColorizedBorder";
-import { SliderSection2 } from "../LandingSections/SliderSection2";
 import { montserratFamily } from "../../constants/themeVars";
-import { getPicture } from "../../helpers/CloudinaryImage";
 import { SliderSection3 } from "../LandingSections/SliderSection3";
 import { SliderSection4 } from "../LandingSections/SliderSection4";
 
@@ -249,7 +242,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
           py: { xs: "3em", sm: "3.5em" },
         }}
         renderTitle={(color) => (
-          <Box>
+          <Box component={"span"}>
             {getTranslatedText(
               <>
                 <Box component={"span"} sx={{ color: color }}>
@@ -626,6 +619,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
         }
         description={
           <Box
+            component={"span"}
             sx={{
               textAlign: { xs: "center", sm: "start" },
               lineHeight: { xs: "27.36px", sm: "27.36px" },
@@ -655,6 +649,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                 content: {
                   acceptTerms: (
                     <Box
+                      component={"span"}
                       sx={{
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
@@ -681,6 +676,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                 content: {
                   acceptTerms: (
                     <Box
+                      component={"span"}
                       sx={{
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
@@ -707,6 +703,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                 content: {
                   acceptTerms: (
                     <Box
+                      component={"span"}
                       sx={{
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
@@ -732,6 +729,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                 content: {
                   acceptTerms: (
                     <Box
+                      component={"span"}
                       sx={{
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
