@@ -394,6 +394,7 @@ const SliderSection4Content: React.FC<SliderSectionContentProps> = ({
               >
                 <ImageWithColorizedBorder
                   image={data.image}
+                  imageSx={{ height: "100%", objectFit: "cover" }}
                   accentColor={accentColor}
                   sx={{ wdith: "100%", height: "100%" }}
                 />
@@ -452,72 +453,73 @@ export const SliderSection4: React.FC<SliderSection4Props> = ({
     return false;
   };
 
-  return checkIfMobile(window) ? (
-    <SliderSection3
-      wrapperSx={wrapperSx}
-      sectionTitle={sectionTitle}
-      info={info}
-      data={data[0].list.map((item) => {
-        return (
-          <ImageWithColorizedBorder
-            imageSx={{
-              minHeight: "12rem",
-              objectFit: "cover",
-            }}
-            image={{
-              src: item.image.src.replace(".png", "_mobile.png"),
-              width: 640,
-              height: 480,
-            }}
-          />
-        );
-      })}
-    />
-  ) : (
-    <SectionContainerWrapperColorized
-      accentColor={accentColor}
-      gradientBg={gradientBg}
-      nodeRef={nodeRef}
-      sx={wrapperSx}
-    >
-      <SectionContainer sx={{ "& .swiper": { width: "100%" } }}>
-        <SectionTwoColumnsContainer
-          disableContainerPaddings
-          sectionContainerSx={{
-            alignItems: "flex-start",
-            justifyContent: { xs: "flex-start", sm: "space-between" },
-            marginBottom: {
-              xs: "2rem",
-              sm: "3.75rem",
-            },
-          }}
-          firstColumnSx={{ maxWidth: { sm: "674px" }, width: "100%" }}
-          firstColumn={
-            <SectionTitle
-              accentColor={accentColor}
-              textContainerSx={{
-                alignItems: "flex-start",
-                flexDirection: { xs: "column", sm: "row" },
-                rowGap: "20px",
+  return (
+    <>
+      <SliderSection3
+        wrapperSx={{ ...wrapperSx, display: { xs: "block", sm: "none" } }}
+        sectionTitle={sectionTitle}
+        info={info}
+        data={data[0].list.map((item) => {
+          return (
+            <ImageWithColorizedBorder
+              imageSx={{
+                minHeight: "12rem",
+                objectFit: "cover",
               }}
-              {...sectionTitle}
+              image={{
+                src: item.image.src.replace(".png", "_mobile.png"),
+                width: 640,
+                height: 480,
+              }}
             />
-          }
-          secondColumnSx={{ maxWidth: "378px" }}
-          secondColumn={info}
-        />
-        <Stack position={"relative"}>
-          <SliderSection4Content
-            key={0}
-            isActive={true}
-            accentColor={accentColor}
-            sliderData={extendedTabData[0].list.map((i, idx) => ({
-              ...i,
-              idx,
-            }))}
+          );
+        })}
+      />
+      <SectionContainerWrapperColorized
+        accentColor={accentColor}
+        gradientBg={gradientBg}
+        nodeRef={nodeRef}
+        sx={{ ...wrapperSx, display: { xs: "none", sm: "block" } }}
+      >
+        <SectionContainer sx={{ "& .swiper": { width: "100%" } }}>
+          <SectionTwoColumnsContainer
+            disableContainerPaddings
+            sectionContainerSx={{
+              alignItems: "flex-start",
+              justifyContent: { xs: "flex-start", sm: "space-between" },
+              marginBottom: {
+                xs: "2rem",
+                sm: "3.75rem",
+              },
+            }}
+            firstColumnSx={{ maxWidth: { sm: "674px" }, width: "100%" }}
+            firstColumn={
+              <SectionTitle
+                accentColor={accentColor}
+                textContainerSx={{
+                  alignItems: "flex-start",
+                  flexDirection: { xs: "column", sm: "row" },
+                  rowGap: "20px",
+                }}
+                {...sectionTitle}
+              />
+            }
+            secondColumnSx={{ maxWidth: "378px" }}
+            secondColumn={info}
           />
-        </Stack>
-      </SectionContainer>
-    </SectionContainerWrapperColorized>
+          <Stack position={"relative"}>
+            <SliderSection4Content
+              key={0}
+              isActive={true}
+              accentColor={accentColor}
+              sliderData={extendedTabData[0].list.map((i, idx) => ({
+                ...i,
+                idx,
+              }))}
+            />
+          </Stack>
+        </SectionContainer>
+      </SectionContainerWrapperColorized>
+    </>
   );
 };
