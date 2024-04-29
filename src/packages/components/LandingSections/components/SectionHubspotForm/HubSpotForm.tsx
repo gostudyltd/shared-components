@@ -30,6 +30,7 @@ type Props = {
   };
   translations: HubspotFormTranslations;
   buttonColor?: string;
+  accentColor?: "primary" | "warning" | "error";
 };
 
 const FinishView: React.FC<{ translations: HubspotFormTranslations }> = ({
@@ -69,6 +70,7 @@ export const HubspotForm: React.FC<Props> = ({
   translations,
   buttonColor,
   withoutHubspot,
+  accentColor = "warning",
 }) => {
   const { language } = translations;
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -76,6 +78,7 @@ export const HubspotForm: React.FC<Props> = ({
   const errorsRef = useRef<{ [key: string]: boolean }>({});
   const hubspotPhoneInputRef = useRef<HTMLInputElement | null>(null);
   const phoneInputRef = useRef<HTMLInputElement | null>(null);
+  const formClass = `form_${accentColor}`;
 
   const langForHubspot =
     language === "ru"
@@ -270,7 +273,7 @@ export const HubspotForm: React.FC<Props> = ({
     onFormSubmitted: () => {
       setIsSubmitted(true);
     },
-    cssClass: styles.form,
+    cssClass: `${styles.form} ${styles[formClass]}`,
   });
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -320,7 +323,7 @@ export const HubspotForm: React.FC<Props> = ({
           }}
           id="my-hubspot-form"
         >
-          {!loaded && <CircularProgress color="warning" />}
+          {!loaded && <CircularProgress color={accentColor} />}
         </Box>
 
         <Box

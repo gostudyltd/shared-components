@@ -1,11 +1,10 @@
 import React from "react";
-import { AboutUsLanding, DeutshLanding } from "./packages";
+import { OfficesLanding } from "./packages/components/Landings/OfficesLanding";
 
 function App() {
   return (
-    <DeutshLanding
+    <OfficesLanding
       lang="uk"
-      cdnUrl="https://images.gostudy.cz/static"
       btnAction={() => {
         console.log("test");
       }}

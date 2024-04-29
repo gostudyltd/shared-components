@@ -161,7 +161,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = (props) => {
                 direction={"row"}
                 gap={"8px"}
                 sx={{
-                  marginBottom: { xs: ".5rem", sm: "1.25" },
+                  marginBottom: { xs: ".5rem", sm: "1.25rem" },
                 }}
               >
                 {info.map((item) => (
@@ -192,7 +192,10 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = (props) => {
             <Stack
               // gap={{ xs: "1em", sm: "1.5em" }}
               sx={{
-                marginBottom: { xs: "2em", sm: "3em" },
+                marginBottom: {
+                  xs: "2em",
+                  sm: button || bottomListData ? "3em" : 0,
+                },
                 "& p": { margin: 0 },
                 "& h2": { marginBottom: { xs: "2rem", sm: "3rem" } },
               }}

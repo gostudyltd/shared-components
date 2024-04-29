@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: "Inter", "Helvetica", "Arial", sans-serif;
   width: 100%;
 }
 
@@ -19,10 +19,20 @@
   width: 100%;
 }
 
+.form_warning :global(.hs-input),
 .phoneInput {
+  border: 2px solid rgba(237, 108, 2, 0.5);
+}
+
+.form_primary :global(.hs-input),
+.phoneInput {
+  border: 2px solid rgba(11, 78, 131, 0.3);
+}
+
+.form .phoneInput {
   font-size: 1rem !important;
   font-weight: 400 !important;
-  padding: 16.5px 14px !important;
+  padding: 3px 14px 0 !important;
   border-radius: 12px !important;
   border: 2px solid rgba(237, 108, 2, 0.5) !important;
   width: 100% !important;
@@ -31,12 +41,28 @@
   display: none;
 }
 
+.form_warning .phoneInput {
+  border: 2px solid rgba(237, 108, 2, 0.5) !important;
+}
+
+.form_primary .phoneInput {
+  border: 2px solid rgba(11, 78, 131, 0.3) !important;
+}
+
 .phoneInput label {
   display: none !important;
 }
 
-.phoneInput:focus {
+.form .phoneInput:focus {
   border-color: #ed6c02 !important;
+}
+
+.form_warning .phoneInput:focus {
+  border-color: #ed6c02 !important;
+}
+
+.form_primary .phoneInput:focus {
+  border-color: #0b4e83 !important;
 }
 
 .phoneInput_button {
@@ -66,13 +92,23 @@
   border-color: #ed6c02;
 }
 
+.form_warning :global(.hs-input):focus {
+  outline: none;
+  border-color: #ed6c02;
+}
+
+.form_primary :global(.hs-input):focus {
+  outline: none;
+  border-color: #0b4e83;
+}
+
 .form :global(.hs-form-field) {
   position: relative;
 }
 
 .form label {
   position: absolute;
-  top: 16.5px;
+  top: 20.5px;
   left: 14px;
   font-size: 0.875rem;
   font-weight: 400;
@@ -86,6 +122,16 @@
   transform: translate(0px, -28px) scale(0.8);
   padding: 0 3px;
   color: #ed6c02;
+}
+
+.form_warning :global(.hs-form-field):focus-within label,
+.form_warning .label_top {
+  color: #ed6c02;
+}
+
+.form_primary :global(.hs-form-field):focus-within label,
+.form_primary .label_top {
+  color: #0b4e83;
 }
 
 .form .label_error {
@@ -108,16 +154,35 @@
   font-weight: 600;
   background: #ed6c02;
   border: none;
-  border-radius: 12px;
+  border-radius: 12px !important;
   color: #ffffff;
-  font-family: 'Montserrat', 'Inter', 'Helvetica', 'Arial', sans-serif;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Montserrat", "Inter", "Helvetica", "Arial", sans-serif;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
 .form :global(.hs-submit) input:hover {
   background: #e65100;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.form_warning :global(.hs-submit) input {
+  background: #ed6c02;
+}
+
+.form_warning :global(.hs-submit) input:hover {
+  background: #e65100;
+}
+
+.form_primary :global(.hs-submit) input {
+  background: #0b4e83;
+}
+
+.form_primary :global(.hs-submit) input:hover {
+  background: #0e5e9c;
 }
 
 .phoneInput_button ul {
@@ -135,7 +200,7 @@
   }
 
   .form label {
-    top: 8.5px;
+    top: 12.5px;
   }
 
   .form :global(.hs-form-field):focus-within label,
@@ -148,7 +213,7 @@
     font-size: 1rem;
   }
 
-  .phoneInput {
+  .form .phoneInput {
     height: 2.625rem !important;
   }
 

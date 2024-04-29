@@ -145,6 +145,7 @@ export const FormSection: React.FC<FormSectionProps> = withCustomTheme(
           ) : (
             <HubspotProvider>
               <HubspotForm
+                accentColor={accentColor}
                 withoutHubspot={withoutHubspot}
                 buttonColor={buttonColor}
                 hubspotConfig={hubspotConfig}
