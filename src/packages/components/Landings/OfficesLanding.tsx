@@ -707,7 +707,8 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
                         fontSize: { xs: "12px", sm: "14px" },
-                        textAlign: "center",
+                        display: "block",
+                        textAlign: { xs: "center", sm: "start" },
                       }}
                     >
                       * відправляючи форму, ви приймаєте умови політики
@@ -735,7 +736,8 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
                         fontSize: { xs: "12px", sm: "14px" },
-                        textAlign: "center",
+                        display: "block",
+                        textAlign: { xs: "center", sm: "start" },
                       }}
                     >
                       * bằng cách gửi biểu mẫu, bạn chấp nhận các điều khoản của
@@ -762,7 +764,8 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
                         fontSize: { xs: "12px", sm: "14px" },
-                        textAlign: "center",
+                        display: "block",
+                        textAlign: { xs: "center", sm: "start" },
                       }}
                     >
                       * by submitting the form, you accept the terms of the
