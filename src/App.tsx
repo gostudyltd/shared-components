@@ -8,12 +8,6 @@ function App() {
       btnAction={() => {
         console.log("test");
       }}
-      // button={{
-      // text: "test",
-      // onClick: () => {
-      // console.log("test");
-      // },
-      // }}
     />
   );
 }

@@ -52,7 +52,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     bgColor: "rgba(225, 243, 255, 0.5)",
     phone: "+420 277 001 200",
     email: "info@gostudy.cz",
-    link: "https://maps.app.goo.gl/dM3fWhQWavgHsZrP8",
+    // link: "https://maps.app.goo.gl/dM3fWhQWavgHsZrP8",
     address: getTranslatedText(
       "Street. Kopechna 938/3, Brno",
       "Địa chỉ: Số nhà 938/3, đường Kopecna, Brno",
@@ -65,7 +65,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     bgColor: "rgba(225, 243, 255, 0.5)",
     phone: "+38-093-861 36 25",
     email: "stanislav.b@gostudy.cz",
-    link: "https://maps.app.goo.gl/BwSGs34KuRptPTXj6",
+    // link: "https://maps.app.goo.gl/BwSGs34KuRptPTXj6",
     address: getTranslatedText(
       "str. Saksaganskogo 1, Kiev",
       "Địa chỉ: Số 1, đường Saksahanskoho, Kiev",
@@ -85,7 +85,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     email: string;
     address: string;
     bgColor: string;
-    link: string;
+    link?: string;
   }) => {
     return (
       <Box
@@ -218,27 +218,29 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             {address}
           </Typography>
         </Box>
-        <Button
-          variant="outlined"
-          sx={{
-            fontFamily: montserratFamily,
-            fontSize: "16px",
-            fontWeight: "600",
-            lineHeight: "26px",
-          }}
-          onClick={() => {
-            if (window) {
-              window.open(link, "_blank");
-            }
-          }}
-        >
-          {getTranslatedText(
-            "View on map",
-            "Xem trên bản đồ",
-            "Открыть на карте",
-            "Подивитись на карті"
-          )}
-        </Button>
+        {link && (
+          <Button
+            variant="outlined"
+            sx={{
+              fontFamily: montserratFamily,
+              fontSize: "16px",
+              fontWeight: "600",
+              lineHeight: "26px",
+            }}
+            onClick={() => {
+              if (window) {
+                window.open(link, "_blank");
+              }
+            }}
+          >
+            {getTranslatedText(
+              "View on map",
+              "Xem trên bản đồ",
+              "Открыть на карте",
+              "Подивитись на карті"
+            )}
+          </Button>
+        )}
       </Box>
     );
   };
