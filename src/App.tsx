@@ -4,7 +4,7 @@ import { OfficesLanding } from "./packages/components/Landings/OfficesLanding";
 function App() {
   return (
     <OfficesLanding
-      lang="uk"
+      lang="ru"
       btnAction={() => {
         console.log("test");
       }}

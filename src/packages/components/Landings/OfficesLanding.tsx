@@ -4,6 +4,7 @@ import {
   FormSection,
   IntroSectionV2,
   SectionContainer,
+  SectionContainerWrapperColorized,
   SectionTitle,
   SectionTwoColumnsContainer,
 } from "../LandingSections";
@@ -38,6 +39,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     bgColor: "rgba(251, 253, 255, 1)",
     phone: "+420 277 001 200",
     email: "info@gostudy.cz",
+    link: "https://maps.app.goo.gl/2YobUjZ9ynRjh7rx7",
     address: getTranslatedText(
       "Street. Washingtonova 25, Prague",
       "Địa chỉ: Số 25 đường Washingtonova, Prague",
@@ -50,6 +52,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     bgColor: "rgba(225, 243, 255, 0.5)",
     phone: "+420 277 001 200",
     email: "info@gostudy.cz",
+    link: "https://maps.app.goo.gl/dM3fWhQWavgHsZrP8",
     address: getTranslatedText(
       "Street. Kopechna 938/3, Brno",
       "Địa chỉ: Số nhà 938/3, đường Kopecna, Brno",
@@ -62,6 +65,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     bgColor: "rgba(225, 243, 255, 0.5)",
     phone: "+38-093-861 36 25",
     email: "stanislav.b@gostudy.cz",
+    link: "https://maps.app.goo.gl/BwSGs34KuRptPTXj6",
     address: getTranslatedText(
       "str. Saksaganskogo 1, Kiev",
       "Địa chỉ: Số 1, đường Saksahanskoho, Kiev",
@@ -75,11 +79,13 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     email,
     address,
     bgColor,
+    link,
   }: {
     phone: string;
     email: string;
     address: string;
     bgColor: string;
+    link: string;
   }) => {
     return (
       <Box
@@ -110,6 +116,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             href={`tel:${phone}`}
             sx={{
               display: "flex",
+              alignItems: "center",
               gap: "12px",
               color: "text.primary",
               textDecoration: "none",
@@ -151,6 +158,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             href={`mailto:${email}`}
             sx={{
               display: "flex",
+              alignItems: "center",
               gap: "12px",
               color: "text.primary",
               textDecoration: "none",
@@ -180,6 +188,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             component={"p"}
             sx={{
               display: "flex",
+              alignItems: "center",
               gap: "12px",
               fontFamily: montserratFamily,
               fontSize: { xs: "14px", sm: "16px" },
@@ -217,6 +226,11 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             fontWeight: "600",
             lineHeight: "26px",
           }}
+          onClick={() => {
+            if (window) {
+              window.open(link, "_blank");
+            }
+          }}
         >
           {getTranslatedText(
             "View on map",
@@ -240,6 +254,11 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
         }}
         containerSx={{
           py: { xs: "3em", sm: "3.5em" },
+        }}
+        titleSx={{
+          fontSize: { xs: "28px", sm: "48px" },
+          lineHeight: { xs: "36.96px", sm: "63.36px" },
+          marginBottom: { xs: "16px !important", sm: "24px !important" },
         }}
         renderTitle={(color) => (
           <Box component={"span"}>
@@ -395,8 +414,8 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
           title: getTranslatedText(
             "Educational center and office",
             "Trung tâm đào tạo và văn phòng",
-            "Офис отдела по работе с клиентами",
-            "Учебный центр и офис"
+            "Учебный центр и офис",
+            "Навчальний центр та офіс"
           ) as string,
           description: getTranslatedText(
             "Located in the center of Brno in the south-east of the Czech Republic. The second largest and most important city in the Czech Republic after Prague.",
@@ -435,64 +454,68 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
         ]}
       />
 
-      <SectionContainer>
-        <SectionTwoColumnsContainer
-          disableContainerPaddings
-          sectionContainerSx={{
-            alignItems: "center",
-            marginBottom: { xs: "2rem", sm: "3.75rem" },
-          }}
-          firstColumn={
-            <SectionTitle
-              preTitle={
-                getTranslatedText(
-                  "Bratislava, Slovakia",
-                  "Bratislava, Slovakia",
-                  "Братислава, Словакия",
-                  "Братислава, Словаччина"
-                ) as string
-              }
-              title={getTranslatedText(
-                "Educational center",
-                "Trung tâm giáo dục",
-                "Учебный центр",
-                "Навчальний центр"
-              )}
-            />
-          }
-          secondColumnSx={{
-            maxWidth: { xs: "100%", sm: "518px" },
-            alignSelf: { sm: "flex-start" },
-          }}
-          secondColumn={
-            <Typography sx={{ fontSize: "1.125rem", color: "rgba(0,0,0,.54)" }}>
-              {getTranslatedText(
-                "Spacious classrooms for students with well-developed infrastructure.",
-                "Phòng học rộng rãi dành cho học sinh với cơ sở vật chất phát triển.",
-                "Просторные аудитории для занятий со студентами с развитой инфраструктурой.",
-                "Простора аудиторія з розвиненою інфраструктурою для занять зі студентами."
-              )}
-            </Typography>
-          }
-        />
+      <SectionContainerWrapperColorized accentColor="primary">
+        <SectionContainer>
+          <SectionTwoColumnsContainer
+            disableContainerPaddings
+            sectionContainerSx={{
+              alignItems: "center",
+              marginBottom: { xs: "2rem", sm: "3.75rem" },
+            }}
+            firstColumn={
+              <SectionTitle
+                preTitle={
+                  getTranslatedText(
+                    "Bratislava, Slovakia",
+                    "Bratislava, Slovakia",
+                    "Братислава, Словакия",
+                    "Братислава, Словаччина"
+                  ) as string
+                }
+                title={getTranslatedText(
+                  "Educational center",
+                  "Trung tâm giáo dục",
+                  "Учебный центр",
+                  "Навчальний центр"
+                )}
+              />
+            }
+            secondColumnSx={{
+              maxWidth: { xs: "100%", sm: "518px" },
+              alignSelf: { sm: "flex-start" },
+            }}
+            secondColumn={
+              <Typography
+                sx={{ fontSize: "1.125rem", color: "rgba(0,0,0,.54)" }}
+              >
+                {getTranslatedText(
+                  "Spacious classrooms for students with well-developed infrastructure.",
+                  "Phòng học rộng rãi dành cho học sinh với cơ sở vật chất phát triển.",
+                  "Просторные аудитории для занятий со студентами с развитой инфраструктурой.",
+                  "Простора аудиторія з розвиненою інфраструктурою для занять зі студентами."
+                )}
+              </Typography>
+            }
+          />
 
-        <ImageWithColorizedBorder
-          imageSx={{
-            minHeight: "12rem",
-            objectFit: "cover",
-          }}
-          image={{
-            src: `${cdnUrl}/officesLanding/fourthSection.png`,
-            width: 1120,
-            height: 408,
-          }}
-          mobileImage={{
-            src: `${cdnUrl}/officesLanding/fourthSection_mobile.png`,
-            width: 640,
-            height: 380,
-          }}
-        />
-      </SectionContainer>
+          <ImageWithColorizedBorder
+            imageSx={{
+              minHeight: "12rem",
+              objectFit: "cover",
+            }}
+            image={{
+              src: `${cdnUrl}/officesLanding/fourthSection.png`,
+              width: 1120,
+              height: 408,
+            }}
+            mobileImage={{
+              src: `${cdnUrl}/officesLanding/fourthSection_mobile.png`,
+              width: 640,
+              height: 380,
+            }}
+          />
+        </SectionContainer>
+      </SectionContainerWrapperColorized>
 
       <SliderSection3
         dataPerSlide={2}
@@ -646,6 +669,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
           lang === "ru"
             ? {
                 language: "ru",
+                button: "Отправить",
                 content: {
                   acceptTerms: (
                     <Box
@@ -654,7 +678,8 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         lineHeight: { xs: "14.4px", sm: "20.02px" },
                         letterSpacing: { xs: "-0.5px", sm: "-0.5px" },
                         fontSize: { xs: "12px", sm: "14px" },
-                        textAlign: "center",
+                        display: "block",
+                        textAlign: { xs: "center", sm: "start" },
                       }}
                     >
                       * отправляя форму, вы принимаете условия политики
@@ -673,6 +698,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             : lang === "uk"
             ? {
                 language: "uk",
+                button: "Відправити",
                 content: {
                   acceptTerms: (
                     <Box
@@ -700,6 +726,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             : lang === "vi"
             ? {
                 language: "vi",
+                button: "Gửi",
                 content: {
                   acceptTerms: (
                     <Box
@@ -726,6 +753,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
               }
             : {
                 language: "en",
+                button: "Send",
                 content: {
                   acceptTerms: (
                     <Box

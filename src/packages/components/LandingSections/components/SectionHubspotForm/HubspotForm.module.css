@@ -108,7 +108,7 @@
 
 .form label {
   position: absolute;
-  top: 20.5px;
+  top: 16.5px;
   left: 14px;
   font-size: 0.875rem;
   font-weight: 400;
@@ -200,7 +200,7 @@
   }
 
   .form label {
-    top: 12.5px;
+    top: 8.5px;
   }
 
   .form :global(.hs-form-field):focus-within label,

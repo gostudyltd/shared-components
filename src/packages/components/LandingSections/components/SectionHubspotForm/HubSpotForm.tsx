@@ -15,6 +15,7 @@ import { FormFields } from "../../FormSection";
 export type HubspotFormTranslations = {
   language: "en" | "ru" | "uk" | "vi";
 
+  button?: string;
   content: {
     acceptTerms: string | React.ReactNode;
     formSubmitted: string | React.ReactNode;
@@ -72,6 +73,7 @@ export const HubspotForm: React.FC<Props> = ({
   withoutHubspot,
   accentColor = "warning",
 }) => {
+  console.log(translations);
   const { language } = translations;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -148,6 +150,9 @@ export const HubspotForm: React.FC<Props> = ({
             if ((child as HTMLElement).className.includes("hs-submit")) {
               const button = child.lastChild?.lastChild;
               if (button) {
+                if (translations.button) {
+                  (button as HTMLInputElement).value = translations.button;
+                }
                 if (buttonColor) {
                   (button as HTMLElement).style.background = buttonColor;
                 }
@@ -330,6 +335,7 @@ export const HubspotForm: React.FC<Props> = ({
           ref={phoneInputRef}
           component={PhoneInput}
           inputClass={styles.phoneInput}
+          inputStyle={{ display: "none" }}
           buttonClass={styles.phoneInput_button}
           specialLabel=""
           preferredCountries={phoneCountries}
@@ -341,7 +347,7 @@ export const HubspotForm: React.FC<Props> = ({
             translations.language === "uk"
               ? "ua"
               : translations.language === "ru"
-              ? "ru"
+              ? "kz"
               : translations.language === "vi"
               ? "vn"
               : "us"
