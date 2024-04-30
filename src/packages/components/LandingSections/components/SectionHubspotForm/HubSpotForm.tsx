@@ -73,7 +73,6 @@ export const HubspotForm: React.FC<Props> = ({
   withoutHubspot,
   accentColor = "warning",
 }) => {
-  console.log(translations);
   const { language } = translations;
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
