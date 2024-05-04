@@ -99,20 +99,19 @@ export const GrantsLanding: React.FC<Props> = ({
             >
               {getTranslatedText(
                 <>
-                  Your{" "}
                   <Box
                     component={"span"}
                     sx={{ color: "rgba(41, 98, 255, 1)", position: "relative" }}
                   >
-                    <FirstDecoration
+                    {/* <FirstDecoration
                       sx={{
                         position: "absolute",
                         right: { xs: "-32px", sm: "-34px" },
                         top: { xs: "-13px", sm: "-9px" },
                       }}
-                    />
-                    successful
-                    <FirstUnderline
+                    /> */}
+                    Scholarship
+                    {/* <FirstUnderline
                       sx={{
                         position: "absolute",
                         right: 0,
@@ -120,39 +119,38 @@ export const GrantsLanding: React.FC<Props> = ({
                         width: lang === "uk" || lang === "ru" ? "90%" : "100%",
                         "& path": { strokeWidth: "7px" },
                       }}
-                    />
-                  </Box>
+                    /> */}
+                  </Box>{" "}
+                  for
                   <br />
-                  future in&nbsp;Europe!
+                  study in Europe
                 </>,
                 <>
-                  Tương lai{" "}
                   <Box
                     component={"span"}
                     sx={{ color: "rgba(41, 98, 255, 1)", position: "relative" }}
                   >
-                    thành{" "}
                     <Box component={"span"} sx={{ position: "relative" }}>
-                      <FirstDecoration
+                      {/* <FirstDecoration
                         sx={{
                           position: "absolute",
                           right: { xs: "-64px", sm: "-34px" },
                           top: { xs: "-24px", sm: "-2px" },
                           width: "100%",
                         }}
-                      />
-                      công
+                      /> */}
+                      Học bổng
                     </Box>
-                    <FirstUnderline
+                    {/* <FirstUnderline
                       sx={{
                         position: "absolute",
                         right: 0,
                         bottom: "-9px",
                         width: lang === "uk" || lang === "ru" ? "90%" : "100%",
                       }}
-                    />
+                    /> */}
                   </Box>{" "}
-                  của bạn tại Châu Âu
+                  du Học Châu Âu
                 </>,
                 <>
                   Твоё{" "}
@@ -248,11 +246,10 @@ export const GrantsLanding: React.FC<Props> = ({
                   />
                   {getTranslatedText(
                     <span>
-                      Enroll in&nbsp;the GoStudy Academy{" "}
-                      <strong>for free!</strong>
+                      <strong>Subscribe</strong> to Facebook Messenger bot
                     </span>,
                     <span>
-                      Đăng ký Học viện GoStudy <strong>miễn phí</strong>
+                      <strong>Đăng Ký</strong> Facebook Messenger bot
                     </span>,
                     <span>
                       Поступи в&nbsp;Академию GoStudy{" "}
@@ -288,11 +285,8 @@ export const GrantsLanding: React.FC<Props> = ({
                     }}
                   />
                   {getTranslatedText(
-                    <>
-                      Discover everything about education and life
-                      in&nbsp;Europe
-                    </>,
-                    <>Khám phá mọi điều về giáo dục và cuộc sống tại Châu Âu</>,
+                    <>Get free materials about education in Europe</>,
+                    <>Nhận tài liệu miễn phí về giáo dục Ở Châu Âu</>,
                     <>
                       Узнай всё об&nbsp;образовании и&nbsp;жизни в&nbsp;Европе
                     </>,
@@ -323,18 +317,8 @@ export const GrantsLanding: React.FC<Props> = ({
                     }}
                   />
                   {getTranslatedText(
-                    <>
-                      Get the chance to&nbsp;win a&nbsp;scholarship for studying
-                      in&nbsp;Europe, up&nbsp;to&nbsp;&euro;5700
-                    </>,
-                    <>
-                      Có cơ hội nhận học bổng để học tập tại Châu Âu,{" "}
-                      <Box
-                        component={"br"}
-                        display={{ xs: "none", sm: "block" }}
-                      />
-                      lên đến €5700
-                    </>,
+                    <>Participate in the draw for scholarships up to 5700 €</>,
+                    <>Tham gia rút thăm cho học bổng lên tới 5700 €</>,
                     <>
                       Получи возможность выиграть грант на&nbsp;обучение
                       до&nbsp;5700&nbsp;&euro;
@@ -440,8 +424,8 @@ export const GrantsLanding: React.FC<Props> = ({
                   }}
                 >
                   {getTranslatedText(
-                    "Academy Prize Fund",
-                    "Quỹ giải thưởng học viện",
+                    "General scholarship fund",
+                    "Quỹ học bổng chung",
                     "Призовой фонд Академии",
                     "Призовий фонд Академії"
                   )}
@@ -464,8 +448,8 @@ export const GrantsLanding: React.FC<Props> = ({
           }
           button={{
             text: getTranslatedText(
-              "Get into the Academy",
-              "Gia nhập Học viện",
+              "Subscribe",
+              "Đăng ký",
               "Поступить в Академию",
               "Вступити до Академії"
             ) as string,
@@ -511,13 +495,12 @@ export const GrantsLanding: React.FC<Props> = ({
                 ) as string,
                 text: getTranslatedText(
                   <>
-                    Becoming a&nbsp;student of&nbsp;the Academy
-                    is&nbsp;absolutely free, all you need
-                    is&nbsp;to&nbsp;register.
+                    Becoming a participant in the scholarship drawing is easy,
+                    registration is free.
                   </>,
                   <>
-                    Việc trở thành sinh viên của Học viện là hoàn toàn miễn phí,
-                    bạn chỉ cần đăng ký.
+                    Trở thành người tham gia rút học bổng rất dễ dàng, đăng
+                    ký miễn phí.
                   </>,
                   <>
                     Стать студентом Академии можно совершенно бесплатно, нужна
@@ -538,12 +521,12 @@ export const GrantsLanding: React.FC<Props> = ({
                 ) as string,
                 text: getTranslatedText(
                   <>
-                    You can become a&nbsp;student of&nbsp;the Academy
-                    at&nbsp;any time, right after registration.
+                    You can become a participant at any time, as soon as you
+                    register.
                   </>,
                   <>
-                    Bạn có thể trở thành sinh viên của Học viện bất kỳ lúc nào,
-                    ngay sau khi đăng ký.
+                    Bạn có thể trở thành người tham gia bất cứ lúc nào, ngay khi
+                    bạn đăng ký.
                   </>,
                   <>
                     Стать студентом Академии можно в&nbsp;любое время
@@ -565,11 +548,11 @@ export const GrantsLanding: React.FC<Props> = ({
                 text: getTranslatedText(
                   <>
                     You will receive assignments and materials from the Academy
-                    in&nbsp;the Telegram chatbot.
+                    in a smart chatbot in the Messenger app.
                   </>,
                   <>
-                    Bạn sẽ nhận bài tập và tài liệu từ Học viện thông qua
-                    chatbot trên Telegram.
+                    Bạn sẽ nhận được các bài tập và tài liệu từ Học viện trong
+                    một chatbot thông minh trong Ứng dụng Messenger.
                   </>,
                   <>
                     Получать задания и&nbsp;материалы Академии ты&nbsp;будешь
@@ -590,10 +573,10 @@ export const GrantsLanding: React.FC<Props> = ({
                 ) as string,
                 text: getTranslatedText(
                   <>
-                    A&nbsp;certificate will be&nbsp;issued to&nbsp;all GoStudy
-                    Academy students upon completion of&nbsp;the course.
+                    Scholarship winners will receive certificates for GoStudy
+                    preparation programs
                   </>,
-                  "Một chứng chỉ sẽ được cấp cho tất cả sinh viên Học viện GoStudy sau khi hoàn thành khóa học.",
+                  "Người chiến thắng học bổng sẽ nhận được chứng chỉ cho các chương trình chuẩn Bị GoStudy",
                   <>
                     Будет выдан всем студентам Академии GoStudy
                     о&nbsp;прохождении курса
@@ -1563,8 +1546,8 @@ export const GrantsLanding: React.FC<Props> = ({
         button={{
           btnAction: scrollToForm,
           btnText: getTranslatedText(
-            "Get into the Academy",
-            "Gia nhập Học viện",
+            "Subscribe",
+            "Đăng ký",
             "Поступить в Академию",
             "Вступити до Академії"
           ) as string,
@@ -1704,8 +1687,8 @@ export const GrantsLanding: React.FC<Props> = ({
             </Typography>
           ),
           description: getTranslatedText(
-            "3 months of classes, lectures, informative videos, and a Grant Competition among students.",
-            "3 tháng học, bài giảng, video thông tin, và Cuộc thi Học bổng giữa sinh viên.",
+            "3 months of classes, lectures, informative videos and a scholarship drawing.",
+            "3 tháng của các lớp học, bài giảng, video thông tin và một bản vẽ học bổng.",
             "3 месяца занятий, лекций, полезных видео и Конкурс Грантов среди студентов",
             "3 місяці занять, лекцій, корисних відео та Конкурс Грантів серед студентів"
           ) as string,
@@ -2138,8 +2121,8 @@ export const GrantsLanding: React.FC<Props> = ({
               >
                 {
                   getTranslatedText(
-                    "Grant Competition 🏆",
-                    "Cuộc thi Học bổng 🏆",
+                    "Scholarship Drawings  🏆",
+                    "Bản Vẽ Học Bổng 🏆",
                     "Конкурс Грантов 🏆",
                     "Конкурс Грантів 🏆"
                   ) as string
@@ -2254,15 +2237,15 @@ export const GrantsLanding: React.FC<Props> = ({
               {getTranslatedText(
                 <>
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
-                    Regular grant giveaways
+                    Regular drawings
                   </span>{" "}
-                  among Academy students
+                  of scholarships among Academy students
                 </>,
                 <>
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
-                    Phát quà định kỳ
+                    Bản vẽ học bổng
                   </span>{" "}
-                  giữa sinh viên Học viện
+                  thường xuyên giữa các sinh viên Học Viện
                 </>,
                 <>
                   <span style={{ color: "rgba(255, 255, 0, 1)" }}>
@@ -2283,12 +2266,12 @@ export const GrantsLanding: React.FC<Props> = ({
                 {
                   title: getTranslatedText(
                     <>
-                      The GoStudy Grant is&nbsp;your chance to&nbsp;fulfill
-                      the&nbsp;dream of&nbsp;studying and living abroad!
+                      The GoStudy Scholarship is your chance to realize your
+                      dream of studying and living abroad!
                     </>,
                     <>
-                      Học bổng GoStudy là cơ hội của bạn để thực hiện ước mơ học
-                      tập và sống ở nước ngoài!
+                      Học Bổng Go Study là cơ hội để bạn thực hiện ước mơ học
+                      tập và sinh sống ở nước ngoài!
                     </>,
                     <>
                       Грант GoStudy&nbsp;&mdash; это ваша возможность исполнить
@@ -2303,13 +2286,12 @@ export const GrantsLanding: React.FC<Props> = ({
                 {
                   title: getTranslatedText(
                     <>
-                      Every Academy participant has a&nbsp;unique opportunity
-                      to&nbsp;receive a&nbsp;grant ranging from&nbsp;&euro;1400
-                      to&nbsp;&euro;5725!
+                      Every Academy participant has a unique opportunity to get
+                      a scholarship from 1400 to 5725 euros!
                     </>,
                     <>
-                      Mỗi người tham gia Học viện đều c&oacute;&nbsp;cơ hội đặc
-                      biệt nhận được học bổng từ 1400 đến 5725&nbsp;euro!
+                      Mỗi Người tham gia Học viện đều có cơ hội duy nhất để nhận
+                      học bổng từ 1400 đến 5725 euro!
                     </>,
                     <>
                       Каждый участник Академии&nbsp;&mdash; обладатель
@@ -2326,16 +2308,14 @@ export const GrantsLanding: React.FC<Props> = ({
                 {
                   title: getTranslatedText(
                     <>
-                      The grant provides the opportunity to&nbsp;study
-                      and&nbsp;prepare for&nbsp;admission
-                      to&nbsp;a&nbsp;European university absolutely free
-                      of&nbsp;charge.
+                      The scholarship gives you the opportunity to study and
+                      prepare for admission to one of the European universities
+                      absolutely free of charge.
                     </>,
                     <>
-                      Học bổng cung cấp cơ hội học tập v&agrave;&nbsp;chuẩn bị
-                      cho việc nhập học v&agrave;o một trường đại học Ch&acirc;u
-                      &Acirc;u&nbsp;m&agrave;&nbsp;ho&agrave;n to&agrave;n miễn
-                      ph&iacute;.
+                      Học bổng mang đến cho bạn cơ hội học tập và chuẩn bị nhập
+                      học vào một trong những trường Đại học Châu âu hoàn toàn
+                      miễn phí.
                     </>,
                     <>
                       Грант дает возможность учиться и&nbsp;готовиться
@@ -2428,10 +2408,9 @@ export const GrantsLanding: React.FC<Props> = ({
             //   lineHeight: { xs: "26px", sm: "28.6px" },
             // },
             description: getTranslatedText(
-              <>Winners of&nbsp;previous Grant Competitions by&nbsp;GoStudy.</>,
+              <>Winners of previous GoStudy Scholarship Drawings.</>,
               <>
-                Những người chiến thắng của Cuộc thi Học bổng trước đ&acirc;y
-                do&nbsp;GoStudy tổ chức.
+                Người chiến thắng trong các Bản Vẽ Học Bổng gostudy trước đây.
               </>,
               <>Победители предыдущих Конкурсов Грантов от&nbsp;GoStudy</>,
               <>Переможці попередніх Конкурсів Грантів від GoStudy</>
@@ -2828,8 +2807,8 @@ export const GrantsLanding: React.FC<Props> = ({
           >
             {
               getTranslatedText(
-                "Fill out the form and become a student of the GoStudy Academy.",
-                "Điền vào biểu mẫu và trở thành sinh viên của Học viện GoStudy.",
+                "Fill out the form, become a GoStudy Academy student and get a Scholarship to study in Europe",
+                "Điền vào biểu mẫu, trở thành sinh viên Học Viện GoStudy và Nhận Học Bổng du Học Châu Âu",
                 "Заполни форму и стань студентом Академии GoStudy",
                 "Заповни форму та стань студентом Академії GoStudy"
               ) as string
@@ -2899,6 +2878,7 @@ export const GrantsLanding: React.FC<Props> = ({
             : lang === "vi"
             ? {
                 language: "vi",
+                button: "Đăng ký",
                 content: {
                   acceptTerms: (
                     <Box
@@ -2927,6 +2907,7 @@ export const GrantsLanding: React.FC<Props> = ({
               }
             : {
                 language: "en",
+                button: "Subscribe",
                 content: {
                   acceptTerms: (
                     <Box
@@ -2981,13 +2962,12 @@ export const GrantsLanding: React.FC<Props> = ({
         description={
           getTranslatedText(
             <>
-              We&nbsp;answer frequently asked questions about our academy, the
-              admission and training process.
+              We answer frequently asked questions about our Academy and
+              Scholarships.
             </>,
             <>
-              Ch&uacute;ng t&ocirc;i trả lời c&aacute;c c&acirc;u hỏi thường gặp
-              về học viện, qu&aacute; tr&igrave;nh tuyển sinh
-              v&agrave;&nbsp;đ&agrave;o tạo.
+              Chúng tôi trả lời các câu hỏi thường gặp về Học viện và Học bổng
+              của chúng tôi.
             </>,
             <>
               Мы&nbsp;отвечаем на&nbsp;часто задаваемые вопросы о&nbsp;нашей
@@ -3170,29 +3150,25 @@ export const GrantsLanding: React.FC<Props> = ({
               <Box letterSpacing={"-0.5px"} fontFamily={montserratFamily}>
                 {getTranslatedText(
                   <>
-                    The conditions are simple: you need to&nbsp;register
-                    as&nbsp;a&nbsp;student of&nbsp;the Academy, receive study
-                    materials and assignments, participate in&nbsp;webinars
-                    as&nbsp;an&nbsp;audience, and keep track of&nbsp;the results
-                    of&nbsp;the Grant Competition draw (who knows, you might
-                    be&nbsp;the winner).
+                    The conditions are simple: you need to register as a student
+                    of the Academy, receive training materials and assignments,
+                    participate in webinars as a listener and follow the results
+                    of the scholarship drawing (who knows, maybe you will be the
+                    winner).
                     <br />
                     <br />
-                    Completing assignments or&nbsp;participating
-                    in&nbsp;webinars is&nbsp;not mandatory!
+                    Completion of assignments or participation in webinars
+                    is not mandatory!
                   </>,
                   <>
-                    C&aacute;c điều kiện rất đơn giản: bạn cần đăng
-                    k&yacute;&nbsp;l&agrave;m sinh vi&ecirc;n của Học viện, nhận
-                    t&agrave;i liệu học v&agrave;&nbsp;b&agrave;i tập, tham gia
-                    c&aacute;c buổi hội thảo trực tuyến như l&agrave;&nbsp;một
-                    người xem, v&agrave;&nbsp;theo d&otilde;i kết quả r&uacute;t
-                    thăm Cuộc thi Học bổng (ai&nbsp;biết được, bạn
-                    c&oacute;&nbsp;thể l&agrave;&nbsp;người chiến thắng).
+                    Các điều kiện rất đơn giản: bạn cần đăng ký làm sinh viên
+                    Của Học viện, nhận tài liệu đào tạo và bài tập, tham gia hội
+                    thảo trên web với tư cách là người nghe và làm theo kết quả
+                    của bản vẽ học bổng (ai biết được, có thể bạn sẽ là người
+                    chiến thắng).
                     <br />
                     <br />
-                    Việc ho&agrave;n th&agrave;nh b&agrave;i tập hoặc tham gia
-                    v&agrave;o c&aacute;c buổi hội thảo trực tuyến kh&ocirc;ng
+                    Hoàn thành bài tập hoặc tham gia hội thảo trên web là không
                     bắt buộc!
                   </>,
                   <>
@@ -3367,36 +3343,28 @@ export const GrantsLanding: React.FC<Props> = ({
               <Box letterSpacing={"-0.5px"} fontFamily={montserratFamily}>
                 {getTranslatedText(
                   <>
-                    The GoStudy grant is&nbsp;a&nbsp;certificate ranging from
-                    &euro;1400 to&nbsp;&euro;5725, which the winner can use
-                    to&nbsp;fully or&nbsp;partially cover the preparation
-                    program for universities in&nbsp;Austria, the Czech
-                    Republic, or&nbsp;Slovakia offered by&nbsp;GoStudy. This
-                    grant allows the recipient to&nbsp;enroll
-                    in&nbsp;a&nbsp;budgetary education program in&nbsp;Europe.
+                    The GoStudy Scholarship is a certificate in the amount
+                    of €1,400 to €5,725, which the winner can use to pay for all
+                    or part of the university preparatory program offered
+                    by GoStudy in Austria, the Czech Republic or Slovakia. This
+                    scholarship will allow the recipient to enroll in a budget
+                    educational program in Europe.
                     <br />
                     <br />
-                    It&rsquo;s important to&nbsp;note that the GoStudy grant
-                    cannot be&nbsp;redeemed for cash or&nbsp;received
-                    as&nbsp;a&nbsp;monetary equivalent.
+                    It is important to note that the GoStudy scholarship cannot
+                    be exchanged for cash or received as a cash equivalent.
                   </>,
                   <>
-                    Học bổng GoStudy l&agrave;&nbsp;một chứng chỉ
-                    c&oacute;&nbsp;gi&aacute; từ 1400 đến 5725&nbsp;euro,
-                    m&agrave;&nbsp;người chiến thắng c&oacute;&nbsp;thể sử dụng
-                    để thanh to&aacute;n đầy đủ hoặc một phần chương
-                    tr&igrave;nh chuẩn bị cho c&aacute;c trường đại học tại
-                    &Aacute;o, Cộng h&ograve;a S&eacute;c hoặc Slovakia
-                    do&nbsp;GoStudy cung cấp. Học bổng n&agrave;y cho
-                    ph&eacute;p người nhận đăng k&yacute;&nbsp;v&agrave;o một
-                    chương tr&igrave;nh gi&aacute;o dục
-                    c&oacute;&nbsp;ng&acirc;n s&aacute;ch tại
-                    Ch&acirc;u&nbsp;&Acirc;u.
+                    Học bổng GoStudy là một chứng chỉ với số tiền từ €1.400 đến
+                    €5.725, mà người chiến thắng có thể sử dụng để thanh toán
+                    cho tất cả hoặc một phần của chương trình dự bị đại học
+                    do gostudy cung cấp Ở Áo, cộng hòa séc hoặc Slovakia. Học
+                    bổng này sẽ cho phép người nhận đăng ký vào một chương trình
+                    giáo dục ngân sách Ở Châu âu.
                     <br />
                     <br />
-                    Quan trọng lưu &yacute;&nbsp;rằng Học bổng GoStudy
-                    kh&ocirc;ng thể đổi th&agrave;nh tiền mặt hoặc nhận được
-                    dưới dạng tương đương tiền mặt.
+                    Điều quan trọng cần lưu ý là Học Bổng Go Study không thể đổi
+                    lấy tiền mặt hoặc nhận dưới dạng tiền mặt tương đương.
                   </>,
                   <>
                     Грант GoStudy&nbsp;&mdash; это сертификат на&nbsp;сумму
@@ -3508,15 +3476,14 @@ export const GrantsLanding: React.FC<Props> = ({
                 {
                   getTranslatedText(
                     <>
-                      The Grant Drawing among participants will take place every
-                      2&nbsp;months, and the results will be&nbsp;announced
-                      on&nbsp;the day of&nbsp;the drawing.
+                      Drawing of Scholarships among the participants will
+                      be held every 2 months and the results will be announced
+                      on the day of the draw.
                     </>,
                     <>
-                      Việc R&uacute;t thăm Học bổng giữa c&aacute;c người tham
-                      gia sẽ diễn ra&nbsp;mỗi 2&nbsp;th&aacute;ng,
-                      v&agrave;&nbsp;kết quả sẽ được c&ocirc;ng bố v&agrave;o
-                      ng&agrave;y diễn ra&nbsp;r&uacute;t thăm.
+                      Việc rút Học bổng trong số những người tham gia sẽ được tổ
+                      chức 2 tháng một lần và kết quả sẽ được công bố vào ngày
+                      bốc thăm.
                     </>,
                     <>
                       Розыгрыш Грантов среди участников будут проходить каждые
@@ -3572,26 +3539,13 @@ export const GrantsLanding: React.FC<Props> = ({
                   getTranslatedText(
                     <>
                       All Academy participants who registered, paid for the
-                      programme and won the Grant will be&nbsp;refunded the
-                      amount of&nbsp;the Grant. Such situations happen often,
-                      we&nbsp;recommend not to&nbsp;wait for the results
-                      of&nbsp;the Grant Competition and to&nbsp;apply for the
-                      programme in&nbsp;advance (in&nbsp;order to&nbsp;have time
-                      to&nbsp;collect all documents, apply for a&nbsp;visa,
-                      etc.).
+                      program and won the scholarship will be refunded the
+                      scholarship amount.
                     </>,
                     <>
-                      Tất cả những người tham gia Học viện
-                      đ&atilde;&nbsp;đăng&nbsp;k&yacute;, thanh to&aacute;n cho
-                      chương tr&igrave;nh v&agrave;&nbsp;gi&agrave;nh được
-                      T&agrave;i trợ sẽ được ho&agrave;n lại số tiền T&agrave;i
-                      trợ. Những t&igrave;nh huống như vậy xảy ra&nbsp;thường
-                      xuy&ecirc;n, ch&uacute;ng t&ocirc;i khuy&ecirc;n bạn
-                      kh&ocirc;ng n&ecirc;n chờ đợi kết quả của Cuộc thi
-                      t&agrave;i trợ v&agrave;&nbsp;n&ecirc;n đăng
-                      k&yacute;&nbsp;trước v&agrave;o chương tr&igrave;nh (để
-                      c&oacute;&nbsp;thời gian thu thập tất cả c&aacute;c
-                      t&agrave;i liệu, xin thị thực, v.v.).
+                      Tất cả những người tham gia Học viện đã đăng ký, trả tiền
+                      cho chương trình và giành được học bổng sẽ được hoàn lại
+                      số tiền học bổng.
                     </>,
                     <>
                       Всем участникам Академии, кто зарегистрировался, оплатил
