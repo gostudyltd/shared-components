@@ -567,6 +567,22 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
               objectFit: "cover",
             }}
             image={{
+              src: `${cdnUrl}/officesLanding/fifthSection_4.png`,
+              width: 1064,
+              height: 816,
+            }}
+            mobileImage={{
+              src: `${cdnUrl}/officesLanding/fifthSection_4_mobile.png`,
+              width: 640,
+              height: 480,
+            }}
+          />,
+          <ImageWithColorizedBorder
+            imageSx={{
+              minHeight: "12rem",
+              objectFit: "cover",
+            }}
+            image={{
               src: `${cdnUrl}/officesLanding/fifthSection_2.png`,
               width: 1064,
               height: 816,
@@ -589,22 +605,6 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             }}
             mobileImage={{
               src: `${cdnUrl}/officesLanding/fifthSection_3_mobile.png`,
-              width: 640,
-              height: 480,
-            }}
-          />,
-          <ImageWithColorizedBorder
-            imageSx={{
-              minHeight: "12rem",
-              objectFit: "cover",
-            }}
-            image={{
-              src: `${cdnUrl}/officesLanding/fifthSection_4.png`,
-              width: 1064,
-              height: 816,
-            }}
-            mobileImage={{
-              src: `${cdnUrl}/officesLanding/fifthSection_4_mobile.png`,
               width: 640,
               height: 480,
             }}

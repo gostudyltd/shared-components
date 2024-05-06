@@ -4,7 +4,7 @@ import { GrantsLanding } from "./packages";
 
 function App() {
   return (
-    <GrantsLanding
+    <OfficesLanding
       lang="en"
       btnAction={() => {
         console.log("test");
