@@ -1,4 +1,5 @@
 import { List5SectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
 
 export const list5SectionContent1: TranslationType<List5SectionProps> = {
@@ -227,3 +228,64 @@ export const list5SectionContent1: TranslationType<List5SectionProps> = {
     ],
   },
 };
+
+export const getList5SectionContent = (lang: LangKey, externalConfig?: Translations) => {
+  const t = createTFunc(lang, externalConfig)
+
+  return {
+    sectionTitle: {
+      preTitle: t('CzechLanguageLanding.FirstSection.PreTitle'),
+      title: t('CzechLanguageLanding.FirstSection.Title'),
+    },
+    data: [
+      {
+        badge: t('CzechLanguageLanding.FirstSection.Card1.Badge'),
+        title: t('CzechLanguageLanding.FirstSection.Card1.Title'),
+        description: t('CzechLanguageLanding.FirstSection.Card1.Description'),
+        list: [
+          t('CzechLanguageLanding.FirstSection.Card1.Points.1'),
+          t('CzechLanguageLanding.FirstSection.Card1.Points.2'),
+          t('CzechLanguageLanding.FirstSection.Card1.Points.3'),
+          t('CzechLanguageLanding.FirstSection.Card1.Points.4'),
+          t('CzechLanguageLanding.FirstSection.Card1.Points.5'),
+          t('CzechLanguageLanding.FirstSection.Card1.Points.6'),
+        ],
+        button: {
+          text: t('CzechLanguageLanding.FirstSection.Card1.Button'),
+        },
+      },
+      {
+        badge: t('CzechLanguageLanding.FirstSection.Card2.Badge'),
+        title: t('CzechLanguageLanding.FirstSection.Card2.Title'),
+        description: t('CzechLanguageLanding.FirstSection.Card2.Description'),
+        list: [
+          t('CzechLanguageLanding.FirstSection.Card2.Points.1'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.2'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.3'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.4'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.5'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.6'),
+        ],
+        button: {
+          text: t('CzechLanguageLanding.FirstSection.Card2.Button'),
+        },
+      },
+      {
+        badge: t('CzechLanguageLanding.FirstSection.Card2.Badge'),
+        title: t('CzechLanguageLanding.FirstSection.Card2.Title'),
+        description: t('CzechLanguageLanding.FirstSection.Card2.Description'),
+        list: [
+          t('CzechLanguageLanding.FirstSection.Card2.Points.1'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.2'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.3'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.4'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.5'),
+          t('CzechLanguageLanding.FirstSection.Card2.Points.6'),
+        ],
+        button: {
+          text: t('CzechLanguageLanding.FirstSection.Card2.Button'),
+        },
+      },
+    ],
+  }
+}

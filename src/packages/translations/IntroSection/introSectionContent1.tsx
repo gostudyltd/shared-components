@@ -1,6 +1,6 @@
 import { IntroSectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
-import { getTranslationByLang } from "../utils";
 
 export const introSectionContent1: TranslationType<
   Omit<IntroSectionProps, "image" | "mobileImage">
@@ -114,3 +114,34 @@ export const introSectionContent1: TranslationType<
     ],
   },
 };
+
+export const getIntroSectionContent = (lang: LangKey, externalConfig?: Translations) => {
+  const t = createTFunc(lang, externalConfig)
+
+  return {
+    preTitle: t('CzechLanguageLanding.IntroSection.PreTitle'),
+    renderTitle: (color: string) => (
+      <>
+        {t('CzechLanguageLanding.IntroSection.Title.Part1')} <span style={{ color }}>{t('CzechLanguageLanding.IntroSection.Title.Part2')}</span> {t('CzechLanguageLanding.IntroSection.Title.Part3')}
+      </>
+    ),
+    imageOverlayText:
+      t('CzechLanguageLanding.IntroSection.Image'),
+    description:
+    t('CzechLanguageLanding.IntroSection.Description'),
+    bottomListData: [
+      {
+        icon: "verifiedCheckTwoTone",
+        text: t('CzechLanguageLanding.IntroSection.Point1'),
+      },
+      {
+        icon: "shieldTwoTone",
+        text: t('CzechLanguageLanding.IntroSection.Point2'),
+      },
+      {
+        icon: 'diplomaTwoTone',
+        text: t('CzechLanguageLanding.IntroSection.Point3'),
+      },
+    ],
+  }
+}

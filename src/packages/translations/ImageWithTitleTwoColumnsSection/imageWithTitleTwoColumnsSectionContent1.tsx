@@ -1,4 +1,5 @@
 import { ImageWithTitleTwoColumnsSectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
 
 export const imageWithTitleTwoColumnsSectionContent1: TranslationType<
@@ -98,3 +99,28 @@ export const imageWithTitleTwoColumnsSectionContent1: TranslationType<
     },
   },
 };
+
+export const getImageWithTitleTwoColumnsSectionContent1 = (lang: LangKey, externalConfig?: Translations) => {
+  const t = createTFunc(lang, externalConfig)
+
+  return {
+    sectionTitle: {
+      renderTitle: (color: string) => (
+        <>
+          {t('CzechLanguageLanding.FourthSection.Title.Part1')}{" "}
+          <span style={{ color }}>{t('CzechLanguageLanding.FourthSection.Title.Part2')}</span>
+        </>
+      ),
+      renderDescription: () => (
+        <>
+          {t('CzechLanguageLanding.FourthSection.Text.Part1')}
+          <br />
+          <br />
+          <span style={{ fontWeight: "600" }}>
+          {t('CzechLanguageLanding.FourthSection.Text.Part2')}
+          </span>
+        </>
+      ),
+    },
+  }
+}

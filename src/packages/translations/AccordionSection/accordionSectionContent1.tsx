@@ -1,4 +1,5 @@
 import { AccordionSectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
 
 export const accordionSectionContent1: TranslationType<AccordionSectionProps> =
@@ -363,3 +364,74 @@ export const accordionSectionContent1: TranslationType<AccordionSectionProps> =
       ],
     },
   };
+
+  export const getAccordionSectionContent1 = (lang: LangKey, externalConfig?: Translations) => {
+    const t = createTFunc(lang, externalConfig)
+  
+    return {
+      title: t('CzechLanguageLanding.FifthSection.Title'),
+      description: t('CzechLanguageLanding.FifthSection.Description'),
+      data: [
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.1.Title'),
+          text: t('CzechLanguageLanding.FifthSection.Questions.1.Text'),
+        },
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.2.Title'),
+          text: t('CzechLanguageLanding.FifthSection.Questions.2.Text'),
+        },
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.3.Title'),
+          text: t('CzechLanguageLanding.FifthSection.Questions.3.Text'),
+        },
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.4.Title'),
+          renderText: () => (
+            <>
+              {t('CzechLanguageLanding.FifthSection.Questions.4.Text.Part1')}
+              <br />
+              <br />
+              {t('CzechLanguageLanding.FifthSection.Questions.4.Text.Part2')}
+            </>
+          ),
+        },
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.5.Title'),
+          renderText: () => (
+            <>
+              {t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part1')}
+              <br />
+              <br />
+              <span style={{ fontWeight: "600" }}>
+              {t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part2')}
+              </span>{" "}
+              {t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part3')}
+              <br />
+              {t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part4')}
+              <br />
+              <br />
+              <span style={{ fontWeight: "600" }}>{t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part5')}</span>{" "}
+              {t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part6')}
+              <br />
+              {t('CzechLanguageLanding.FifthSection.Questions.5.Text.Part7')}
+            </>
+          ),
+        },
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.6.Title'),
+          text: t('CzechLanguageLanding.FifthSection.Questions.6.Text'),
+        },
+        {
+          title: t('CzechLanguageLanding.FifthSection.Questions.7.Title'),
+          renderText: () => (
+            <>
+              {t('CzechLanguageLanding.FifthSection.Questions.7.Text.Part1')}
+              <br />
+              <br />
+              {t('CzechLanguageLanding.FifthSection.Questions.7.Text.Part2')}
+            </>
+          ),
+        },
+      ],
+    }
+  }

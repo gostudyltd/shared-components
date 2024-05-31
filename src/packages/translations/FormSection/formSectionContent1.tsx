@@ -1,4 +1,5 @@
 import { FormSectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
 
 export const formSectionContent1: TranslationType<
@@ -105,3 +106,31 @@ export const formSectionContent1: TranslationType<
     },
   },
 };
+
+export const getFormSectionContent1 = (lang: LangKey, externalConfig?: Translations) => {
+  const t = createTFunc(lang, externalConfig)
+
+  return {
+    renderTitle: (color: string) => {
+      return (
+        <>
+          {t('CzechLanguageLanding.SixthSection.Title.Part1')}{" "}<span style={{ color }}>{t('CzechLanguageLanding.SixthSection.Title.Part2')}</span>
+        </>
+      );
+    },
+    description: t('CzechLanguageLanding.SixthSection.Description'),
+    formTranslations: {
+      language: lang,
+      content: {
+        acceptTerms: t('CzechLanguageLanding.SixthSection.Terms'),
+        formSubmitted: (
+          <>
+            { t('CzechLanguageLanding.SixthSection.Submited.Part1')}
+            <br />
+            { t('CzechLanguageLanding.SixthSection.Submited.Part2')}
+          </>
+        ),
+      },
+    },
+  }
+}

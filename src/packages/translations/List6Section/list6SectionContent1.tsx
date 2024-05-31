@@ -1,4 +1,5 @@
 import { List6SectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
 
 export const list6SectionContent1: TranslationType<List6SectionProps> = {
@@ -151,3 +152,39 @@ export const list6SectionContent1: TranslationType<List6SectionProps> = {
     },
   },
 };
+
+export const getList6SectionContent = (lang: LangKey, externalConfig?: Translations) => {
+  const t = createTFunc(lang, externalConfig)
+
+  return {
+    sectionTitle: {
+      preTitle: t('CzechLanguageLanding.ThirdSection.PreTitle'),
+      title: t('CzechLanguageLanding.ThirdSection.Title'),
+    },
+    data: {
+      postDescription: t('CzechLanguageLanding.ThirdSection.PostDescription'),
+      data: [
+        {
+          title: t('CzechLanguageLanding.ThirdSection.Card1.Title'),
+          list: [t('CzechLanguageLanding.ThirdSection.Card1.Points.1'), t('CzechLanguageLanding.ThirdSection.Card1.Points.2')],
+          button: {
+            text: t('CzechLanguageLanding.ThirdSection.Card1.Button'),
+          },
+        },
+        {
+          title: t('CzechLanguageLanding.ThirdSection.Card2.Title')
+        },
+        {
+          title: t('CzechLanguageLanding.ThirdSection.Card3.Title')
+        },
+        {
+          title: t('CzechLanguageLanding.ThirdSection.Card4.Title')
+        },
+        {
+          title: t('CzechLanguageLanding.ThirdSection.Card5.Title'),
+          isHighlighted: true,
+        },
+      ],
+    },
+  }
+}

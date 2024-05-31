@@ -1,4 +1,5 @@
 import { ColorizedWithTwoImagesSectionProps } from "../../components";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { TranslationType } from "../types";
 
 export const colorizedWithTwoImagesSectionContent1: TranslationType<
@@ -58,3 +59,20 @@ export const colorizedWithTwoImagesSectionContent1: TranslationType<
     },
   },
 };
+
+export const getColorizedWithTwoImagesSectionContent1 = (lang: LangKey, externalConfig?: Translations) => {
+  const t = createTFunc(lang, externalConfig)
+
+  return {
+    sectionTitle: {
+      title: t('CzechLanguageLanding.SecondSection.Title'),
+      renderDescription: () => (
+        <>
+          {t('CzechLanguageLanding.SecondSection.Text.Part1')}
+          <br />
+          {t('CzechLanguageLanding.SecondSection.Text.Part2')}
+        </>
+      ),
+    },
+  }
+}

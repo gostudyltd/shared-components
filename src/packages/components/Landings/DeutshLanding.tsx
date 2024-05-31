@@ -1,13 +1,5 @@
 import React from "react";
-// import { IntroSection } from "../components/LandingSections/IntroSection";
-// import { SectionContainer } from "../components/LandingSections/components/SectionContainer";
-// import { SectionTextCardList } from "../components/LandingSections/components/SectionTextCardList";
-// import { SectionTwoColumnsContainer } from "../components/LandingSections/components/SectionTwoColumnsContainer";
 import { Box, Stack, Typography } from "@mui/material";
-// import { getSrc, getSrcSet } from "../helpers/residence";
-// import { montserratFamily } from "../constants/themeVars";
-// import { RoundedColorizedSection } from "../components/LandingSections/RoundedSection";
-// import { SectionContainerWrapperColorized } from "../components/LandingSections/components/SectionContainerWrapperColorized";
 import {
   IntroSectionV2,
   RoundedColorizedSectionV2,
@@ -18,18 +10,22 @@ import {
 } from "../LandingSections";
 import { montserratFamily } from "../../constants/themeVars";
 import { getSrc, getSrcSet } from "../../helpers/residence";
+import { createTFunc, Translations } from "../../config/langs";
 
 interface Props {
   lang: "ru" | "uk";
+  externalLocales?: Translations;
   cdnUrl: string;
   btnAction: VoidFunction;
 }
 
 export const DeutshLanding: React.FC<Props> = ({
   lang = "ru",
+  externalLocales,
   cdnUrl,
   btnAction,
 }) => {
+  const t = createTFunc(lang, externalLocales)
   return (
     <>
       <SectionContainerWrapperColorized
@@ -38,48 +34,23 @@ export const DeutshLanding: React.FC<Props> = ({
       >
         <IntroSectionV2
           containerSx={{ py: { xs: "3em", sm: "3.5em" } }}
-          renderTitle={() =>
-            lang === "ru" ? (
-              <>
-                <span style={{ color: "rgba(227, 136, 0, 1)" }}>
-                  Онлайн-уроки{" "}
-                </span>
-                немецкого языка
-              </>
-            ) : (
-              <>
-                <span style={{ color: "rgba(227, 136, 0, 1)" }}>
-                  Онлайн-уроки{" "}
-                </span>
-                німецької мови
-              </>
-            )
+          renderTitle={() => 
+          <>
+            <span style={{ color: "rgba(227, 136, 0, 1)" }}>
+              {t('DeutshLanding.IntroSection.Title.Part1')}{" "}
+            </span>
+            {t('DeutshLanding.IntroSection.Title.Part2')}
+          </>
           }
-          renderDescription={() =>
-            lang === "ru" ? (
-              <>
-                Начните учить язык с преподавателем-носителем бесплатно,
-                эффективно и без скучных заданий, <br /> от которых тянет спать.
-              </>
-            ) : (
-              <>
-                Почніть вивчати мову з викладачем-носієм безкоштовно та без
-                нудних завдань, від яких тягне спати.
-              </>
-            )
+          renderDescription={() => t('DeutshLanding.IntroSection.Description')
           }
-          // description={
-          //   lang === "ru"
-          //     ? "Начните учить язык с преподавателем-носителем бесплатно, эффективно и без скучных заданий, от которых тянет спать."
-          //     : "Почніть вивчати мову з викладачем-носієм безкоштовно та без нудних завдань, від яких тягне спати."
-          // }
           info={[
             {
-              text: lang === "ru" ? "Бесплатно" : "Безкоштовно",
+              text: t('DeutshLanding.IntroSection.Chip1'),
               bgColor: "rgba(221, 159, 1, 1)",
             },
             {
-              text: lang === "ru" ? "Каждую неделю" : "Щотижня",
+              text: t('DeutshLanding.IntroSection.Chip2'),
               bgColor: "rgba(221, 159, 1, 1)",
             },
           ]}
@@ -95,7 +66,7 @@ export const DeutshLanding: React.FC<Props> = ({
             sx: { maxHeight: "338px", objectFit: "contain" },
           }}
           button={{
-            text: lang === "ru" ? "Зарегистрироваться" : "Зареєструватися",
+            text: t('DeutshLanding.IntroSection.Button'),
             onClick: () => {
               btnAction();
             },
@@ -109,14 +80,8 @@ export const DeutshLanding: React.FC<Props> = ({
         sectionTitle={{
           sx: { fontSize: { xs: "1.25rem", sm: "2.25rem" } },
           descriptionSx: { fontSize: { xs: "0.875rem", sm: "1.25rem" } },
-          title:
-            lang === "ru"
-              ? "Учите язык эффективно и с интересом!"
-              : "Вивчайте мову ефективно та з інтересом!",
-          description:
-            lang === "ru"
-              ? "На уроках немецкого от GoStudy вы:"
-              : "На уроках німецької мови від GoStudy ви:",
+          title: t('DeutshLanding.FirstSection.Title'),
+          description: t('DeutshLanding.FirstSection.Description'),
           centered: true,
         }}
       >
@@ -128,66 +93,42 @@ export const DeutshLanding: React.FC<Props> = ({
           data={[
             {
               iconName: "notebookBookmarkTwoTone",
-              title:
-                lang === "ru"
-                  ? "Освоите языковую базу: произношение, правила, аудирование и мн. др."
-                  : "Освоїте мовну базу: вимова, правила, аудіювання та багато іншого",
+              title: t('DeutshLanding.FirstSection.Points.1'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "userSpeakTwoTone",
-              title:
-                lang === "ru"
-                  ? "Начнете понимать немецкую речь на слух"
-                  : "Почнете розуміти німецьку мову на слух",
+              title: t('DeutshLanding.FirstSection.Points.2'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "documentAddTwoTone",
-              title:
-                lang === "ru"
-                  ? "Построите свои первые предложения на немецком"
-                  : "Побудуєте свої перші речення німецькою",
+              title: t('DeutshLanding.FirstSection.Points.3'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "layersMinimalisticTwoTone",
-              title:
-                lang === "ru"
-                  ? "Убедитесь в том, что немецкий может быть простым и логичным"
-                  : "Переконаєтеся, що німецька може бути простою та логічною",
+              title: t('DeutshLanding.FirstSection.Points.4'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "userHeartTwoTone",
-              title:
-                lang === "ru"
-                  ? "Познакомитесь с замечательными преподавателями центра GoStudy"
-                  : "Познайометеся із чудовими викладачами центру GoStudy",
+              title: t('DeutshLanding.FirstSection.Points.5'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "hashtagChatTwoTone",
-              title:
-                lang === "ru"
-                  ? "Оцените комфорт и эффективность онлайн-обучения"
-                  : "Оціните комфорт та ефективність онлайн-навчання",
+              title: t('DeutshLanding.FirstSection.Points.6'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "usersGroupTwoRoundedTwoTone",
-              title:
-                lang === "ru"
-                  ? "Проведете время не скучно, с пользой и найдете новых друзей в учебной группе!"
-                  : "Проведете час не нудно, з користю та знайдете нових друзів у навчальній групі!",
+              title: t('DeutshLanding.FirstSection.Points.7'),
               iconColor: "rgba(221, 159, 1, 1)",
             },
             {
               iconName: "handStarsTwoTone",
-              title:
-                lang === "ru"
-                  ? "Убедитесь, что онлайн-обучение в GoStudy действительно результативно"
-                  : "Переконаєтеся, що онлайн-навчання в GoStudy дійсно результативне",
+              title: t('DeutshLanding.FirstSection.Points.8'),
               iconColor: "rgba(221, 159, 1, 1)",
               sx: {
                 border: "1.6px solid rgba(221, 159, 1, 1)",
@@ -206,10 +147,7 @@ export const DeutshLanding: React.FC<Props> = ({
           sectionTitle={{
             sx: { fontSize: { xs: "1.25rem", sm: "2.25rem" } },
             centered: true,
-            title:
-              lang === "ru"
-                ? "С вами будут профессионалы своего дела"
-                : "З вами будуть професіонали своєї справи",
+            title: t('DeutshLanding.SecondSection.Title'),
           }}
         >
           <SectionTwoColumnsContainer
@@ -249,7 +187,7 @@ export const DeutshLanding: React.FC<Props> = ({
                   fontWeight={600}
                   lineHeight={{ xs: "19.25px", sm: "29.26px" }}
                 >
-                  Petra Ustohalová
+                  {t('DeutshLanding.SecondSection.Card1.Title')}
                 </Typography>
                 <Typography
                   fontFamily={montserratFamily}
@@ -259,23 +197,7 @@ export const DeutshLanding: React.FC<Props> = ({
                   color={"rgba(134, 134, 134, 1)"}
                   minHeight={{ xs: "unset", sm: "97px" }}
                 >
-                  {lang === "ru" ? (
-                    <>
-                      Преподаватель немецкого языка в GoStudy,
-                      филолог-германист, училась в Потсдамском университете,
-                      опыт работы с иностранными студентами – более 10 лет.
-                      Всегда улыбчивая и креативная. Главный педагог «Бесплатных
-                      уроков немецкого» от GoStudy.{" "}
-                    </>
-                  ) : (
-                    <>
-                      Викладач німецької мови в GoStudy, філолог-германіст,
-                      навчалася у Потсдамському університеті, досвід роботи з
-                      іноземними студентами – понад 10 років. Завжди усміхнена
-                      та креативна. Головний педагог «Безкоштовних німецьких
-                      уроків» від GoStudy.
-                    </>
-                  )}
+                  {t('DeutshLanding.SecondSection.Card1.Description')}
                 </Typography>
               </Stack>
             }
@@ -314,7 +236,7 @@ export const DeutshLanding: React.FC<Props> = ({
                   fontWeight={600}
                   lineHeight={{ xs: "19.25px", sm: "29.26px" }}
                 >
-                  Markus Stoess
+                  {t('DeutshLanding.SecondSection.Card2.Title')}
                 </Typography>
                 <Typography
                   fontFamily={montserratFamily}
@@ -324,21 +246,7 @@ export const DeutshLanding: React.FC<Props> = ({
                   color={"rgba(134, 134, 134, 1)"}
                   // minHeight={{ xs: "unset", sm: "132px" }}
                 >
-                  {lang === "ru" ? (
-                    <>
-                      Учитель-носитель немецкого языка. Окончил престижные
-                      университеты в Карлсруэ (Германия) и Нанси (Франция).
-                      Более 9 лет преподает немецкий язык иностранным студентам.
-                      Педагог «Бесплатных уроков немецкого» от GoStudy.
-                    </>
-                  ) : (
-                    <>
-                      Учитель-носій німецької мови. Закінчив престижні
-                      університети в Карлсруе (Німеччина) і Нансі (Франція).
-                      Понад 9 років викладає німецьку мову іноземним студентам.
-                      Педагог «Безкоштовних уроків німецької» від GoStudy.
-                    </>
-                  )}
+                  {t('DeutshLanding.SecondSection.Card2.Description')}
                 </Typography>
               </Stack>
             }
@@ -353,29 +261,10 @@ export const DeutshLanding: React.FC<Props> = ({
         sx={{ background: "rgba(248, 248, 248, 1)" }}
         sectionTitle={{
           sx: { fontSize: { xs: "1.25rem", sm: "1.75rem" } },
-          title: lang === "ru" ? "Регистрация" : "Реєстрація",
+          title: t('DeutshLanding.ThirdSection.Title'),
           descriptionSx: { fontSize: { xs: ".75rem", sm: "1.125rem" } },
           textContainerSx: { width: { xs: "100%", sm: "70%" } },
-          renderDescription: () =>
-            lang === "ru" ? (
-              <>
-                Уроки бесплатные, но нужна регистрация. Нажмите на кнопку,
-                заполните короткую форму и выберите удобный для вас мессенджер.
-                Умный бот пришлет доступ к уроку и напомнит о начале
-                за 15 минут, чтобы вы точно ничего не пропустили
-              </>
-            ) : (
-              <>
-                Уроки безкоштовні, але потрібна реєстрація.Натисніть кнопку,
-                заповніть коротку форму і виберіть зручний для вас месенджер.
-                Розумний бот надішле доступ до уроку і нагадає про початок
-                за 15 хвилин. Щоб ви точно нічого не пропустили
-              </>
-            ),
-          // description:
-          //   lang === "ru"
-          //     ? "Уроки бесплатные, но нужна регистрация. Нажмите на кнопку, заполните короткую форму и выберите удобный для вас мессенджер. Умный бот пришлет доступ к уроку и напомнит о начале за 15 минут, чтобы вы точно ничего не пропустили"
-          //     : "Уроки безкоштовні, але потрібна реєстрація.Натисніть кнопку, заповніть коротку форму і виберіть зручний для вас месенджер. Розумний бот надішле доступ до уроку і нагадає про початок за 15 хвилин. Щоб ви точно нічого не пропустили",
+          renderDescription: () => t('DeutshLanding.ThirdSection.Description'),
           wrapperSx: { marginBottom: { xs: "0", sm: "40px" } },
         }}
         image={{
@@ -403,7 +292,7 @@ export const DeutshLanding: React.FC<Props> = ({
             fontSize: { xs: ".75rem", sm: "1.125rem" },
           },
           buttonContainerSx: { marginTop: "0" },
-          text: lang === "ru" ? "Регистрация" : "Зареєструватися",
+          text: t('DeutshLanding.ThirdSection.Button'),
           onClick: () => {
             btnAction();
           },

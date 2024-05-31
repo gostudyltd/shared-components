@@ -12,16 +12,20 @@ import { ImageWithColorizedBorder } from "../LandingSections/ImageWithColorizedB
 import { montserratFamily } from "../../constants/themeVars";
 import { SliderSection3 } from "../LandingSections/SliderSection3";
 import { SliderSection4 } from "../LandingSections/SliderSection4";
+import { createTFunc, LangKey, Translations } from "../../config/langs";
 
 interface Props {
-  lang: "ru" | "uk" | "en" | "vi";
+  lang: LangKey;
+  externalLocales?: Translations;
   btnAction?: VoidFunction;
   onSubmit?: VoidFunction;
   button?: { onClick: VoidFunction; text: string };
 }
 
-export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
+export const OfficesLanding: React.FC<Props> = ({ lang = "ru", externalLocales }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
+
+  const t = createTFunc(lang, externalLocales)
 
   const getTranslatedText = (
     enVariant: string | React.ReactNode,
@@ -40,12 +44,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     phone: "+420 277 001 200",
     email: "info@gostudy.cz",
     link: "https://maps.app.goo.gl/2YobUjZ9ynRjh7rx7",
-    address: getTranslatedText(
-      "Street. Washingtonova 25, Prague",
-      "Địa chỉ: Số 25 đường Washingtonova, Prague",
-      "ул. Вашингтонова 25, Прага, 110 00",
-      "вул. Вашингтонова 25, Прага"
-    ) as string,
+    address: t('OfficesLanding.FirstSection.Address'),
   };
 
   const secondSliderContent = {
@@ -53,12 +52,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     phone: "+420 277 001 200",
     email: "info@gostudy.cz",
     // link: "https://maps.app.goo.gl/dM3fWhQWavgHsZrP8",
-    address: getTranslatedText(
-      "Street. Kopechna 938/3, Brno",
-      "Địa chỉ: Số nhà 938/3, đường Kopecna, Brno",
-      "ул. Копечна 3, Брно, 602 00",
-      "вул. Копечна 938/3, Брно"
-    ) as string,
+    address: t('OfficesLanding.SecondSection.Address'),
   };
 
   const thirdSliderContent = {
@@ -66,12 +60,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
     phone: "+38-093-861 36 25",
     email: "stanislav.b@gostudy.cz",
     // link: "https://maps.app.goo.gl/BwSGs34KuRptPTXj6",
-    address: getTranslatedText(
-      "str. Saksaganskogo 1, Kiev",
-      "Địa chỉ: Số 1, đường Saksahanskoho, Kiev",
-      "ул. Саксаганского 1, Киев",
-      "вул. Саксаганського 1, Київ"
-    ) as string,
+    address: t('OfficesLanding.FourthSection.Address'),
   };
 
   const renderOfficeContacts = ({
@@ -233,12 +222,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
               }
             }}
           >
-            {getTranslatedText(
-              "View on map",
-              "Xem trên bản đồ",
-              "Открыть на карте",
-              "Подивитись на карті"
-            )}
+            {t('OfficesLanding.ViewOnMap')}
           </Button>
         )}
       </Box>
@@ -267,37 +251,32 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             {getTranslatedText(
               <>
                 <Box component={"span"} sx={{ color: color }}>
-                  GoStudy
+                  {t('OfficesLanding.IntroSection.Title.Part1')}
                 </Box>{" "}
-                offices and educational centers
+                {t('OfficesLanding.IntroSection.Title.Part2')}
               </>,
               <>
-                Văn phòng và trung tâm đào tạo{" "}
-                <Box component={"span"} sx={{ color: color }}>
-                  GoStudy
-                </Box>
-              </>,
+              {t('OfficesLanding.IntroSection.Title.Part1')}{" "}
+              <Box component={"span"} sx={{ color: color }}>
+                {t('OfficesLanding.IntroSection.Title.Part2')}
+              </Box>
+            </>,
               <>
-                Офисы и учебные центры{" "}
-                <Box component={"span"} sx={{ color: color }}>
-                  GoStudy
-                </Box>
-              </>,
+              {t('OfficesLanding.IntroSection.Title.Part1')}{" "}
+              <Box component={"span"} sx={{ color: color }}>
+                {t('OfficesLanding.IntroSection.Title.Part2')}
+              </Box>
+            </>,
               <>
-                Офіси та навчальні центри{" "}
+                {t('OfficesLanding.IntroSection.Title.Part1')}{" "}
                 <Box component={"span"} sx={{ color: color }}>
-                  GoStudy
+                  {t('OfficesLanding.IntroSection.Title.Part2')}
                 </Box>
               </>
             )}
           </Box>
         )}
-        description={getTranslatedText(
-          "Modern, bright and comfortable classrooms and offices in Prague, Brno, Kiev, Bratislava and Vienna.",
-          "Các phòng học và văn phòng hiện đại, sáng sủa và thoải mái tại Prague, Brno, Kiev, Bratislava và Vienna.",
-          "Современные, светлые и комфортные учебные классы и офисы в Праге, Брно, Вене, Братиславе и Киеве.",
-          "Сучасні, світлі та комфортні навчальні класи та офіси у Празі, Брно, Києві, Братиславі та Відні."
-        )}
+        description={t('OfficesLanding.IntroSection.Description')}
         image={{
           src: `${cdnUrl}/officesLanding/firstSection.png`,
           width: 1080,
@@ -315,24 +294,9 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
         info={renderOfficeContacts(firstSliderContent)}
         accentColor={"primary"}
         sectionTitle={{
-          preTitle: getTranslatedText(
-            "Prague, Czech Republic",
-            "Prague, Cộng hòa Séc",
-            "Прага, Чехия",
-            "Прага, Чехія"
-          ) as string,
-          title: getTranslatedText(
-            "Main educational center and office",
-            "Trung tâm đào tạo chính và văn phòng",
-            "Главный учебный центр и офис",
-            "Головний навчальний центр та офіс"
-          ) as string,
-          description: getTranslatedText(
-            "The main office and administration of the GoStudy Language Centre is located in the center of Prague. This is also where the classrooms for face-to-face teaching are located. Spacious, comfortable rooms, modern equipment.",
-            "Trụ sở chính và quản lý của Trung tâm Ngôn ngữ GoStudy nằm ở trung tâm Prague. Ở đây cũng là nơi có các lớp học được tổ chức trực tiếp. Các phòng học rộng rãi, thoải mái và được trang bị thiết bị hiện đại.",
-            "Главный офис и администрация языкового центра GoStudy находится в центре Праги. Здесь же расположены классы, где проводится очное обучение. Просторные, удобные помещения, современное оборудование.",
-            "Головний офіс та адміністрація мовного центру GoStudy знаходиться у центрі Праги. Тут розташовані класи, де проводиться очне навчання. Просторе, зручне приміщення, сучасне обладнання."
-          ),
+          preTitle: t('OfficesLanding.FirstSection.PreTitle'),
+          title: t('OfficesLanding.FirstSection.Title'),
+          description: t('OfficesLanding.FirstSection.Description'),
         }}
         data={[
           <ImageWithColorizedBorder
@@ -407,24 +371,9 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
         accentColor="primary"
         wrapperSx={{ background: "#ffffff" }}
         sectionTitle={{
-          preTitle: getTranslatedText(
-            "Brno, Czech Republic",
-            "Brno, Cộng hòa Séc",
-            "Брно, Чехия",
-            "Брно, Чехія"
-          ) as string,
-          title: getTranslatedText(
-            "Educational center and office",
-            "Trung tâm đào tạo và văn phòng",
-            "Учебный центр и офис",
-            "Навчальний центр та офіс"
-          ) as string,
-          description: getTranslatedText(
-            "Located in the center of Brno in the south-east of the Czech Republic. The second largest and most important city in the Czech Republic after Prague.",
-            "Nằm ở trung tâm Brno ở phía đông nam Cộng hòa Séc. Thành phố lớn thứ hai và quan trọng nhất ở Cộng hòa Séc sau Praha.",
-            "Находится в центре Брно на юго-востоке Чехии. Второй по величине и значимости город в Чехии после Праги.",
-            "Знаходиться у центрі Брно на південному сході Чехії. Друге за величиною та значущістю місто в Чехії після Праги."
-          ),
+          preTitle: t('OfficesLanding.SecondSection.PreTitle'),
+          title: t('OfficesLanding.SecondSection.Title'),
+          description: t('OfficesLanding.SecondSection.Description'),
         }}
         data={[
           {
@@ -467,19 +416,9 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
             firstColumn={
               <SectionTitle
                 preTitle={
-                  getTranslatedText(
-                    "Bratislava, Slovakia",
-                    "Bratislava, Slovakia",
-                    "Братислава, Словакия",
-                    "Братислава, Словаччина"
-                  ) as string
+                  t('OfficesLanding.ThirdSection.PreTitle')
                 }
-                title={getTranslatedText(
-                  "Educational center",
-                  "Trung tâm giáo dục",
-                  "Учебный центр",
-                  "Навчальний центр"
-                )}
+                title={t('OfficesLanding.ThirdSection.Title')}
               />
             }
             secondColumnSx={{
@@ -490,12 +429,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
               <Typography
                 sx={{ fontSize: "1.125rem", color: "rgba(0,0,0,.54)" }}
               >
-                {getTranslatedText(
-                  "Spacious classrooms for students with well-developed infrastructure.",
-                  "Phòng học rộng rãi dành cho học sinh với cơ sở vật chất phát triển.",
-                  "Просторные аудитории для занятий со студентами с развитой инфраструктурой.",
-                  "Простора аудиторія з розвиненою інфраструктурою для занять зі студентами."
-                )}
+                {t('OfficesLanding.ThirdSection.Description')}
               </Typography>
             }
           />
@@ -525,24 +459,9 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
         accentColor="primary"
         wrapperSx={{ background: "#ffffff" }}
         sectionTitle={{
-          preTitle: getTranslatedText(
-            "Kiev, Ukraine",
-            "Kiev, Ukraine",
-            "Киев, Украина",
-            "Київ, Україна"
-          ) as string,
-          title: getTranslatedText(
-            "Office of the Customer Service Department",
-            "Văn phòng dịch vụ khách hàng",
-            "Офис отдела по работе с клиентами",
-            "Офіс відділу роботи з клієнтами"
-          ) as string,
-          description: getTranslatedText(
-            "Located in the city center. The team of specialists is always ready to answer your questions and provide free consultation on all issues related to education in Europe in person in the office or online.",
-            "Nằm ở trung tâm thành phố. Đội ngũ chuyên gia luôn sẵn sàng trả lời các câu hỏi của bạn và cung cấp tư vấn miễn phí về mọi vấn đề liên quan đến giáo dục ở Châu u, trực tiếp tại văn phòng hoặc trực tuyến.",
-            "Расположен в центре Киева. Консультанты GoStudy расскажут вам о том, как за год выучить иностранный язык до продвинутого уровня, поступить в престижный вуз и начать строить международную карьеру.",
-            "Розташований у центрі міста. Команда фахівців завжди готова відповісти на ваші запитання та провести безкоштовну консультацію щодо усіх питань, пов’язаних з освітою в Європі, очно в офісі або онлайн."
-          ),
+          preTitle: t('OfficesLanding.FourthSection.PreTitle'),
+          title: t('OfficesLanding.FourthSection.Title'),
+          description: t('OfficesLanding.FourthSection.Description'),
         }}
         data={[
           <ImageWithColorizedBorder
@@ -615,32 +534,12 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
       <FormSection
         accentColor="primary"
         renderTitle={(color) =>
-          getTranslatedText(
             <>
               <Box sx={{ color }} component={"span"}>
-                Free
+              {t('OfficesLanding.FifthSection.Title.Part1')}
               </Box>{" "}
-              consultation
-            </>,
-            <>
-              <Box sx={{ color }} component={"span"}>
-                Tư vấn
-              </Box>{" "}
-              miễn phí
-            </>,
-            <>
-              <Box sx={{ color }} component={"span"}>
-                Бесплатная
-              </Box>{" "}
-              консультация
-            </>,
-            <>
-              <Box sx={{ color }} component={"span"}>
-                Безкоштовна
-              </Box>{" "}
-              консультація
+              {t('OfficesLanding.FifthSection.Title.Part2')}
             </>
-          )
         }
         description={
           <Box
@@ -653,14 +552,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
               color: "text.secondary",
             }}
           >
-            {
-              getTranslatedText(
-                "For questions about education and preparation in Europe, please contact any of our offices and educational centers or leave an enquiry via the form. We will contact you as soon as possible.",
-                "Nếu có bất kỳ câu hỏi nào về giáo dục và đào tạo tại Châu u, xin vui lòng liên hệ với bất kỳ văn phòng hoặc trung tâm đào tạo nào của chúng tôi, hoặc để lại yêu cầu liên hệ thông qua biểu mẫu. Chúng tôi sẽ phản hồi bạn ngay khi có thể.",
-                "По вопросам обучения и подготовки в Европе, пожалуйста, обращайтесь в любой из наших офисов и учебных центров или оставляйте заявку для связи через форму. Мы свяжемся с вами в кратчайшие сроки.",
-                "Щодо питань навчання та підготовки в Європі, будь ласка, звертайтесь до будь-якого з наших офісів та навчальних центрів або залишайте заявку для зв’язку через форму. Ми зв’яжемося з вами у найкоротші терміни."
-              ) as string
-            }
+            {t('OfficesLanding.FifthSection.Description')}
           </Box>
         }
         hubspotConfig={{
@@ -684,15 +576,14 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         textAlign: { xs: "center", sm: "start" },
                       }}
                     >
-                      * отправляя форму, вы принимаете условия политики
-                      и пользовательского соглашения
+                      {t('OfficesLanding.FifthSection.Terms')}
                     </Box>
                   ),
                   formSubmitted: (
                     <>
-                      Форма успешно отправлена!
+                      {t('OfficesLanding.FifthSection.Submited.Part1')}
                       <br />
-                      Спасибо!
+                      {t('OfficesLanding.FifthSection.Submited.Part2')}
                     </>
                   ),
                 },
@@ -713,15 +604,14 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         textAlign: { xs: "center", sm: "start" },
                       }}
                     >
-                      * відправляючи форму, ви приймаєте умови політики
-                      та користувальницької угоди.
+                      {t('OfficesLanding.FifthSection.Terms')}
                     </Box>
                   ),
                   formSubmitted: (
                     <>
-                      Форму успішно відправлено!
+                      {t('OfficesLanding.FifthSection.Submited.Part1')}
                       <br />
-                      Дякую!
+                      {t('OfficesLanding.FifthSection.Submited.Part2')}
                     </>
                   ),
                 },
@@ -742,15 +632,14 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         textAlign: { xs: "center", sm: "start" },
                       }}
                     >
-                      * bằng cách gửi biểu mẫu, bạn chấp nhận các điều khoản của
-                      chính sách và thỏa thuận người dùng
+                      {t('OfficesLanding.FifthSection.Terms')}
                     </Box>
                   ),
                   formSubmitted: (
                     <>
-                      Biểu mẫu đã được gửi thành công!
+                      {t('OfficesLanding.FifthSection.Submited.Part1')}
                       <br />
-                      Kinh quá!
+                      {t('OfficesLanding.FifthSection.Submited.Part2')}
                     </>
                   ),
                 },
@@ -770,15 +659,14 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru" }) => {
                         textAlign: { xs: "center", sm: "start" },
                       }}
                     >
-                      * by submitting the form, you accept the terms of the
-                      policy and user agreement
+                      {t('OfficesLanding.FifthSection.Terms')}
                     </Box>
                   ),
                   formSubmitted: (
                     <>
-                      The form has been successfully submitted!
+                      {t('OfficesLanding.FifthSection.Submited.Part1')}
                       <br />
-                      Thanks!
+                      {t('OfficesLanding.FifthSection.Submited.Part2')}
                     </>
                   ),
                 },
