@@ -47,14 +47,7 @@ type ItemRowProps = {
   animationTime: number;
 };
 
-const ItemRow: React.FC<ItemRowProps> = ({
-  data,
-  idx,
-  accentColor,
-  stepsCount,
-  isAnimationPaused,
-  animationTime,
-}) => {
+const ItemRow: React.FC<ItemRowProps> = ({ data, idx, accentColor }) => {
   const accent = accentColorBase[accentColor];
 
   return (
