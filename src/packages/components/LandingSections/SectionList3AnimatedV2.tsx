@@ -37,22 +37,6 @@ const getKeyframeMaxHeightValuesByStepCount = (stepCount: number) => {
   }
   return resultArray.join("\n");
 };
-const getKeyframeScaleValues = (stepCount: number, currentIdx: number) => {
-  const stepsByPercentage = 100 / stepCount;
-  const offset = stepsByPercentage / 2;
-  const percentage = stepsByPercentage * currentIdx;
-
-  const keyframeValue = `
-    0%, ${percentage - offset - 2}% {
-      transform: translateX(-50%) scale(0);
-    }
-    ${percentage - stepCount}%, 100% {
-      transform: translateX(-50%) scale(1);
-    }
-  `;
-
-  return keyframeValue;
-};
 
 type ItemRowProps = {
   data: SectionList3AnimatedV2Props["data"][number];
@@ -72,9 +56,7 @@ const ItemRow: React.FC<ItemRowProps> = ({
   animationTime,
 }) => {
   const accent = accentColorBase[accentColor];
-  const overlayKeyframe = useMemo(() => {
-    return data && keyframes`${getKeyframeScaleValues(stepsCount, idx)}`;
-  }, [data]);
+
   return (
     <Stack
       direction={"row"}
@@ -230,6 +212,7 @@ export const SectionList3AnimatedV2: React.FC<SectionList3AnimatedV2Props> = ({
     return () => {
       window.removeEventListener("scroll", fn);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAnimationPaused, contentRef.current]);
 
   return (

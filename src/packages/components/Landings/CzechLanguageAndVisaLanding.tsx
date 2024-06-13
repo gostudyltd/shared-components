@@ -1,22 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Button, Grid, Link, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Stack } from "@mui/material";
 import {
   AccordionSection,
   FormSection,
-  Image,
   IntroSectionV2,
   SectionContainer,
   SectionContainerWrapperColorized,
-  SectionImageColumn,
-  SectionTitle,
   SectionTwoColumnsContainer,
 } from "../LandingSections";
 import { ImageWithColorizedBorder } from "../LandingSections/ImageWithColorizedBorder";
 import { defaultFontFamily, montserratFamily } from "../../constants/themeVars";
-import { SliderSection3 } from "../LandingSections/SliderSection3";
-import { SliderSection4 } from "../LandingSections/SliderSection4";
 import { createTFunc, LangKey, Translations } from "../../config/langs";
-import { SectionList3Animated } from "../LandingSections/SectionList3Animated";
 import { ReactComponent as ThirdSection1 } from "../Icons/ThirdSection1.svg";
 import { ReactComponent as ThirdSection2 } from "../Icons/ThirdSection2.svg";
 import { ReactComponent as ThirdSection3 } from "../Icons/ThirdSection3.svg";
@@ -28,7 +22,6 @@ import { BurstPucker } from "../Icons";
 import { Service } from "../Icons/RoundedPlus copy";
 import { SectionImageColumnV2 } from "../LandingSections/components/SectionImageColumnV2";
 import { SectionList1 } from "../LandingSections/components/SectionList1";
-import { FirstUnderline } from "../LandingSections/images/lines/FirstUnderline";
 import { Visa1Underline } from "../LandingSections/images/lines/Visa1Underline";
 
 interface Props {
@@ -45,6 +38,15 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
   onClick,
 }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
+
+  const formRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToForm = () => {
+    if (onClick) {
+      onClick();
+    }
+    formRef?.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
 
   const t = createTFunc(lang === "vi" ? "en" : lang, externalLocales);
 
@@ -645,7 +647,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                   <Button
                     size="large"
                     variant="outlined"
-                    onClick={onClick}
+                    onClick={scrollToForm}
                     sx={{
                       fontsize: "18px",
                       fontWeight: 600,
@@ -662,7 +664,12 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
             </Grid>
             {secondSectionData.map((item) => (
               <Grid key={item.title + item.price} item sm={3} xs={12}>
-                {renderCard(item.title, item.price, item.location, onClick)}
+                {renderCard(
+                  item.title,
+                  item.price,
+                  item.location,
+                  scrollToForm
+                )}
               </Grid>
             ))}
           </Grid>
@@ -796,7 +803,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                 button={{
                   label: t("CzechLanguageAndVisaLanding.ThirdSection.Button"),
                   onClick: () => {
-                    console.log("test");
+                    scrollToForm();
                   },
                 }}
                 accentColor="primary"
@@ -885,6 +892,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
       />
 
       <FormSection
+        nodeRef={formRef}
         accentColor="primary"
         buttonColor="rgba(41, 98, 255, 1)"
         renderTitle={() => (
