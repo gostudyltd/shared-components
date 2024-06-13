@@ -12,17 +12,16 @@ import { ImageWithColorizedBorder } from "../LandingSections/ImageWithColorizedB
 import { defaultFontFamily, montserratFamily } from "../../constants/themeVars";
 import { createTFunc, LangKey, Translations } from "../../config/langs";
 import { ReactComponent as ThirdSection1 } from "../Icons/ThirdSection1.svg";
-import { ReactComponent as ThirdSection2 } from "../Icons/ThirdSection2.svg";
-import { ReactComponent as ThirdSection3 } from "../Icons/ThirdSection3.svg";
 import { ReactComponent as SecondSection1 } from "../Icons/secondSection1.svg";
 import { ReactComponent as SecondSection2 } from "../Icons/secondSection2.svg";
 import { ReactComponent as SecondSection3 } from "../Icons/secondSection3.svg";
 import { SectionList3AnimatedV2 } from "../LandingSections/SectionList3AnimatedV2";
 import { BurstPucker } from "../Icons";
-import { Service } from "../Icons/RoundedPlus copy";
+import { Service } from "../Icons/Service";
 import { SectionImageColumnV2 } from "../LandingSections/components/SectionImageColumnV2";
 import { SectionList1 } from "../LandingSections/components/SectionList1";
 import { Visa1Underline } from "../LandingSections/images/lines/Visa1Underline";
+import { LocationPoint } from "../Icons/LocationPoint";
 
 interface Props {
   lang: LangKey;
@@ -123,12 +122,21 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         <Box
           component={"span"}
           sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "6px",
             color: "text.secondary",
             fontSize: { xs: "16px", sm: "18px" },
             lineHeight: { xs: "22.88px", sm: "25.56px" },
             fontWeight: "600",
           }}
         >
+          <LocationPoint
+            sx={{
+              width: { xs: "18px", sm: "24px" },
+              height: { xs: "18px", sm: "24px" },
+            }}
+          />
           {location}
         </Box>
       </Stack>
@@ -139,8 +147,10 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         sx={{
           fontsize: "18px",
           fontWeight: 600,
-          lineHeight: "28px",
-          marginTop: "1.75rem",
+          marginTop: { sm: "20px" },
+          padding: { xs: "7px 22px", sm: "13px 32px" },
+          fontSize: { xs: "16px", sm: "18px" },
+          lineHeight: { xs: "26px", sm: "28px" },
         }}
       >
         {t("CzechLanguageAndVisaLanding.SecondSection.Button")}
@@ -281,8 +291,8 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
           }}
           mobileImage={{
             src: `${cdnUrl}/CzechLanguageAndVisaLanding/${getTranslatedText(
-              "into_en",
-              "into_en",
+              "intro_en",
+              "intro_en",
               "into_ru",
               "into_uk"
             )}_mobile.png`,
@@ -291,77 +301,93 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
             sx: { maxHeight: "306px", objectFit: "contain" },
           }}
         />
-        <Stack
+        <Box
           sx={{
             position: "absolute",
             bottom: { xs: "-332px", sm: "-202px" },
-            flexDirection: { xs: "column", sm: "row" },
-            gap: { xs: "20px", sm: "32px" },
-            padding: { xs: "16px", sm: "28px" },
-            borderRadius: "20px",
-            backgroundColor: "#ffffff",
-            maxWidth: { xs: "343px", sm: "1152px" },
             width: "100%",
-            mx: "auto",
+            px: { xs: "16px", sm: "24px" },
             left: "50%",
             transform: "translate(-50%, 0)",
           }}
         >
-          {[
-            {
-              icon: <SecondSection1 />,
-              text: t(
-                "CzechLanguageAndVisaLanding.IntroSection.Chip.Options.1"
-              ),
-            },
-            {
-              icon: <SecondSection2 />,
-              text: t(
-                "CzechLanguageAndVisaLanding.IntroSection.Chip.Options.2"
-              ),
-            },
-            {
-              icon: <SecondSection3 />,
-              text: t(
-                "CzechLanguageAndVisaLanding.IntroSection.Chip.Options.3"
-              ),
-            },
-          ].map((item, idx) => (
-            <>
-              <Stack
-                sx={{
-                  flexDirection: "row",
-                  gap: { xs: "16px", sm: "20px" },
-                  alignItems: "center",
-                  maxWidth: "322px",
-                }}
-              >
-                <Box component={"span"} sx={{ flexShrink: "9" }}>
-                  {item.icon}
-                </Box>
-                <Box
+          <Stack
+            sx={{
+              flexDirection: { xs: "column", sm: "row" },
+              gap: { xs: "20px", sm: "32px" },
+              padding: { xs: "16px", sm: "28px" },
+              borderRadius: "20px",
+              backgroundColor: "#ffffff",
+              maxWidth: { sm: "1152px" },
+              width: "100%",
+              mx: "auto",
+            }}
+          >
+            {[
+              {
+                icon: <SecondSection1 />,
+                text: t(
+                  "CzechLanguageAndVisaLanding.IntroSection.Chip.Options.1"
+                ),
+              },
+              {
+                icon: <SecondSection2 />,
+                text: t(
+                  "CzechLanguageAndVisaLanding.IntroSection.Chip.Options.2"
+                ),
+              },
+              {
+                icon: <SecondSection3 />,
+                text: t(
+                  "CzechLanguageAndVisaLanding.IntroSection.Chip.Options.3"
+                ),
+              },
+            ].map((item, idx) => (
+              <>
+                <Stack
                   sx={{
-                    fontFamily: montserratFamily,
-                    fontSize: "16px",
-                    lineHeight: "22.88px",
-                    fontWeight: "600",
+                    flexDirection: "row",
+                    gap: { xs: "16px", sm: "20px" },
+                    alignItems: "center",
+                    maxWidth: { sm: "322px" },
                   }}
                 >
-                  {item.text}
-                </Box>
-              </Stack>
-              {idx !== 2 && (
-                <Box
-                  sx={{
-                    minHeight: "100%",
-                    width: "1px",
-                    backgroundColor: "rgba(0, 0, 0, 0.1)",
-                  }}
-                />
-              )}
-            </>
-          ))}
-        </Stack>
+                  <Box
+                    component={"span"}
+                    sx={{
+                      flexShrink: "9",
+                      "& > svg": {
+                        height: { xs: "64px", sm: "64px" },
+                        width: { xs: "64px", sm: "64px" },
+                      },
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+                  <Box
+                    sx={{
+                      fontFamily: montserratFamily,
+                      fontSize: "16px",
+                      lineHeight: "22.88px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {item.text}
+                  </Box>
+                </Stack>
+                {idx !== 2 && (
+                  <Box
+                    sx={{
+                      minHeight: "100%",
+                      width: "1px",
+                      backgroundColor: "rgba(0, 0, 0, 0.1)",
+                    }}
+                  />
+                )}
+              </>
+            ))}
+          </Stack>
+        </Box>
       </SectionContainerWrapperColorized>
 
       <SectionContainerWrapperColorized
@@ -619,7 +645,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     <Box
                       component={"span"}
                       sx={{
-                        color: "#E1F3FF",
+                        color: "#FFFFFF",
                         fontSize: { xs: "16px", sm: "20px" },
                         lineHeight: { xs: "22.88px", sm: "28.8px" },
                         fontWeight: "600",
@@ -633,12 +659,22 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     <Box
                       component={"span"}
                       sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "6px",
                         color: "#E1F3FF",
+                        "& > svg > path": { fill: "#E1F3FF", fillOpacity: "1" },
                         fontSize: { xs: "16px", sm: "18px" },
                         lineHeight: { xs: "22.88px", sm: "25.56px" },
                         fontWeight: "600",
                       }}
                     >
+                      <LocationPoint
+                        sx={{
+                          width: { xs: "18px", sm: "24px" },
+                          height: { xs: "18px", sm: "24px" },
+                        }}
+                      />
                       {t(
                         "CzechLanguageAndVisaLanding.SecondSection.Cards.1.Location"
                       )}
@@ -651,8 +687,10 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     sx={{
                       fontsize: "18px",
                       fontWeight: 600,
-                      lineHeight: "28px",
-                      marginTop: "1.75rem",
+                      padding: { xs: "7px 22px", sm: "13px 32px" },
+                      fontSize: { xs: "16px", sm: "18px" },
+                      lineHeight: { xs: "26px", sm: "28px" },
+                      marginTop: { sm: "20px" },
                       backgroundColor: "#FFFFFF",
                       "&:hover": { backgroundColor: "#FFFFFF" },
                     }}
@@ -818,7 +856,19 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     ),
                   },
                   {
-                    icon: <ThirdSection2 />,
+                    // icon: (
+                    //   <Box
+                    //     sx={{
+                    //       "& > svg > rect": {
+                    //         stroke: "transparent",
+                    //         // fill: "transparent",
+                    //       },
+                    //     }}
+                    //   >
+                    //     <ThirdSection2 />
+                    //   </Box>
+                    // ),
+                    iconName: "WriteNotes",
                     title: t(
                       "CzechLanguageAndVisaLanding.ThirdSection.Option2.Title"
                     ),
@@ -827,7 +877,19 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     ),
                   },
                   {
-                    icon: <ThirdSection3 />,
+                    // icon: (
+                    //   <Box
+                    //     sx={{
+                    //       "& > svg > rect": {
+                    //         stroke: "transparent",
+                    //         // fill: "transparent",
+                    //       },
+                    //     }}
+                    //   >
+                    //     <ThirdSection3 />
+                    //   </Box>
+                    // ),
+                    iconName: "incomplete",
                     title: t(
                       "CzechLanguageAndVisaLanding.ThirdSection.Option3.Title"
                     ),

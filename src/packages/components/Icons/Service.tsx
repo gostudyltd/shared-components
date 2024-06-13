@@ -2,7 +2,7 @@ import { SxProps } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-export const Service: React.FC<{ sx: SxProps }> = ({ sx }) => {
+export const Service: React.FC<{ sx?: SxProps }> = ({ sx }) => {
   return (
     <Box
       component={"svg"}

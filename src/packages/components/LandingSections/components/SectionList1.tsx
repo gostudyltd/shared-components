@@ -43,6 +43,10 @@ export const SectionList1: React.FC<SectionList1Props> = ({
               height: { xs: "2rem", sm: "2.5rem" },
               width: { xs: "2rem", sm: "2.5rem" },
               marginRight: { xs: "1rem", sm: "1.25rem" },
+              "& > svg": {
+                height: { xs: "2rem", sm: "2.5rem" },
+                width: { xs: "2rem", sm: "2.5rem" },
+              },
               "& > svg  path": {
                 fill: idx ? accent.main : "#ffffff",
               },

@@ -38,6 +38,23 @@ const getKeyframeMaxHeightValuesByStepCount = (stepCount: number) => {
   return resultArray.join("\n");
 };
 
+const getKeyframeScaleValues = (stepCount: number, currentIdx: number) => {
+  const stepsByPercentage = 100 / stepCount;
+  const offset = stepsByPercentage / 2;
+  const percentage = stepsByPercentage * currentIdx;
+
+  const keyframeValue = `
+    0%, ${percentage - offset - 2}% {
+      transform: translateX(-50%) scale(0);
+    }
+    ${percentage - stepCount}%, 100% {
+      transform: translateX(-50%) scale(1);
+    }
+  `;
+
+  return keyframeValue;
+};
+
 type ItemRowProps = {
   data: SectionList3AnimatedV2Props["data"][number];
   idx: number;
@@ -47,8 +64,18 @@ type ItemRowProps = {
   animationTime: number;
 };
 
-const ItemRow: React.FC<ItemRowProps> = ({ data, idx, accentColor }) => {
+const ItemRow: React.FC<ItemRowProps> = ({
+  data,
+  idx,
+  accentColor,
+  stepsCount,
+  isAnimationPaused,
+  animationTime,
+}) => {
   const accent = accentColorBase[accentColor];
+  const overlayKeyframe = useMemo(() => {
+    return data && keyframes`${getKeyframeScaleValues(stepsCount, idx)}`;
+  }, [data]);
 
   return (
     <Stack
@@ -93,7 +120,7 @@ const ItemRow: React.FC<ItemRowProps> = ({ data, idx, accentColor }) => {
                 width: "2rem",
                 height: "2rem",
                 "& > path": {
-                  fill: idx === 0 ? "#fff" : accent.main,
+                  fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
                 },
               },
               zIndex: 2,
@@ -116,6 +143,9 @@ const ItemRow: React.FC<ItemRowProps> = ({ data, idx, accentColor }) => {
                 "& > path": {
                   fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
                 },
+                "& > svg > rect": {
+                  fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
+                },
               },
               zIndex: 2,
             }}
@@ -124,7 +154,7 @@ const ItemRow: React.FC<ItemRowProps> = ({ data, idx, accentColor }) => {
           </Box>
         )}
 
-        {/* {idx > 0 && (
+        {idx > 0 && (
           <Box
             component={"span"}
             position={"absolute"}
@@ -144,7 +174,7 @@ const ItemRow: React.FC<ItemRowProps> = ({ data, idx, accentColor }) => {
               animationPlayState: isAnimationPaused ? "paused" : undefined,
             }}
           />
-        )} */}
+        )}
       </Box>
       <Stack>
         <Typography
@@ -235,7 +265,9 @@ export const SectionList3AnimatedV2: React.FC<SectionList3AnimatedV2Props> = ({
           backgroundColor: "rgba(41, 98, 255, 1)",
           fontsize: "18px",
           fontWeight: 600,
-          lineHeight: "28px",
+          padding: { xs: "7px 22px", sm: "13px 32px" },
+          fontSize: { xs: "16px", sm: "18px" },
+          lineHeight: { xs: "26px", sm: "28px" },
           marginTop: "1.75rem",
           "&:hover": { backgroundColor: "rgba(41, 98, 255, 1)" },
         }}
