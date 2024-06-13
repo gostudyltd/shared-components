@@ -163,8 +163,8 @@ export const getSrapiImageSrcSet = (
 
 export const getPicture = (
   src: string,
-  width: number | null,
-  height: number | null,
+  width?: number | null,
+  height?: number | null,
   pictureSx?: SxProps,
   imageSx?: SxProps,
   alt?: string
@@ -174,8 +174,8 @@ export const getPicture = (
       <Box component={"picture"} sx={pictureSx}>
         <Box
           component={"img"}
-          src={`${src}`}
-          sx={{ verticalAlign: "top", ...imageSx }}
+          src={`${src}?tx=c_fill,q_100`}
+          sx={imageSx}
           alt={alt ?? ""}
         />
       </Box>
@@ -183,18 +183,22 @@ export const getPicture = (
   }
 
   const getSourceForResolution = (resolution: number) => {
+    if (!width || !height) {
+      return;
+    }
+
     return (
       <>
         <Box
           component={"source"}
-          srcSet={`${src}?tx=c_fill,h_${height * resolution},w_${
+          srcSet={`${src}?tx=c_fill,q_100,h_${height * resolution},w_${
             width * resolution
           },q_100`}
           media={`(resolution: ${resolution}dppx)`}
         />
         <Box
           component={"source"}
-          srcSet={`${src}?tx=c_fill,h_${height * resolution},w_${
+          srcSet={`${src}?tx=c_fill,q_100,h_${height * resolution},w_${
             width * resolution
           },q_100`}
           media={`(-webkit-min-device-pixel-ratio: ${resolution})`}
@@ -213,7 +217,7 @@ export const getPicture = (
       <Box
         component={"img"}
         src={`${src}?tx=c_fill,h_${height},w_${width},q_100`}
-        sx={{ verticalAlign: "top", ...imageSx }}
+        sx={imageSx}
         alt={alt ?? ""}
       />
     </Box>

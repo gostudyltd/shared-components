@@ -10,6 +10,11 @@ import React from 'react'
 import {ReactComponent as HelpTogether} from '../../../icons/one-tone/HelpTogether.svg'
 import {ReactComponent as Internet} from '../../../icons/one-tone/Internet.svg'
 import {ReactComponent as Smiley} from '../../../icons/one-tone/Smiley.svg'
+import {ReactComponent as Clipboard} from '../../../icons/one-tone/clipboard.svg'
+import {ReactComponent as DonateMoney} from '../../../icons/one-tone/donate-money.svg'
+import {ReactComponent as Form} from '../../../icons/one-tone/form.svg'
+import {ReactComponent as Incomplete} from '../../../icons/one-tone/incomplete.svg'
+import {ReactComponent as Like} from '../../../icons/one-tone/like.svg'
 import {ReactComponent as MagicStick2} from '../../../icons/one-tone/magic-stick-2.svg'
 import {ReactComponent as Point1} from '../../../icons/one-tone/point1.svg'
 import {ReactComponent as Point2} from '../../../icons/one-tone/point2.svg'
@@ -54,6 +59,11 @@ export const iconBase = {
   HelpTogether: <HelpTogether />,
   Internet: <Internet />,
   Smiley: <Smiley />,
+  clipboard: <Clipboard />,
+  donateMoney: <DonateMoney />,
+  form: <Form />,
+  incomplete: <Incomplete />,
+  like: <Like />,
   magicStick2: <MagicStick2 />,
   point1: <Point1 />,
   point2: <Point2 />,

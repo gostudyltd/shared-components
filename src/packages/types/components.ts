@@ -16,6 +16,6 @@ export interface sliderState {
 
 export interface CdnImage {
   src: string;
-  width: number | null;
-  height: number | null;
+  width?: number | null;
+  height?: number | null;
 }

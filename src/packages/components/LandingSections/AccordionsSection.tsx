@@ -162,7 +162,7 @@ const AccordionItem: React.FC<AccordionProps> = (props) => {
 };
 
 export type AccordionSectionProps = {
-  title: string;
+  title: string | React.ReactNode;
   description: string;
   data: AccordionItemProps[];
   accentColor?: AccentColor;
