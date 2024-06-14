@@ -847,7 +847,8 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                 accentColor="primary"
                 data={[
                   {
-                    icon: <ThirdSection1 />,
+                    iconName: "target",
+
                     title: t(
                       "CzechLanguageAndVisaLanding.ThirdSection.Option1.Title"
                     ),
@@ -856,18 +857,6 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     ),
                   },
                   {
-                    // icon: (
-                    //   <Box
-                    //     sx={{
-                    //       "& > svg > rect": {
-                    //         stroke: "transparent",
-                    //         // fill: "transparent",
-                    //       },
-                    //     }}
-                    //   >
-                    //     <ThirdSection2 />
-                    //   </Box>
-                    // ),
                     iconName: "WriteNotes",
                     title: t(
                       "CzechLanguageAndVisaLanding.ThirdSection.Option2.Title"
@@ -877,22 +866,11 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     ),
                   },
                   {
-                    // icon: (
-                    //   <Box
-                    //     sx={{
-                    //       "& > svg > rect": {
-                    //         stroke: "transparent",
-                    //         // fill: "transparent",
-                    //       },
-                    //     }}
-                    //   >
-                    //     <ThirdSection3 />
-                    //   </Box>
-                    // ),
                     iconName: "incomplete",
                     title: t(
                       "CzechLanguageAndVisaLanding.ThirdSection.Option3.Title"
                     ),
+                    text: "",
                   },
                 ]}
               />

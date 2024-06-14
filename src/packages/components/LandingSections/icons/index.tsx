@@ -7,58 +7,60 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 
-import { ReactComponent as HelpTogether } from "../../../icons/one-tone/HelpTogether.svg";
-import { ReactComponent as Incomplete } from "../../../icons/one-tone/Incomplete.svg";
-import { ReactComponent as Internet } from "../../../icons/one-tone/Internet.svg";
-import { ReactComponent as Smiley } from "../../../icons/one-tone/Smiley.svg";
-import { ReactComponent as WriteNotes } from "../../../icons/one-tone/WriteNotes.svg";
-import { ReactComponent as Clipboard } from "../../../icons/one-tone/clipboard.svg";
-import { ReactComponent as DonateMoney } from "../../../icons/one-tone/donate-money.svg";
-import { ReactComponent as Form } from "../../../icons/one-tone/form.svg";
-import { ReactComponent as Like } from "../../../icons/one-tone/like.svg";
-import { ReactComponent as MagicStick2 } from "../../../icons/one-tone/magic-stick-2.svg";
-import { ReactComponent as Point1 } from "../../../icons/one-tone/point1.svg";
-import { ReactComponent as Point2 } from "../../../icons/one-tone/point2.svg";
-import { ReactComponent as Point3 } from "../../../icons/one-tone/point3.svg";
-import { ReactComponent as Point4 } from "../../../icons/one-tone/point4.svg";
-import { ReactComponent as Point5 } from "../../../icons/one-tone/point5.svg";
-import { ReactComponent as Point6 } from "../../../icons/one-tone/point6.svg";
-import { ReactComponent as Point7 } from "../../../icons/one-tone/point7.svg";
-import { ReactComponent as Step1 } from "../../../icons/one-tone/step1.svg";
-import { ReactComponent as Step2 } from "../../../icons/one-tone/step2.svg";
-import { ReactComponent as Step3 } from "../../../icons/one-tone/step3.svg";
-import { ReactComponent as Step4 } from "../../../icons/one-tone/step4.svg";
-import { ReactComponent as Step5 } from "../../../icons/one-tone/step5.svg";
-import { ReactComponent as Step6 } from "../../../icons/one-tone/step6.svg";
-import { ReactComponent as Step7 } from "../../../icons/one-tone/step7.svg";
-import { ReactComponent as FireTwoTone } from "../../../icons/two-tone/Fire.svg";
-import { ReactComponent as UserHandUpTwoTone } from "../../../icons/two-tone/UserHandUp.svg";
-import { ReactComponent as AcademicCapTwoTone } from "../../../icons/two-tone/academicCap.svg";
-import { ReactComponent as BackpackTwoTone } from "../../../icons/two-tone/backpack.svg";
-import { ReactComponent as CaseTwoTone } from "../../../icons/two-tone/case.svg";
-import { ReactComponent as ChatRoundCallTwoTone } from "../../../icons/two-tone/chat-round-call.svg";
-import { ReactComponent as DiplomaTwoTone } from "../../../icons/two-tone/diploma.svg";
-import { ReactComponent as DocumentAddTwoTone } from "../../../icons/two-tone/document-add.svg";
-import { ReactComponent as Flag2TwoTone } from "../../../icons/two-tone/flag-2.svg";
-import { ReactComponent as HandStarsTwoTone } from "../../../icons/two-tone/hand-stars.svg";
-import { ReactComponent as HashtagChatTwoTone } from "../../../icons/two-tone/hashtag-chat.svg";
-import { ReactComponent as LayersMinimalisticTwoTone } from "../../../icons/two-tone/layers-minimalistic.svg";
-import { ReactComponent as NotebookBookmarkTwoTone } from "../../../icons/two-tone/notebook-bookmark.svg";
-import { ReactComponent as ShieldCrossTwoTone } from "../../../icons/two-tone/shield-cross.svg";
-import { ReactComponent as ShieldTwoTone } from "../../../icons/two-tone/shield.svg";
-import { ReactComponent as SquareAcademicCapTwoTone } from "../../../icons/two-tone/square-academic-cap.svg";
-import { ReactComponent as StarsLineTwoTone } from "../../../icons/two-tone/stars-line.svg";
-import { ReactComponent as SuitcaseTagTwoTone } from "../../../icons/two-tone/suitcase-tag.svg";
-import { ReactComponent as UserHeartTwoTone } from "../../../icons/two-tone/user-heart.svg";
-import { ReactComponent as UserSpeakTwoTone } from "../../../icons/two-tone/user-speak.svg";
-import { ReactComponent as UsersGroupTwoRoundedTwoTone } from "../../../icons/two-tone/users-group-two-rounded.svg";
-import { ReactComponent as VerifiedCheckTwoTone } from "../../../icons/two-tone/verified-check.svg";
-import { ReactComponent as WalletMoneyTwoTone } from "../../../icons/two-tone/wallet-money.svg";
-import { ReactComponent as WaterSunTwoTone } from "../../../icons/two-tone/water-sun.svg";
+import {ReactComponent as HelpTogether} from '../../../icons/one-tone/HelpTogether.svg'
+import {ReactComponent as Incomplete1} from '../../../icons/one-tone/Incomplete1.svg'
+import {ReactComponent as Internet} from '../../../icons/one-tone/Internet.svg'
+import {ReactComponent as Smiley} from '../../../icons/one-tone/Smiley.svg'
+import {ReactComponent as WriteNotes} from '../../../icons/one-tone/WriteNotes.svg'
+import {ReactComponent as Clipboard} from '../../../icons/one-tone/clipboard.svg'
+import {ReactComponent as DonateMoney} from '../../../icons/one-tone/donate-money.svg'
+import {ReactComponent as Form} from '../../../icons/one-tone/form.svg'
+import {ReactComponent as Incomplete} from '../../../icons/one-tone/incomplete.svg'
+import {ReactComponent as Like} from '../../../icons/one-tone/like.svg'
+import {ReactComponent as MagicStick2} from '../../../icons/one-tone/magic-stick-2.svg'
+import {ReactComponent as Point1} from '../../../icons/one-tone/point1.svg'
+import {ReactComponent as Point2} from '../../../icons/one-tone/point2.svg'
+import {ReactComponent as Point3} from '../../../icons/one-tone/point3.svg'
+import {ReactComponent as Point4} from '../../../icons/one-tone/point4.svg'
+import {ReactComponent as Point5} from '../../../icons/one-tone/point5.svg'
+import {ReactComponent as Point6} from '../../../icons/one-tone/point6.svg'
+import {ReactComponent as Point7} from '../../../icons/one-tone/point7.svg'
+import {ReactComponent as Step1} from '../../../icons/one-tone/step1.svg'
+import {ReactComponent as Step2} from '../../../icons/one-tone/step2.svg'
+import {ReactComponent as Step3} from '../../../icons/one-tone/step3.svg'
+import {ReactComponent as Step4} from '../../../icons/one-tone/step4.svg'
+import {ReactComponent as Step5} from '../../../icons/one-tone/step5.svg'
+import {ReactComponent as Step6} from '../../../icons/one-tone/step6.svg'
+import {ReactComponent as Step7} from '../../../icons/one-tone/step7.svg'
+import {ReactComponent as Target} from '../../../icons/one-tone/target.svg'
+import {ReactComponent as FireTwoTone} from '../../../icons/two-tone/Fire.svg'
+import {ReactComponent as UserHandUpTwoTone} from '../../../icons/two-tone/UserHandUp.svg'
+import {ReactComponent as AcademicCapTwoTone} from '../../../icons/two-tone/academicCap.svg'
+import {ReactComponent as BackpackTwoTone} from '../../../icons/two-tone/backpack.svg'
+import {ReactComponent as CaseTwoTone} from '../../../icons/two-tone/case.svg'
+import {ReactComponent as ChatRoundCallTwoTone} from '../../../icons/two-tone/chat-round-call.svg'
+import {ReactComponent as DiplomaTwoTone} from '../../../icons/two-tone/diploma.svg'
+import {ReactComponent as DocumentAddTwoTone} from '../../../icons/two-tone/document-add.svg'
+import {ReactComponent as Flag2TwoTone} from '../../../icons/two-tone/flag-2.svg'
+import {ReactComponent as HandStarsTwoTone} from '../../../icons/two-tone/hand-stars.svg'
+import {ReactComponent as HashtagChatTwoTone} from '../../../icons/two-tone/hashtag-chat.svg'
+import {ReactComponent as LayersMinimalisticTwoTone} from '../../../icons/two-tone/layers-minimalistic.svg'
+import {ReactComponent as NotebookBookmarkTwoTone} from '../../../icons/two-tone/notebook-bookmark.svg'
+import {ReactComponent as ShieldCrossTwoTone} from '../../../icons/two-tone/shield-cross.svg'
+import {ReactComponent as ShieldTwoTone} from '../../../icons/two-tone/shield.svg'
+import {ReactComponent as SquareAcademicCapTwoTone} from '../../../icons/two-tone/square-academic-cap.svg'
+import {ReactComponent as StarsLineTwoTone} from '../../../icons/two-tone/stars-line.svg'
+import {ReactComponent as SuitcaseTagTwoTone} from '../../../icons/two-tone/suitcase-tag.svg'
+import {ReactComponent as UserHeartTwoTone} from '../../../icons/two-tone/user-heart.svg'
+import {ReactComponent as UserSpeakTwoTone} from '../../../icons/two-tone/user-speak.svg'
+import {ReactComponent as UsersGroupTwoRoundedTwoTone} from '../../../icons/two-tone/users-group-two-rounded.svg'
+import {ReactComponent as VerifiedCheckTwoTone} from '../../../icons/two-tone/verified-check.svg'
+import {ReactComponent as WalletMoneyTwoTone} from '../../../icons/two-tone/wallet-money.svg'
+import {ReactComponent as WaterSunTwoTone} from '../../../icons/two-tone/water-sun.svg'
 
 export const iconBase = {
   HelpTogether: <HelpTogether />,
-  Incomplete: <Incomplete />,
+  Incomplete1: <Incomplete1 />,
   Internet: <Internet />,
   Smiley: <Smiley />,
   WriteNotes: <WriteNotes />,
@@ -82,6 +84,7 @@ export const iconBase = {
   step5: <Step5 />,
   step6: <Step6 />,
   step7: <Step7 />,
+  target: <Target />,
   FireTwoTone: <FireTwoTone />,
   UserHandUpTwoTone: <UserHandUpTwoTone />,
   academicCapTwoTone: <AcademicCapTwoTone />,
@@ -106,4 +109,4 @@ export const iconBase = {
   verifiedCheckTwoTone: <VerifiedCheckTwoTone />,
   walletMoneyTwoTone: <WalletMoneyTwoTone />,
   waterSunTwoTone: <WaterSunTwoTone />,
-};
+}

@@ -10,12 +10,11 @@ import { Button } from "@mui/material";
 
 export type SectionList3AnimatedV2Props = {
   data: {
-    iconName?: keyof typeof iconBase;
-    icon?: React.ReactNode;
+    iconName: keyof typeof iconBase;
     title: string;
     text?: string;
   }[];
-  button: { label: string; onClick: VoidFunction };
+  button?: { label: string; onClick: VoidFunction };
   accentColor?: AccentColor;
 };
 
@@ -88,71 +87,37 @@ const ItemRow: React.FC<ItemRowProps> = ({
         justifyContent={"center"}
         alignItems={"center"}
         flexShrink={"0"}
-        sx={
-          data.icon
-            ? {
-                position: "relative",
-                overflow: "hidden",
-                width: "3.5rem",
-                height: "3.5rem",
-                borderRadius: ".75rem",
-                marginRight: "1.25rem",
-              }
-            : {
-                width: "3.5rem",
-                height: "3.5rem",
-                backgroundColor: idx === 0 ? accent.main : "#fff",
-                borderRadius: ".75rem",
-                marginRight: "1.25rem",
-                position: "relative",
-                overflow: "hidden",
-              }
-        }
+        sx={{
+          width: "3.5rem",
+          height: "3.5rem",
+          backgroundColor: idx === 0 ? "rgba(41, 98, 255, 1)" : "#fff",
+          borderRadius: ".75rem",
+          marginRight: "1.25rem",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        {data.iconName ? (
-          <Box
-            component={"span"}
-            position={"relative"}
-            display={"flex"}
-            alignItems={"center"}
-            sx={{
-              "& > svg": {
-                width: "2rem",
-                height: "2rem",
-                "& > path": {
-                  fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
-                },
+        <Box
+          component={"span"}
+          position={"relative"}
+          display={"flex"}
+          alignItems={"center"}
+          sx={{
+            "& > svg": {
+              width: "2rem",
+              height: "2rem",
+              "& > path": {
+                fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
               },
-              zIndex: 2,
-            }}
-          >
-            {iconBase[data.iconName]}
-          </Box>
-        ) : (
-          <Box
-            component={"span"}
-            position={"relative"}
-            display={"flex"}
-            alignItems={"center"}
-            sx={{
-              borderRadius: ".75rem",
-              // marginRight: "1.25rem",
-              "& > svg": {
-                width: "3.5rem",
-                height: "3.5rem",
-                "& > path": {
-                  fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
-                },
-                "& > svg > rect": {
-                  fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
-                },
+              "& > g > path": {
+                fill: idx === 0 ? "#fff" : "rgba(41, 98, 255, 1)",
               },
-              zIndex: 2,
-            }}
-          >
-            {data.icon}
-          </Box>
-        )}
+            },
+            zIndex: 2,
+          }}
+        >
+          {iconBase[data.iconName]}
+        </Box>
 
         {idx > 0 && (
           <Box
@@ -221,6 +186,7 @@ export const SectionList3AnimatedV2: React.FC<SectionList3AnimatedV2Props> = ({
     const fn = () => {
       if (!contentRef.current) return null;
       const { y, height } = contentRef.current.getBoundingClientRect();
+      // const height = containerHeight;
       const startPosition = window.scrollY + y - window.innerHeight / 2;
       const endPosition = startPosition + height + window.innerHeight / 4;
       const mustBeEnabled =
@@ -239,58 +205,62 @@ export const SectionList3AnimatedV2: React.FC<SectionList3AnimatedV2Props> = ({
   }, [isAnimationPaused, contentRef.current]);
 
   return (
-    <Box
-      ref={contentRef}
-      component={"div"}
-      display={"flex"}
-      flexDirection={"column"}
-      position={"relative"}
-    >
-      {data.map((item, idx) => (
-        <ItemRow
-          key={item.title}
-          data={item}
-          accentColor={accentColor}
-          idx={idx}
-          stepsCount={data.length}
-          isAnimationPaused={isAnimationPaused}
-          animationTime={animationTime}
-        />
-      ))}
-      <Button
-        size="large"
-        variant="contained"
-        onClick={button.onClick}
-        sx={{
-          backgroundColor: "rgba(41, 98, 255, 1)",
-          fontsize: "18px",
-          fontWeight: 600,
-          padding: { xs: "7px 22px", sm: "13px 32px" },
-          fontSize: { xs: "16px", sm: "18px" },
-          lineHeight: { xs: "26px", sm: "28px" },
-          marginTop: "1.75rem",
-          "&:hover": { backgroundColor: "rgba(41, 98, 255, 1)" },
-        }}
-      >
-        {button.label}
-      </Button>
-
+    <>
       <Box
-        component={"span"}
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: "1.625rem",
-          width: ".25rem",
-          maxHeight: 0,
-          height: `calc(100% - ${100 / data.length}%)`,
-          animation:
-            maxHeightByStepsKeyframe &&
-            `${maxHeightByStepsKeyframe} ${animationTime}s linear forwards`,
-          backgroundColor: accent.secondary,
-          animationPlayState: isAnimationPaused ? "paused" : undefined,
-        }}
-      />
-    </Box>
+        ref={contentRef}
+        component={"div"}
+        display={"flex"}
+        flexDirection={"column"}
+        position={"relative"}
+      >
+        {data.map((item, idx) => (
+          <ItemRow
+            key={item.title}
+            data={item}
+            accentColor={accentColor}
+            idx={idx}
+            stepsCount={data.length}
+            isAnimationPaused={isAnimationPaused}
+            animationTime={animationTime}
+          />
+        ))}
+
+        <Box
+          component={"span"}
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: "1.625rem",
+            width: ".25rem",
+            maxHeight: 0,
+            height: `calc(100% - ${100 / data.length}% + 2rem)`,
+            animation:
+              maxHeightByStepsKeyframe &&
+              `${maxHeightByStepsKeyframe} ${animationTime}s linear forwards`,
+            backgroundColor: accent.secondary,
+            animationPlayState: isAnimationPaused ? "paused" : undefined,
+          }}
+        />
+      </Box>
+      {button && (
+        <Button
+          size="large"
+          variant="contained"
+          onClick={button.onClick}
+          sx={{
+            backgroundColor: "rgba(41, 98, 255, 1)",
+            fontsize: "18px",
+            fontWeight: 600,
+            padding: { xs: "7px 22px", sm: "13px 32px" },
+            fontSize: { xs: "16px", sm: "18px" },
+            lineHeight: { xs: "26px", sm: "28px" },
+            marginTop: "1.75rem",
+            "&:hover": { backgroundColor: "rgba(41, 98, 255, 1)" },
+          }}
+        >
+          {button.label}
+        </Button>
+      )}
+    </>
   );
 };
