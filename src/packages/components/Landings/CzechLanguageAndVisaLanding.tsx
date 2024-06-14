@@ -181,7 +181,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         window.getComputedStyle(spanElement).lineHeight
       );
 
-      if (spanHeight > lineHeight || spanHeight === 0) {
+      if (spanHeight > lineHeight || (spanHeight === 0 && lang !== "en")) {
         setShowIntroSectionUnderline(false);
       } else {
         setShowIntroSectionUnderline(true);

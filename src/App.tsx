@@ -8,7 +8,7 @@ function App() {
   return (
     <CzechLanguageAndVisaLanding
       // cdnUrl={"https://images.gostudy.cz/static"}
-      lang="ru"
+      lang="en"
       onClick={() => {
         console.log("test");
       }}
