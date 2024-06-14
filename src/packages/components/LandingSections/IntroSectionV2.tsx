@@ -47,6 +47,7 @@ export type IntroSectionPropsV2 = {
     textSx?: SxProps;
   }[];
   secondColumn?: ReactNode;
+  firstColumnSx?: SxProps;
 };
 
 type ImageProps = {
@@ -127,6 +128,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = (props) => {
     info,
     renderDescription,
     secondColumn,
+    firstColumnSx,
   } = props;
 
   const accent = accentColorBase[accentColor];
@@ -150,6 +152,7 @@ export const IntroSectionV2: React.FC<IntroSectionPropsV2> = (props) => {
           },
           ...leftSectionContainerSx,
         }}
+        firstColumnSx={firstColumnSx}
         firstColumn={
           <Stack
             sx={{

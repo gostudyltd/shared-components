@@ -181,7 +181,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         window.getComputedStyle(spanElement).lineHeight
       );
 
-      if (spanHeight > lineHeight) {
+      if (spanHeight > lineHeight || spanHeight === 0) {
         setShowIntroSectionUnderline(false);
       } else {
         setShowIntroSectionUnderline(true);
@@ -243,8 +243,12 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         }}
       >
         <IntroSectionV2
+          firstColumnSx={{
+            minWidth: { sm: "500px !important" },
+          }}
           leftSectionContainerSx={{
             paddingBottom: "0px !important",
+            paddingTop: { sm: "80px !important" },
           }}
           containerSx={{
             paddingTop: { xs: "3em", sm: "3.5em" },
@@ -255,12 +259,24 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
               <Box
                 ref={spanRef1}
                 component={"span"}
-                sx={{ color: "#2962FF", position: "relative" }}
+                sx={{
+                  color: "#2962FF",
+                  position: "relative",
+                }}
               >
                 {t("CzechLanguageAndVisaLanding.IntroSection.Title.Part2")}
                 <Visa1Underline
                   sx={{
-                    display: showIntroSectionUnderline ? "block" : "none",
+                    display:
+                      lang === "uk"
+                        ? {
+                            xs: showIntroSectionUnderline ? "block" : "none",
+                            sm: "none",
+                          }
+                        : showIntroSectionUnderline
+                        ? "block"
+                        : "none",
+                    sm: "none",
                     position: "absolute",
                     right: 0,
                     bottom: "-8px",
@@ -271,7 +287,8 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     },
                   }}
                 />
-              </Box>{" "}
+              </Box>
+              {lang === "ru" ? " " : " "}
               {t("CzechLanguageAndVisaLanding.IntroSection.Title.Part3")}
             </Box>
           )}
@@ -606,6 +623,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     fontSize: { xs: "16px", sm: "18px" },
                     lineHeight: { xs: "22.88px", sm: "25.56px" },
                     fontWeight: "600",
+                    fontFamily: defaultFontFamily,
                   }}
                 >
                   <BurstPucker
@@ -810,6 +828,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     fontSize: { xs: "16px", sm: "18px" },
                     fontWeight: "600",
                     whiteSpace: "nowrap",
+                    defaultFontFamily,
                   }}
                 >
                   <BurstPucker
