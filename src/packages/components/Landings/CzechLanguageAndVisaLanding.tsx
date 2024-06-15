@@ -267,15 +267,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                 {t("CzechLanguageAndVisaLanding.IntroSection.Title.Part2")}
                 <Visa1Underline
                   sx={{
-                    display:
-                      lang === "uk"
-                        ? {
-                            xs: showIntroSectionUnderline ? "block" : "none",
-                            sm: "none",
-                          }
-                        : showIntroSectionUnderline
-                        ? "block"
-                        : "none",
+                    display: showIntroSectionUnderline ? "block" : "none",
                     sm: "none",
                     position: "absolute",
                     right: 0,
@@ -828,7 +820,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                     fontSize: { xs: "16px", sm: "18px" },
                     fontWeight: "600",
                     whiteSpace: "nowrap",
-                    defaultFontFamily,
+                    fontFamily: defaultFontFamily,
                   }}
                 >
                   <BurstPucker
