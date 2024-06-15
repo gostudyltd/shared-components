@@ -181,7 +181,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         window.getComputedStyle(spanElement).lineHeight
       );
 
-      if (spanHeight > lineHeight || (spanHeight === 0 && lang !== "en")) {
+      if (spanHeight > lineHeight) {
         setShowIntroSectionUnderline(false);
       } else {
         setShowIntroSectionUnderline(true);
@@ -280,7 +280,24 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
                   }}
                 />
               </Box>
-              {lang === "ru" ? " " : " "}
+              {lang === "ru" ? (
+                <>
+                  <Box
+                    component={"span"}
+                    sx={{ display: { xs: "none", sm: "inline" } }}
+                  >
+                    {" "}
+                  </Box>
+                  <Box
+                    component={"span"}
+                    sx={{ display: { xs: "inline", sm: "none" } }}
+                  >
+                    {" "}
+                  </Box>
+                </>
+              ) : (
+                " "
+              )}
               {t("CzechLanguageAndVisaLanding.IntroSection.Title.Part3")}
             </Box>
           )}
