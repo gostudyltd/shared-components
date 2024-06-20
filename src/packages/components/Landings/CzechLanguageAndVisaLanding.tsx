@@ -35,6 +35,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
   lang = "ru",
   externalLocales,
   onClick,
+  onSubmit,
 }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
 
@@ -988,6 +989,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
         hubspotConfig={{
           portalId: "139617067",
           formId: "d9a6bed0-c54d-4981-a619-11adc2e36fcf",
+          onSubmit: onSubmit,
         }}
         formTranslations={
           lang === "ru"

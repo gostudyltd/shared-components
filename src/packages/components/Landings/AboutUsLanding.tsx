@@ -25,9 +25,12 @@ interface Props {
   button?: { onClick: VoidFunction; text: string };
 }
 
-export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }) => {
+export const AboutUsLanding: React.FC<Props> = ({
+  lang = "ru",
+  externalLocales,
+}) => {
   const cdnUrl = "https://images.gostudy.cz/static";
-  const t = createTFunc(lang, externalLocales)
+  const t = createTFunc(lang, externalLocales);
 
   const getTranslatedText = (
     enVariant: string | React.ReactNode,
@@ -57,30 +60,30 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
             {getTranslatedText(
               <>
                 <Box sx={{ color: color, display: "inline" }}>
-                  {t('AboutUsLanding.IntroSection.Title.Part1')}
+                  {t("AboutUsLanding.IntroSection.Title.Part1")}
                 </Box>{" "}
-                {t('AboutUsLanding.IntroSection.Title.Part2')}
+                {t("AboutUsLanding.IntroSection.Title.Part2")}
               </>,
               <>
-                {t('AboutUsLanding.IntroSection.Title.Part1')}
+                {t("AboutUsLanding.IntroSection.Title.Part1")}{" "}
                 <Box sx={{ color: color, display: "inline" }}>
-                {t('AboutUsLanding.IntroSection.Title.Part2')}
+                  {t("AboutUsLanding.IntroSection.Title.Part2")}
                 </Box>{" "}
-                {t('AboutUsLanding.IntroSection.Title.Part3')}
+                {t("AboutUsLanding.IntroSection.Title.Part3")}
               </>,
               <>
-                {t('AboutUsLanding.IntroSection.Title.Part1')}
+                {t("AboutUsLanding.IntroSection.Title.Part1")}{" "}
                 <Box sx={{ color: color, display: "inline" }}>
-                {t('AboutUsLanding.IntroSection.Title.Part2')}
+                  {t("AboutUsLanding.IntroSection.Title.Part2")}
                 </Box>{" "}
-                {t('AboutUsLanding.IntroSection.Title.Part3')}
+                {t("AboutUsLanding.IntroSection.Title.Part3")}
               </>,
               <>
-                {t('AboutUsLanding.IntroSection.Title.Part1')}{" "}
+                {t("AboutUsLanding.IntroSection.Title.Part1")}{" "}
                 <Box sx={{ color: color, display: "inline" }}>
-                {t('AboutUsLanding.IntroSection.Title.Part2')}
+                  {t("AboutUsLanding.IntroSection.Title.Part2")}
                 </Box>{" "}
-                {t('AboutUsLanding.IntroSection.Title.Part3')}
+                {t("AboutUsLanding.IntroSection.Title.Part3")}
               </>
             )}
           </Box>
@@ -88,9 +91,9 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
         renderDescription={() => (
           <Stack sx={{ gap: { xs: "4px", sm: "8px" } }}>
             {[
-              t('AboutUsLanding.IntroSection.Point1'),
-              t('AboutUsLanding.IntroSection.Point2'),
-              t('AboutUsLanding.IntroSection.Point3'),
+              t("AboutUsLanding.IntroSection.Point1"),
+              t("AboutUsLanding.IntroSection.Point2"),
+              t("AboutUsLanding.IntroSection.Point3"),
             ].map((item) => (
               <Stack sx={{ gap: { xs: "4px", sm: "8px" } }}>
                 <Box
@@ -160,21 +163,17 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
         }
         secondColumn={
           <SectionTitle
-            preTitle={
-              t('AboutUsLanding.FirstSection.PreTitle')
-            }
-            title={
-              t('AboutUsLanding.FirstSection.Title')
-            }
+            preTitle={t("AboutUsLanding.FirstSection.PreTitle")}
+            title={t("AboutUsLanding.FirstSection.Title")}
             description={
               <>
-                {t('AboutUsLanding.FirstSection.Text.Part1')}
+                {t("AboutUsLanding.FirstSection.Text.Part1")}
                 <br />
                 <br />
-                {t('AboutUsLanding.FirstSection.Text.Part2')}
+                {t("AboutUsLanding.FirstSection.Text.Part2")}
                 <br />
                 <br />
-                {t('AboutUsLanding.FirstSection.Text.Part3')}
+                {t("AboutUsLanding.FirstSection.Text.Part3")}
               </>
             }
           />
@@ -184,8 +183,8 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
       <SectionContainerWrapperColorized accentColor="primary">
         <SectionContainer
           sectionTitle={{
-            title: t('AboutUsLanding.SecondSection.Title'),
-            description: t('AboutUsLanding.SecondSection.Description'),
+            title: t("AboutUsLanding.SecondSection.Title"),
+            description: t("AboutUsLanding.SecondSection.Description"),
           }}
         >
           <SectionTextCardList
@@ -194,18 +193,18 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
             data={[
               {
                 iconName: "Internet",
-                title: t('AboutUsLanding.SecondSection.Card1.Title'),
-                text: t('AboutUsLanding.SecondSection.Card1.Text'),
+                title: t("AboutUsLanding.SecondSection.Card1.Title"),
+                text: t("AboutUsLanding.SecondSection.Card1.Text"),
               },
               {
                 iconName: "HelpTogether",
-                title: t('AboutUsLanding.SecondSection.Card2.Title'),
-                text: t('AboutUsLanding.SecondSection.Card2.Text'),
+                title: t("AboutUsLanding.SecondSection.Card2.Title"),
+                text: t("AboutUsLanding.SecondSection.Card2.Text"),
               },
               {
                 iconName: "Smiley",
-                title: t('AboutUsLanding.SecondSection.Card3.Title'),
-                text: t('AboutUsLanding.SecondSection.Card3.Text'),
+                title: t("AboutUsLanding.SecondSection.Card3.Title"),
+                text: t("AboutUsLanding.SecondSection.Card3.Text"),
               },
             ]}
           />
@@ -219,29 +218,39 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
           renderTitle: (color) =>
             getTranslatedText(
               <>
-                «{t('AboutUsLanding.ThirdSection.Title.Part1')}{" "}
+                «{t("AboutUsLanding.ThirdSection.Title.Part1")}
+                {" "}
                 <span style={{ color }}>
-                {t('AboutUsLanding.ThirdSection.Title.Part2')}
+                  {t("AboutUsLanding.ThirdSection.Title.Part2")}
                 </span>{" "}
-                {t('AboutUsLanding.ThirdSection.Title.Part3')}»
+                {t("AboutUsLanding.ThirdSection.Title.Part3")}»
               </>,
               <>
-                «{t('AboutUsLanding.ThirdSection.Title.Part1')}{" "}
+                «{t("AboutUsLanding.ThirdSection.Title.Part1")}
+                {" "}
                 <span style={{ color }}>
-                {t('AboutUsLanding.ThirdSection.Title.Part2')}
+                  {t("AboutUsLanding.ThirdSection.Title.Part2")}
                 </span>{" "}
-                {t('AboutUsLanding.ThirdSection.Title.Part3')}»
+                {t("AboutUsLanding.ThirdSection.Title.Part3")}»
               </>,
               <>
-                «{t('AboutUsLanding.ThirdSection.Title.Part1')}{" "}
-                <span style={{ color }}>{t('AboutUsLanding.ThirdSection.Title.Part2')}</span>»
+                «{t("AboutUsLanding.ThirdSection.Title.Part1")}
+                {" "}
+                <span style={{ color }}>
+                  {t("AboutUsLanding.ThirdSection.Title.Part2")}
+                </span>
+                »
               </>,
               <>
-                «{t('AboutUsLanding.ThirdSection.Title.Part1')}{" "}
-                <span style={{ color }}>{t('AboutUsLanding.ThirdSection.Title.Part2')}</span>»
+                «{t("AboutUsLanding.ThirdSection.Title.Part1")}
+                {" "}
+                <span style={{ color }}>
+                  {t("AboutUsLanding.ThirdSection.Title.Part2")}
+                </span>
+                »
               </>
             ),
-          description: t('AboutUsLanding.ThirdSection.Description'),
+          description: t("AboutUsLanding.ThirdSection.Description"),
         }}
         image={{
           src: `${cdnUrl}/AboutsUsNew/FourthSection.png`,
@@ -259,8 +268,8 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
       <SliderSection2
         gradientBg
         sectionTitle={{
-          title: t('AboutUsLanding.FourthSection.Title'),
-          description: t('AboutUsLanding.FourthSection.Card1.Description'),
+          title: t("AboutUsLanding.FourthSection.Title"),
+          description: t("AboutUsLanding.FourthSection.Card1.Description"),
         }}
         accentColor="warning"
         data={[
@@ -279,33 +288,33 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
             avatar: `${cdnUrl}/AboutsUsNew/FifthSection_1_${
               lang === "vi" ? "en" : lang
             }.png?tx=c_fill,q_100`,
-            author: t('AboutUsLanding.FourthSection.Card1.Title'),
-            description: t('AboutUsLanding.FourthSection.Card1.Description'),
-            text: t('AboutUsLanding.FourthSection.Card1.Text'),
+            author: t("AboutUsLanding.FourthSection.Card1.Title"),
+            description: t("AboutUsLanding.FourthSection.Card1.Description"),
+            text: t("AboutUsLanding.FourthSection.Card1.Text"),
           },
           {
             avatar: `${cdnUrl}/AboutsUsNew/FifthSection_2_${
               lang === "vi" ? "en" : lang
             }.png?tx=c_fill,q_100`,
-            author: t('AboutUsLanding.FourthSection.Card2.Title'),
-            description: t('AboutUsLanding.FourthSection.Card2.Description'),
-            text: t('AboutUsLanding.FourthSection.Card2.Text'),
+            author: t("AboutUsLanding.FourthSection.Card2.Title"),
+            description: t("AboutUsLanding.FourthSection.Card2.Description"),
+            text: t("AboutUsLanding.FourthSection.Card2.Text"),
           },
           {
             avatar: `${cdnUrl}/AboutsUsNew/FifthSection_3_${
               lang === "vi" ? "en" : lang
             }.png?tx=c_fill,q_100`,
-            author: t('AboutUsLanding.FourthSection.Card3.Title'),
-            description: t('AboutUsLanding.FourthSection.Card3.Description'),
-            text: t('AboutUsLanding.FourthSection.Card3.Text'),
+            author: t("AboutUsLanding.FourthSection.Card3.Title"),
+            description: t("AboutUsLanding.FourthSection.Card3.Description"),
+            text: t("AboutUsLanding.FourthSection.Card3.Text"),
           },
           {
             avatar: `${cdnUrl}/AboutsUsNew/FifthSection_4_${
               lang === "vi" ? "en" : lang
             }.png?tx=c_fill,q_100`,
-            author: t('AboutUsLanding.FourthSection.Card4.Title'),
-            description: t('AboutUsLanding.FourthSection.Card4.Description'),
-            text: t('AboutUsLanding.FourthSection.Card4.Text'),
+            author: t("AboutUsLanding.FourthSection.Card4.Title"),
+            description: t("AboutUsLanding.FourthSection.Card4.Description"),
+            text: t("AboutUsLanding.FourthSection.Card4.Text"),
           },
         ]}
       />
@@ -372,14 +381,16 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                 wrapperSx={{
                   mb: { xs: "2rem", sm: "2.5rem" },
                 }}
-                renderTitle={(color) =>
-                    <>
-                      {t('AboutUsLanding.SixthSection.Title.Part1')}{" "}
-                      <span style={{ color }}>{t('AboutUsLanding.SixthSection.Title.Part2')}</span>{" "}
-                      {t('AboutUsLanding.SixthSection.Title.Part3')}
-                    </>
-                }
-                description={t('AboutUsLanding.SixthSection.Description')}
+                renderTitle={(color) => (
+                  <>
+                    {t("AboutUsLanding.SixthSection.Title.Part1")}{" "}
+                    <span style={{ color }}>
+                      {t("AboutUsLanding.SixthSection.Title.Part2")}
+                    </span>{" "}
+                    {t("AboutUsLanding.SixthSection.Title.Part3")}
+                  </>
+                )}
+                description={t("AboutUsLanding.SixthSection.Description")}
               />
               <ImageWithColorizedBorder
                 accentColor="primary"
@@ -413,14 +424,14 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   lineHeight: { xs: "28.8px", sm: "36.96px" },
                 }}
               >
-                {t('AboutUsLanding.SixthSection.Points.Title')}
+                {t("AboutUsLanding.SixthSection.Points.Title")}
               </Typography>
               <Stack sx={{ gap: "20px" }}>
                 {[
-                  t('AboutUsLanding.SixthSection.Points.1'),
-                  t('AboutUsLanding.SixthSection.Points.2'),
-                  t('AboutUsLanding.SixthSection.Points.3'),
-                  t('AboutUsLanding.SixthSection.Points.4'),
+                  t("AboutUsLanding.SixthSection.Points.1"),
+                  t("AboutUsLanding.SixthSection.Points.2"),
+                  t("AboutUsLanding.SixthSection.Points.3"),
+                  t("AboutUsLanding.SixthSection.Points.4"),
                 ].map((item) => (
                   <Box
                     sx={{
@@ -470,7 +481,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   color: "text.secondary",
                 }}
               >
-                {t('AboutUsLanding.SixthSection.Points.Text')}
+                {t("AboutUsLanding.SixthSection.Points.Text")}
               </Typography>
             </Stack>
           }
@@ -487,19 +498,31 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
             renderTitle: (color) =>
               getTranslatedText(
                 <>
-                  {t('AboutUsLanding.SeventhSection.Title.Part1')} <span style={{ color }}>{t('AboutUsLanding.SeventhSection.Title.Part2')}</span>
+                  {t("AboutUsLanding.SeventhSection.Title.Part1")}{" "}
+                  <span style={{ color }}>
+                    {t("AboutUsLanding.SeventhSection.Title.Part2")}
+                  </span>
                 </>,
                 <>
-                  <span style={{ color }}>{t('AboutUsLanding.SeventhSection.Title.Part1')} </span> {t('AboutUsLanding.SeventhSection.Title.Part2')}
+                  <span style={{ color }}>
+                    {t("AboutUsLanding.SeventhSection.Title.Part1")}{" "}
+                  </span>{" "}
+                  {t("AboutUsLanding.SeventhSection.Title.Part2")}
                 </>,
                 <>
-                  {t('AboutUsLanding.SeventhSection.Title.Part1')} <span style={{ color }}>{t('AboutUsLanding.SeventhSection.Title.Part2')}</span>
+                  {t("AboutUsLanding.SeventhSection.Title.Part1")}{" "}
+                  <span style={{ color }}>
+                    {t("AboutUsLanding.SeventhSection.Title.Part2")}
+                  </span>
                 </>,
                 <>
-                  {t('AboutUsLanding.SeventhSection.Title.Part1')} <span style={{ color }}>{t('AboutUsLanding.SeventhSection.Title.Part2')}</span>
+                  {t("AboutUsLanding.SeventhSection.Title.Part1")}{" "}
+                  <span style={{ color }}>
+                    {t("AboutUsLanding.SeventhSection.Title.Part2")}
+                  </span>
                 </>
               ),
-            description: t('AboutUsLanding.SeventhSection.Description'),
+            description: t("AboutUsLanding.SeventhSection.Description"),
           }}
         >
           <Stack
@@ -536,7 +559,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                     marginBottom: { xs: "12px", sm: "12px" },
                   }}
                 >
-                  {t('AboutUsLanding.SeventhSection.Card1.Title')}
+                  {t("AboutUsLanding.SeventhSection.Card1.Title")}
                 </Typography>
                 <Typography
                   sx={{
@@ -547,7 +570,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                     color: "text.secondary",
                   }}
                 >
-                  {t('AboutUsLanding.SeventhSection.Card1.Text')}
+                  {t("AboutUsLanding.SeventhSection.Card1.Text")}
                 </Typography>
                 <Box
                   sx={{
@@ -605,7 +628,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                     marginBottom: { xs: "12px", sm: "12px" },
                   }}
                 >
-                  {t('AboutUsLanding.SeventhSection.Card2.Title')}
+                  {t("AboutUsLanding.SeventhSection.Card2.Title")}
                 </Typography>
                 <Typography
                   sx={{
@@ -616,7 +639,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                     color: "text.secondary",
                   }}
                 >
-                  {t('AboutUsLanding.SeventhSection.Card2.Text')}
+                  {t("AboutUsLanding.SeventhSection.Card2.Text")}
                 </Typography>
                 {getPicture(
                   `${cdnUrl}/AboutsUsNew/EigthSection_2.png`,
@@ -768,7 +791,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   marginBottom: { xs: "12px", sm: "12px" },
                 }}
               >
-                {t('AboutUsLanding.SeventhSection.Card3.Title')}
+                {t("AboutUsLanding.SeventhSection.Card3.Title")}
               </Typography>
               <Typography
                 sx={{
@@ -779,7 +802,7 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   color: "text.secondary",
                 }}
               >
-                {t('AboutUsLanding.SeventhSection.Card3.Text')}
+                {t("AboutUsLanding.SeventhSection.Card3.Text")}
               </Typography>
             </Box>
           </Stack>
@@ -789,12 +812,15 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
       {(lang === "ru" || lang === "uk") && (
         <SectionContainer
           sectionTitle={{
-            renderTitle: (color) =>
-                <>
-                  <span style={{ color }}>{t('AboutUsLanding.EigthSection.Title.Part1')}</span>{" "}
-                  {t('AboutUsLanding.EigthSection.Title.Part2')}
-                </>,
-            description: t('AboutUsLanding.EigthSection.Description'),
+            renderTitle: (color) => (
+              <>
+                <span style={{ color }}>
+                  {t("AboutUsLanding.EigthSection.Title.Part1")}
+                </span>{" "}
+                {t("AboutUsLanding.EigthSection.Title.Part2")}
+              </>
+            ),
+            description: t("AboutUsLanding.EigthSection.Description"),
           }}
         >
           <SectionTextCardList
@@ -845,10 +871,10 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   height: "unset",
                 },
                 iconName: "step1",
-                title: t('AboutUsLanding.EigthSection.Card1.Text'),
+                title: t("AboutUsLanding.EigthSection.Card1.Text"),
                 link: {
-                  title: t('AboutUsLanding.EigthSection.Card1.Link.Title'),
-                  text: t('AboutUsLanding.EigthSection.Card1.Link.Text'),
+                  title: t("AboutUsLanding.EigthSection.Card1.Link.Title"),
+                  text: t("AboutUsLanding.EigthSection.Card1.Link.Text"),
                   to: getTranslatedText(
                     "",
                     "",
@@ -900,10 +926,10 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   height: "unset",
                 },
                 iconName: "step2",
-                title: t('AboutUsLanding.EigthSection.Card2.Text'),
+                title: t("AboutUsLanding.EigthSection.Card2.Text"),
                 link: {
-                  title: t('AboutUsLanding.EigthSection.Card2.Link.Title'),
-                  text: t('AboutUsLanding.EigthSection.Card2.Link.Text'),
+                  title: t("AboutUsLanding.EigthSection.Card2.Link.Title"),
+                  text: t("AboutUsLanding.EigthSection.Card2.Link.Text"),
                   to: getTranslatedText(
                     "",
                     "",
@@ -955,10 +981,10 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
                   height: "unset",
                 },
                 iconName: "step3",
-                title: t('AboutUsLanding.EigthSection.Card3.Text'),
+                title: t("AboutUsLanding.EigthSection.Card3.Text"),
                 link: {
-                  title: t('AboutUsLanding.EigthSection.Card3.Link.Title'),
-                  text: t('AboutUsLanding.EigthSection.Card3.Link.Text'),
+                  title: t("AboutUsLanding.EigthSection.Card3.Link.Title"),
+                  text: t("AboutUsLanding.EigthSection.Card3.Link.Text"),
                   to: getTranslatedText(
                     "",
                     "",
@@ -979,60 +1005,56 @@ export const AboutUsLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
             "& path": { stroke: "rgba(11, 78, 131, 0.3)" },
           },
         }}
-        title={
-          t("AboutUsLanding.NinthSection.Title")
-        }
-        description={
-          t("AboutUsLanding.NinthSection.Description")
-        }
+        title={t("AboutUsLanding.NinthSection.Title")}
+        description={t("AboutUsLanding.NinthSection.Description")}
         data={[
           {
-            title: t('AboutUsLanding.NinthSection.Question1.Title'),
-            text: t('AboutUsLanding.NinthSection.Question1.Text'),
+            title: t("AboutUsLanding.NinthSection.Question1.Title"),
+            text: t("AboutUsLanding.NinthSection.Question1.Text"),
           },
           {
-            title: t('AboutUsLanding.NinthSection.Question2.Title'),
-            text: t('AboutUsLanding.NinthSection.Question2.Text'),
+            title: t("AboutUsLanding.NinthSection.Question2.Title"),
+            text: t("AboutUsLanding.NinthSection.Question2.Text"),
             link:
               lang === "ru"
                 ? {
-                    text: t('AboutUsLanding.NinthSection.Question2.Button'),
+                    text: t("AboutUsLanding.NinthSection.Question2.Button"),
                     to: "https://www.gostudy.cz/vse-programmyi",
                   }
                 : lang === "uk"
                 ? {
-                    text: t('AboutUsLanding.NinthSection.Question2.Button'),
+                    text: t("AboutUsLanding.NinthSection.Question2.Button"),
                     to: "https://www.gostudy.cz/uk/vse-programmyi",
                   }
                 : undefined,
           },
           {
-            title: t('AboutUsLanding.NinthSection.Question3.Title'),
-            text: t('AboutUsLanding.NinthSection.Question3.Text'),
+            title: t("AboutUsLanding.NinthSection.Question3.Title"),
+            text: t("AboutUsLanding.NinthSection.Question3.Text"),
             link:
               lang === "ru"
                 ? {
-                    text: t('AboutUsLanding.NinthSection.Question3.Button'),
+                    text: t("AboutUsLanding.NinthSection.Question3.Button"),
                     to: "https://www.gostudy.cz/vse-programmyi-avstrii",
                   }
                 : lang === "uk"
                 ? {
-                    text: t('AboutUsLanding.NinthSection.Question3.Button'),
+                    text: t("AboutUsLanding.NinthSection.Question3.Button"),
                     to: "https://www.gostudy.cz/uk/vse-programmyi-slovakia",
                   }
                 : undefined,
           },
           {
-            title: t('AboutUsLanding.NinthSection.Question4.Title'),
-            text: t('AboutUsLanding.NinthSection.Question4.Text'),
+            title: t("AboutUsLanding.NinthSection.Question4.Title"),
+            text: t("AboutUsLanding.NinthSection.Question4.Text"),
           },
           {
-            title: t('AboutUsLanding.NinthSection.Question5.Title'),
-            text: t('AboutUsLanding.NinthSection.Question5.Text'),
+            title: t("AboutUsLanding.NinthSection.Question5.Title"),
+            text: t("AboutUsLanding.NinthSection.Question5.Text"),
           },
           {
-            title: t('AboutUsLanding.NinthSection.Question6.Title'),
-            text: t('AboutUsLanding.NinthSection.Question6.Text'),
+            title: t("AboutUsLanding.NinthSection.Question6.Title"),
+            text: t("AboutUsLanding.NinthSection.Question6.Text"),
           },
         ]}
       />
