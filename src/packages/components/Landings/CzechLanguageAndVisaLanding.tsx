@@ -29,6 +29,7 @@ interface Props {
   onClick: VoidFunction;
   onSubmit?: VoidFunction;
   button?: { onClick: VoidFunction; text: string };
+  withoutHubspot: boolean;
 }
 
 export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
@@ -36,6 +37,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
   externalLocales,
   onClick,
   onSubmit,
+  withoutHubspot,
 }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
 
@@ -961,7 +963,7 @@ export const CzechLanguageAndVisaLanding: React.FC<Props> = ({
       />
 
       <FormSection
-        withoutHubspot
+        withoutHubspot={withoutHubspot}
         nodeRef={formRef}
         accentColor="primary"
         buttonColor="rgba(41, 98, 255, 1)"
