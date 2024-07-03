@@ -25,6 +25,7 @@ import {ReactComponent as Point4} from '../../../icons/one-tone/point4.svg'
 import {ReactComponent as Point5} from '../../../icons/one-tone/point5.svg'
 import {ReactComponent as Point6} from '../../../icons/one-tone/point6.svg'
 import {ReactComponent as Point7} from '../../../icons/one-tone/point7.svg'
+import {ReactComponent as Service} from '../../../icons/one-tone/service.svg'
 import {ReactComponent as Step1} from '../../../icons/one-tone/step1.svg'
 import {ReactComponent as Step2} from '../../../icons/one-tone/step2.svg'
 import {ReactComponent as Step3} from '../../../icons/one-tone/step3.svg'
@@ -45,6 +46,7 @@ import {ReactComponent as Flag2TwoTone} from '../../../icons/two-tone/flag-2.svg
 import {ReactComponent as HandStarsTwoTone} from '../../../icons/two-tone/hand-stars.svg'
 import {ReactComponent as HashtagChatTwoTone} from '../../../icons/two-tone/hashtag-chat.svg'
 import {ReactComponent as LayersMinimalisticTwoTone} from '../../../icons/two-tone/layers-minimalistic.svg'
+import {ReactComponent as LikeFilledTwoTone} from '../../../icons/two-tone/like-filled.svg'
 import {ReactComponent as NotebookBookmarkTwoTone} from '../../../icons/two-tone/notebook-bookmark.svg'
 import {ReactComponent as ShieldCrossTwoTone} from '../../../icons/two-tone/shield-cross.svg'
 import {ReactComponent as ShieldTwoTone} from '../../../icons/two-tone/shield.svg'
@@ -77,6 +79,7 @@ export const iconBase = {
   point5: <Point5 />,
   point6: <Point6 />,
   point7: <Point7 />,
+  service: <Service />,
   step1: <Step1 />,
   step2: <Step2 />,
   step3: <Step3 />,
@@ -97,6 +100,7 @@ export const iconBase = {
   handStarsTwoTone: <HandStarsTwoTone />,
   hashtagChatTwoTone: <HashtagChatTwoTone />,
   layersMinimalisticTwoTone: <LayersMinimalisticTwoTone />,
+  likeFilledTwoTone: <LikeFilledTwoTone />,
   notebookBookmarkTwoTone: <NotebookBookmarkTwoTone />,
   shieldCrossTwoTone: <ShieldCrossTwoTone />,
   shieldTwoTone: <ShieldTwoTone />,

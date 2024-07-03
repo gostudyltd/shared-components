@@ -25,6 +25,7 @@ type SectionTextCardPropsShared = {
   iconColor?: string;
   isHighlighted?: boolean;
   link?: { title: string; text: string; to: string };
+  stackSx?: SxProps;
 };
 
 export const SectionTextCard1: React.FC<SectionTextCardPropsShared> = (
@@ -214,6 +215,8 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
     iconName,
     title,
     iconColor,
+    isHighlighted,
+    stackSx,
   } = props;
   const accent = iconColor ? iconColor : accentColorBase[accentColor].main;
   const icon = iconName && iconBase[iconName as keyof typeof iconBase];
@@ -226,6 +229,8 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
           p: { xs: "1rem", sm: "1.25rem" },
           borderBottom: "none",
           height: { sm: "100%" },
+          border: "2px solid transparent",
+          borderColor: isHighlighted ? "#FFCC80" : "transparent",
           ...sx,
         }}
       >
@@ -233,6 +238,7 @@ export const SectionTextCard4: React.FC<SectionTextCardPropsShared> = (
           direction={"column"}
           sx={{
             marginBottom: text ? { sm: ".75rem", xs: ".75rem" } : undefined,
+            ...stackSx,
           }}
         >
           {icon && renderIcon ? (

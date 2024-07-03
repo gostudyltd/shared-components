@@ -5,11 +5,13 @@ import React from "react";
 import { accentColorBase } from "./utils";
 import { AccentColor } from "./types";
 import { iconBase } from "../icons";
+import { SxProps } from "@mui/material";
 
 export type SectionList1Props = {
   list: {
     text: string | React.ReactNode;
     iconName: keyof typeof iconBase;
+    containerSx?: SxProps;
   }[];
 
   accentColor?: AccentColor;
@@ -22,7 +24,7 @@ export const SectionList1: React.FC<SectionList1Props> = ({
   const accent = accentColorBase[accentColor];
   return (
     <Stack gap={"1.25rem"}>
-      {list.map(({ text, iconName }, idx) => (
+      {list.map(({ text, iconName, containerSx }, idx) => (
         <Stack
           key={typeof text === "string" ? text : iconName}
           direction={"row"}
@@ -31,6 +33,7 @@ export const SectionList1: React.FC<SectionList1Props> = ({
             backgroundColor: idx ? "#fff" : accent.main,
             borderRadius: "1.25rem",
             p: { xs: "1rem", sm: "1.5rem" },
+            ...containerSx,
           }}
         >
           <Box

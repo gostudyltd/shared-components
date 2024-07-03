@@ -10,6 +10,7 @@ type SliderNavigationProps = {
   sx?: SxProps;
   accentColor?: AccentColor;
   slideCount: number;
+  inActiveColor?: string;
 };
 
 export const SliderNavigation: React.FC<SliderNavigationProps> = ({
@@ -18,6 +19,7 @@ export const SliderNavigation: React.FC<SliderNavigationProps> = ({
   sx,
   accentColor = "primary",
   slideCount,
+  inActiveColor,
 }) => {
   const [mounted, setMounted] = useState(false);
   const nodeRef = useRef<HTMLSpanElement | null>(null);
@@ -75,7 +77,7 @@ export const SliderNavigation: React.FC<SliderNavigationProps> = ({
                 height: "0.125rem",
                 transition: "background .3s linear",
                 borderRadius: ".1875rem",
-                backgroundColor: "rgba(0,0,0,.12)",
+                backgroundColor: inActiveColor ?? "rgba(0,0,0,.12)",
               }}
             />
           </Box>
