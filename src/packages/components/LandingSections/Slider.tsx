@@ -170,7 +170,7 @@ export const Slider: React.FC<BottomSliderProps> = ({
                       image={data}
                       accentColor={accentColor}
                       imageSx={{
-                        minHeight: { sm: "300px", objectFit: "cover" },
+                        minHeight: { sm: "332px", objectFit: "cover" },
                       }}
                       sx={{
                         minHeight: { sm: "332px" },

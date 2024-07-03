@@ -12,12 +12,12 @@ import {
 import { ImageWithColorizedBorder } from "../LandingSections/ImageWithColorizedBorder";
 import { defaultFontFamily, montserratFamily } from "../../constants/themeVars";
 import { createTFunc, LangKey, Translations } from "../../config/langs";
-import { ReactComponent as FolderIcon } from "../Icons/Folder-icon.svg";
 import background from "../Icons/svgBg.svg";
 import { SectionList1 } from "../LandingSections/components/SectionList1";
 import { getPicture } from "../../helpers/CloudinaryImage";
 import { FlagGB } from "../Icons/FlagGB";
 import { Slider } from "../LandingSections/Slider";
+import { FolderIcon } from "../Icons/FolderIcon";
 
 interface Props {
   lang: LangKey;
@@ -1165,7 +1165,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
           sectionContainerSx={{ gap: { xs: "32px", sm: "60px" } }}
           firstColumnSx={{ maxWidth: "240px", order: { xs: "1", sm: "0" } }}
           secondColumnSx={{ order: { xs: "0", sm: "1" } }}
-          firstColumn={<FolderIcon />}
+          firstColumn={<FolderIcon sx={{ width: "240px", height: "253px" }} />}
           secondColumn={
             <SectionTitle
               accentColor="warning"
