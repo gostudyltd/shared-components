@@ -12,7 +12,7 @@ import {
 import { ImageWithColorizedBorder } from "../LandingSections/ImageWithColorizedBorder";
 import { defaultFontFamily, montserratFamily } from "../../constants/themeVars";
 import { createTFunc, LangKey, Translations } from "../../config/langs";
-import background from "../Icons/svgBg.svg";
+// import background from "../Icons/svgBg.svg";
 import { SectionList1 } from "../LandingSections/components/SectionList1";
 import { getPicture } from "../../helpers/CloudinaryImage";
 import { FlagGB } from "../Icons/FlagGB";
@@ -159,15 +159,16 @@ export const UniversityProgramLanding: React.FC<Props> = ({
 
       <SectionContainerWrapperColorized
         accentColor="error"
+        overlayVariant="icons"
         sx={{
-          backgroundImage: `url(${background})`,
+          // backgroundImage: `url(${background})`,
           backgroundColor: "#424242",
         }}
       >
         <SectionContainer
           sx={{ display: "flex", flexDirection: "column", gap: 0 }}
           sectionTitle={{
-            wrapperSx: { paddingBottom: 0 },
+            wrapperSx: { paddingBottom: { xs: "16px", sm: "24px" } },
             renderTitle: () => (
               <Box component={"span"} color={"#FFFFFF"}>
                 {t("UniversityProgramLanding.SecondSection.Title.Part1")}{" "}
