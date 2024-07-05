@@ -90,6 +90,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
         leftSectionContainerSx={{
           py: { xs: "48px", sm: "120px" },
         }}
+        titleSx={{ lineHeight: { xs: "36.96px", sm: "47.52px" } }}
         renderTitle={(color) => (
           <Box
             component={"span"}
@@ -118,7 +119,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
           sx: { maxHeight: "526px", objectFit: "contain" },
         }}
         mobileImage={{
-          src: `${cdnUrl}/UniversityProgramLanding/ThirdSectionSlide1_mobile.png`,
+          src: `${cdnUrl}/UniversityProgramLanding/ThirdSectionSlide1_mobile_v2.png`,
           width: null,
           height: null,
           sx: { objectFit: "contain" },
@@ -375,19 +376,26 @@ export const UniversityProgramLanding: React.FC<Props> = ({
                 title: t("UniversityProgramLanding.ThirdSection.Card1.Title"),
                 text: t("UniversityProgramLanding.ThirdSection.Card1.Text"),
                 iconName: "likeFilledTwoTone",
-                sx: { background: "#ffffff" },
+                sx: {
+                  background: "#ffffff",
+                  border: "2px solid rgba(255, 204, 128, 1) !important",
+                },
               },
               {
                 title: t("UniversityProgramLanding.ThirdSection.Card2.Title"),
                 text: t("UniversityProgramLanding.ThirdSection.Card2.Text"),
                 iconName: "form",
-                sx: { background: "#ffffff" },
+                sx: {
+                  background: "#ffffff",
+                },
               },
               {
                 title: t("UniversityProgramLanding.ThirdSection.Card3.Title"),
                 text: t("UniversityProgramLanding.ThirdSection.Card3.Text"),
                 iconName: "donateMoney",
-                sx: { background: "#ffffff" },
+                sx: {
+                  background: "#ffffff",
+                },
               },
             ]}
           />
@@ -401,7 +409,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
           renderTitle: (color) => (
             <>
               {t("UniversityProgramLanding.SubjectSection.Title.Part1")}{" "}
-              <Box sx={{ color }}>
+              <Box component={"span"} sx={{ color }}>
                 {t("UniversityProgramLanding.SubjectSection.Title.Part2")}
               </Box>
             </>
