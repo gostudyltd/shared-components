@@ -11,6 +11,7 @@ import vi from "./vi.json";
 import "react-phone-input-2/lib/style.css";
 import { ReactComponent as FormSubmittedImage } from "./form-submitted.svg";
 import { FormFields } from "../../FormSection";
+import { InputLabel, MenuItem, Select } from "@mui/material";
 
 export type HubspotFormTranslations = {
   language: "en" | "ru" | "uk" | "vi";
@@ -79,6 +80,9 @@ export const HubspotForm: React.FC<Props> = ({
   const errorsRef = useRef<{ [key: string]: boolean }>({});
   const hubspotPhoneInputRef = useRef<HTMLInputElement | null>(null);
   const phoneInputRef = useRef<HTMLInputElement | null>(null);
+  const selectRef = useRef<HTMLSelectElement | null>(null);
+  const [options, setOptions] = useState<string[]>([]);
+  const [selectedValue, setSelectedValue] = useState<string | null>("");
   const formClass = `form_${accentColor}`;
 
   const langForHubspot =
@@ -202,6 +206,25 @@ export const HubspotForm: React.FC<Props> = ({
                 }
               }
 
+              if (input.name === "preferred_study_area" && child.lastChild) {
+                input.style.display = "none";
+                label.style.display = "none";
+
+                selectRef.current = input as unknown as HTMLSelectElement;
+                const optionsFromHs: string[] = [];
+                for (const option of selectRef.current.options) {
+                  if (!option.value) continue;
+                  optionsFromHs.push(option.value);
+                }
+                setOptions(optionsFromHs);
+                const selectElement =
+                  document.getElementById("selectContainer");
+                if (selectElement) {
+                  child.lastChild.appendChild(selectElement);
+                  selectElement.style.display = "flex";
+                }
+              }
+
               if (input.name === "url" && child.lastChild) {
                 if (typeof window !== "undefined") {
                   input.value = window.location.href;
@@ -292,6 +315,14 @@ export const HubspotForm: React.FC<Props> = ({
     }
   }, [phoneNumber]);
 
+  useEffect(() => {
+    if (selectRef.current) {
+      selectRef.current.value = selectedValue ?? "";
+    }
+  }, [selectedValue]);
+
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+
   return (
     <Box
       width={"100%"}
@@ -357,6 +388,61 @@ export const HubspotForm: React.FC<Props> = ({
             language === "ru" ? ru : language === "vi" ? vi : undefined
           }
         />
+
+        <Box
+          className={styles.input}
+          id="selectContainer"
+          sx={{ display: "none" }}
+        >
+          <InputLabel
+            id="select-label"
+            sx={{ backgroundColor: "white", zIndex: "10" }}
+            className={styles.label_top}
+          >
+            Preferred Study Area
+          </InputLabel>
+          <Select
+            displayEmpty
+            renderValue={(selected: string) => {
+              if (!selected) {
+                return <Box component="span">Please select</Box>;
+              }
+
+              return selected;
+            }}
+            value={selectedValue}
+            onChange={(e) => {
+              setSelectedValue(e.target.value);
+            }}
+            onClose={() => {
+              setIsSelectOpen(false);
+            }}
+            onOpen={() => {
+              setIsSelectOpen(true);
+            }}
+            id="select"
+            // label='Age'
+            color="warning"
+            sx={{
+              // '&:focus fieldset': { borderColor: '#ed6c02 !important' },
+              "& fieldset": {
+                border: isSelectOpen
+                  ? "2px solid #ed6c02 !important"
+                  : "2px solid rgba(237, 108, 2, 0.5) !important",
+                borderWidth: "2px",
+              },
+            }}
+          >
+            <MenuItem value="" disabled>
+              Please select
+            </MenuItem>
+            {options.map((item) => (
+              <MenuItem value={item} key={item}>
+                {item}
+              </MenuItem>
+            ))}
+          </Select>
+        </Box>
 
         {loaded && !isSubmitted && (
           <>

@@ -9,6 +9,15 @@
   height: 3.5rem;
 }
 
+.input {
+  /* display: flex; */
+  width: 100%;
+}
+
+.input > div {
+  width: 100%;
+}
+
 .form :global(.hs-input),
 .phoneInput {
   font-size: 1rem;
