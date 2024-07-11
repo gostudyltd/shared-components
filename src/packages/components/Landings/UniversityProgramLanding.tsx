@@ -343,7 +343,14 @@ export const UniversityProgramLanding: React.FC<Props> = ({
               padding: { sm: "13px 32px" },
               alignSelf: "center",
             }}
-            onClick={scrollToForm}
+            onClick={() => {
+              if (window) {
+                window.open(
+                  "https://www.gostudy.eu/en/university/pan-european-university",
+                  "_blank"
+                );
+              }
+            }}
           >
             {t("UniversityProgramLanding.SecondSection.Button")}
           </Button>
