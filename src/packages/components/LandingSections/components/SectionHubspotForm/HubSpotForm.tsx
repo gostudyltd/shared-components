@@ -82,7 +82,7 @@ export const HubspotForm: React.FC<Props> = ({
   const phoneInputRef = useRef<HTMLInputElement | null>(null);
   const selectRef = useRef<HTMLSelectElement | null>(null);
   const [options, setOptions] = useState<string[]>([]);
-  const [selectedValue, setSelectedValue] = useState<string | null>("");
+  const [selectedValue, setSelectedValue] = useState<string>("");
   const formClass = `form_${accentColor}`;
 
   const langForHubspot =
