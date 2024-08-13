@@ -378,6 +378,9 @@ export const HubspotForm: React.FC<Props> = ({
   useEffect(() => {
     if (hubspotPhoneInputRef.current) {
       hubspotPhoneInputRef.current.value = phoneNumber;
+      const event = new Event("change", { bubbles: true });
+      hubspotPhoneInputRef.current.dispatchEvent(event);
+      console.log(hubspotPhoneInputRef.current.value);
     }
   }, [phoneNumber]);
 
