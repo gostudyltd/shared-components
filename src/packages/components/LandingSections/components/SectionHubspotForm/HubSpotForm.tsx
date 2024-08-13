@@ -223,7 +223,7 @@ export const HubspotForm: React.FC<Props> = ({
                       const isInvalidValue = target.className.includes("error");
                       if (isInvalidValue) {
                         if (firstChild.className.includes("error")) return;
-                        firstChild.className += ` ${styles.error}`;
+                        firstChild.className += " error";
                         errorsRef.current[
                           (mutation.target as HTMLInputElement).name
                         ] = true;
@@ -234,7 +234,7 @@ export const HubspotForm: React.FC<Props> = ({
                         (mutation.target as HTMLInputElement).name
                       ];
                       firstChild.className = firstChild.className.replace(
-                        styles.label_error,
+                        "error",
                         ""
                       );
                     }
@@ -276,7 +276,7 @@ export const HubspotForm: React.FC<Props> = ({
                       if (isInvalidValue) {
                         if (selectBorderContainer.className.includes("error"))
                           return;
-                        selectBorderContainer.className += ` ${styles.error}`;
+                        selectBorderContainer.className += ` ${" error"}`;
                         errorsRef.current[
                           (mutation.target as HTMLInputElement).name
                         ] = true;
@@ -287,10 +287,7 @@ export const HubspotForm: React.FC<Props> = ({
                         (mutation.target as HTMLInputElement).name
                       ];
                       selectBorderContainer.className =
-                        selectBorderContainer.className.replace(
-                          styles.label_error,
-                          ""
-                        );
+                        selectBorderContainer.className.replace("error", "");
                     }
                   }
                 };
