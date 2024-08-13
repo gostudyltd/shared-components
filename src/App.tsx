@@ -1,12 +1,18 @@
 import React from "react";
 import { OfficesLanding } from "./packages/components/Landings/OfficesLanding";
-import { AboutUsLanding, DeutshLanding, GrantsLanding } from "./packages";
+import {
+  AboutUsLanding,
+  DeutshLanding,
+  GrantsLanding,
+  UniversityProgramLanding,
+} from "./packages";
 import { CzechLanguageLanding } from "./packages/components/Landings/CzechLanguageLanding";
 import { CzechLanguageAndVisaLanding } from "./packages/components/Landings/CzechLanguageAndVisaLanding";
 
 function App() {
   return (
-    <CzechLanguageAndVisaLanding
+    <UniversityProgramLanding
+      withoutHubspot
       // cdnUrl={"https://images.gostudy.cz/static"}
       lang="en"
       onClick={() => {

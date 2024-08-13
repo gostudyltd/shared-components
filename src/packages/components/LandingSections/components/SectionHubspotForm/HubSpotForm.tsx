@@ -35,6 +35,12 @@ type Props = {
   accentColor?: "primary" | "warning" | "error";
 };
 
+const obsConfig = {
+  attributes: true,
+  childList: false,
+  subtree: false,
+};
+
 const FinishView: React.FC<{ translations: HubspotFormTranslations }> = ({
   translations,
 }) => {
@@ -100,6 +106,7 @@ export const HubspotForm: React.FC<Props> = ({
     target: "#my-hubspot-form",
     locale: HubSpotFormLocale[langForHubspot],
     onFormSubmit: (form) => {
+      console.log("work");
       if (hubspotConfig.onSubmit) {
         const data = new FormData(form);
         hubspotConfig.onSubmit(Object.fromEntries(data) as FormFields);
@@ -204,6 +211,39 @@ export const HubspotForm: React.FC<Props> = ({
                 for (const phoneInputChild of phoneInputDOMElementChildrenArray) {
                   (phoneInputChild as HTMLElement).style.display = "flex";
                 }
+
+                const obsCallback: MutationCallback = (
+                  mutationList: MutationRecord[]
+                ) => {
+                  const firstChild =
+                    phoneInputDOMElement.firstChild as HTMLElement;
+                  for (const mutation of mutationList) {
+                    if (mutation.type === "attributes") {
+                      const target = mutation.target as HTMLElement;
+                      const isInvalidValue = target.className.includes("error");
+                      if (isInvalidValue) {
+                        if (firstChild.className.includes("error")) return;
+                        firstChild.className += ` ${styles.error}`;
+                        errorsRef.current[
+                          (mutation.target as HTMLInputElement).name
+                        ] = true;
+                        return;
+                      }
+
+                      delete errorsRef.current[
+                        (mutation.target as HTMLInputElement).name
+                      ];
+                      firstChild.className = firstChild.className.replace(
+                        styles.label_error,
+                        ""
+                      );
+                    }
+                  }
+                };
+
+                const observer = new MutationObserver(obsCallback);
+
+                observer.observe(input, obsConfig);
               }
 
               if (input.name === "preferred_study_area" && child.lastChild) {
@@ -223,6 +263,41 @@ export const HubspotForm: React.FC<Props> = ({
                   child.lastChild.appendChild(selectElement);
                   selectElement.style.display = "flex";
                 }
+
+                const obsCallback: MutationCallback = (
+                  mutationList: MutationRecord[]
+                ) => {
+                  const selectBorderContainer = selectElement?.lastElementChild
+                    ?.lastElementChild as HTMLElement;
+                  for (const mutation of mutationList) {
+                    if (mutation.type === "attributes") {
+                      const target = mutation.target as HTMLElement;
+                      const isInvalidValue = target.className.includes("error");
+                      if (isInvalidValue) {
+                        if (selectBorderContainer.className.includes("error"))
+                          return;
+                        selectBorderContainer.className += ` ${styles.error}`;
+                        errorsRef.current[
+                          (mutation.target as HTMLInputElement).name
+                        ] = true;
+                        return;
+                      }
+
+                      delete errorsRef.current[
+                        (mutation.target as HTMLInputElement).name
+                      ];
+                      selectBorderContainer.className =
+                        selectBorderContainer.className.replace(
+                          styles.label_error,
+                          ""
+                        );
+                    }
+                  }
+                };
+
+                const observer = new MutationObserver(obsCallback);
+
+                observer.observe(input, obsConfig);
               }
 
               if (input.name === "url" && child.lastChild) {
@@ -246,12 +321,6 @@ export const HubspotForm: React.FC<Props> = ({
               if (input.name === "utm_campaign" && child.lastChild) {
                 input.value = utmObject["utm_campaign"] ?? "";
               }
-
-              const obsConfig = {
-                attributes: true,
-                childList: false,
-                subtree: false,
-              };
 
               const obsCallback: MutationCallback = (
                 mutationList: MutationRecord[]
@@ -399,7 +468,7 @@ export const HubspotForm: React.FC<Props> = ({
             sx={{ backgroundColor: "white", zIndex: "10" }}
             className={styles.label_top}
           >
-            Preferred Study Area
+            Preferred Study Area*
           </InputLabel>
           <Select
             displayEmpty
@@ -430,6 +499,7 @@ export const HubspotForm: React.FC<Props> = ({
                   ? "2px solid #ed6c02 !important"
                   : "2px solid rgba(237, 108, 2, 0.5) !important",
                 borderWidth: "2px",
+                maxWidth: "unset !important",
               },
             }}
           >
