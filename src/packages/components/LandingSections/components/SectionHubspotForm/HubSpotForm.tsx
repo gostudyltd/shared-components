@@ -106,7 +106,6 @@ export const HubspotForm: React.FC<Props> = ({
     target: "#my-hubspot-form",
     locale: HubSpotFormLocale[langForHubspot],
     onFormSubmit: (form) => {
-      console.log("work");
       if (hubspotConfig.onSubmit) {
         const data = new FormData(form);
         hubspotConfig.onSubmit(Object.fromEntries(data) as FormFields);
@@ -375,23 +374,46 @@ export const HubspotForm: React.FC<Props> = ({
     setPhoneNumber(`+${phoneNumber}`);
   };
 
-  const simulateInputChange = (value: string) => {
-    const input = hubspotPhoneInputRef.current;
+  const simulateInputChange = (
+    value: string,
+    ref: HTMLInputElement,
+    event = "input"
+  ) => {
+    const input = ref;
     if (input) {
       input.value = value;
-      input.dispatchEvent(new Event("input", { bubbles: true }));
+      input.dispatchEvent(new Event(event, { bubbles: true }));
+    }
+  };
+
+  const simulateSelectInputChange = (
+    value: string,
+    ref: HTMLSelectElement,
+    event = "change"
+  ) => {
+    const input = ref;
+    if (input) {
+      if ((window as any).test) {
+        console.log("index");
+        input.selectedIndex = options.findIndex((item) => item === value) + 1;
+      } else {
+        input.value = value;
+      }
+      input.dispatchEvent(new Event(event, { bubbles: true }));
     }
   };
 
   useEffect(() => {
     if (hubspotPhoneInputRef.current) {
-      simulateInputChange(phoneNumber);
+      simulateInputChange(phoneNumber, hubspotPhoneInputRef.current);
     }
   }, [phoneNumber]);
 
   useEffect(() => {
     if (selectRef.current) {
-      simulateInputChange(selectedValue ?? "");
+      selectRef.current.style.display = "flex";
+      simulateSelectInputChange(selectedValue, selectRef.current, "change");
+      console.log(selectRef.current);
     }
   }, [selectedValue]);
 

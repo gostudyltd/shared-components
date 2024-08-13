@@ -18,6 +18,7 @@ function App() {
       onClick={() => {
         console.log("test");
       }}
+      onSubmit={() => {}}
     />
   );
 }
