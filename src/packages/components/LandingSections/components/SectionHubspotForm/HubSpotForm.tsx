@@ -375,18 +375,23 @@ export const HubspotForm: React.FC<Props> = ({
     setPhoneNumber(`+${phoneNumber}`);
   };
 
+  const simulateInputChange = (value: string) => {
+    const input = hubspotPhoneInputRef.current;
+    if (input) {
+      input.value = value;
+      input.dispatchEvent(new Event("input", { bubbles: true }));
+    }
+  };
+
   useEffect(() => {
     if (hubspotPhoneInputRef.current) {
-      hubspotPhoneInputRef.current.value = phoneNumber;
-      const event = new Event("change", { bubbles: true });
-      hubspotPhoneInputRef.current.dispatchEvent(event);
-      console.log(hubspotPhoneInputRef.current.value);
+      simulateInputChange(phoneNumber);
     }
   }, [phoneNumber]);
 
   useEffect(() => {
     if (selectRef.current) {
-      selectRef.current.value = selectedValue ?? "";
+      simulateInputChange(selectedValue ?? "");
     }
   }, [selectedValue]);
 
