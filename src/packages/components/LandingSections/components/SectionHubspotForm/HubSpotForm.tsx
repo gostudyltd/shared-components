@@ -388,17 +388,12 @@ export const HubspotForm: React.FC<Props> = ({
 
   const simulateSelectInputChange = (
     value: string,
-    ref: HTMLSelectElement,
-    event = "change"
+    ref: HTMLInputElement | HTMLSelectElement,
+    event = "input"
   ) => {
     const input = ref;
     if (input) {
-      if ((window as any).test) {
-        console.log("index");
-        input.selectedIndex = options.findIndex((item) => item === value) + 1;
-      } else {
-        input.value = value;
-      }
+      input.value = value;
       input.dispatchEvent(new Event(event, { bubbles: true }));
     }
   };
@@ -411,9 +406,7 @@ export const HubspotForm: React.FC<Props> = ({
 
   useEffect(() => {
     if (selectRef.current) {
-      selectRef.current.style.display = "flex";
       simulateSelectInputChange(selectedValue, selectRef.current, "change");
-      console.log(selectRef.current);
     }
   }, [selectedValue]);
 
