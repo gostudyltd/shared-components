@@ -623,7 +623,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
                     },
                   },
                   {
-                    text: t("UniversityProgramLanding.FifthSection.Option1"),
+                    text: t("UniversityProgramLanding.FifthSection.Option2"),
                     iconName: "service",
                     containerSx: {
                       border: "2px solid #FFCC80",
