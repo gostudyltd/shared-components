@@ -8,14 +8,15 @@ import {
 } from "./packages";
 import { CzechLanguageLanding } from "./packages/components/Landings/CzechLanguageLanding";
 import { CzechLanguageAndVisaLanding } from "./packages/components/Landings/CzechLanguageAndVisaLanding";
+import { NewGrantsLanding } from "./packages/components/Landings/NewGrantsLanding";
 
 function App() {
   return (
-    <UniversityProgramLanding
-      withoutHubspot
+    <NewGrantsLanding
+      // withoutHubspot
       // cdnUrl={"https://images.gostudy.cz/static"}
-      lang="en"
-      onClick={() => {
+      lang="ru"
+      btnAction={() => {
         console.log("test");
       }}
       onSubmit={() => {}}

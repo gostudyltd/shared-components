@@ -7,9 +7,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react'
 
+import {ReactComponent as Diploma} from '../../../icons/one-tone/Diploma.svg'
 import {ReactComponent as HelpTogether} from '../../../icons/one-tone/HelpTogether.svg'
 import {ReactComponent as Incomplete1} from '../../../icons/one-tone/Incomplete1.svg'
 import {ReactComponent as Internet} from '../../../icons/one-tone/Internet.svg'
+import {ReactComponent as PointOnMap} from '../../../icons/one-tone/PointOnMap.svg'
+import {ReactComponent as Routing} from '../../../icons/one-tone/Routing.svg'
 import {ReactComponent as Smiley} from '../../../icons/one-tone/Smiley.svg'
 import {ReactComponent as WriteNotes} from '../../../icons/one-tone/WriteNotes.svg'
 import {ReactComponent as Clipboard} from '../../../icons/one-tone/clipboard.svg'
@@ -61,9 +64,12 @@ import {ReactComponent as WalletMoneyTwoTone} from '../../../icons/two-tone/wall
 import {ReactComponent as WaterSunTwoTone} from '../../../icons/two-tone/water-sun.svg'
 
 export const iconBase = {
+  Diploma: <Diploma />,
   HelpTogether: <HelpTogether />,
   Incomplete1: <Incomplete1 />,
   Internet: <Internet />,
+  PointOnMap: <PointOnMap />,
+  Routing: <Routing />,
   Smiley: <Smiley />,
   WriteNotes: <WriteNotes />,
   clipboard: <Clipboard />,

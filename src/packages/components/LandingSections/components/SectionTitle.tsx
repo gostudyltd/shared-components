@@ -133,7 +133,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = withCustomTheme(
           {button && (
             <Button
               onClick={button.onClick}
-              variant="outlined"
+              variant={button.variant || "outlined"}
               size="small"
               color={accentColor || "primary"}
               sx={{

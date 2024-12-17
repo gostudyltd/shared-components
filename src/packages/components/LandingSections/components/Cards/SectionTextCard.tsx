@@ -105,7 +105,11 @@ export const SectionTextCard1: React.FC<SectionTextCardPropsShared> = (
 };
 
 export const SectionTextCard2: React.FC<
-  SectionTextCardPropsShared & { disableBorder?: boolean }
+  SectionTextCardPropsShared & {
+    disableBorder?: boolean;
+    iconSx?: SxProps;
+    topSx?: SxProps;
+  }
 > = (props) => {
   const {
     sx,
@@ -116,6 +120,8 @@ export const SectionTextCard2: React.FC<
     iconName,
     title,
     disableBorder,
+    iconSx,
+    topSx,
   } = props;
   const accent = accentColorBase[accentColor].main;
   return (
@@ -133,6 +139,7 @@ export const SectionTextCard2: React.FC<
         direction={"row"}
         sx={{
           marginBottom: { sm: "1.25rem", xs: ".75rem" },
+          ...topSx,
         }}
       >
         {iconName && (
@@ -142,14 +149,17 @@ export const SectionTextCard2: React.FC<
             sx={{
               display: "flex",
               // width: { xs: '2rem', sm: '2.5rem' },
-              "& path": {
-                fill: accent,
-              },
+              "& path": !iconSx
+                ? {
+                    fill: accent,
+                  }
+                : {},
               "& > svg": {
                 width: { xs: "2rem", sm: "2.5rem" },
                 height: { xs: "2rem", sm: "2.5rem" },
               },
               marginRight: "12px",
+              ...iconSx,
             }}
           >
             {iconBase[iconName as keyof typeof iconBase]}
@@ -369,7 +379,7 @@ export const SectionTextCard6: React.FC<SectionTextCardPropsShared> = (
 };
 
 export type SectionTextCardProps = SectionTextCardPropsShared & {
-  variant?: "v1" | "v2" | "v3" | "v4" | "v5" | "v6" | "v7";
+  variant?: "v1" | "v2" | "v3" | "v4" | "v5" | "v6" | "v7" | "v8";
 };
 
 export const SectionTextCard: React.FC<SectionTextCardProps> = ({
@@ -478,6 +488,33 @@ export const SectionTextCard: React.FC<SectionTextCardProps> = ({
 
   if (variant === "v7") {
     return <SectionTextCard6 {...restProps} />;
+  }
+
+  if (variant === "v8") {
+    return (
+      <SectionTextCard2
+        renderTitle={(text) =>
+          text ? (
+            <Box component={"span"} sx={{ color: "primary.main" }}>
+              {text}
+            </Box>
+          ) : null
+        }
+        topSx={{ marginRight: "auto" }}
+        iconSx={{
+          marginRight: "auto",
+          "& > svg": {
+            width: { xs: "36px", sm: "48px" },
+            height: { xs: "36px", sm: "48px" },
+            // "& > path": {
+            //   fill: "none",
+            // },
+          },
+        }}
+        disableBorder
+        {...restProps}
+      />
+    );
   }
 
   return <SectionTextCard1 {...restProps} />;

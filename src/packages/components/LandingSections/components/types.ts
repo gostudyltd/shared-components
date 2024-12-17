@@ -30,6 +30,7 @@ export type SectionTitleProps = {
   button?: {
     sx?: SxProps;
     text: string;
+    variant?: "outlined" | "contained";
     onClick: () => void;
   };
   renderButtons?: (
