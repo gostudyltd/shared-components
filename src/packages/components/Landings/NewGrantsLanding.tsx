@@ -10,23 +10,14 @@ import {
 } from "../LandingSections";
 import { montserratFamily } from "../../constants/themeVars";
 import { FirstSectionBg } from "../LandingSections/images/lines/FirstSectionBg";
-import { FirstDecoration } from "../LandingSections/images/lines/FirstDecoration";
 import { FirstUnderline } from "../LandingSections/images/lines/FirstUnderline";
 import { BurstPucker } from "../Icons";
-import { iconBase } from "../LandingSections/icons";
-import { AccordionsSectionV2 } from "../LandingSections/AccordionsSectionV2";
 import { InstIcon } from "../LandingSections/images/lines/InstIcon";
 import { FacebookIcon } from "../LandingSections/images/lines/FacebookIcon";
 import { Star } from "../LandingSections/images/lines/Star";
 import { getPicture } from "../../helpers/CloudinaryImage";
 import { SeventhSectionBg } from "../LandingSections/images/lines/SeventhSectionBg";
-import { SixthSectionDecoration1 } from "../LandingSections/images/lines/SixthSectionDecoration1";
-import { SixthSectionDecoration2 } from "../LandingSections/images/lines/SixthSectionDecoration2";
-import { AnimatedListSection2 } from "../LandingSections/AnimatedListSection2";
 import { FourthSectionBg } from "../LandingSections/images/lines/FourthSectionBg";
-import { ThirdSectionCardBg } from "../LandingSections/images/lines/ThirdSectionCardBg";
-import { BurstStar } from "../Icons/BurstStar";
-import { FreeDesk } from "../LandingSections/images/lines/Free_desk";
 import { SeventhSectionMobileBg } from "../LandingSections/images/lines/SeventhSectionMobileBg";
 import { FourthSectionMobileBg } from "../LandingSections/images/lines/FourthSectionMobileBg";
 import { createTFunc, Translations } from "../../config/langs";
@@ -35,16 +26,12 @@ interface Props {
   lang: "ru" | "uk" | "en" | "vi";
   externalLocales?: Translations;
   btnAction?: VoidFunction;
-  onSubmit?: VoidFunction;
-  button?: { onClick: VoidFunction; text: string };
 }
 
 export const NewGrantsLanding: React.FC<Props> = ({
   lang = "ru",
   externalLocales,
   btnAction,
-  onSubmit,
-  button,
 }) => {
   const t = createTFunc(lang, externalLocales);
   const cdnUrl = "https://images.gostudy.cz/static";

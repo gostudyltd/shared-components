@@ -19,7 +19,6 @@ function App() {
       btnAction={() => {
         console.log("test");
       }}
-      onSubmit={() => {}}
     />
   );
 }
