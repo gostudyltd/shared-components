@@ -1,15 +1,14 @@
-import React, { useRef } from "react";
-import { Box, Button, Stack, Typography } from "@mui/material";
+import React, { useRef, useState } from "react";
+import { Box, Button, Modal, Stack, Typography } from "@mui/material";
 import {
-  FormSection,
   Image,
   IntroSectionV2,
   SectionContainer,
   SectionContainerWrapperColorized,
   SectionTextCardList,
+  SectionTwoColumnsContainer,
 } from "../LandingSections";
 import { montserratFamily } from "../../constants/themeVars";
-import { FirstSectionBg } from "../LandingSections/images/lines/FirstSectionBg";
 import { FirstUnderline } from "../LandingSections/images/lines/FirstUnderline";
 import { BurstPucker } from "../Icons";
 import { InstIcon } from "../LandingSections/images/lines/InstIcon";
@@ -17,31 +16,27 @@ import { FacebookIcon } from "../LandingSections/images/lines/FacebookIcon";
 import { Star } from "../LandingSections/images/lines/Star";
 import { getPicture } from "../../helpers/CloudinaryImage";
 import { SeventhSectionBg } from "../LandingSections/images/lines/SeventhSectionBg";
-import { FourthSectionBg } from "../LandingSections/images/lines/FourthSectionBg";
 import { SeventhSectionMobileBg } from "../LandingSections/images/lines/SeventhSectionMobileBg";
-import { FourthSectionMobileBg } from "../LandingSections/images/lines/FourthSectionMobileBg";
 import { createTFunc, Translations } from "../../config/langs";
+import { NewGrantsBg } from "../LandingSections/images/lines/NewGrantsBg";
+import { NewGrantsMobileBg } from "../LandingSections/images/lines/NewGrantsMobileBg copy";
+import { NewGrantFirstSectionBg } from "../LandingSections/images/lines/NewGrantFirstSectionBg";
 
 interface Props {
   lang: "ru" | "uk" | "en" | "vi";
   externalLocales?: Translations;
   btnAction?: VoidFunction;
+  youtubeLink?: string;
 }
 
 export const NewGrantsLanding: React.FC<Props> = ({
   lang = "ru",
   externalLocales,
   btnAction,
+  youtubeLink,
 }) => {
   const t = createTFunc(lang, externalLocales);
   const cdnUrl = "https://images.gostudy.cz/static";
-  const formRef = useRef<HTMLDivElement | null>(null);
-  const scrollToForm = () => {
-    if (btnAction) {
-      btnAction();
-    }
-    formRef?.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
 
   const getTranslatedText = (
     enVariant: string | React.ReactNode,
@@ -55,18 +50,23 @@ export const NewGrantsLanding: React.FC<Props> = ({
     return enVariant;
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
+
   return (
     <>
       <SectionContainerWrapperColorized
         accentColor="primary"
         sx={{ background: "rgba(225, 245, 254, 1)" }}
       >
-        <FirstSectionBg
+        <NewGrantFirstSectionBg
           sx={{
             position: "absolute",
-            width: { xs: "176%", sm: "100%" },
-            height: { xs: "100%", sm: "unset" },
-            top: { xs: "-215px", sm: "unset" },
+            width: { xs: "100%", sm: "100%" },
+            height: { xs: "auto", sm: "unset" },
+            // top: { xs: "-215px", sm: "unset" },
           }}
         />
         <IntroSectionV2
@@ -94,15 +94,34 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   sx={{ color: "rgba(41, 98, 255, 1)", position: "relative" }}
                 >
                   {t("NewGrantsLanding.FirstSection.Title.Part1")}
-                  <FirstUnderline
+                  <Box
+                    component={"svg"}
+                    width="329"
+                    height="12"
+                    viewBox="0 0 329 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                     sx={{
                       position: "absolute",
-                      right: 0,
                       bottom: "-6px",
-                      width: lang === "uk" || lang === "ru" ? "90%" : "100%",
-                      "& path": { strokeWidth: "7px" },
+                      left: "0",
+                      width: "100%",
+                      // "& path": {
+                      //   strokeWidth:
+                      //     lang === "uk"
+                      //       ? "7px"
+                      //       : lang === "vi"
+                      //       ? "17px"
+                      //       : "7px",
+                      // },
                     }}
-                  />
+                  >
+                    <path
+                      d="M1 3C137.614 10.4385 210.525 11.5425 328 3"
+                      stroke="#2962FF"
+                      stroke-width="6"
+                    />
+                  </Box>
                 </Box>
                 <br />
                 {t("NewGrantsLanding.FirstSection.Title.Part2")}
@@ -111,12 +130,12 @@ export const NewGrantsLanding: React.FC<Props> = ({
           )}
           description={t("NewGrantsLanding.FirstSection.Description")}
           image={{
-            src: `${cdnUrl}/newGrantsLanding/first.png`,
+            src: `${cdnUrl}/newGrantsLanding/first_${lang}.png`,
             width: null,
             height: null,
           }}
           mobileImage={{
-            src: `${cdnUrl}/newGrantsLanding/first_mobile.png`,
+            src: `${cdnUrl}/newGrantsLanding/first_${lang}_mobile.png`,
             width: null,
             height: null,
             sx: { maxHeight: "338px", objectFit: "contain" },
@@ -261,22 +280,34 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     }}
                   >
                     {t("NewGrantsLanding.SecondSection.Title.Part1")}
-                    <FirstUnderline
+                    <Box
+                      component={"svg"}
+                      width="490"
+                      height="11"
+                      viewBox="0 0 490 11"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                       sx={{
                         position: "absolute",
                         bottom: "-6px",
                         left: "0",
                         width: "100%",
-                        "& path": {
-                          strokeWidth:
-                            lang === "uk"
-                              ? "7px"
-                              : lang === "vi"
-                              ? "17px"
-                              : "7px",
-                        },
+                        // "& path": {
+                        //   strokeWidth:
+                        //     lang === "uk"
+                        //       ? "7px"
+                        //       : lang === "vi"
+                        //       ? "17px"
+                        //       : "7px",
+                        // },
                       }}
-                    />
+                    >
+                      <path
+                        d="M1 3C204.876 9.19873 313.686 10.1188 489 3"
+                        stroke="#FFD600"
+                        stroke-width="6"
+                      />
+                    </Box>
                   </Box>{" "}
                   {t("NewGrantsLanding.SecondSection.Title.Part2")}
                 </>
@@ -369,7 +400,12 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   <Box component={"span"}>
                     {t("NewGrantsLanding.SecondSection.Step2.Text.Part1")}
                   </Box>{" "}
-                  <Box component={"a"} href="#" color={"rgba(255, 214, 0, 1)"}>
+                  <Box
+                    component={"a"}
+                    href="https://www.instagram.com/gostudy_eu/"
+                    target="_blank"
+                    color={"rgba(255, 214, 0, 1)"}
+                  >
                     {t("NewGrantsLanding.SecondSection.Step2.Text.Part2")}
                   </Box>{" "}
                   <Box component={"span"}>
@@ -409,7 +445,12 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   <Box component={"span"}>
                     {t("NewGrantsLanding.SecondSection.Step3.Text.Part3")}
                   </Box>{" "}
-                  <Box component={"a"} href="#" color={"rgba(255, 214, 0, 1)"}>
+                  <Box
+                    component={"a"}
+                    href="https://www.instagram.com/gostudy_eu/"
+                    target="_blank"
+                    color={"rgba(255, 214, 0, 1)"}
+                  >
                     {t("NewGrantsLanding.SecondSection.Step3.Text.Part4")}
                   </Box>{" "}
                 </Box>
@@ -447,14 +488,14 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     left: "0",
                     width: "100%",
                     "& path": {
-                      strokeWidth:
-                        lang === "uk"
-                          ? "5px"
-                          : lang === "vi"
-                          ? "8px"
-                          : lang === "en"
-                          ? "9px"
-                          : "5px",
+                      // strokeWidth:
+                      //   lang === "uk"
+                      //     ? "5px"
+                      //     : lang === "vi"
+                      //     ? "8px"
+                      //     : lang === "en"
+                      //     ? "9px"
+                      //     : "5px",
                     },
                   }}
                 />
@@ -558,7 +599,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
         accentColor="primary"
         sx={{ background: "transparent", position: "relative" }}
       >
-        <FourthSectionBg
+        <NewGrantsBg
           sx={{
             display: { xs: "none", sm: "block" },
             position: "absolute",
@@ -568,7 +609,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
             transform: "translateY(-50%)",
           }}
         />
-        <FourthSectionMobileBg
+        <NewGrantsMobileBg
           sx={{
             position: "absolute",
             width: "100%",
@@ -632,12 +673,12 @@ export const NewGrantsLanding: React.FC<Props> = ({
                         left: "0",
                         width: "100%",
                         "& path": {
-                          strokeWidth:
-                            lang === "uk"
-                              ? "7px"
-                              : lang === "vi"
-                              ? "17px"
-                              : "7px",
+                          // strokeWidth:
+                          //   lang === "uk"
+                          //     ? "7px"
+                          //     : lang === "vi"
+                          //     ? "17px"
+                          //     : "7px",
                         },
                       }}
                     />
@@ -658,9 +699,11 @@ export const NewGrantsLanding: React.FC<Props> = ({
               position: "absolute",
               width: "22px",
               height: "22px",
-              top: { xs: "13%", sm: "27%" },
-              left: { xs: "84%", sm: "10%" },
+              top: { xs: "13%", sm: "60%" },
+              left: { xs: "84%", sm: "0%" },
               zIndex: "0",
+              display: { xs: "none", sm: "block" },
+              "&>path": { fill: "rgba(187, 222, 251, 1)" },
             }}
           />
           <Star
@@ -668,20 +711,24 @@ export const NewGrantsLanding: React.FC<Props> = ({
               position: "absolute",
               width: { xs: "20.2px", sm: "39px" },
               height: { xs: "20.2px", sm: "39px" },
-              left: { xs: "8%", sm: "42%" },
-              bottom: { xs: "29.8%", sm: "12%" },
+              left: { xs: "8%", sm: "40%" },
+              // bottom: { xs: "29.8%", sm: "12%" },
+              top: "43%",
               zIndex: "0",
+              display: { xs: "none", sm: "block" },
+              "&>path": { fill: "rgba(41, 98, 255, 1)" },
             }}
           />
           <Star
             sx={{
               display: { xs: "none", sm: "block" },
               position: "absolute",
-              width: "24px",
-              height: "24px",
+              width: "27px",
+              height: "27px",
               bottom: "32%",
               right: "0",
               zIndex: "0",
+              "&>path": { fill: "rgba(187, 222, 251, 1)" },
             }}
           />
           <SectionTextCardList
@@ -784,8 +831,8 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   },
                 }}
               >
-                {t("NewGrantsLanding.SixthSection.Title.Part1")}
-                <FirstUnderline
+                {t("NewGrantsLanding.FifthSection.Title.Part1")}
+                {/* <FirstUnderline
                   sx={{
                     position: "absolute",
                     bottom: lang === "vi" ? "-12px" : "-6px",
@@ -802,7 +849,220 @@ export const NewGrantsLanding: React.FC<Props> = ({
                           : "5px",
                     },
                   }}
-                />
+                /> */}
+                <Box
+                  component={"svg"}
+                  width="447"
+                  height="13"
+                  viewBox="0 0 447 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  sx={{
+                    position: "absolute",
+                    bottom: "-6px",
+                    left: "0",
+                    width: "100%",
+                  }}
+                >
+                  <path
+                    d="M1 3C186.912 11.6782 286.134 12.9663 446 3"
+                    stroke="#2962FF"
+                    stroke-width="6"
+                  />
+                </Box>
+              </Box>{" "}
+              {t("NewGrantsLanding.FifthSection.Title.Part2")}
+            </Typography>
+          ),
+        }}
+      >
+        <SectionTwoColumnsContainer
+          disableContainerPaddings
+          firstColumn={
+            <Box>
+              <Box onClick={handleOpen}>
+                {getPicture(
+                  `${cdnUrl}/newGrantsLanding/fifth_${lang}.png`,
+                  null,
+                  null,
+                  {
+                    width: "100%",
+                  },
+                  {
+                    borderRadius: { xs: "24px", sm: "32px" },
+                    objectFit: "cover",
+                    width: "100%",
+                    // width: { xs: "142px", sm: "164px" },
+                    // height: { xs: "160px", sm: "200px" },
+                  }
+                )}
+              </Box>
+              <Modal open={isOpen} onClose={handleClose}>
+                <Box
+                  onClick={handleClose} // Close video when clicking on the background
+                  sx={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100vw",
+                    height: "100vh",
+                    bgcolor: "rgba(0, 0, 0, 0.8)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    zIndex: 1300,
+                    px: "16px",
+                  }}
+                >
+                  <Box
+                    onClick={(e) => e.stopPropagation()}
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      maxWidth: "952px",
+                      aspectRatio: "16 / 9",
+                      bgcolor: "transparent",
+                    }}
+                  >
+                    {/* YouTube iFrame */}
+                    <iframe
+                      src={youtubeLink}
+                      // "https://www.youtube.com/embed/tan7kF_L0yY?si=-QaSHoAv7LzGcFXf&autoplay=1"
+                      title="YouTube Video"
+                      allow="autoplay"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        border: "none",
+                        borderRadius: "32px",
+                      }}
+                    ></iframe>
+                  </Box>
+                </Box>
+              </Modal>
+            </Box>
+          }
+          secondColumn={
+            <Stack gap={{ xs: "20px", sm: "28px" }}>
+              <Stack gap={{ xs: "12px", sm: "16px" }}>
+                <Box
+                  sx={{
+                    color: "rgba(0, 0, 0, 0.87)",
+                    fontSize: { xs: "20px", sm: "24px" },
+                    fontWeight: "600",
+                    lineHeight: { xs: "24px", sm: "29.76px" },
+                    display: "flex",
+                    gap: "16px",
+                  }}
+                >
+                  <BurstPucker
+                    sx={{
+                      width: { xs: "24px", sm: "30px" },
+                      height: { xs: "24px", sm: "30px" },
+                      color: "rgba(41, 98, 255, 1)",
+                      flexShrink: 0,
+                    }}
+                  />
+                  <Box component={"span"}>
+                    {t("NewGrantsLanding.FifthSection.Item1.Text.Part1")}{" "}
+                    <Box component={"span"} color={"rgba(41, 98, 255, 1)"}>
+                      {t("NewGrantsLanding.FifthSection.Item1.Text.Part2")}
+                    </Box>
+                  </Box>
+                </Box>
+                <Box
+                  sx={{
+                    color: "rgba(0, 0, 0, 0.87)",
+                    fontSize: { xs: "20px", sm: "24px" },
+                    fontWeight: "600",
+                    lineHeight: { xs: "24px", sm: "29.76px" },
+                    display: "flex",
+                    gap: "16px",
+                  }}
+                >
+                  <BurstPucker
+                    sx={{
+                      width: { xs: "24px", sm: "30px" },
+                      height: { xs: "24px", sm: "30px" },
+                      color: "rgba(41, 98, 255, 1)",
+                      flexShrink: 0,
+                    }}
+                  />
+                  <Box component={"span"}>
+                    {t("NewGrantsLanding.FifthSection.Item2.Text.Part1")}{" "}
+                    <Box component={"span"} color={"rgba(41, 98, 255, 1)"}>
+                      {t("NewGrantsLanding.FifthSection.Item2.Text.Part2")}
+                    </Box>{" "}
+                    <Box component={"span"}>
+                      {t("NewGrantsLanding.FifthSection.Item2.Text.Part3")}
+                    </Box>{" "}
+                    <Box
+                      component={"a"}
+                      href="https://www.instagram.com/gostudy_eu/"
+                      target="_blank"
+                      color={"rgba(41, 98, 255, 1)"}
+                    >
+                      {t("NewGrantsLanding.FifthSection.Item2.Text.Part4")}
+                    </Box>
+                  </Box>
+                </Box>
+              </Stack>
+              <Typography
+                component={"span"}
+                sx={{
+                  fontSize: { xs: "18px", sm: "22px" },
+                  fontWeight: "400",
+                  lineHeight: { xs: "21.6px", sm: "27.28px" },
+                }}
+              >
+                {t("NewGrantsLanding.FifthSection.Description")}
+              </Typography>
+            </Stack>
+          }
+        />
+      </SectionContainer>
+
+      <SectionContainer
+        sectionTitle={{
+          renderTitle: () => (
+            <Typography
+              fontSize={{ xs: "30px", sm: "46px" }}
+              lineHeight={{ xs: "37.2px", sm: "46px" }}
+              fontFamily={montserratFamily}
+              fontWeight={700}
+              letterSpacing={{ xs: "-1px", sm: "-2px" }}
+            >
+              <Box
+                component={"span"}
+                sx={{
+                  position: "relative",
+                  color: "rgba(41, 98, 255, 1)",
+                  "& path": {
+                    stroke: "rgba(41, 98, 255, 1)",
+                  },
+                }}
+              >
+                {t("NewGrantsLanding.SixthSection.Title.Part1")}
+                <Box
+                  component={"svg"}
+                  width="322"
+                  height="11"
+                  viewBox="0 0 322 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  sx={{
+                    position: "absolute",
+                    bottom: "-6px",
+                    left: "0",
+                    width: "100%",
+                  }}
+                >
+                  <path
+                    d="M1 3C134.689 9.19873 206.04 10.1188 321 3"
+                    stroke="#2962FF"
+                    strokeWidth="6"
+                  />
+                </Box>
               </Box>{" "}
               {t("NewGrantsLanding.SixthSection.Title.Part2")}
             </Typography>
@@ -974,38 +1234,26 @@ export const NewGrantsLanding: React.FC<Props> = ({
                       }}
                     >
                       {t("GrantsLanding.SixthSection.Title.Part2")}
-                      <FirstUnderline
-                        sx={{
-                          position: "absolute",
-                          bottom: "-6px",
-                          left: "0",
-                          width: "100%",
-                          "& path": { strokeWidth: "6px" },
-                        }}
-                      />
-                    </Box>
-                  </>,
-                  <>
-                    {t("GrantsLanding.SixthSection.Title.Part1")}{" "}
-                    <Box
-                      component={"span"}
-                      sx={{
-                        position: "relative",
-                        color: "rgba(41, 98, 255, 1)",
-                        "& path": {
-                          stroke: "rgba(41, 98, 255, 1)",
-                        },
-                      }}
-                    >
-                      {t("GrantsLanding.SixthSection.Title.Part2")}
-                      <FirstUnderline
+                      <Box
+                        component={"svg"}
+                        width="322"
+                        height="11"
+                        viewBox="0 0 322 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                         sx={{
                           position: "absolute",
                           bottom: "-6px",
                           left: "0",
                           width: "100%",
                         }}
-                      />
+                      >
+                        <path
+                          d="M1 3C134.689 9.19873 206.04 10.1188 321 3"
+                          stroke="#2962FF"
+                          strokeWidth="6"
+                        />
+                      </Box>
                     </Box>
                   </>,
                   <>
@@ -1021,14 +1269,26 @@ export const NewGrantsLanding: React.FC<Props> = ({
                       }}
                     >
                       {t("GrantsLanding.SixthSection.Title.Part2")}
-                      <FirstUnderline
+                      <Box
+                        component={"svg"}
+                        width="322"
+                        height="11"
+                        viewBox="0 0 322 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                         sx={{
                           position: "absolute",
-                          bottom: "-14px",
+                          bottom: "-6px",
                           left: "0",
                           width: "100%",
                         }}
-                      />
+                      >
+                        <path
+                          d="M1 3C134.689 9.19873 206.04 10.1188 321 3"
+                          stroke="#2962FF"
+                          strokeWidth="6"
+                        />
+                      </Box>
                     </Box>
                   </>,
                   <>
@@ -1044,15 +1304,61 @@ export const NewGrantsLanding: React.FC<Props> = ({
                       }}
                     >
                       {t("GrantsLanding.SixthSection.Title.Part2")}
-                      <FirstUnderline
+                      <Box
+                        component={"svg"}
+                        width="322"
+                        height="11"
+                        viewBox="0 0 322 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                         sx={{
                           position: "absolute",
-                          bottom: "-11px",
+                          bottom: "-6px",
                           left: "0",
                           width: "100%",
-                          "& path": { strokeWidth: "7px" },
                         }}
-                      />
+                      >
+                        <path
+                          d="M1 3C134.689 9.19873 206.04 10.1188 321 3"
+                          stroke="#2962FF"
+                          strokeWidth="6"
+                        />
+                      </Box>
+                    </Box>
+                  </>,
+                  <>
+                    {t("GrantsLanding.SixthSection.Title.Part1")}{" "}
+                    <Box
+                      component={"span"}
+                      sx={{
+                        position: "relative",
+                        color: "rgba(41, 98, 255, 1)",
+                        "& path": {
+                          stroke: "rgba(41, 98, 255, 1)",
+                        },
+                      }}
+                    >
+                      {t("GrantsLanding.SixthSection.Title.Part2")}
+                      <Box
+                        component={"svg"}
+                        width="322"
+                        height="11"
+                        viewBox="0 0 322 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        sx={{
+                          position: "absolute",
+                          bottom: "-6px",
+                          left: "0",
+                          width: "100%",
+                        }}
+                      >
+                        <path
+                          d="M1 3C134.689 9.19873 206.04 10.1188 321 3"
+                          stroke="#2962FF"
+                          strokeWidth="6"
+                        />
+                      </Box>
                     </Box>
                   </>
                 )}

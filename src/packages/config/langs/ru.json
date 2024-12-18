@@ -427,5 +427,14 @@
     "NewGrantsLanding.FirstSection.Title.Part1": "10 грантов",
     "NewGrantsLanding.FirstSection.Title.Part2": "на образование в Европе",
     "NewGrantsLanding.FirstSection.Description": "Выиграй свое будущее: подайте заявку на один из 10 образовательных грантов от GoStudy и сделайте первый шаг к светлому будущему в Европе.",
-    "NewGrantsLanding.FirstSection.Button": "Участвовать"
+    "NewGrantsLanding.FirstSection.Button": "Участвовать",
+    "NewGrantsLanding.FifthSection.Title.Part1": "Сроки проведения",
+    "NewGrantsLanding.FifthSection.Title.Part2": "конкурса",
+    "NewGrantsLanding.FifthSection.Item1.Text.Part1": "Период подачи заявок:",
+    "NewGrantsLanding.FifthSection.Item1.Text.Part2": "до 19 января 2025 года",
+    "NewGrantsLanding.FifthSection.Item2.Text.Part1": "Объявление победителей:",
+    "NewGrantsLanding.FifthSection.Item2.Text.Part2": "20 января",
+    "NewGrantsLanding.FifthSection.Item2.Text.Part3": "на Instagram",
+    "NewGrantsLanding.FifthSection.Item2.Text.Part4": "@gostudy_eu",
+    "NewGrantsLanding.FifthSection.Description": "10 победителей получат шанс приехать в Европу учить язык и готовиться к поступлению в престижные вузы Чехии, Словакии или Австрии уже в 2025 учебном году."
 }
