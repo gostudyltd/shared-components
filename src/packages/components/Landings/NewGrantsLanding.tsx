@@ -421,7 +421,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     color={"rgba(255, 214, 0, 1)"}
                     sx={{
                       "&:hover": {
-                        color: "rgba(41, 98, 255, 1)",
+                        color: "rgba(255, 214, 0, 1)",
                       },
                     }}
                   >
@@ -474,7 +474,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     color={"rgba(255, 214, 0, 1)"}
                     sx={{
                       "&:hover": {
-                        color: "rgba(41, 98, 255, 1)",
+                        color: "rgba(255, 214, 0, 1)",
                       },
                     }}
                   >
