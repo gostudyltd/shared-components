@@ -129,6 +129,12 @@ export const NewGrantsLanding: React.FC<Props> = ({
             </Typography>
           )}
           description={t("NewGrantsLanding.FirstSection.Description")}
+          descriptionSx={{
+            fontSize: { xs: "18px", sm: "20px" },
+            lineHeight: { xs: "23.76px", sm: "28.6px" },
+            color: "rgba(0, 0, 0, 0.87)",
+            fontFamily: montserratFamily,
+          }}
           image={{
             src: `${cdnUrl}/newGrantsLanding/first_${lang}.png`,
             width: null,
@@ -144,7 +150,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
             <Box
               sx={{
                 position: "relative",
-                width: "fit-content",
+                width: "100%",
                 mx: { xs: "auto", sm: "0" },
               }}
             >
@@ -166,7 +172,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   sx: {
                     objectFit: "contain",
                     maxWidth: "460px",
-                    width: { xs: "90%", sm: "100%" },
+                    width: { xs: "100%", sm: "100%" },
                   },
                   pictureSx: {
                     display: "flex",
@@ -321,6 +327,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
               color: "rgba(224, 224, 224, 1)",
               fontSize: { xs: "20px", sm: "22px" },
               lineHeight: { xs: "26px", sm: "28.6px" },
+              fontFamily: montserratFamily,
             },
             // centered: true,
           }}
@@ -337,6 +344,9 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   color: "rgba(255, 255, 255, 1)",
                   fontSize: { xs: "24px", sm: "32px" },
                   lineHeight: { xs: "24px", sm: "32px" },
+                  fontFamily: montserratFamily,
+                  letterSpacing: "-0.5px",
+                  fontWeight: 700,
                 }}
               >
                 1.
@@ -357,13 +367,14 @@ export const NewGrantsLanding: React.FC<Props> = ({
                 <Button
                   variant="contained"
                   sx={{
+                    height: "42px",
                     bgcolor: "rgba(255, 214, 0, 1)",
                     "&:hover": { bgcolor: "rgba(255, 214, 0, 1)" },
                     color: "rgba(0, 0, 0, 0.87)",
                     fontSize: { xs: "16px", sm: "16px" },
                     lineHeight: { xs: "26px", sm: "26px" },
                     fontFamily: montserratFamily,
-                    width: "fit-content",
+                    width: { xs: "100%", sm: "fit-content" },
                   }}
                   onClick={() => {
                     if (btnAction) {
@@ -382,6 +393,9 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   color: "rgba(255, 255, 255, 1)",
                   fontSize: { xs: "24px", sm: "32px" },
                   lineHeight: { xs: "24px", sm: "32px" },
+                  fontFamily: montserratFamily,
+                  letterSpacing: "-0.5px",
+                  fontWeight: 700,
                 }}
               >
                 2.
@@ -405,6 +419,11 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     href="https://www.instagram.com/gostudy_eu/"
                     target="_blank"
                     color={"rgba(255, 214, 0, 1)"}
+                    sx={{
+                      "&:hover": {
+                        color: "rgba(41, 98, 255, 1)",
+                      },
+                    }}
                   >
                     {t("NewGrantsLanding.SecondSection.Step2.Text.Part2")}
                   </Box>{" "}
@@ -421,6 +440,9 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   color: "rgba(255, 255, 255, 1)",
                   fontSize: { xs: "24px", sm: "32px" },
                   lineHeight: { xs: "24px", sm: "32px" },
+                  fontFamily: montserratFamily,
+                  letterSpacing: "-0.5px",
+                  fontWeight: 700,
                 }}
               >
                 3.
@@ -450,6 +472,11 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     href="https://www.instagram.com/gostudy_eu/"
                     target="_blank"
                     color={"rgba(255, 214, 0, 1)"}
+                    sx={{
+                      "&:hover": {
+                        color: "rgba(41, 98, 255, 1)",
+                      },
+                    }}
                   >
                     {t("NewGrantsLanding.SecondSection.Step3.Text.Part4")}
                   </Box>{" "}
@@ -571,7 +598,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   display: { xs: "none", sm: "block" },
                   position: "absolute",
                   right: "0",
-                  bottom: "-3px",
+                  bottom: "0",
                 },
                 { width: "100%" }
               )}
@@ -585,7 +612,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   display: { xs: "block", sm: "none" },
                   position: "absolute",
                   right: "0",
-                  bottom: "-3px",
+                  bottom: "0",
                   height: "215px",
                 },
                 { width: "100%", height: "215px" }
@@ -630,6 +657,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                 "&:hover": {
                   bgcolor: "rgba(41, 98, 255, 1)",
                 },
+                height: { xs: "42px !important", sm: "56px !important" },
               },
               onClick: () => {
                 if (btnAction) {
@@ -725,7 +753,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
               position: "absolute",
               width: "27px",
               height: "27px",
-              bottom: "32%",
+              bottom: "40%",
               right: "0",
               zIndex: "0",
               "&>path": { fill: "rgba(187, 222, 251, 1)" },
@@ -880,9 +908,19 @@ export const NewGrantsLanding: React.FC<Props> = ({
           disableContainerPaddings
           firstColumn={
             <Box>
-              <Box onClick={handleOpen}>
+              <Box
+                onClick={youtubeLink ? handleOpen : undefined}
+                sx={{
+                  cursor: "pointer",
+                  position: "relative",
+                  "&:hover .play-button": {
+                    "& > path": { fillOpacity: "0.96", transition: "0.3s" },
+                    "& > rect": { fillOpacity: "0.76", transition: "0.3s" },
+                  },
+                }}
+              >
                 {getPicture(
-                  `${cdnUrl}/newGrantsLanding/fifth_${lang}.png`,
+                  `${cdnUrl}/newGrantsLanding/fifth_new_${lang}.png`,
                   null,
                   null,
                   {
@@ -896,6 +934,34 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     // height: { xs: "160px", sm: "200px" },
                   }
                 )}
+                <Box
+                  component={"svg"}
+                  width="68px"
+                  height="68px"
+                  viewBox="0 0 68 68"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="play-button"
+                  sx={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                >
+                  <rect
+                    width="68"
+                    height="68"
+                    rx="34"
+                    fill="black"
+                    fillOpacity="0.6"
+                  />
+                  <path
+                    d="M41.5504 27.1161C45.8501 30.0391 48 31.5005 48 34.0001C48 36.4997 45.8501 37.9612 41.5504 40.8841C40.3635 41.691 39.1862 42.4507 38.1044 43.0837C37.1554 43.6391 36.0805 44.2136 34.9677 44.7775C30.6781 46.9513 28.5333 48.0382 26.6097 46.8348C24.686 45.6314 24.5112 43.1123 24.1615 38.074C24.0626 36.6491 24 35.2523 24 34.0001C24 32.7479 24.0626 31.3511 24.1615 29.9263C24.5112 24.888 24.686 22.3688 26.6097 21.1655C28.5333 19.9621 30.6781 21.049 34.9677 23.2228C36.0805 23.7867 37.1554 24.3612 38.1044 24.9165C39.1862 25.5496 40.3635 26.3093 41.5504 27.1161Z"
+                    fill="white"
+                    fillOpacity="0.8"
+                  />
+                </Box>
               </Box>
               <Modal open={isOpen} onClose={handleClose}>
                 <Box
@@ -927,7 +993,6 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     {/* YouTube iFrame */}
                     <iframe
                       src={youtubeLink}
-                      // "https://www.youtube.com/embed/tan7kF_L0yY?si=-QaSHoAv7LzGcFXf&autoplay=1"
                       title="YouTube Video"
                       allow="autoplay"
                       style={{
@@ -951,6 +1016,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                     fontSize: { xs: "20px", sm: "24px" },
                     fontWeight: "600",
                     lineHeight: { xs: "24px", sm: "29.76px" },
+                    fontFamily: montserratFamily,
                     display: "flex",
                     gap: "16px",
                   }}
@@ -963,9 +1029,20 @@ export const NewGrantsLanding: React.FC<Props> = ({
                       flexShrink: 0,
                     }}
                   />
-                  <Box component={"span"}>
+                  <Box
+                    component={"span"}
+                    sx={{
+                      fontFamily: montserratFamily,
+                    }}
+                  >
                     {t("NewGrantsLanding.FifthSection.Item1.Text.Part1")}{" "}
-                    <Box component={"span"} color={"rgba(41, 98, 255, 1)"}>
+                    <Box
+                      component={"span"}
+                      color={"rgba(41, 98, 255, 1)"}
+                      sx={{
+                        fontFamily: montserratFamily,
+                      }}
+                    >
                       {t("NewGrantsLanding.FifthSection.Item1.Text.Part2")}
                     </Box>
                   </Box>
@@ -988,12 +1065,28 @@ export const NewGrantsLanding: React.FC<Props> = ({
                       flexShrink: 0,
                     }}
                   />
-                  <Box component={"span"}>
+                  <Box
+                    component={"span"}
+                    sx={{
+                      fontFamily: montserratFamily,
+                    }}
+                  >
                     {t("NewGrantsLanding.FifthSection.Item2.Text.Part1")}{" "}
-                    <Box component={"span"} color={"rgba(41, 98, 255, 1)"}>
+                    <Box
+                      component={"span"}
+                      color={"rgba(41, 98, 255, 1)"}
+                      sx={{
+                        fontFamily: montserratFamily,
+                      }}
+                    >
                       {t("NewGrantsLanding.FifthSection.Item2.Text.Part2")}
                     </Box>{" "}
-                    <Box component={"span"}>
+                    <Box
+                      component={"span"}
+                      sx={{
+                        fontFamily: montserratFamily,
+                      }}
+                    >
                       {t("NewGrantsLanding.FifthSection.Item2.Text.Part3")}
                     </Box>{" "}
                     <Box
@@ -1001,6 +1094,12 @@ export const NewGrantsLanding: React.FC<Props> = ({
                       href="https://www.instagram.com/gostudy_eu/"
                       target="_blank"
                       color={"rgba(41, 98, 255, 1)"}
+                      sx={{
+                        fontFamily: montserratFamily,
+                        "&:hover": {
+                          color: "rgba(41, 98, 255, 1)",
+                        },
+                      }}
                     >
                       {t("NewGrantsLanding.FifthSection.Item2.Text.Part4")}
                     </Box>
@@ -1013,6 +1112,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
                   fontSize: { xs: "18px", sm: "22px" },
                   fontWeight: "400",
                   lineHeight: { xs: "21.6px", sm: "27.28px" },
+                  fontFamily: montserratFamily,
                 }}
               >
                 {t("NewGrantsLanding.FifthSection.Description")}
@@ -1077,7 +1177,10 @@ export const NewGrantsLanding: React.FC<Props> = ({
           },
         }}
       >
-        <Stack flexDirection={{ xs: "column", sm: "row" }} gap={"16px"}>
+        <Stack
+          flexDirection={{ xs: "column", sm: "row" }}
+          gap={{ xs: "16px", sm: "32px" }}
+        >
           <Stack gap={{ xs: "16px", sm: "32px" }} width={"100%"}>
             <Box
               sx={{
@@ -1441,6 +1544,7 @@ export const NewGrantsLanding: React.FC<Props> = ({
               {
                 name: t("GrantsLanding.SixthSection.Card6.Text"),
                 social: "manzuritta",
+                href: "https://www.instagram.com/manzuritta/",
                 img: "seventhSection_6.png",
               },
               {
