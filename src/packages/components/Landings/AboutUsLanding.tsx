@@ -56,11 +56,13 @@ export const AboutUsLanding: React.FC<Props> = ({
           py: { xs: "3em", sm: "3.5em" },
         }}
         button={
-          lang === "en" && (window as any)?.HubSpotConversations?.widget?.open
+          lang === "en"
             ? {
                 text: t("AboutUsLanding.IntroSection.Button"),
                 onClick: () => {
-                  (window as any)?.HubSpotConversations?.widget?.open();
+                  if ((window as any)?.HubSpotConversations?.widget?.open) {
+                    (window as any).HubSpotConversations.widget.open();
+                  }
                 },
                 sx: { bgcolor: "primary" },
               }
