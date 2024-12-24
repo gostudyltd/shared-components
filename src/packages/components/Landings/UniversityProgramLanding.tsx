@@ -109,7 +109,18 @@ export const UniversityProgramLanding: React.FC<Props> = ({
         description={t("UniversityProgramLanding.IntroSection.Description")}
         button={{
           text: t("UniversityProgramLanding.IntroSection.Button"),
-          onClick: scrollToForm,
+          onClick: () => {
+            if (lang === "en") {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              if ((window as any)?.HubSpotConversations?.widget?.open) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                (window as any)?.HubSpotConversations?.widget?.open();
+                return;
+              }
+            }
+
+            scrollToForm();
+          },
           sx: { bgcolor: "warning" },
         }}
         image={{
@@ -496,7 +507,18 @@ export const UniversityProgramLanding: React.FC<Props> = ({
                   color={"warning"}
                   variant="outlined"
                   size="large"
-                  onClick={scrollToForm}
+                  onClick={() => {
+                    if (lang === "en") {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      if ((window as any)?.HubSpotConversations?.widget?.open) {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        (window as any)?.HubSpotConversations?.widget?.open();
+                        return;
+                      }
+                    }
+
+                    scrollToForm();
+                  }}
                   sx={{
                     marginTop: "auto",
                     fontSize: { sm: "18px" },
@@ -636,7 +658,18 @@ export const UniversityProgramLanding: React.FC<Props> = ({
                 variant="contained"
                 size="large"
                 color="warning"
-                onClick={scrollToForm}
+                onClick={() => {
+                  if (lang === "en") {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    if ((window as any)?.HubSpotConversations?.widget?.open) {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      (window as any)?.HubSpotConversations?.widget?.open();
+                      return;
+                    }
+                  }
+
+                  scrollToForm();
+                }}
                 sx={{
                   marginTop: { xs: "32px", sm: "40px" },
                   fontSize: { sm: "18px" },

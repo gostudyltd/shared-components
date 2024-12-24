@@ -55,6 +55,17 @@ export const AboutUsLanding: React.FC<Props> = ({
         containerSx={{
           py: { xs: "3em", sm: "3.5em" },
         }}
+        button={
+          lang === "en" && (window as any)?.HubSpotConversations?.widget?.open
+            ? {
+                text: t("AboutUsLanding.IntroSection.Button"),
+                onClick: () => {
+                  (window as any)?.HubSpotConversations?.widget?.open();
+                },
+                sx: { bgcolor: "primary" },
+              }
+            : undefined
+        }
         renderTitle={(color) => (
           <Box>
             {getTranslatedText(
