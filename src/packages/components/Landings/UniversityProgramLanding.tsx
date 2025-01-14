@@ -976,7 +976,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
         </SectionContainer>
       </SectionContainerWrapperColorized>
 
-      <FormSection
+{/*       <FormSection
         withoutHubspot={withoutHubspot}
         nodeRef={formRef}
         accentColor="warning"
@@ -1121,7 +1121,7 @@ export const UniversityProgramLanding: React.FC<Props> = ({
                 },
               }
         }
-      />
+      /> */}
 
       <SectionContainerWrapperColorized
         accentColor="warning"
