@@ -23,17 +23,17 @@ interface Props {
   lang: LangKey;
   externalLocales?: Translations;
   onClick: VoidFunction;
-  onSubmit?: VoidFunction;
+  // onSubmit?: VoidFunction;
   button?: { onClick: VoidFunction; text: string };
-  withoutHubspot: boolean;
+  // withoutHubspot: boolean;
 }
 
 export const UniversityProgramLanding: React.FC<Props> = ({
   lang = "ru",
   externalLocales,
   onClick,
-  onSubmit,
-  withoutHubspot,
+  // onSubmit,
+  // withoutHubspot,
 }) => {
   const cdnUrl = "https://images.gostudy.cz/static";
 
