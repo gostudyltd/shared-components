@@ -41,7 +41,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
 
   const firstSliderContent = {
     bgColor: "rgba(251, 253, 255, 1)",
-    phone: "+420 277 001 200",
+    phone: "+420 228 887 034",
     email: "info@gostudy.cz",
     link: "https://maps.app.goo.gl/2YobUjZ9ynRjh7rx7",
     address: t('OfficesLanding.FirstSection.Address'),
@@ -49,7 +49,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
 
   const secondSliderContent = {
     bgColor: "rgba(225, 243, 255, 0.5)",
-    phone: "+420 277 001 200",
+    phone: "+420 228 887 034",
     email: "info@gostudy.cz",
     // link: "https://maps.app.goo.gl/dM3fWhQWavgHsZrP8",
     address: t('OfficesLanding.SecondSection.Address'),
@@ -57,7 +57,7 @@ export const OfficesLanding: React.FC<Props> = ({ lang = "ru", externalLocales }
 
   const thirdSliderContent = {
     bgColor: "rgba(225, 243, 255, 0.5)",
-    phone: "+38-093-861 36 25",
+    phone: "+420 228 887 034",
     email: "stanislav.b@gostudy.cz",
     // link: "https://maps.app.goo.gl/BwSGs34KuRptPTXj6",
     address: t('OfficesLanding.FourthSection.Address'),
